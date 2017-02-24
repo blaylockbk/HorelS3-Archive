@@ -87,34 +87,34 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
   * `sfc/` Surface fields
     * _`YYYYMMDD/`_
       * Analysis and forecast hours (f00-f18) for all hours (00-23).
-      * `hrrr.t00.wrfsfcf00.grib2`
+      * File example: `hrrr.t00.wrfsfcf00.grib2`
 
   * `prs/` Pressure fields
     * _`YYYYMMDD/`_
       * Analysis hour (f00) only for all hours (00-23).
-      * `hrrr.t00.wrfprsf00.grib2`
+      * File example: `hrrr.t00.wrfprsf00.grib2`
   * `buf/` Bufr soundings
     * _`YYYYMMDD/`_
       * All hours (00-23). Each file contains analysis and forecast soundings.
       * Only for Salt Lake City (kslc), Ogden (kogd), and Provo (kpvu)
-      * `kslc.2017010100.buf`
+      * File example: `kslc.2017010100.buf`
  
 * #### `exp/` Experimental HRRR
   * `sfc/` Surface fields
     * _`YYYYMMDD/`_
       * Analysis hour (f00) for all available hours.
-      * `hrrrX.t00.wrfsfcf00.grib2`
+      * File example: `hrrrX.t00.wrfsfcf00.grib2`
 
 * #### `alaska/` HRRR Alaska (Experimental)
   * `sfc/` Surface fields
     * _`YYYYMMDD/`_
       * Analysis and 36 hour forecasts (f00-f36) if available. Runs initialize
       every three hours (0, 3, 6, 9, 12, 15, 18, 21).
-      * `hrrrAK.t00.wrfsfcf00.grib2`
+      * File example: `hrrrAK.t00.wrfsfcf00.grib2`
   * `prs/` Pressure fields
     * _`YYYYMMDD/`_
       * Analysis hours (f00) for run hours only (0, 3, 6, 9, 12, 15, 18, 21)
-      * `hrrrAK.t00.wrfsfcf00.grib2`
+      * File example: `hrrrAK.t00.wrfsfcf00.grib2`
 
 More details about the HRRR archive **[here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html)**.
 
