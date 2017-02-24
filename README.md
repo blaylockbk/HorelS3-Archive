@@ -124,7 +124,7 @@ More details about the HRRR archive **[here](http://home.chpc.utah.edu/~u0553130
 
 A python script that utilizes multiprocessing to simultaneously execute an rclone 
 command that copies HRRR files from the `horel-group/archive/models/hrrr` to
-the `horelS3:HRRR` archive buckets. Default is to use 12 processors, but could
+the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
 bump this up to 24. (Hummm, would that increase the speed?? Or is that I/O like
 rush hour traffic at point of the mountain jamming those copper wires??)
 
@@ -157,13 +157,15 @@ required to create those grib2 index files.
 When I copy the grib2 file to the S3 archive, I create these index files and 
 move them to the S3 archive. This script is called by the above python script.
 
-### `untar_move_HRRR_to_horelS3_multipro.py` (future work)
+### `untar_move_HRRR_to_horelS3.py` (future work)
 This will be a modified version of the above script with the added function to
 untar HRRR files from the compressed archive directory.
 **This script shoudl be run on wx4**
   1. Untar HRRR files into a temp directory.
   2. Move to S3 (same as above).
   3. Remove the decompressed files.
+This script doesn't use multiprocessing, because we have to untar a bunch of 
+files in the scratch space. So we'll do one day at a time with a while loop.
 
 
 ## Gotchas
