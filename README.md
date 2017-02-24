@@ -157,7 +157,7 @@ required to create those grib2 index files.
 When I copy the grib2 file to the S3 archive, I create these index files and 
 move them to the S3 archive. This script is called by the above python script.
 
-### `untar_move_HRRR_to_horelS3.py` (future work)
+### `untar_move_HRRR_to_horelS3.py`
 This will be a modified version of the above script with the added function to
 untar HRRR files from the compressed archive directory.
 **This script shoudl be run on wx4**
