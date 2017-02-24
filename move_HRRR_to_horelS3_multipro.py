@@ -213,6 +213,7 @@ def move_HRRR_to_horelS3(DATE):
 
 
 if __name__ == "__main__":
+    timer1 = datetime.now()
     base = DATE
     days = (eDATE - DATE).days
     date_list = np.array([base + timedelta(days=x) for x in range(0, days)])
@@ -225,4 +226,11 @@ if __name__ == "__main__":
     num_proc = multiprocessing.cpu_count() # use all processors
     num_proc = 12                          # specify number to use (to be nice)
     p = multiprocessing.Pool(num_proc)
+    
     p.map(move_HRRR_to_horelS3, date_list)
+
+    print ""
+    print "Model:", model
+    print "Date Start:", DATE
+    print "Date End:", eDATE
+    print 'Total Elapse time:', datetime.now() - timer1
