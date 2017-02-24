@@ -144,7 +144,7 @@ def move_HRRR_to_horelS3(DATE):
         log.write("========== Checking for "+model + ' ' + t +" files ====================\n")
 
         # loop for each hour (0,24)
-        for h in range(0, 25):
+        for h in range(0, 24):
             log.write('Hour %02d:' % (h))
 
             # loop for each forecast hour, depenent on model type.
@@ -220,7 +220,8 @@ if __name__ == "__main__":
     # Multiprocessing :)
     # Pushing so much data at once might be like rush hour traffic at point of
     # the mountian, but heck, if there is any space let's send it through!
-    # Each processor will work on a single day at a time.
+    # Each processor will work on a single day at a time. I'm trying to push
+    # about 400 GB onto the S3 buckets at a time. That's a lot.
     num_proc = multiprocessing.cpu_count() # use all processors
     num_proc = 12                          # specify number to use (to be nice)
     p = multiprocessing.Pool(num_proc)

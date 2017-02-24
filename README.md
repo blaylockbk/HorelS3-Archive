@@ -50,7 +50,7 @@ for the meteo19 ldm user). If you named your source differently when you
 configured rclone, simple replace the name before the colon.
 
 |      What do you want to do?                |   Command   | notes|
-| --------------------------------------------|-------------|--|
+| ------------------------------------------- | ----------- | -- |
 | make a new bucket                           | `rclone mkdir horelS3:HRRR` |
 | make a new bucket/path                      | `rclone mkdir horelS3:HRRR/oper/sfc/` | `copy` will make the directory if it doesn't exist, so it isn't necessary to mkdir before copying|
 | list top-level buckets                      | `rclone lsd horelS3:` | `lsd` Only lists the directories |
