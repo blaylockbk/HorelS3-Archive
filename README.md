@@ -49,8 +49,8 @@ These examples can be used if you named the archive source `horelS3` (like I did
 for the meteo19 ldm user). If you named your source differently when you
 configured rclone, simple replace the name before the colon.
 
-|      What do you want to do?                |   Command   | notes|
-| ------------------------------------------- | ----------- | -- |
+|      What do you want to do?                |       Command     | notes  |
+|---------------------------------------------|-------------------|--------|
 | make a new bucket                           | `rclone mkdir horelS3:HRRR` |
 | make a new bucket/path                      | `rclone mkdir horelS3:HRRR/oper/sfc/` | `copy` will make the directory if it doesn't exist, so it isn't necessary to mkdir before copying|
 | list top-level buckets                      | `rclone lsd horelS3:` | `lsd` Only lists the directories |
@@ -64,8 +64,8 @@ configured rclone, simple replace the name before the colon.
 
 You can do a little more, like rename a file on S3, with **rclone-beta**. This version is currently located 
 here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
-| What do you want to do?  | Command| Notes|
-| -----------------------  |-------------|---|
+| What do you want to do?                 | Command           |  Notes |
+|-----------------------------------------|-------------------|--------|
 | move file from computer to S3 and rename| `/path/to/rclone-beta/rclone moveto /this/path/and/file horelS3:HRRR/path/and/new-name` | will overwrite existing file? |
 | copy file from computer to S3 and rename| `/path/to/rclone-beta/rclone copyto /this/path/and/file horelS3:HRRR/path/and/new-name` | will not overwrite if file exists?? |
 
