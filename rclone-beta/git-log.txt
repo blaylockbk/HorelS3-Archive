@@ -1,0 +1,1044 @@
+commit e2f0feef3cf4ff5a15312b5f02e5f7e71ad7ecd8
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 23 11:23:19 2017 +0000
+
+    Add debugging to print hash values on failed hash comparison
+
+commit 30e97ad9ecda76276cec0c45229f550021ec4963
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 22 21:24:04 2017 +0000
+
+    Fix parsing of remotes in moveto and copyto - fixes #1079
+
+commit 07dc76eff0017db0eeaecfb98088ed3485bbffcd
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 22 20:58:24 2017 +0000
+
+    Remove unused test file
+
+commit e59dc81658d77af0538f6fdbc7a8fc4cfb0021ca
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 22 19:28:22 2017 +0000
+
+    Stop --track-renames deleting case folded source files - fixes #1094
+    
+    What was happening is that when Move was implemented as Copy + Delete,
+    MoveFile was seeing the files didn't need transferring (because they
+    were identical) then deleted the source.
+    
+    The fix uses Move instead and patches onedrive to disallow a case
+    folded identical copy (which errors with 500 error)
+
+commit f40443359d439fd284022f9540bec9dbdf97ca75
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 22 18:00:56 2017 +0000
+
+    Fix exit code docs - fixes #1169
+
+commit 6b0f2ef4bdf9812583aad453702b06db5c91d4e1
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 22 13:17:38 2017 +0000
+
+    Fix --delete-before deleting files on copy - fixes #1166
+
+commit 12aa03f5b8ff6af25323c9e51e70f0933bac4d01
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 22 12:48:16 2017 +0000
+
+    dropbox: fix depth 1 listing - fixes #1165
+
+commit 73a96dc588405ec55003ec8ef2f1f750409024a9
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 22 10:14:40 2017 +0000
+
+    Improve directory listing tests to detect issue #1165
+
+commit 980cd5bfd8cd7b855e04eb8291189ace2060a185
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 20 18:02:45 2017 +0000
+
+    Put the -beta-latest files at the root of beta.rclone.org - fixes #1047
+
+commit 86cc9f3dfbbcb8e4b7839e2402692df4c206766e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 20 17:08:07 2017 +0000
+
+    Include git-log.txt into beta releases - fixes #1047
+
+commit 1ae604fcf4cfa05f4bb0450fe48dd2d028b22f2f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 20 16:54:33 2017 +0000
+
+    cross-compile: make rclone-beta-latest* for download #1047
+
+commit 5e93fe96d30114aa7be6e58b43c37d780b23c404
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 20 16:36:54 2017 +0000
+
+    cross-compile: add missing .exe suffix to windows binaries
+
+commit 31745320c8652d434d5a57e06852e743a1b52abd
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 20 16:36:25 2017 +0000
+
+    Log the rclone version at the end of the run - fixes #847
+
+commit 2da6cd7f845f868b04e0a83cecc25405801026c3
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 20 16:33:45 2017 +0000
+
+    Introduce AtExit to fix --cpuprofile and --memprofile to write profiles at end of run
+
+commit 6e0e1ad9cbb5548a5905b322f849fc1148cdc1a3
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 18 12:02:04 2017 +0000
+
+    Add more description to the snapcraft files
+
+commit dd62c94d059b921296179d5d081c8ae938a8096b
+Author: Dedsec1 <Dedsec1@users.noreply.github.com>
+Date:   Thu Feb 16 21:30:09 2017 -0500
+
+    Create dev-snapcraft.yaml for current snapshot rclone
+
+commit ee70b991439a3503a549559a9939e8d54274348e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 18 11:42:26 2017 +0000
+
+    Add Hisham Zarka to contributors
+
+commit b3a526814e8eb0433e9328df33384623548dbe03
+Author: Hisham Zarka <hzarka@gmail.com>
+Date:   Sat Feb 18 13:13:53 2017 +0400
+
+    fix --ignore-checksum
+
+commit 69a15ae1739e9bd8b92f5571e0a625f892ef76ec
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 21:54:32 2017 +0000
+
+    Replace gox with a go script to do cross compiling
+    
+    gox wasn't building the mips binaries for some reason.
+
+commit 1d7f95da8e525321cad4bf68aa0f072fc370e8b2
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 19:11:08 2017 +0000
+
+    Support MIPS big and little endian - fixes #849
+
+commit 8ec57d145eca06cbdede8628d3344c07795e0ac7
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 16:49:51 2017 +0000
+
+    Update vendor directory
+    
+    Re-added cobra patch 499475bb41e00278e1776bea49ee48624e7a1e53
+
+commit 3ef9f6f016857a8d59b98ec4104f65ffae4f5d41
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 11:37:19 2017 +0000
+
+    mount: add test scripts
+
+commit 990b676e1310025a8f52f06302adc5efd0a3a1e8
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 10:30:45 2017 +0000
+
+    travis: only run go latest on OS X and include go tip, but allow failures
+    
+    fixup
+
+commit 5cdfe9c7ae8f9dfa895fcb488f22ec5f2b7badbf
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 09:40:14 2017 +0000
+
+    Updae to go1.8
+
+commit 033d1eb7afd52d115d2c27d243bb524755f47031
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 09:15:24 2017 +0000
+
+    Refactor Account interface
+
+commit ac62ef430d826902cf3279a28f24f1ea07ee9da5
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 17 08:37:53 2017 +0000
+
+    Prevent double closes on async buffer
+
+commit 928be0f1fd4844548d8857788e11e3799c45f79f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 16 23:57:58 2017 +0000
+
+    mount: fix seek with buffering to use correct interface
+    
+    Stop pre-cache before seeking which stops lots of excess data transfer
+
+commit 6f7529067836b12b42b900c31bd935916309bb86
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 16 23:55:47 2017 +0000
+
+    Make async buffering start slowly to improve seek performance
+
+commit 8c2b50c7ed2c98219e74dd83d986e810c4c0d4b7
+Author: Dedsec1 <Dedsec1@users.noreply.github.com>
+Date:   Thu Feb 16 00:34:43 2017 -0500
+
+    Update snapcraft.yaml
+
+commit 2b1695e09b9fde0056536c3127e9d289b1888f6f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 16 22:21:32 2017 +0000
+
+    Add Dedsec1 to contributors
+
+commit ef604f6100d0843e3e97b4274b6c1b7c10cd639f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 6 21:17:45 2017 +0000
+
+    mount: implement renaming directories - fixes #954
+    
+    This also fixes various caching issues renaming files.
+
+commit f3c57454684423d2cb6fd0f62d6fc7ead73b0c9e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Feb 5 21:20:56 2017 +0000
+
+    Add srcRemote and dstRemote parameters to DirMove #954
+
+commit e4835f535d35c42f958918a2e40bb528161175ae
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 4 17:32:44 2017 +0000
+
+    sftp: remove stray debug
+
+commit 33c2873ae97a1f16d9c28e2037937944ee3333c0
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 16 12:29:37 2017 +0000
+
+    drive: Fix Rmdir on directories with trashed files - fixes #1040
+    
+    When we try to delete a directory which is empty other than with
+    trashed files, we trash the directory rather than deleting it.
+
+commit dac4bb22d39b83300614b1dedf7cdfffe07dfe53
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 15 23:26:40 2017 +0000
+
+    mount: Make include and exclude filters apply to mount - fixes #1060
+
+commit b52c80e85c7d98b894ccbcfe5604150ad349d611
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 15 23:09:44 2017 +0000
+
+    sync: don't update mod times if --dry-run set - fixes #1100
+
+commit f15c6b68b6df3c29503741abc982d29600319366
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 15 22:39:07 2017 +0000
+
+    Re-add the async buffer on seek - fixes #1137
+
+commit 3f778d70f719c20b04fdd78c62eacacd66d44b84
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Feb 14 22:28:18 2017 +0000
+
+    Add sync.Pool to async reader
+
+commit 6fc114d681df80c5ce8595d5f230700531c18c6b
+Author: Dedsec1 <Dedsec1@users.noreply.github.com>
+Date:   Thu Feb 9 20:33:53 2017 -0500
+
+    Create Ubuntu snap for rclone #1120
+
+commit 9a9d09845cdc168196fcd1f5c2cea5f6c57faddd
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Feb 14 22:59:52 2017 +0000
+
+    mount: put read and write async buffers back - control with --buffer-size #1043
+
+commit 7fa687b3e1e06b58d4315458b8e32f955a672de8
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Feb 14 22:33:53 2017 +0000
+
+    fs: Async buffer: use ReadFill to fill the chunks and increase to 1MB
+
+commit 493da54113b6dd7eb89b461ab4557417bb76329d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Feb 14 19:31:33 2017 +0000
+
+    Add --buffer-size parameter to control buffer size for copy
+
+commit 541929258b81a078dbad56843e27119315eb7ca0
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 13 10:48:26 2017 +0000
+
+    check: Add --download flag to check all the data, not just hashes
+
+commit 370f242fa20bbaaa70250cbc2574f60abe7f3ca9
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 13 09:24:29 2017 +0000
+
+    local: Fix interaction between -x flag and --max-depth - fixes #1126
+    
+    This was causing the by directory sync to ignore the -x flag because
+    it was putting directories into the listing which should have been
+    excluded.
+
+commit 7047c67a5e1a0d1b2e9b3c6ab732a39fdb827466
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Feb 13 09:23:21 2017 +0000
+
+    sync: Fix log message containing <nil>
+
+commit 18c75a81f9d411884aa8d746435497683a013a2d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Feb 12 16:49:31 2017 +0000
+
+    Add notes on cryptcheck and backups to crypt docs
+
+commit 01c747e7db5fae2014800a8b67d38ecdafdfa6d5
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Feb 12 16:30:18 2017 +0000
+
+    Add cryptcheck command to check integrity of crypt remotes #1102
+
+commit 186aedda982c9c4f61f021a280b206b645bf1f9c
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Feb 12 12:43:13 2017 +0000
+
+    Fix go vet on go 1.7
+
+commit ca0e25b1a12fa559790b91d8b71f280a9357d47f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Feb 12 10:56:52 2017 +0000
+
+    Remove spurious comment
+
+commit f87a694d10dc08b97ebd202fdeffb270ef81110f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 11 22:56:30 2017 +0000
+
+    Make donation page easier to find and add bitcoin address
+
+commit 006227baed4fb53413b0598170d6c5cabf4e350e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 11 20:19:44 2017 +0000
+
+    Replace -v with -vv where necessary or change Debugf to Logf
+
+commit 4d28b5ed22c7520729bff6ad2920544af80e200d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 11 14:11:02 2017 +0000
+
+    Update list of commands in docs.
+
+commit 499475bb41e00278e1776bea49ee48624e7a1e53
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 11 13:57:48 2017 +0000
+
+    Fix -vv by temporarily patching vendored cobra
+    
+    This is a temporary fix until this pull request gets merged
+    
+    https://github.com/spf13/cobra/pull/391
+    
+    See original ticket
+    
+    https://github.com/spf13/pflag/issues/112
+
+commit 666dae42298f97dd12e07786f130a21f4e5ab5f1
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 10 13:28:06 2017 +0000
+
+    Add --syslog flag to optionally log to syslog on capable platforms
+
+commit ac1c04137758b2677fe072882e9a7fc0ebe97d72
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 9 21:22:46 2017 +0000
+
+    Redo log level flags
+    
+      * -vv or --log-level DEBUG
+      * -v or --log-level INFO
+      * --log-level NOTICE (default)
+      * -q --log-level ERROR
+    
+    Replace Config.Verbose and Config.Quiet with Config.LogLevel
+    
+    Fixes #739 Fixes #1108 Fixes #1000
+
+commit 0366ea39c5dd581819b8f412e13b9260da34ba90
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 9 17:08:51 2017 +0000
+
+    Reassign some logging levels
+
+commit 80f53176d92f27843e6cc555288e1e2412e0c2ea
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 9 11:01:20 2017 +0000
+
+    Rename log functions and factor into own file
+
+commit 40c02989f102f3a1be6e96cf419a0fa8f81eff2e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 11 17:49:59 2017 +0000
+
+    acd: Fix panic on token expiry - fixes #1117
+
+commit 50e190ff54c9e3b94f6e1f48be5b66b5e113e561
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 9 11:46:53 2017 +0000
+
+    cat: don't allocate buffers if not needed to reduce memory usage
+
+commit dd20a297d6aeccb3c37809fc80b9c48016f1255b
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 9 11:25:36 2017 +0000
+
+    cat: Fix go routine leak
+
+commit c0ad29c06cac38c29ea1b93a6de096bbe653f580
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 8 22:35:12 2017 +0000
+
+    Clarify logging and docs for --no-traverse incompatibilities - fixes #1059
+
+commit d091d4a8bb4d777ac11e1d66712e47f45fd08371
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 8 08:09:41 2017 +0000
+
+    rclone cat: add --head, --tail, --offset, --count and --discard
+    
+    Fixes #819
+
+commit 381b8453070d4c9d6ada204eae6efd72cc65971d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Feb 4 12:56:21 2017 +0000
+
+    acd: Fix nil pointer deref after Move #1098
+    
+    Don't attempt to read the info in moveNode as there are paths which
+    don't, read it again from the directory afterwards.
+
+commit 48cdedc97b238a18bdc33b6930e3a6af0ffd8e9d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 25 19:59:53 2017 +0000
+
+    Re-implement sync routine to work a directory at a time
+    
+    Multiple directories (up to --checkers worth) are scanned at once.
+    
+    This uses much less memory than the previous scheme - only the amount
+    of memory needed to hold an entire directory listing of objects.
+    
+    For directory based remotes the speed is unchanged.
+    
+    For bucket based remotes, instead of doing one API call to list the
+    whole bucket, it does multiple calls, one for each pseudo directory.
+    However these are done in parallel so in practice this seems to speed
+    up directory listings.
+    
+    This replaces the existing sync method as it performs faster and uses
+    less memory.
+    
+    The old sync method is available with the temporary --old-sync-method
+    flag.
+    
+    Fixes #517
+    Fixes #439
+    Fixes #236
+    Fixes #1067
+
+commit 7c6cd3a9e1e51b5a4cd9f36abf95431c1847e059
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 25 19:35:14 2017 +0000
+
+    Make --delete-after the default and refactor --delete-{before,during,after} parsing
+
+commit bcdd73369f9a20776a79e85e689e7d069c30fe0c
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 24 17:43:58 2017 +0000
+
+    Ignore --delete-before with --track-renames
+
+commit 86bec20b56c1db949820372f76932cadb16ebe3e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 24 11:04:09 2017 +0000
+
+    sync: factor accumulating the rename checks
+
+commit c3b2b89473d0054602d25b05051a72b659d63028
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 24 11:00:05 2017 +0000
+
+    Add ListDirSorted function to list a directory
+    
+      * fix error return of readFilesFn also
+
+commit 85f05c57d18cbb6ead356c811045f51e4440e1e5
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 24 17:15:56 2017 +0000
+
+    Clean empty directories between test runs
+
+commit 16d91246c4a4ddd8932e4e4fad4cc3e13d1028e9
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Feb 3 18:00:33 2017 +0000
+
+    sftp: Fix remote race on creating directories
+    
+    Because there is a period of time between checking a directory needs
+    creating and creating it, the leads to errors where directories are
+    attempting to be created twice.
+    
+    Add locking on a per directory basis to fix while doing mkdir.
+
+commit 726cb43be97898e570e6c02a2717f09df9062e11
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 31 20:34:11 2017 +0000
+
+    Complete SFTP remote #521
+    
+      * Add unit tests
+      * Fix up remote so it passes tests
+      * Add docs
+
+commit 288302c2cfc94c5a87ed0e599fe4902f32fc3f2d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Feb 1 13:23:31 2017 +0000
+
+    Make fallback purge delete empty directories too.
+    
+    This was implemented to make the SFTP unit tests pass.
+
+commit 609671aabccdab29f9398f1063175413936842e1
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 31 20:09:00 2017 +0000
+
+    Add Jack Schmidt to contributors
+
+commit b9a831569634feb4b1b635d532d3db03651e71fd
+Author: Jack Schmidt <github@mowsey.org>
+Date:   Sat Nov 12 18:36:08 2016 -0500
+
+    Basic SFTP support, Issue #521
+
+commit 27e18b6efa9da39522a57c35f632ddad96649664
+Author: Jack Schmidt <github@mowsey.org>
+Date:   Sat Nov 12 19:04:55 2016 -0500
+
+    sftp: add required packages to vendor
+
+commit 9d331ce04b000ea1d284ee5b251fbc142ad8f623
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 5 17:32:42 2017 +0000
+
+    Implement --ignore-checksum flag
+    
+    Fixes #793 Fixes #863 Fixes #981
+
+commit 916569102c69a2662d50ff7dd36f6e6359933c77
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 22:21:39 2017 +0000
+
+    b2: constrain memory usage when doing multipart uploads #439
+    
+    Each part of a multipart upload takes 96M of memory, so we make sure
+    that we don't user more than `--transfers` * 96M of memory buffering
+    the multipart uploads.
+    
+    This has the consequence that some uploads may appear to be at 0% for
+    a while, however they will get going eventually so this won't
+    re-introduce #731.
+
+commit 28f9b9b611c910c5db0b2ef4b5b0d56482f4ad88
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 3 21:20:21 2017 +0000
+
+    drive: detect files using file size as well as md5 - fixes 980
+
+commit 7679620f4bc3f7ca92d584ee0d2ae5e496b6886e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Dec 29 18:04:37 2016 +0000
+
+    drive: Experimentally add --drive-list-chunk
+
+commit 8a11da4e14d89ef860a10dc77bdfe115f5cbafb2
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 2 21:30:32 2017 +0000
+
+    mount: Make fsync be a no-op for direectories too #1045
+
+commit f11867d8108741bd25274c895914b46555905df8
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Feb 2 21:13:23 2017 +0000
+
+    Add Jon Yergatian to contributors
+
+commit 6f8501e9a1b38cdd0aaee752d325dcc6552ef750
+Author: Jon Yergatian <jon@macfanatic.ca>
+Date:   Thu Feb 2 10:59:01 2017 -0800
+
+    s3: Added ca-central-1 region
+
+commit 37fe6d56e5ff5f7dd0b41f9466ea7492d588fdfc
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Jan 30 18:16:53 2017 +0000
+
+    mount: fix docs for umount flags - fixes #1036
+
+commit ff8f11d79c5a57450539780a6fcd6958562968e2
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 20:55:21 2017 +0000
+
+    Add Károly Oláh to contributors
+
+commit cbc113492a7d482255f63cae75dfcb2d0805419e
+Author: okaresz <okaresz@aol.com>
+Date:   Sun Jan 29 18:06:26 2017 +0100
+
+    Add Drive specific option: --drive-skip-gdocs - fixes #1035
+
+commit 74702554da315aba99b6371c4c1444d12f97a347
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 20:42:43 2017 +0000
+
+    onedrive: use token renewer to stop auth errors on long uploads
+    
+    Fixes #820
+
+commit bd29015022ab627a644c26b3b61a3a44f3268210
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 20:35:57 2017 +0000
+
+    Factor token renewer from amazonclouddrive to oauthutil
+
+commit 21928053608f5560b80e5e5aaa6e718e9f3ba4ad
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 15:51:26 2017 +0000
+
+    rclone config: when choosing from a list, allow the value to be entered
+
+commit db0b93c0ad3357c90599dcde7a9a374a9c842515
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 15:37:44 2017 +0000
+
+    rclone config: allow rename and copy of remotes - fixes #641
+
+commit 94947f2523a0f137d9b741221c5bf271eed214c9
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 13:43:20 2017 +0000
+
+    Implement -L, --copy-links flag to allow rclone to follow symlinks
+    
+    Fixes #40
+
+commit 29c6e22024be15085d8b266a8e814abcbcc1e666
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 11:29:42 2017 +0000
+
+    mount: Make fsync be a no-op rather than returning an error - fixes #1045
+
+commit 390f3cf35b2ca044d866955d3b1d8056c252515c
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 10:12:52 2017 +0000
+
+    crypt: Add --crypt-show-mapping to show encrypted file mapping
+    
+    Fixes #1004
+
+commit 20c033b48442dfd866074aee6a0f2dd1e6a2abb6
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 29 09:47:28 2017 +0000
+
+    Add a writing documentation section and update document
+
+commit 8068ef96b6c576c70c205cc889a5a2054e36618a
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 26 10:29:21 2017 +0000
+
+    Add Dario Giovannetti to contributors
+
+commit 9d362589233e50f9ca8befd3e9ef7f01b08e408b
+Author: Dario Giovannetti <dev@dariogiovannetti.net>
+Date:   Sat Jan 14 11:47:55 2017 +0800
+
+    Comply with XDG Base Directory specification
+    
+    Fixes #868
+
+commit 9fdeb823282e5b6af943b62a644af932c0bcc7ba
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 20 17:12:05 2017 +0000
+
+    Fix tests under Windows
+
+commit 2abfae283cd6128cf36bb31bffad1c818e82bbb4
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 20 16:00:55 2017 +0000
+
+    crypt: fix crypt writer getting stuck in a loop #902
+    
+    This happened when the underlying reader returned io.ErrUnexpectedEOF.
+    The error handling for the call to io.ReadFull failed to take this
+    into account.
+    
+    io.ErrUnexpectedEOF is reasonably common when SSL connections go wrong
+    when communicating with ACD, so it manifested itself as transfers from
+    non-encrypted ACD to encrypted ACD getting stuck.
+
+commit b6848a3edb833af7b6749da9d3a9dc716e96d517
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 19 18:01:31 2017 +0000
+
+    Fix race in Lister.Finished which was causing the tests to be unreliable
+
+commit e2bf9eb8e9519930861ade4108a2971f5a379868
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 19 17:26:29 2017 +0000
+
+    Implement --suffix for use with --backup-dir only #98
+    
+    This also makes sure we remove files we are about to override in the
+    --backup-dir properly.
+
+commit a77659e47d9f0812cbdbb6d9c8a263bc9ace39e9
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 19 17:25:57 2017 +0000
+
+    Make directory listing checks more reliable and easier to read
+
+commit e9da14ac2ed024ff06570a8d3926fc711f11e854
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 19 17:21:14 2017 +0000
+
+    acd: After moving a file, wait for the file to no longer be in the directory
+    
+    This fixes a Move followed quickly by a Copy updating the wrong file.
+
+commit a4bf22e620b75c8c08aae5520b5ab60083a8430a
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 17 17:34:21 2017 +0000
+
+    b2: fix upload url not being refreshed properly #825
+
+commit a6b4065e13fd8b850a1257167bfca37f838f9230
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 17 16:32:04 2017 +0000
+
+    mount: fix retry on network failure when reading off crypt - fixes #1042
+
+commit 07ebf35987417691a59a80b56277db90682f4669
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Jan 16 19:26:56 2017 +0000
+
+    Clarify what happens to files already in the --backup-dir DIR
+
+commit 47ebd0789c511a51d28a46961388a69cdb0f36ae
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Jan 16 17:54:18 2017 +0000
+
+    Make "make quicktest" ignore a config file if present for local running
+    
+    This means "make quicktest" should give the same result as when run by
+    Travis.
+
+commit 166fd5045170971d6c66f5e90de1c050694cc739
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Jan 16 15:10:08 2017 +0000
+
+    oauthutil: copy the config before modifying it
+    
+    The stops simultaneous use of oauth configs with different client IDs
+    causing a problem.
+
+commit 0604d3dbf255184320878a9a0bba2300dbc5c624
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Jan 15 12:18:07 2017 +0000
+
+    acd, onedrive: make sure we have found the root before purging
+    
+    If we don't, purge can try to trash the root node which fortunately
+    doesn't succeed.
+
+commit 1fa258c2b45cdd81f245104608285fc7df81e5b5
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 13 17:21:47 2017 +0000
+
+    Define a new Features() method for Fs
+    
+    Optional interfaces are becoming more important in rclone,
+    --track-renames and --backup-dir both rely on them.
+    
+    Up to this point rclone has used interface upgrades to define optional
+    behaviour on Fs objects.  However when one Fs object wraps another it
+    is very difficult for this scheme to work accurately.  rclone has
+    relied on specific error messages being returned when the interface
+    isn't supported - this is unsatisfactory because it means you have to
+    call the interface to see whether it is supported.
+    
+    This change enables accurate detection of optional interfaces by use
+    of a Features struct as returned by an obligatory Fs.Features()
+    method.  The Features struct contains flags and function pointers
+    which can be tested against nil to see whether they can be used.
+    
+    As a result crypt and hubic can accurately reflect the capabilities of
+    the underlying Fs they are wrapping.
+
+commit 3745c526f1987a44eae3fa4e994e16fd1623f540
+Author: ncw <nick@craig-wood.com>
+Date:   Tue Jan 10 21:47:03 2017 +0000
+
+    Implement --backup-dir - fixes #98
+    
+    The parameter of backup-dir specifies a remote that all deleted or
+    overwritten files will be copied to.
+
+commit c123c702abf531b70bfa1fc93b9dbfcda66a909e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 11 14:59:53 2017 +0000
+
+    Fix fs.Overlapping and factor fs.SameConfig
+
+commit 4aae7bcca63e8e76821851ec925672285b88d41b
+Author: ncw <nick@craig-wood.com>
+Date:   Tue Jan 10 20:03:55 2017 +0000
+
+    Factor server side move detection
+
+commit aa62e93094c5206f09af619e85022bfedede5d54
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sat Jan 14 09:50:45 2017 +0000
+
+    acd: fix panic when renaming files - fixes #973
+    
+    Fixed by no longer overwriting the parameters in a retry loop
+
+commit 45862f4c1634ec05e49110f17f2714ce1471a012
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 12 10:07:46 2017 +0000
+
+    Add Brandur to contributors
+
+commit 3b1e0b66bbf78024baf06d51c3de837135ef95e2
+Author: Brandur <brandur@mutelight.org>
+Date:   Mon Jan 9 21:14:53 2017 -0700
+
+    Return error on not found from ListFn
+    
+    This changes `ListFn`'s implementation so that if it encounters a not
+    found error, instead of sending a fatal error to log, it coordinates the
+    return of the error between checker goroutines and sends it back to the
+    caller.
+    
+    The main impetus here is that it allows an external program compiling
+    against rclone as a package to handle a not found, where it currently it
+    cannot.
+    
+    This does change error output on a not found a little bit, we go from
+    this:
+    
+        2017/01/09 21:14:03 directory not found
+    
+    To this:
+    
+        2017/01/09 21:13:44 Failed to ls: directory not found
+
+commit a7d8ccd2658e9d98795bb5b4a48e50bcf2a4cb82
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 10 13:22:51 2017 +0000
+
+    Add T.C. Ferguson to contributors
+
+commit d4c923a5ccadb4f189ce2f501afbfc0ca0bf263e
+Author: T.C. Ferguson <tcf909@gmail.com>
+Date:   Sun Jan 8 10:24:03 2017 -0600
+
+    Add obscure command for generating encrypted passwords for rclone's config
+
+commit e426cb1d1a502436d4130e1c7873133f585cc92d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 10 13:13:14 2017 +0000
+
+    Add emyarod to contributors
+
+commit 3c87a0d0dcc822ae53b65edd1878e5e1f18ab5a6
+Author: emyarod <allllaboutyou@gmail.com>
+Date:   Sun Jan 8 21:09:19 2017 -0800
+
+    Update remote docs to show correct setup process
+
+commit 499766f6ab7e4c5aca04055b09c9baae244a8ed0
+Author: 0xJAKE <0xJAKE@users.noreply.github.com>
+Date:   Sun Jan 8 10:24:03 2017 -0600
+
+    Update amazonclouddrive.md
+    
+    Added details about Amazon Drive's latest trash retention policy.
+    See:
+    https://www.reddit.com/r/DataHoarder/comments/5dh96j/files_in_amazon_cloud_drive_trash_now_deleted/
+    https://www.amazon.com/gp/help/customer/display.html?nodeId=201376760
+
+commit 35a64369837f76280ac02df882d19bfc69614891
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 6 11:24:22 2017 +0000
+
+    mount: implement proper directory handling (mkdir, rmdir)
+    
+    Before this change mount only simulated rmdir & mkdir, now it actually
+    runs mkdir & rmdir on the underlying remote, using the new parmaeters
+    to fs.Mkdir and fs.Rmdir.
+    
+    Fixes #956
+
+commit 341745d4d5e6432779516262330874bb87be2970
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 5 21:11:46 2017 +0000
+
+    Update docs on server side copy
+
+commit 78c1f2839e1ad2f5d9173b2ae6d61720cb8f55ee
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 7 11:17:10 2016 +0000
+
+    Fix filters to add ** rules to directory rules
+    
+    This fixes `--exclude ".*{,/**}"` to exclude all . files and
+    . directories.
+
+commit de2d967abd75b0cae73e3a2de79fdbc0e954e223
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 3 23:03:20 2017 +0000
+
+    Stop --track-renames hashing matching files - fixes #984
+    
+    Also only hash files of the correct size.
+    
+    This speeds it up a lot.
+
+commit 6611d92e218d2ee76331497753a139d5d776c010
+Author: Marco Paganini <paganini@paganini.net>
+Date:   Wed Jan 4 19:03:49 2017 -0800
+
+    Only start bandwidth ticker when necessary.
+    
+    - Only start the token ticker when the timetable entry has more than one
+      entry.
+    - This fixes the "Scheduled bandwidth change" log message when no
+      bwlimit is specified.
+    - Fixes #987
+
+commit e1a49ca4264b3deb1d900d062518c8002ba75d34
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 3 22:42:08 2017 +0000
+
+    Document environment variable usage
+
+commit f73ee5eade8516f0e956381ef5b9971460187d96
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Dec 20 18:03:09 2016 +0000
+
+    Make all config file variables be settable in the environment
+    
+    These are set in the form RCLONE_CONFIG_remote_option where remote is
+    the uppercased remote name and option is the uppercased config file
+    option name.  Note that RCLONE_CONFIG_remote_TYPE must be set if
+    defining a new remote.
+    
+    Fixes #616
+
+commit 0d75d2585f09b3518da54e44960173844181199d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Dec 20 15:50:46 2016 +0000
+
+    Allow all options to be set from environment variables
+    
+    The option names are munged changing - to _ making upper case and
+    prepending RCLONE_.  The values are as parsed by pflag.
+
+commit 3b0f944e23460affaa6f8b13594673953add0db7
+Author: Marco Paganini <paganini@paganini.net>
+Date:   Mon Jan 2 18:52:41 2017 -0800
+
+    Add time-based bandwidth limits.
+    
+    - Change the --bwlimit command line parameter to accept both a limit (as
+      before) or a full timetable (formatted as "hh:mm,limit
+      hh:mm,limit...")
+    - The timetable is checked once a minute by a ticker function. A new
+      tokenBucket is created every time a bandwidth change is necessary.
+    - This change is compatible with the SIGUSR2 change to toggle bandwidth
+      limits.
+    
+    This resolves #221.
+
+commit aaeab58ce6ad4ff421bc31b2f597372151996f74
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 3 20:47:40 2017 +0000
+
+    Add Lukas Loesche to contributors
+
+commit 5894c02a346a511b516a8463be083edccc77dd36
+Author: Lukas Loesche <lukas@mesosphere.io>
+Date:   Sat Dec 31 18:20:31 2016 +0100
+
+    Typo: the the -> the in docs and comments
+
+commit f1221b510be21a69ba6a9cff4ac126c37e07fa94
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 3 17:35:12 2017 +0000
+
+    Change --track-renames to use the length,hash pair stored in a map
+    
+    This makes it much faster in the case of many files and use less
+    memory.
+    
+    This also detects use of --no-traverse and disables it.
+
+commit 274ab349f4ba904118b9053b2ebbafaf79623255
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Jan 2 16:37:59 2017 +0000
+
+    sync: Only allow --track-renames if have a common hash
+
+commit 86392fb8009bd0609bc9eeec3d36c86b248f5d75
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 3 20:34:36 2017 +0000
+
+    Add Bjørn Erik Pedersen to contributors
+
+commit adc156ab2aa3a7f3f8e7034e176ffa9e0341899d
+Author: Bjørn Erik Pedersen <bjorn.erik.pedersen@gmail.com>
+Date:   Tue Dec 20 19:30:50 2016 +0100
+
+    docs: Document track-renames option
+    
+    See #888
+
+commit 47d3a450a4f11996a483915c7c002df428bf8452
+Author: Bjørn Erik Pedersen <bjorn.erik.pedersen@gmail.com>
+Date:   Sun Dec 18 11:03:56 2016 +0100
+
+    sync: Track and perform server-side renames
+    
+    This commits adds support for tracking of file renames if `track-renames` flag is set,
+    and it then performs server-side renames for remotes that support it, i.e.
+    remotes that implement either the `Mover` or the `Copier` interface.
+    
+    Fixes #888
+
+commit 5c89fd679df60d11642ec2b2afb10d8f3f095195
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 3 17:39:56 2017 +0000
+
+    Fix incorrect vendoring for swift library
+    
+    (vendored a feature branch by accident)
+
+commit 1cad759306ff117cfb9bd9339db543b91e0738e9
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Jan 2 16:12:05 2017 +0000
+
+    Update vendor directory
