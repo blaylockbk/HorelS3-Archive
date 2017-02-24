@@ -1,7 +1,8 @@
 [//]: # (You can view this markdown file with the Chrome extention "Markdown Preview Plus")
 
 ![MesoWest Logo, why doesn't this work??](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/images/MesoWest/MesoWest_20th_black.png "Powered by MesoWest")
-
+![MesoWest Logo, why doesn't this work??](MesoWest_20th_black.png "Powered by MesoWest")
+![MesoWest Logo, why doesn't this work??](./MesoWest_20th_black.png "Powered by MesoWest")
 # Using the Horel S3 Archive Buckets  
 Brian Blaylock  
 _February 22, 2017_
