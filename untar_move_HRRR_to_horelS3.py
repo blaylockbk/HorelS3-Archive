@@ -4,7 +4,8 @@
 """
 Use python to execute an rclone command that copies HRRR files from the
 the horel-group/archive/models/ to the horelS3:HRRR archive buckets.
-This script should be run by the meteo19 ldm user.
+This script should be run on wx4.
+Just do this sequentually in a while loop. Don't use multiprocessing.
 
 Requirements:
     rclone:      module load rclone
@@ -15,7 +16,7 @@ Requirements:
 
 from datetime import datetime, timedelta
 import os
-import multiprocessing #:)
+import shutil
 import numpy as np
 
 # rclone config file
@@ -24,6 +25,30 @@ config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
 model_options = {1:'hrrr', 2:'hrrrX', 3:'hrrr_alaska'} # name in horel-group/archive
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}       # name in horelS3:
 types = ['sfc', 'prs', 'buf']                          # model file types
+
+def untar_model_dir(DATE):
+    """
+    Run this on WX1
+    untar the model directory and put it in the /temp directory
+    Make sure you are in the directory you want to untar this stuff.
+    """
+
+    # Set the TAR directory/file path
+    if DATE >= datetime(2016, 7, 1):
+        TAR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/models.tar.gz' \
+            % (DATE.year, DATE.month, DATE.day)
+    else:
+        # It's on horel-group5
+        TAR = '/uufs/chpc.utah.edu/common/home/horel-group5/archive/%04d%02d%02d/models.tar.gz' \
+            % (DATE.year, DATE.month, DATE.day)
+    # Set the destination to copy the files to
+    DESTINATION = '-C /scratch/local/Brian_untar_HRRR/'
+
+    # What is the folder name? It's the same as the date and the model (e.g. hrrr)
+    FOLDER = '%04d%02d%02d/models/hrrr' % (DATE.year, DATE.month, DATE.day)
+    os.system('tar -xzvf %s %s %s' % (TAR, DESTINATION, FOLDER))
+
+    return DESTINATION[3:]
 
 def create_grb_idx(this_file):
     """
@@ -95,8 +120,8 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2016, 10, 1)
-eDATE = datetime(2016, 12, 1)
+DATE = datetime(2015, 4, 19)
+eDATE = datetime(2016, 10, 1)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
 model_type = 1
@@ -107,16 +132,18 @@ model_type = 1
 
 model = model_options[model_type]
 
-def move_HRRR_to_horelS3(DATE):
+while DATE < eDATE:
     """
     Attempt to copy all possible hours, forecast hours, etc. for HRRR from the
     horel-group/archive to the horelS3:HRRR archive.
 
     This Script utilized multiprocessing for faster moving.
     """
+
     # Build the current day directory and file to move
-    DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/models/%s/' \
-        % (DATE.year, DATE.month, DATE.day, model)
+    # First, untar the model directory (function returns where files were saved)
+    DEST = untar_model_dir(DATE)
+    DIR = DEST + '%04d%02d%02d/models/%s/' % (DATE.year, DATE.month, DATE.day, model)
 
 
     # HRRR has 18 hour forcasts, Alaska has 36 hour forecasts
@@ -214,25 +241,8 @@ def move_HRRR_to_horelS3(DATE):
             log.write('\n')
     log.close()
 
+    # Remove the untared hrrr directory for the current date.
+    remove_this = DEST + '%04d%02d%02d' % (DATE.year, DATE.month, DATE.day)
+    shutil.rmtree(remove_this)
 
-if __name__ == "__main__":
-    timer1 = datetime.now()
-    base = DATE
-    days = (eDATE - DATE).days
-    date_list = np.array([base + timedelta(days=x) for x in range(0, days)])
-
-    # Multiprocessing :)
-    # Pushing so much data at once might be like rush hour traffic at point of
-    # the mountian, but heck, if there is any space let's send it through!
-    # Each processor will work on a single day at a time. I'm trying to push
-    # about 400 GB onto the S3 buckets at a time. That's a lot.
-    num_proc = multiprocessing.cpu_count() # use all processors
-    num_proc = 4                          # specify number to use (to be nice)
-    p = multiprocessing.Pool(num_proc)
-    p.map(move_HRRR_to_horelS3, date_list)
-
-    print ""
-    print "Model:", model
-    print "Date Start:", DATE
-    print "Date End:", eDATE
-    print 'Total Elapse time:', datetime.now() - timer1
+    DATE += timedelta(days=1)

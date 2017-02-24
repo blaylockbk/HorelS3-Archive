@@ -160,6 +160,7 @@ move them to the S3 archive. This script is called by the above python script.
 ### `untar_move_HRRR_to_horelS3_multipro.py` (future work)
 This will be a modified version of the above script with the added function to
 untar HRRR files from the compressed archive directory.
+**This script shoudl be run on wx4**
   1. Untar HRRR files into a temp directory.
   2. Move to S3 (same as above).
   3. Remove the decompressed files.
