@@ -164,6 +164,7 @@ untar HRRR files from the compressed archive directory.
   1. Untar HRRR files into a temp directory.
   2. Move to S3 (same as above).
   3. Remove the decompressed files.
+
 This script doesn't use multiprocessing, because we have to untar a bunch of 
 files in the scratch space. So we'll do one day at a time with a while loop.
 
