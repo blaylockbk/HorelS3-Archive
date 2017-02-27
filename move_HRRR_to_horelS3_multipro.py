@@ -125,7 +125,7 @@ def move_HRRR_to_horelS3(DATE):
     else:
         forecasts = np.arange(0, 19)
 
-    # Open file for printing output
+    # Open file for printing output log. Organize into directories by year and month.
     log_path = 'logs/%s_%04d-%02d' % (model, DATE.year, DATE.month)
     if not os.path.exists(log_path):
         os.makedirs(log_path)
@@ -133,6 +133,7 @@ def move_HRRR_to_horelS3(DATE):
     log.write('Moving %s files\nDate: %s\n' % (model, DATE))
     log.write('Origin: ' + DIR)
 
+    # Do lots of loops...file type (t), hour of day (h), forecast hour (f).
     # loop for each type: sfc, prs, buf
     for t in types:
         # Known conditions that don't exist

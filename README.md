@@ -76,12 +76,13 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
 ### `horelS3:HRRR/`
 |      Important Dates            |   What happened?  | Notes  |
 |---------------------------------|-------------------|--------|
-| Apr 18, 2015 | Began downloading HRRR sfc/prs/buf analyses HRRRv1 Some days/hours may be missing|
-| Jul 27, 2016 | Began downloading HRRR sfc 15 hr forecasts| |
-| Aug 23, 2017 | HRRRv2 implemented at NCEP starting with 12z run|
-| Aug 24, 2017 | Began downloading HRRR sfc 18 hr forecasts| HRRRv2 runs a few extra hours|
-| Summer 2016? | Taylor began downloading HRRR-Alaska prs analyses and sfc 36 hr forecasts| Runs occur every three hours, but isn't always availalbe.|
-| Dec 1, 2017  | Began downloading experimental HRRR sfc analyses| HRRRv3: Runs aren't always available |
+| 2015-Apr-18 | Began downloading HRRR sfc/prs/buf analyses HRRRv1 Some days/hours may be missing|
+| 2015-May-30 | Began downloading HRRR Bufr soundings for KSLC, KODG, and KPVU|
+| 2016-Jul-27 | Began downloading HRRR sfc 15 hr forecasts| |
+| 2016-Sep-?? | Taylor began downloading HRRR-Alaska prs analyses and sfc 36 hr forecasts| Runs occur every three hours, but isn't always availalbe.|
+| 2016-Aug-23 | HRRRv2 implemented at NCEP starting with 12z run|
+| 2016-Aug-24 | Began downloading HRRR sfc 18 hr forecasts| HRRRv2 runs a few extra hours|
+| 2016-Dec-01 | Began downloading experimental HRRR sfc analyses| HRRRv3: Runs aren't always available |
 
 * #### `oper/` Operational HRRR
   * `sfc/` Surface fields
@@ -161,23 +162,26 @@ When I copy the grib2 file to the S3 archive, I create these index files and
 move them to the S3 archive. This script is called by the above python script.
 
 ### `untar_move_HRRR_to_horelS3.py`
-This will be a modified version of the above script with the added function to
+This is a modified version of the above script with the added function to
 untar HRRR files from the compressed archive directory.
-**This script shoudl be run on wx4**
-  1. Untar HRRR files into a temp directory.
+**This script must be run on wx4**
+  1. Untar HRRR files into a temporary directory on WX4 (`/scratch/local/Brian_untar_HRRR/`).
   2. Move to S3 (same as above).
   3. Remove the decompressed files.
 
-This script doesn't use multiprocessing, because we have to untar a bunch of 
-files in the scratch space. So we'll do one day at a time with a while loop.
+This script doesn't use multiprocessing because we have to untar a bunch of 
+files in the scratch space. Since I don't want to fill this all up so fast
+we'll only do one day at a time with a while loop.
 
 
 ## Gotchas
 ### Rename files on S3 
-You have to use the rclone-beta version if you want to rename files on the S3 archive
+You have to use the rclone-beta version if you want to rename files on the S3 
+archive.
 
 ### List files in alpha-numeric order
 Yep, can't do this at all.
 
 ### How do you list the size of a bucket or directory?
-I want to see how big the HRRR bucket is or how big a directory is inside the bucket.
+I want to see how big the HRRR bucket is or how big a directory is inside the 
+bucket.
