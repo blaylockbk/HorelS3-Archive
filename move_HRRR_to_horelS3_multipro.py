@@ -7,10 +7,10 @@ the horel-group/archive/models/ to the horelS3:HRRR archive buckets.
 This script should be run by the meteo19 ldm user.
 
 Requirements:
-    rclone:      module load rclone
-    rclone-beta: should be here in this directory
-    g2ctl.pl:    should be here in this directory
-    grads:       module load grads
+    rclone        <- module load rclone
+    rclone-beta   <- should be here in this directory
+    g2ctl.pl      <- should be here in this directory
+    grads         <- module load grads
 """
 
 from datetime import datetime, timedelta
@@ -95,8 +95,8 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2016, 10, 1)
-eDATE = datetime(2016, 12, 1)
+DATE = datetime(2017, 1, 1)
+eDATE = datetime(2017, 2, 1)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
 model_type = 1

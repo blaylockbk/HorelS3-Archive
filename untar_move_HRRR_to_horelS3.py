@@ -1,5 +1,5 @@
 # Brian Blaylock
-# February 22, 2017                             Yesterday's cold front was neat
+# February 24, 2017                 Roads were bad this morning because of snow
 
 """
 Use python to execute an rclone command that copies HRRR files from the
@@ -37,6 +37,11 @@ def untar_model_dir(DATE):
     if DATE >= datetime(2016, 7, 1):
         TAR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/models.tar.gz' \
             % (DATE.year, DATE.month, DATE.day)
+    if DATE >= datetime(2016, 1, 1):
+        # its on horel group 5, but for some reason the date direcotries are
+        # double layered. I don't know why.
+        TAR = '/uufs/chpc.utah.edu/common/home/horel-group5/archive/%04d%02d%02d/%04d%02d%02d/models.tar.gz' \
+            % (DATE.year, DATE.month, DATE.day, DATE.year, DATE.month, DATE.day)
     else:
         # It's on horel-group5
         TAR = '/uufs/chpc.utah.edu/common/home/horel-group5/archive/%04d%02d%02d/models.tar.gz' \
@@ -120,7 +125,7 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2015, 4, 19)
+DATE = datetime(2016, 1, 1)
 eDATE = datetime(2016, 10, 1)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)

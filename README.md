@@ -127,6 +127,9 @@ command that copies HRRR files from the `horel-group/archive/models/hrrr` to
 the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
 bump this up to 24. (Hummm, would that increase the speed?? Or is that I/O like
 rush hour traffic at point of the mountain jamming those copper wires??)
+The idea is to sustain a continuous data transfer even while one process is creating
+the .ctl and .idx files, which takes a second or two. So, it seems using just 
+four processors makes the most sense.
 
 For a range of dates (different day on each processor:  
   1. Loops through all data types (sfc, prs, buf), hours of the day, and forecast
@@ -175,3 +178,6 @@ You have to use the rclone-beta version if you want to rename files on the S3 ar
 
 ### List files in alpha-numeric order
 Yep, can't do this at all.
+
+### How do you list the size of a bucket or directory?
+I want to see how big the HRRR bucket is or how big a directory is inside the bucket.
