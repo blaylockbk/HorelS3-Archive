@@ -1,7 +1,12 @@
 # Brian Blaylock
-# February 22, 2017                             Yesterday's cold front was neat
+# February 27, 2017                    It's snowing, again. Been a good winter.
 
 """
+Attempt to copy all possible hours, forecast hours, etc. for HRRR from the
+horel-group/archive to the horelS3:HRRR archive.
+
+This script will be run daily after the HRRR files are all downloaded.
+
 Use python to execute an rclone command that copies HRRR files from the
 the horel-group/archive/models/ to the horelS3:HRRR archive buckets.
 This script should be run by the meteo19 ldm user.
@@ -15,8 +20,10 @@ Requirements:
 
 from datetime import datetime, timedelta
 import os
-import multiprocessing #:)
 import numpy as np
+
+# Date to transfer (yesterday's data)
+DATE = datetime.today() - timedelta(days=1)
 
 # rclone config file
 config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
@@ -90,30 +97,14 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
         os.system(beta_rclone + ' --config %s copyto %s horelS3:%s' \
                   % (config_file, from_here+'.idx', to_there+'/'+new_name+'.idx'))
 
-# =============================================================================
-#                      Stuff you can change :)
-# =============================================================================
-
-# Dates, start and end
-DATE = datetime(2017, 1, 1)
-eDATE = datetime(2017, 2, 1)
-
-# Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
-model_type = 1
-
 
 # =============================================================================
 # =============================================================================
+# Start doing lots of loops...
+for M in model_options.keys():
+    model_type = M
+    model = model_options[model_type]
 
-model = model_options[model_type]
-
-def move_HRRR_to_horelS3(DATE):
-    """
-    Attempt to copy all possible hours, forecast hours, etc. for HRRR from the
-    horel-group/archive to the horelS3:HRRR archive.
-
-    This Script utilized multiprocessing for faster moving.
-    """
     # Build the current day directory and file to move
     DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/models/%s/' \
         % (DATE.year, DATE.month, DATE.day, model)
@@ -215,25 +206,4 @@ def move_HRRR_to_horelS3(DATE):
             log.write('\n')
     log.close()
 
-
-if __name__ == "__main__":
-    timer1 = datetime.now()
-    base = DATE
-    days = (eDATE - DATE).days
-    date_list = np.array([base + timedelta(days=x) for x in range(0, days)])
-
-    # Multiprocessing :)
-    # Pushing so much data at once might be like rush hour traffic at point of
-    # the mountian, but heck, if there is any space let's send it through!
-    # Each processor will work on a single day at a time. I'm trying to push
-    # about 400 GB onto the S3 buckets at a time. That's a lot.
-    num_proc = multiprocessing.cpu_count() # use all processors
-    num_proc = 2                          # specify number to use (to be nice)
-    p = multiprocessing.Pool(num_proc)
-    p.map(move_HRRR_to_horelS3, date_list)
-
-    print ""
-    print "Model:", model
-    print "Date Start:", DATE
-    print "Date End:", eDATE
-    print 'Total Elapse time:', datetime.now() - timer1
+    DATE += timedelta(days=1)

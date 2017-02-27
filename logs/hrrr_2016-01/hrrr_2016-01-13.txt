@@ -1,8 +1,8 @@
 Moving hrrr files
-Date: 2016-01-12 00:00:00
-Origin: /scratch/local/Brian_untar_HRRR/20160112/models/hrrr/  
+Date: 2016-01-13 00:00:00
+Origin: /scratch/local/Brian_untar_HRRR/20160113/models/hrrr/  
 
-Copy to: horelS3:HRRR/oper/sfc/20160112
+Copy to: horelS3:HRRR/oper/sfc/20160113
 ========== Checking for hrrr sfc files ====================
 Hour 00:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 01:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
@@ -30,7 +30,7 @@ Hour 22:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][ 
 Hour 23:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
   
 
-Copy to: horelS3:HRRR/oper/prs/20160112
+Copy to: horelS3:HRRR/oper/prs/20160113
 ========== Checking for hrrr prs files ====================
 Hour 00:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 01:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
@@ -58,7 +58,7 @@ Hour 22:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][ 
 Hour 23:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
   
 
-Copy to: horelS3:HRRR/oper/buf/20160112
+Copy to: horelS3:HRRR/oper/buf/20160113
 ========== Checking for hrrr buf files ====================
 Hour 00:[kslc][kpvu][kogd]
 Hour 01:[kslc][kpvu][kogd]

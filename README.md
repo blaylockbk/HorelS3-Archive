@@ -122,7 +122,6 @@ More details about the HRRR archive **[here](http://home.chpc.utah.edu/~u0553130
 
 ## Scripts
 ### `move_HRRR_to_horelS3_multipro.py`
-
 A python script that utilizes multiprocessing to simultaneously execute an rclone 
 command that copies HRRR files from the `horel-group/archive/models/hrrr` to
 the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
@@ -153,13 +152,13 @@ When you log into meteo19 as ldm, you must:
 * `module load rclone`
 * `module load grads` (required to create .idx files)
 
+### `move_HRRR_to_horelS3_serial.py`
+Same as above, but run in serial with a while loop.
 
-### `g2ctl.pl`
-A pearl script that creates the .idx and GrADS .ctl files for a grib2 file.
-You don't have to do anything with this. Just know it's here and that it is 
-required to create those grib2 index files.
-When I copy the grib2 file to the S3 archive, I create these index files and 
-move them to the S3 archive. This script is called by the above python script.
+### `daily_move_HRRR_to_horelS3_serial.py`
+Same as above, but this script will only move the current day data to the S3
+archive. This script is (will be) called by gl1 cron after the HRRR data is 
+downloaded.
 
 ### `untar_move_HRRR_to_horelS3.py`
 This is a modified version of the above script with the added function to
@@ -173,7 +172,22 @@ This script doesn't use multiprocessing because we have to untar a bunch of
 files in the scratch space. Since I don't want to fill this all up so fast
 we'll only do one day at a time with a while loop.
 
+### `g2ctl.pl`
+A pearl script that creates the .idx and GrADS .ctl files for a grib2 file.
+You don't have to do anything with this. Just know it's here and that it is 
+required to create those grib2 index files.
+When I copy the grib2 file to the S3 archive, I create these index files and 
+move them to the S3 archive. This script is called by the above python script.
 
+
+____
+## To do:
+Implement a script to add new HRRR files to the S3 archive as soon as 
+they are downloaded each day. (This whole download system needs to be more 
+robust. I'd like to rewrite the download scripts in 
+python becuase the datetime module is so much easier to use than shell
+scripting dates.)
+____
 ## Gotchas
 ### Rename files on S3 
 You have to use the rclone-beta version if you want to rename files on the S3 

@@ -95,11 +95,11 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2017, 1, 1)
+DATE = datetime(2016, 9, 1)
 eDATE = datetime(2017, 2, 1)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
-model_type = 1
+model_type = 3
 
 
 # =============================================================================
@@ -107,13 +107,14 @@ model_type = 1
 
 model = model_options[model_type]
 
-def move_HRRR_to_horelS3(DATE):
+while DATE < eDATE:
     """
     Attempt to copy all possible hours, forecast hours, etc. for HRRR from the
     horel-group/archive to the horelS3:HRRR archive.
 
     This Script utilized multiprocessing for faster moving.
     """
+    timer1 = datetime.now()
     # Build the current day directory and file to move
     DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/models/%s/' \
         % (DATE.year, DATE.month, DATE.day, model)
@@ -214,26 +215,5 @@ def move_HRRR_to_horelS3(DATE):
                     log.write('[   ]')
             log.write('\n')
     log.close()
-
-
-if __name__ == "__main__":
-    timer1 = datetime.now()
-    base = DATE
-    days = (eDATE - DATE).days
-    date_list = np.array([base + timedelta(days=x) for x in range(0, days)])
-
-    # Multiprocessing :)
-    # Pushing so much data at once might be like rush hour traffic at point of
-    # the mountian, but heck, if there is any space let's send it through!
-    # Each processor will work on a single day at a time. I'm trying to push
-    # about 400 GB onto the S3 buckets at a time. That's a lot.
-    num_proc = multiprocessing.cpu_count() # use all processors
-    num_proc = 2                          # specify number to use (to be nice)
-    p = multiprocessing.Pool(num_proc)
-    p.map(move_HRRR_to_horelS3, date_list)
-
-    print ""
-    print "Model:", model
-    print "Date Start:", DATE
-    print "Date End:", eDATE
-    print 'Total Elapse time:', datetime.now() - timer1
+    print "Timer:", datetime.now() - timer1
+    DATE += timedelta(days=1)
