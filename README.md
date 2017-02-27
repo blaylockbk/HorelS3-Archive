@@ -193,10 +193,27 @@ You have to use the rclone-beta version if you want to rename files on the S3
 archive.
 
 ### List files in alpha-numeric order
-Yep, can't do this at all.
+Yep, can't do this at all. But, you can pipe the output to the sort command.
+For example:
+
+`rclone ls horelS3:HRRR/oper/sfc/20170109/ | sort -k 2`
+
+Where the "k" specifies which field to sort by. The first field is file size and
+the second field (2) is the file name.
 
 ### How do you list the size of a bucket or directory?
 I want to see how big the HRRR bucket is or how big a directory is inside the 
 bucket.
+
+You can see how big the contents of a file are by this:
+
+`rclone ls horelS3:HRRR/oper/sfc/20170109/ | cut -c 1-10 | awk '{total += $0} END{print "sum="total}'`
+which results in:
+sum=57137761006
+
+or in Gigabytes:
+
+`rclone ls horelS3:HRRR/oper/sfc/20170109/ | cut -c 1-10 | awk '{total += $0} END{print "sum="total/1000000000}'`
+sum=57.1378
 
 
