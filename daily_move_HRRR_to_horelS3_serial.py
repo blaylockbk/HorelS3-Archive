@@ -207,3 +207,8 @@ for M in model_options.keys():
     log.close()
 
     DATE += timedelta(days=1)
+
+
+# Meteo19 Crontab: 
+# Move HRRR files from horel-group/archive to S3 archive
+#21 12 * * * python /uufs/chpc.utah.edu/common/home/horel-group/archive_s3/daily_move_HRRR_to_horelS3_serial.py > /uufs/chpc.utah.edu/common/home/horel-group/archive_s3/daily_transfer.log

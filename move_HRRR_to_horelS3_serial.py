@@ -95,11 +95,11 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2016, 9, 1)
-eDATE = datetime(2017, 2, 1)
+DATE = datetime(2016, 12, 1)
+eDATE = datetime(2017, 1, 1)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
-model_type = 3
+model_type = 2
 
 
 # =============================================================================

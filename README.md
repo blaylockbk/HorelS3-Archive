@@ -156,9 +156,8 @@ When you log into meteo19 as ldm, you must:
 Same as above, but run in serial with a while loop.
 
 ### `daily_move_HRRR_to_horelS3_serial.py`
-Same as above, but this script will only move the current day data to the S3
-archive. This script is (will be) called by gl1 cron after the HRRR data is 
-downloaded.
+Same as above, but this script will only move yesterday's HRRR data to the S3
+archive. This script is (will be) called by gl1 crontab.
 
 ### `untar_move_HRRR_to_horelS3.py`
 This is a modified version of the above script with the added function to
@@ -199,3 +198,5 @@ Yep, can't do this at all.
 ### How do you list the size of a bucket or directory?
 I want to see how big the HRRR bucket is or how big a directory is inside the 
 bucket.
+
+
