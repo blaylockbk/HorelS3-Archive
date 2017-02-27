@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+
+# Don't send the compiled rclone software to github
+rclone-beta/
