@@ -18,12 +18,26 @@ import os
 import multiprocessing #:)
 import numpy as np
 
+# =============================================================================
+#                      Stuff you can change :)
+# =============================================================================
+# Dates, start and end
+DATE = datetime(2017, 2, 1)
+eDATE = datetime(2017, 3, 1)
+
+# Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
+model_type = 3
+
+# =============================================================================
+
 # rclone config file
 config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
 
 model_options = {1:'hrrr', 2:'hrrrX', 3:'hrrr_alaska'} # name in horel-group/archive
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}       # name in horelS3:
 types = ['sfc', 'prs', 'buf']                          # model file types
+
+model = model_options[model_type]
 
 def create_grb_idx(this_file):
     """
@@ -90,22 +104,6 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
         os.system(beta_rclone + ' --config %s copyto %s horelS3:%s' \
                   % (config_file, from_here+'.idx', to_there+'/'+new_name+'.idx'))
 
-# =============================================================================
-#                      Stuff you can change :)
-# =============================================================================
-
-# Dates, start and end
-DATE = datetime(2016, 12, 1)
-eDATE = datetime(2017, 1, 1)
-
-# Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
-model_type = 2
-
-
-# =============================================================================
-# =============================================================================
-
-model = model_options[model_type]
 
 while DATE < eDATE:
     """

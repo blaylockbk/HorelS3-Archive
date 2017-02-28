@@ -130,7 +130,7 @@ The idea is to sustain a continuous data transfer even while one process is crea
 the .ctl and .idx files, which takes a second or two. So, it seems using just 
 four processors makes the most sense.
 
-For a range of dates (different day on each processor:  
+For a range of dates (different day on each processor):  
   1. Loops through all data types (sfc, prs, buf), hours of the day, and forecast
   hours.
   2. Checks if files exist in horel-group/archive.
@@ -160,7 +160,7 @@ Same as above, but this script will only move yesterday's HRRR data to the S3
 archive. This script is (will be) called by gl1 crontab?
 
 ### `untar_move_HRRR_to_horelS3.py`
-This is a modified version of the top script with the added function to
+A modified version of the top script with the added function to
 untar HRRR files from the compressed archive directory.
 **This script must be run on wx4**
   1. Untars HRRR files into a temporary directory on WX4 (`/scratch/local/Brian_untar_HRRR/`).
