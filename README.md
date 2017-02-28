@@ -11,12 +11,11 @@ In January 2017, CHPC allocated the Horel Group 30 TB on the S3 (Simple Storage
 Service) archive space. This space is used for the Horel archive. Presently, it 
 only houses the HRRR archive (> 12 TB), but more data will be moved to S3. 
 
-You can copy/move/get data on cloud servers via `rclone` in your linux terminal
-(you can even download rclone for your PC). Someday, you might be able to
-explore the files and use curl commands to get data from a web URL: 
-[http://pando-rgw01.chpc.utah.edu](http://pando-rgw01.chpc.utah.edu).
+You can view and access data via:
+* `rclone` in your linux terminal (you can also get rclone for your PC)
+* **_Coming soon_** URL and curl commands: [http://pando-rgw01.chpc.utah.edu](http://pando-rgw01.chpc.utah.edu).
 
-## rclone
+## Access via rclone
 [rclone](http://rclone.org/) allows you to sync files and directories between
 your linux computer and the S3 buckets (and other cloud services).
 Before getting started, first review the CHPC rclone tutorial 
@@ -69,6 +68,9 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
 | move file from computer to S3 and rename | `/path/to/rclone-beta/rclone moveto /this/path/and/file horelS3:HRRR/path/and/new-name` | will overwrite existing file? |
 | copy file from computer to S3 and rename | `/path/to/rclone-beta/rclone copyto /this/path/and/file horelS3:HRRR/path/and/new-name` | will not overwrite if file exists?? |
 
+## Access via URL and curl comands
+**_Coming soon_** Waiting on CHPC to set this up
+
 ## S3 Archive Contents
 
 
@@ -116,63 +118,63 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
       * Analysis hours (f00) for run hours, if available
       * File example: `hrrrAK.t00.wrfsfcf00.grib2`
 
-More details about the HRRR archive **[here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html)**.
-
-
-## Scripts
-### `move_HRRR_to_horelS3_multipro.py`
-A python script that utilizes multiprocessing to simultaneously execute an rclone 
-command that copies HRRR files from the `horel-group/archive/models/hrrr` to
-the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
-bump this up to 24. (Hummm, would that increase the speed?? Or is that I/O like
-rush hour traffic at point of the mountain jamming those copper wires??)
-The idea is to sustain a continuous data transfer even while one process is creating
-the .ctl and .idx files, which takes a second or two. So, it seems using just 
-four processors makes the most sense.
-
-For a range of dates (different day on each processor):  
-  1. Loops through all data types (sfc, prs, buf), hours of the day, and forecast
-  hours.
-  2. Checks if files exist in horel-group/archive.
-  3. Creates .idx and .ctl files for .grib2 files.
-  4. Copys the files to horelS3:HRRR to the appropriate directory
-  5. Creates a log of files that were found. Find log files [here](https://github.com/blaylockbk/HorelS3-Archive/tree/master/logs).
-
->**A note about log files: This script creates a log file for each day located in the
+**Log files: The scripts below create a log file for each day located in the
 [logs](https://github.com/blaylockbk/HorelS3-Archive/tree/master/logs) 
-directory. Use these log files to review what is available. 
+directory. Use these log files to review what data is available. 
 Files are organized and named by the model type and the date 
 (e.g. `logs/hrrr_2017-01/hrrr_2017-01-01.txt`). The file shows a check box for all the 
 forecast hours and hours of the day that were found in the horel-group/archive.
 An attempt to move the file to the S3 archive was made. However, a check mark 
 in the log file does not garuntee the file was successfully moved to the S3 archive.**
 
- **This script should be run by the meteo19 ldm user.**
-When you log into meteo19 as ldm, you must:
-* `module load rclone`
-* `module load grads` (required to create .idx files)
+More details about the HRRR archive **[here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html)**.
+
+
+## Scripts
+### `move_HRRR_to_horelS3_multipro.py`
+>A python script that utilizes multiprocessing to simultaneously execute an rclone 
+command that copies HRRR files from the `horel-group/archive/models/hrrr` to
+the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
+bump this up to 24. (Hummm, would that increase the speed?? Or is that I/O like
+rush hour traffic at point of the mountain jamming those copper wires??)
+The idea is to sustain a continuous data transfer even while one process is creating
+the .ctl and .idx files, which takes a second or two. So, it seems using just 
+four processors makes the most sense.  
+>
+>For a range of dates (different day on each processor):  
+>  1. Loops through all data types (sfc, prs, buf), hours of the day, and forecast
+>  hours.
+>  2. Checks if files exist in horel-group/archive.
+>  3. Creates .idx and .ctl files for .grib2 files.
+>  4. Copys the files to horelS3:HRRR to the appropriate directory
+>  5. Creates a log of files that were found. Find log files [here](https://github.com/blaylockbk/HorelS3-Archive/tree/master/logs).
+>
+> **This script should be run by the meteo19 ldm user.**
+>When you log into meteo19 as ldm, you must:
+>* `module load rclone`
+>* `module load grads` (required to create .idx files)
 
 ### `move_HRRR_to_horelS3_serial.py`
-Same as above, but run in serial (one date at at time) with a while loop.
+>Same as above, but run in serial (one date at at time) with a while loop.
 
 ### `daily_move_HRRR_to_horelS3_serial.py`
-Same as above, but this script will only move yesterday's HRRR data to the S3
+>Same as above, but this script will only move yesterday's HRRR data to the S3
 archive. This script is (will be) called by gl1 crontab?
 
 ### `untar_move_HRRR_to_horelS3.py`
-A modified version of the top script with the added function to
+>A modified version of the top script with the added function to
 untar HRRR files from the compressed archive directory.
-**This script must be run on wx4**
-  1. Untars HRRR files into a temporary directory on WX4 (`/scratch/local/Brian_untar_HRRR/`).
-  2. Moves to S3 (same as above).
-  3. Removes the uncompressed files.
-
-This script doesn't use multiprocessing because we have to untar a bunch of 
+>**This script must be run on wx4**
+>  1. Untars HRRR files into a temporary directory on WX4 (`/scratch/local/Brian_untar_HRRR/`).
+>  2. Moves to S3 (same as above).
+>  3. Removes the uncompressed files.
+>
+>This script doesn't use multiprocessing because we have to untar a bunch of 
 files in the scratch space. Since I don't want to fill this all up so fast
 we'll only do one day at a time with a while loop.
 
 ### `g2ctl.pl`
-A pearl script that creates the .idx and GrADS .ctl files for a grib2 file.
+>A pearl script that creates the .idx and GrADS .ctl files for a grib2 file.
 You don't have to do anything with this. Just know it's here and that it is 
 required to create those grib2 index files.
 When I copy the grib2 file to the S3 archive, I create these index files and 
