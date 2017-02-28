@@ -200,7 +200,7 @@ With some creative linux commands...
 How big is a bucket, in Terabytes?  
 `rclone ls horelS3:HRRR | cut -c 1-10 | awk '{total += $0} END{print "sum(TB)="total/1000000000000}'`
 
-How big is a directory, in Gigabytes?
+How big is a directory, in Gigabytes?  
 `rclone ls horelS3:HRRR/oper/sfc/20161213 | cut -c 1-10 | awk '{total += $0} END{print "sum(GB)="total/1000000000}'`
 
 ____
