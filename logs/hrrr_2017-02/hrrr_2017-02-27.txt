@@ -1,9 +1,9 @@
-Moving hrrrX files
+Moving hrrr files
 Date: 2017-02-27
-Origin: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170227/BB_test/models/hrrrX/  
+Origin: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170227/BB_test/models/hrrr/  
 
-Copy to: horelS3:HRRR/exp/sfc/20170227
-========== Checking for hrrrX sfc files ====================
+Copy to: horelS3:HRRR/oper/sfc/20170227
+========== Checking for hrrr sfc files ====================
 Hour 00:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 01:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 02:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
@@ -30,8 +30,8 @@ Hour 22:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][ 
 Hour 23:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
   
 
-Copy to: horelS3:HRRR/exp/prs/20170227
-========== Checking for hrrrX prs files ====================
+Copy to: horelS3:HRRR/oper/prs/20170227
+========== Checking for hrrr prs files ====================
 Hour 00:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 01:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 02:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
@@ -56,3 +56,31 @@ Hour 20:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][ 
 Hour 21:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 22:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 23:[   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
+  
+
+Copy to: horelS3:HRRR/oper/buf/20170227
+========== Checking for hrrr buf files ====================
+Hour 00:[    ][    ][    ]
+Hour 01:[    ][    ][    ]
+Hour 02:[    ][    ][    ]
+Hour 03:[    ][    ][    ]
+Hour 04:[    ][    ][    ]
+Hour 05:[    ][    ][    ]
+Hour 06:[    ][    ][    ]
+Hour 07:[    ][    ][    ]
+Hour 08:[    ][    ][    ]
+Hour 09:[    ][    ][    ]
+Hour 10:[    ][    ][    ]
+Hour 11:[    ][    ][    ]
+Hour 12:[    ][    ][    ]
+Hour 13:[    ][    ][    ]
+Hour 14:[    ][    ][    ]
+Hour 15:[    ][    ][    ]
+Hour 16:[    ][    ][    ]
+Hour 17:[    ][    ][    ]
+Hour 18:[    ][    ][    ]
+Hour 19:[    ][    ][    ]
+Hour 20:[    ][    ][    ]
+Hour 21:[    ][    ][    ]
+Hour 22:[    ][    ][    ]
+Hour 23:[    ][    ][    ]
