@@ -9,12 +9,11 @@ _February 22, 2017_
 ## Introduction
 In January 2017, CHPC allocated the Horel Group 30 TB on the S3 (Simple Storage
 Service) archive space. This space is used for the Horel archive. Presently, it 
-only houses the HRRR archive, but more data will
-be moved to S3. 
+only houses the HRRR archive (> 12 TB), but more data will be moved to S3. 
 
 You can copy/move/get data on cloud servers via `rclone` in your linux terminal
 (you can even download rclone for your PC). Someday, you might be able to
-explore the directories and files at on the web: 
+explore the files and use curl commands to get data from a web URL: 
 [http://pando-rgw01.chpc.utah.edu](http://pando-rgw01.chpc.utah.edu).
 
 ## rclone
