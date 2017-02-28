@@ -19,12 +19,28 @@ import os
 import shutil
 import numpy as np
 
+# =============================================================================
+#                      Stuff you can change :)
+# =============================================================================
+
+# Dates, start and end
+DATE = datetime(2016, 9, 2)
+eDATE = datetime(2016, 10, 1)
+
+# Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
+model_type = 3
+
+# =============================================================================
+# =============================================================================
+
 # rclone config file
 config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
 
+# info about the models
 model_options = {1:'hrrr', 2:'hrrrX', 3:'hrrr_alaska'} # name in horel-group/archive
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}       # name in horelS3:
 types = ['sfc', 'prs', 'buf']                          # model file types
+
 
 def untar_model_dir(DATE, model):
     """
@@ -123,20 +139,6 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
         os.system(beta_rclone + ' --config %s copyto %s horelS3:%s' \
                   % (config_file, from_here+'.idx', to_there+'/'+new_name+'.idx'))
 
-# =============================================================================
-#                      Stuff you can change :)
-# =============================================================================
-
-# Dates, start and end
-DATE = datetime(2016, 9, 2)
-eDATE = datetime(2016, 10, 1)
-
-# Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
-model_type = 3
-
-
-# =============================================================================
-# =============================================================================
 
 model = model_options[model_type]
 

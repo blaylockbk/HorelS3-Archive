@@ -56,9 +56,9 @@ configured rclone, simple replace the name before the colon.
 | list top-level buckets                      | `rclone lsd horelS3:` | `lsd` Only lists the directories |
 | list buckets in bucket                      | `rclone lsd horelS3:HRRR` |
 | list buckets in path                        | `rclone lsd horelS3:HRRR/oper` |
-| list bucket contents                        | `rclone ls horelS3:HRRR` | `ls` will list everything in the bucket including all directory's contents |
-| list bucket/path contents                   | `rclone ls horelS3:HRRR/oper/sfc/20171201` | currently, no way to sort alpha-numerically |
-| list bucket contents                        | `rclone lsl horelS3:HRRR` | `lsl` will list more details than `ls`|
+| list bucket contents                        | `rclone ls horelS3:HRRR` | `ls` will list everything in the bucket including all directory's contents, so this particular example isn't very useful |
+| list bucket/path contents                   | `rclone ls horelS3:HRRR/oper/sfc/20171201` | currently, no way to sort alpha-numerically, unless you pipe the output to `sort -k 2` |
+| list bucket contents                        | `rclone lsl horelS3:HRRR/oper/sfc/20161213` | `lsl` will list more details than `ls`|
 | copy file from your computer to S3          | `rclone copy ./file/name/on/linux/system horelS3:path/you/want/to/copy/to/`| You can't rename the files yet. You'll have to use rclone beta commands `copyto` and `moveto` functions available in rclone-beta.|
 | copy file from S3 to your curent directory  | `rclone copy horelS3:HRRR/oper/sfc/20161201/hrrr.t12z.wrfsfcf16.grib2 .` |
 
@@ -76,13 +76,13 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
 ### `horelS3:HRRR/`
 |      Important Dates            |   What happened?  | Notes  |
 |---------------------------------|-------------------|--------|
-| 2015-Apr-18 | Began downloading HRRR sfc/prs/buf analyses HRRRv1 Some days/hours may be missing|
+| 2015-Apr-18 | Began downloading HRRR sfc and prs analyses | HRRRv1 Some days/hours may be missing|
 | 2015-May-30 | Began downloading HRRR Bufr soundings for KSLC, KODG, and KPVU|
 | 2016-Jul-27 | Began downloading HRRR sfc 15 hr forecasts| |
-| 2016-Sep-?? | Taylor began downloading HRRR-Alaska prs analyses and sfc 36 hr forecasts| Runs occur every three hours, but isn't always availalbe.|
+| 2016-Sep-01 | Taylor began downloading HRRR-Alaska prs analyses and sfc 36 hr forecasts| Runs occur every three hours, but becuase it's an experimental model, runs are not always availalbe.|
 | 2016-Aug-23 | HRRRv2 implemented at NCEP starting with 12z run|
-| 2016-Aug-24 | Began downloading HRRR sfc 18 hr forecasts| HRRRv2 runs a few extra hours|
-| 2016-Dec-01 | Began downloading experimental HRRR sfc analyses| HRRRv3: Runs aren't always available |
+| 2016-Aug-24 | Began downloading HRRR sfc 18 hr forecasts| HRRRv2 increased forecasts from 15 to 18 hours.|
+| 2016-Dec-01 | Began downloading experimental HRRR sfc analyses| HRRRv3: Runs aren't always available becuase this is an experimental model.|
 
 * #### `oper/` Operational HRRR
   * `sfc/` Surface fields
@@ -98,23 +98,23 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
     * _`YYYYMMDD/`_
       * All hours (00-23). Each file contains analysis and forecast soundings.
       * Only for Salt Lake City (kslc), Ogden (kogd), and Provo (kpvu)
-      * File example: `kslc.2017010100.buf`
+      * File example: `kslc_2017010100.buf`
  
 * #### `exp/` Experimental HRRR
   * `sfc/` Surface fields
     * _`YYYYMMDD/`_
-      * Analysis hour (f00) for all available hours.
+      * Analysis hour (f00) for all hours, if available.
       * File example: `hrrrX.t00.wrfsfcf00.grib2`
 
 * #### `alaska/` HRRR Alaska (Experimental)
   * `sfc/` Surface fields
     * _`YYYYMMDD/`_
-      * Analysis and 36 hour forecasts (f00-f36) if available. Runs initialize
-      every three hours (0, 3, 6, 9, 12, 15, 18, 21).
+      * Analysis and 36 hour forecasts (f00-f36), if available. Runs initialize
+      every three hours at 0z, 3z, 6z, 9z, 12z, 15z, 18z, 21z.
       * File example: `hrrrAK.t00.wrfsfcf00.grib2`
   * `prs/` Pressure fields
     * _`YYYYMMDD/`_
-      * Analysis hours (f00) for run hours only (0, 3, 6, 9, 12, 15, 18, 21)
+      * Analysis hours (f00) for run hours, if available
       * File example: `hrrrAK.t00.wrfsfcf00.grib2`
 
 More details about the HRRR archive **[here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html)**.
@@ -137,15 +137,16 @@ For a range of dates (different day on each processor:
   2. Checks if files exist in horel-group/archive.
   3. Creates .idx and .ctl files for .grib2 files.
   4. Copys the files to horelS3:HRRR to the appropriate directory
-  5. Creates a log of files that were found.
+  5. Creates a log of files that were found. Find log files [here](https://github.com/blaylockbk/HorelS3-Archive/tree/master/logs).
 
->About the Log file: This script creates a log file for each day located in the
-`logs` directory. These files are name by the model type and the date 
-(e.g. logs/hrrr_2017-01-01.txt). The file shows a check box for all the 
-forecast hours and hours of the day that were found on the horel-group/archive
-space. An attempt to move the file was made. A check mark in the log file, 
-however, does not garuntee the file was successfully moved to the S3 archive.
-Instead, use these logs to review what is available.
+>**A note about log files: This script creates a log file for each day located in the
+[logs](https://github.com/blaylockbk/HorelS3-Archive/tree/master/logs) 
+directory. Use these log files to review what is available. 
+Files are organized and named by the model type and the date 
+(e.g. `logs/hrrr_2017-01/hrrr_2017-01-01.txt`). The file shows a check box for all the 
+forecast hours and hours of the day that were found in the horel-group/archive.
+An attempt to move the file to the S3 archive was made. However, a check mark 
+in the log file does not garuntee the file was successfully moved to the S3 archive.**
 
  **This script should be run by the meteo19 ldm user.**
 When you log into meteo19 as ldm, you must:
@@ -153,19 +154,19 @@ When you log into meteo19 as ldm, you must:
 * `module load grads` (required to create .idx files)
 
 ### `move_HRRR_to_horelS3_serial.py`
-Same as above, but run in serial with a while loop.
+Same as above, but run in serial (one date at at time) with a while loop.
 
 ### `daily_move_HRRR_to_horelS3_serial.py`
 Same as above, but this script will only move yesterday's HRRR data to the S3
-archive. This script is (will be) called by gl1 crontab.
+archive. This script is (will be) called by gl1 crontab?
 
 ### `untar_move_HRRR_to_horelS3.py`
-This is a modified version of the above script with the added function to
+This is a modified version of the top script with the added function to
 untar HRRR files from the compressed archive directory.
 **This script must be run on wx4**
-  1. Untar HRRR files into a temporary directory on WX4 (`/scratch/local/Brian_untar_HRRR/`).
-  2. Move to S3 (same as above).
-  3. Remove the decompressed files.
+  1. Untars HRRR files into a temporary directory on WX4 (`/scratch/local/Brian_untar_HRRR/`).
+  2. Moves to S3 (same as above).
+  3. Removes the uncompressed files.
 
 This script doesn't use multiprocessing because we have to untar a bunch of 
 files in the scratch space. Since I don't want to fill this all up so fast
@@ -176,24 +177,16 @@ A pearl script that creates the .idx and GrADS .ctl files for a grib2 file.
 You don't have to do anything with this. Just know it's here and that it is 
 required to create those grib2 index files.
 When I copy the grib2 file to the S3 archive, I create these index files and 
-move them to the S3 archive. This script is called by the above python script.
+move them to the S3 archive. This script is called by the above python scripts.
 
-
-____
-## To do:
-Implement a script to add new HRRR files to the S3 archive as soon as 
-they are downloaded each day. (This whole download system needs to be more 
-robust. I'd like to rewrite the download scripts in 
-python becuase the datetime module is so much easier to use than shell
-scripting dates.)
-____
-## Gotchas
-### Rename files on S3 
+---
+## Answers to other questions you might have...
+### How do I rename a file when I copy it to S3?
 You have to use the rclone-beta version if you want to rename files on the S3 
-archive.
+archive. Use the `copyto` and `moveto` commands.
 
-### List files in alpha-numeric order
-Yep, can't do this at all. But, you can pipe the output to the sort command.
+### How do I list files in alpha-numeric order?
+rclone wont do this for you, but you can pipe the output to the sort command.
 For example:
 
 `rclone ls horelS3:HRRR/oper/sfc/20170109/ | sort -k 2`
@@ -201,19 +194,22 @@ For example:
 Where the "k" specifies which field to sort by. The first field is file size and
 the second field (2) is the file name.
 
-### How do you list the size of a bucket or directory?
-I want to see how big the HRRR bucket is or how big a directory is inside the 
-bucket.
+### How do you get the total size of a bucket or directory?
+With some creative linux commands...
 
-You can see how big the contents of a file are by this:
+How big is a bucket, in Terabytes?  
+`rclone ls horelS3:HRRR | cut -c 1-10 | awk '{total += $0} END{print "sum(TB)="total/1000000000000}'`
 
-`rclone ls horelS3:HRRR/oper/sfc/20170109/ | cut -c 1-10 | awk '{total += $0} END{print "sum="total}'`
-which results in:
-sum=57137761006
+How big is a directory, in Gigabytes?
+`rclone ls horelS3:HRRR/oper/sfc/20161213 | cut -c 1-10 | awk '{total += $0} END{print "sum(GB)="total/1000000000}'`
 
-or in Gigabytes:
-
-`rclone ls horelS3:HRRR/oper/sfc/20170109/ | cut -c 1-10 | awk '{total += $0} END{print "sum="total/1000000000}'`
-sum=57.1378
-
-
+____
+## To do list:
+* Implement a script to add new HRRR files to the S3 archive as soon as 
+they are downloaded each day. (This whole download system needs to be more 
+robust. I'd like to rewrite the download scripts in 
+python becuase the datetime module is so much easier to use than shell
+scripting dates.)
+* Make file contents available online
+* Come up with says to get data from the archive URL via curl comands.
+____
