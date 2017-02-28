@@ -26,7 +26,7 @@ model_options = {1:'hrrr', 2:'hrrrX', 3:'hrrr_alaska'} # name in horel-group/arc
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}       # name in horelS3:
 types = ['sfc', 'prs', 'buf']                          # model file types
 
-def untar_model_dir(DATE):
+def untar_model_dir(DATE, model):
     """
     Run this on WX1
     untar the model directory and put it in the /temp directory
@@ -50,7 +50,7 @@ def untar_model_dir(DATE):
     DESTINATION = '-C /scratch/local/Brian_untar_HRRR/'
 
     # What is the folder name? It's the same as the date and the model (e.g. hrrr)
-    FOLDER = '%04d%02d%02d/models/hrrr' % (DATE.year, DATE.month, DATE.day)
+    FOLDER = '%04d%02d%02d/models/%s' % (DATE.year, DATE.month, DATE.day, model)
     print "!!!!"
     print 'tar -xzvf %s %s %s' % (TAR, DESTINATION, FOLDER)
     print "!!!!"
@@ -128,7 +128,7 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2016, 9, 1)
+DATE = datetime(2016, 9, 2)
 eDATE = datetime(2016, 10, 1)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
@@ -150,7 +150,7 @@ while DATE < eDATE:
 
     # Build the current day directory and file to move
     # First, untar the model directory (function returns where files were saved)
-    DEST = untar_model_dir(DATE)
+    DEST = untar_model_dir(DATE, model)
     DIR = DEST + '%04d%02d%02d/models/%s/' % (DATE.year, DATE.month, DATE.day, model)
 
 
