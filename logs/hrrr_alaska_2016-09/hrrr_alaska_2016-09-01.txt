@@ -1,6 +1,6 @@
 Moving hrrr_alaska files
 Date: 2016-09-01 00:00:00
-Origin: /uufs/chpc.utah.edu/common/home/horel-group/archive/20160901/models/hrrr_alaska/  
+Origin: /scratch/local/Brian_untar_HRRR/20160901/models/hrrr_alaska/  
 
 Copy to: horelS3:HRRR/alaska/sfc/20160901
 ========== Checking for hrrr_alaska sfc files ====================

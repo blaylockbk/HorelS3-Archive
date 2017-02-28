@@ -37,7 +37,7 @@ def untar_model_dir(DATE):
     if DATE >= datetime(2016, 7, 1):
         TAR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/models.tar.gz' \
             % (DATE.year, DATE.month, DATE.day)
-    if DATE >= datetime(2016, 1, 1):
+    elif DATE >= datetime(2016, 1, 1):
         # its on horel group 5, but for some reason the date direcotries are
         # double layered. I don't know why.
         TAR = '/uufs/chpc.utah.edu/common/home/horel-group5/archive/%04d%02d%02d/%04d%02d%02d/models.tar.gz' \
@@ -51,6 +51,9 @@ def untar_model_dir(DATE):
 
     # What is the folder name? It's the same as the date and the model (e.g. hrrr)
     FOLDER = '%04d%02d%02d/models/hrrr' % (DATE.year, DATE.month, DATE.day)
+    print "!!!!"
+    print 'tar -xzvf %s %s %s' % (TAR, DESTINATION, FOLDER)
+    print "!!!!"
     os.system('tar -xzvf %s %s %s' % (TAR, DESTINATION, FOLDER))
 
     return DESTINATION[3:]
@@ -125,11 +128,11 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2016, 1, 1)
+DATE = datetime(2016, 9, 1)
 eDATE = datetime(2016, 10, 1)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
-model_type = 1
+model_type = 3
 
 
 # =============================================================================
