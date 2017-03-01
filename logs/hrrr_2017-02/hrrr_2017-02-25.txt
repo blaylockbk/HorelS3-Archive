@@ -1,8 +1,8 @@
 Moving hrrr files
-Date: 2017-02-11 00:00:00
-Origin: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170211/models/hrrr/  
+Date: 2017-02-25 00:00:00
+Origin: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170225/models/hrrr/  
 
-Copy to: horelS3:HRRR/oper/sfc/20170211
+Copy to: horelS3:HRRR/oper/sfc/20170225
 ========== Checking for hrrr sfc files ====================
 Hour 00:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f14][f15][f16][f17][f18]
 Hour 01:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f14][f15][f16][f17][f18]
@@ -30,7 +30,7 @@ Hour 22:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f
 Hour 23:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f14][f15][f16][f17][f18]
   
 
-Copy to: horelS3:HRRR/oper/prs/20170211
+Copy to: horelS3:HRRR/oper/prs/20170225
 ========== Checking for hrrr prs files ====================
 Hour 00:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 01:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
@@ -58,7 +58,7 @@ Hour 22:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][ 
 Hour 23:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
   
 
-Copy to: horelS3:HRRR/oper/buf/20170211
+Copy to: horelS3:HRRR/oper/buf/20170225
 ========== Checking for hrrr buf files ====================
 Hour 00:[kslc][kpvu][kogd]
 Hour 01:[kslc][kpvu][kogd]
@@ -73,14 +73,14 @@ Hour 09:[kslc][kpvu][kogd]
 Hour 10:[kslc][kpvu][kogd]
 Hour 11:[kslc][kpvu][kogd]
 Hour 12:[kslc][kpvu][kogd]
-Hour 13:[kslc][kpvu][kogd]
-Hour 14:[kslc][kpvu][kogd]
-Hour 15:[kslc][kpvu][kogd]
-Hour 16:[kslc][kpvu][kogd]
-Hour 17:[kslc][kpvu][kogd]
-Hour 18:[kslc][kpvu][kogd]
-Hour 19:[kslc][kpvu][kogd]
-Hour 20:[kslc][kpvu][kogd]
-Hour 21:[kslc][kpvu][kogd]
-Hour 22:[kslc][kpvu][kogd]
-Hour 23:[kslc][kpvu][kogd]
+Hour 13:[    ][kpvu][kogd]
+Hour 14:[    ][kpvu][kogd]
+Hour 15:[    ][kpvu][kogd]
+Hour 16:[    ][kpvu][kogd]
+Hour 17:[    ][kpvu][kogd]
+Hour 18:[    ][kpvu][kogd]
+Hour 19:[    ][kpvu][kogd]
+Hour 20:[    ][kpvu][kogd]
+Hour 21:[    ][kpvu][kogd]
+Hour 22:[    ][kpvu][kogd]
+Hour 23:[    ][kpvu][kogd]
