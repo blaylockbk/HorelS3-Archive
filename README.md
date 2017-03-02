@@ -13,7 +13,7 @@ only houses the HRRR archive (> 12 TB), but more data will be moved to S3.
 
 You can view and access data via:
 * `rclone` in your linux terminal (you can also get rclone for your PC)
-* **_Coming soon_** URL and curl commands: [http://pando-rgw01.chpc.utah.edu](http://pando-rgw01.chpc.utah.edu).
+* URL and cURL commands: [http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR).
 
 ## Access via rclone
 [rclone](http://rclone.org/) allows you to sync files and directories between
@@ -69,10 +69,26 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
 | copy file from computer to S3 and rename | `/path/to/rclone-beta/rclone copyto /this/path/and/file horelS3:HRRR/path/and/new-name` | will not overwrite if file exists?? |
 
 ## Access via URL and curl comands
-**_Coming soon_** Waiting on CHPC to set this up
+You can view _some_ of the file contents here: 
+[http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR)
+The trouble is that it shows everything in the HRRR bucket without letting you
+view the files for each specific directory. Also, not every file is listed becuase
+the list is limited to 1000 files.
+
+### Download a file:
+Download a file from the browser address:  
+[https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2](`https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`)
+
+Download with wget  
+`wget https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
+
+Download with cURL   
+`curl -O https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
+
+Download with cURL and rename  
+`curl -o hrrr20170101_00zf00.grib2 https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
 
 ## S3 Archive Contents
-
 
 ### `horelS3:HRRR/`
 |      Important Dates            |   What happened?  | Notes  |
@@ -188,12 +204,13 @@ archive. Use the `copyto` and `moveto` commands.
 
 ### How do I list files in alpha-numeric order?
 rclone wont do this for you, but you can pipe the output to the sort command.
-For example:
-
-`rclone ls horelS3:HRRR/oper/sfc/20170109/ | sort -k 2`
-
+For example:  
+`rclone ls horelS3:HRRR/oper/sfc/20170109/ | sort -k 2`  
 Where the "k" specifies which field to sort by. The first field is file size and
 the second field (2) is the file name.
+
+You can sort direcotry contents like this:  
+`rclone lsd horelS3:HRRR/oper/sfc | sort -k 4`
 
 ### How do you get the total size of a bucket or directory?
 With some creative linux commands...
