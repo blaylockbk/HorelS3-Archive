@@ -1,4 +1,4 @@
-[//]: # (You can view this markdown file with the Chrome extention "Markdown Preview Plus")
+[//]: # (If not on github, you can view this markdown file with the Chrome extention "Markdown Preview Plus")
 
 ![MesoWest Logo, why doesn't this work??](MesoWest_20th_black.png "Powered by MesoWest")
 
@@ -229,4 +229,28 @@ robust. I'd like to rewrite the download scripts in
 python becuase the datetime module is so much easier to use than shell
 scripting dates.)
 * Make file contents available online
+>Brian,  
+>In order to make buckets web accessible (public) you need to you need to use 
+s3cmd as rclone doesn’t >yet have the functionality to set this.  I went ahead 
+and made the HRRR bucket and all it’s contents public.  >If you need to make 
+adjustments here are the commands:
+>
+>Make public:
+>        `s3cmd setacl s3://HRRR --acl-public —recursive`
+>
+>Make private:
+>        `s3cmd setacl s3://HRRR --acl-private —recursive`
+>
+>Give it a look.  I noticed that my browser address line didn’t like the HRRR 
+name prepended to the >front of the rados gateways name because of the caps, 
+but was fine with it being appended thusly:
+>https://pando-rgw01.chpc.utah.edu/HRRR.   You will also notice that as you web
+browse to that page that the >style is not right and it is displaying what 
+looks like raw XML.  I haven’t figured out how or if I can I can >adjust by 
+http settings and make that look better.
+>
+>--
+>Sam Liston (sam.liston@utah.edu)
+
+
 * Come up with says to get data from the archive URL via curl comands.
