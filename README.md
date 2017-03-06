@@ -59,6 +59,7 @@ configured rclone, simple replace the name before the colon.
 | list bucket contents                        | `rclone lsl horelS3:HRRR/oper/sfc/20161213` | `lsl` will list more details than `ls`|
 | copy file from your computer to S3          | `rclone copy ./file/name/on/linux/system horelS3:path/you/want/to/copy/to/`| You can't rename the files yet. You'll have to use rclone beta commands `copyto` and `moveto` functions available in rclone-beta.|
 | copy file from S3 to your curent directory  | `rclone copy horelS3:HRRR/oper/sfc/20161201/hrrr.t12z.wrfsfcf16.grib2 .` |
+| deleate a file or directory on S3 | *I'm not going to tell you how to do this* |
 
 You can do a little more, like rename a file on S3, with **rclone-beta**. This version is currently located 
 here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
