@@ -237,10 +237,10 @@ and made the HRRR bucket and all it’s contents public.  >If you need to make
 adjustments here are the commands:
 >
 >Make public:
->        `s3cmd setacl s3://HRRR --acl-public —recursive`
+>        `s3cmd setacl s3://HRRR --acl-public --recursive`
 >
 >Make private:
->        `s3cmd setacl s3://HRRR --acl-private —recursive`
+>        `s3cmd setacl s3://HRRR --acl-private --recursive`
 >
 >Give it a look.  I noticed that my browser address line didn’t like the HRRR 
 name prepended to the >front of the rados gateways name because of the caps, 
@@ -253,5 +253,12 @@ http settings and make that look better.
 >--
 >Sam Liston (sam.liston@utah.edu)
 
+s3cmd is installed on `airplane04-dmz.chpc.utah.edu`
+
+use configuration file here:
+`/uufs/chpc.utah.edu/common/home/u0553130/.s3cfg`
+
+Make a single file public
+`s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`
 
 * Come up with says to get data from the archive URL via curl comands.

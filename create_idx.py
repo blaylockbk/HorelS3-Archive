@@ -12,19 +12,26 @@ Run this on wx1, wx2, wx3, and wx4 to test the S3 archive I/O
 
 import os
 from datetime import datetime, timedelta
+import numpy as np
 
 month = 11
 
 DATE = datetime(2016, month, 1)
 eDATE = datetime(2016, month+1, 1)
 
+
+base = DATE
+days = (eDATE - DATE).days
+date_list = np.array([base + timedelta(days=x) for x in range(0, days)])
+
 models = ['oper', 'alaska', 'exp']
 types = ['sfc', 'prs']
 
 timer1 = datetime.now()
-while DATE < eDATE:
-    for m in models:
+for m in models:
+    for d in date_list:
         for t in types:
+            print "working on", m, t, d
             # Create a list of files for the day
             S3_DIR = 'HRRR/%s/%s/%04d%02d%02d/' \
                       % (m, t, DATE.year, DATE.month, DATE.day)
@@ -60,9 +67,8 @@ while DATE < eDATE:
                     print cmd_create
                     os.system(cmd_create)
 
-            # Remove the list and the downloaded file
+                # Remove the downloaded file and the list
+                os.system('rm temp/%s' % (dwnld_rename))
             os.system('rm temp/%s' % (file_list_name))
-            os.system('rm temp/%s' % (dwnld_rename))
-    DATE += timedelta(days=1)
 
 print "Month %s- Time to complete:" % (month), datetime.now()-timer1 

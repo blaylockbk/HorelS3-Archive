@@ -41,13 +41,13 @@ def create_grb_idx(this_file):
     2. Requires GrADS, so make sure you "module load grads" before running the
        python script.
     """
-    print ""
-    print "========= Messages from creating .ctl and .idx files =============="
-    # Create the .ctl file
-    os.system('/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/g2ctl.pl ' + this_file + '>' + this_file + '.ctl')
-    # Create the .idx file (gribmap is a GrADS function)
-    os.system('gribmap -i ' + this_file +'.ctl -0')
-    print "==================================================================="
+    #print ""
+    #print "========= Messages from creating .ctl and .idx files =============="
+    ## Create the .ctl file
+    #os.system('/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/g2ctl.pl ' + this_file + '>' + this_file + '.ctl')
+    ## Create the .idx file (gribmap is a GrADS function)
+    #os.system('gribmap -i ' + this_file +'.ctl -0')
+    #print "==================================================================="
 
 def copy_to_horelS3(from_here, to_there):
     """
@@ -60,14 +60,14 @@ def copy_to_horelS3(from_here, to_there):
     os.system('rclone --config %s copy %s horelS3:%s' \
               % (config_file, from_here, to_there))
 
-    if from_here[-6:] == '.grib2':
-        # Create the .idx and .ctl files and copy those to the horelS3.
-        # (only create these for .grib2 files)
-        create_grb_idx(from_here)
-        os.system('rclone --config %s copy %s horelS3:%s' \
-                  % (config_file, from_here+'.ctl', to_there))
-        os.system('rclone --config %s copy %s horelS3:%s' \
-                  % (config_file, from_here+'.idx', to_there))
+    #if from_here[-6:] == '.grib2':
+    #    # Create the .idx and .ctl files and copy those to the horelS3.
+    #    # (only create these for .grib2 files)
+    #    create_grb_idx(from_here)
+    #    os.system('rclone --config %s copy %s horelS3:%s' \
+    #              % (config_file, from_here+'.ctl', to_there))
+    #    os.system('rclone --config %s copy %s horelS3:%s' \
+    #              % (config_file, from_here+'.idx', to_there))
 
 def copy_to_horelS3_rename(from_here, to_there, new_name):
     """
@@ -88,14 +88,14 @@ def copy_to_horelS3_rename(from_here, to_there, new_name):
     os.system(beta_rclone +' --config %s copyto %s horelS3:%s/%s' \
               % (config_file, from_here, to_there, new_name))
 
-    if from_here[-6:] == '.grib2':
-        # Create the .idx and .ctl files and copy those to the horelS3.
-        # (only create these for .grib2 files)
-        create_grb_idx(from_here)
-        os.system(beta_rclone + ' --config %s copyto %s horelS3:%s' \
-                  % (config_file, from_here+'.ctl', to_there+'/'+new_name+'.ctl'))
-        os.system(beta_rclone + ' --config %s copyto %s horelS3:%s' \
-                  % (config_file, from_here+'.idx', to_there+'/'+new_name+'.idx'))
+    #if from_here[-6:] == '.grib2':
+    #    # Create the .idx and .ctl files and copy those to the horelS3.
+    #    # (only create these for .grib2 files)
+    #    create_grb_idx(from_here)
+    #    os.system(beta_rclone + ' --config %s copyto %s horelS3:%s' \
+    #              % (config_file, from_here+'.ctl', to_there+'/'+new_name+'.ctl'))
+    #    os.system(beta_rclone + ' --config %s copyto %s horelS3:%s' \
+    #              % (config_file, from_here+'.idx', to_there+'/'+new_name+'.idx'))
 
 
 # =============================================================================
