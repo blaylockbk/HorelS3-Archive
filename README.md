@@ -253,12 +253,13 @@ http settings and make that look better.
 >--
 >Sam Liston (sam.liston@utah.edu)
 
-s3cmd is installed on `airplane04-dmz.chpc.utah.edu`
+s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1`  
 
-use configuration file here:
-`/uufs/chpc.utah.edu/common/home/u0553130/.s3cfg`
+Configuration files on mesohorse user:  
+`/scratch/local/mesohorse/.s3cfg`  
+`/scratch/local/mesohorse/.rclone-conf`
 
-Make a single file public
-`s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`
+Make a single file public (navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1`)
+`./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`
 
-* Come up with says to get data from the archive URL via curl comands.
+* Come up with ways to get data from the archive URL via curl comands.

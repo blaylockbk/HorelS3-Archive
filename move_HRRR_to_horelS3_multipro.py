@@ -23,11 +23,11 @@ import numpy as np
 # =============================================================================
 
 # Dates, start and end
-DATE = datetime(2017, 3, 9)
+DATE = datetime(2017, 3, 7)
 eDATE = datetime(2017, 3, 10)
 
 # Model type: 1) hrrr    2) hrrrX    3) hrrr_alaska)
-model_type = 1
+model_type = 2
 
 # =============================================================================
 

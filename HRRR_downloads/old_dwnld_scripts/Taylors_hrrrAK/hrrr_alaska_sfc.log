@@ -1,0 +1,2921 @@
+20 17 02 26 057 17057
+mkdir: cannot create directory `hrrr_alaska': File exists
+get: Command not found.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+Please login with USER and PASS.
+Please login with USER and PASS.
+KERBEROS_V4 rejected as an authentication type
+Interactive mode off.
+1705700000000
+17 057 00 0000
+02 26
+starting to truncate file 00
+9:2435466:d=2017022600:GUST:surface:anl:
+14:3896488:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:anl:
+32:5951879:d=2017022600:PRES:surface:anl:
+33:6717453:d=2017022600:HGT:surface:anl:
+59:23767797:d=2017022600:TMP:2 m above ground:anl:
+64:27331742:d=2017022600:UGRD:10 m above ground:anl:
+65:27943198:d=2017022600:VGRD:10 m above ground:anl:
+69:29221732:d=2017022600:APCP:surface:0-0 day acc fcst:
+74:29385039:d=2017022600:BGRUN:surface:0-0 day acc fcst:
+1705700000100
+17 057 00 0001
+02 26
+starting to truncate file 00
+9:2553141:d=2017022600:GUST:surface:1 hour fcst:
+14:5949427:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:1 hour fcst:
+32:8441553:d=2017022600:PRES:surface:1 hour fcst:
+33:9209376:d=2017022600:HGT:surface:1 hour fcst:
+59:26572620:d=2017022600:TMP:2 m above ground:1 hour fcst:
+64:30158967:d=2017022600:UGRD:10 m above ground:1 hour fcst:
+65:30795059:d=2017022600:VGRD:10 m above ground:1 hour fcst:
+69:32483067:d=2017022600:APCP:surface:0-1 hour acc fcst:
+74:33485174:d=2017022600:BGRUN:surface:0-1 hour acc fcst:
+1705700000200
+17 057 00 0002
+02 26
+starting to truncate file 00
+9:3058623:d=2017022600:GUST:surface:2 hour fcst:
+14:6505855:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:2 hour fcst:
+32:8988722:d=2017022600:PRES:surface:2 hour fcst:
+33:9756541:d=2017022600:HGT:surface:2 hour fcst:
+59:27135258:d=2017022600:TMP:2 m above ground:2 hour fcst:
+64:30779493:d=2017022600:UGRD:10 m above ground:2 hour fcst:
+65:31430020:d=2017022600:VGRD:10 m above ground:2 hour fcst:
+69:33163588:d=2017022600:APCP:surface:0-2 hour acc fcst:
+74:34154949:d=2017022600:BGRUN:surface:1-2 hour acc fcst:
+1705700000300
+17 057 00 0003
+02 26
+starting to truncate file 00
+9:3246325:d=2017022600:GUST:surface:3 hour fcst:
+14:6725685:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:3 hour fcst:
+32:9313689:d=2017022600:PRES:surface:3 hour fcst:
+33:10082589:d=2017022600:HGT:surface:3 hour fcst:
+59:27521932:d=2017022600:TMP:2 m above ground:3 hour fcst:
+64:31207889:d=2017022600:UGRD:10 m above ground:3 hour fcst:
+65:31868098:d=2017022600:VGRD:10 m above ground:3 hour fcst:
+69:33608864:d=2017022600:APCP:surface:0-3 hour acc fcst:
+74:34712951:d=2017022600:BGRUN:surface:2-3 hour acc fcst:
+1705700000400
+17 057 00 0004
+02 26
+starting to truncate file 00
+9:3432560:d=2017022600:GUST:surface:4 hour fcst:
+14:6933095:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:4 hour fcst:
+32:9440193:d=2017022600:PRES:surface:4 hour fcst:
+33:10208099:d=2017022600:HGT:surface:4 hour fcst:
+59:27596822:d=2017022600:TMP:2 m above ground:4 hour fcst:
+64:31314583:d=2017022600:UGRD:10 m above ground:4 hour fcst:
+65:31980812:d=2017022600:VGRD:10 m above ground:4 hour fcst:
+69:33719092:d=2017022600:APCP:surface:0-4 hour acc fcst:
+74:34919632:d=2017022600:BGRUN:surface:3-4 hour acc fcst:
+1705700000500
+17 057 00 0005
+02 26
+starting to truncate file 00
+9:3631725:d=2017022600:GUST:surface:5 hour fcst:
+14:7160532:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:5 hour fcst:
+32:9694141:d=2017022600:PRES:surface:5 hour fcst:
+33:10462217:d=2017022600:HGT:surface:5 hour fcst:
+59:27886441:d=2017022600:TMP:2 m above ground:5 hour fcst:
+64:31639171:d=2017022600:UGRD:10 m above ground:5 hour fcst:
+65:32310501:d=2017022600:VGRD:10 m above ground:5 hour fcst:
+69:34052522:d=2017022600:APCP:surface:0-5 hour acc fcst:
+74:35320453:d=2017022600:BGRUN:surface:4-5 hour acc fcst:
+1705700000600
+17 057 00 0006
+02 26
+starting to truncate file 00
+9:3780349:d=2017022600:GUST:surface:6 hour fcst:
+14:7300368:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:6 hour fcst:
+32:9856868:d=2017022600:PRES:surface:6 hour fcst:
+33:10624871:d=2017022600:HGT:surface:6 hour fcst:
+59:28078384:d=2017022600:TMP:2 m above ground:6 hour fcst:
+64:31859051:d=2017022600:UGRD:10 m above ground:6 hour fcst:
+65:32535980:d=2017022600:VGRD:10 m above ground:6 hour fcst:
+69:34291682:d=2017022600:APCP:surface:0-6 hour acc fcst:
+74:35645439:d=2017022600:BGRUN:surface:5-6 hour acc fcst:
+1705700000700
+17 057 00 0007
+02 26
+starting to truncate file 00
+9:3819570:d=2017022600:GUST:surface:7 hour fcst:
+14:7351064:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:7 hour fcst:
+32:9912356:d=2017022600:PRES:surface:7 hour fcst:
+33:10681387:d=2017022600:HGT:surface:7 hour fcst:
+59:28161361:d=2017022600:TMP:2 m above ground:7 hour fcst:
+64:31972527:d=2017022600:UGRD:10 m above ground:7 hour fcst:
+65:32654478:d=2017022600:VGRD:10 m above ground:7 hour fcst:
+69:34423028:d=2017022600:APCP:surface:0-7 hour acc fcst:
+74:35856921:d=2017022600:BGRUN:surface:6-7 hour acc fcst:
+1705700000800
+17 057 00 0008
+02 26
+starting to truncate file 00
+9:3829164:d=2017022600:GUST:surface:8 hour fcst:
+14:7378527:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:8 hour fcst:
+32:9813161:d=2017022600:PRES:surface:8 hour fcst:
+33:10581885:d=2017022600:HGT:surface:8 hour fcst:
+59:28084199:d=2017022600:TMP:2 m above ground:8 hour fcst:
+64:31920688:d=2017022600:UGRD:10 m above ground:8 hour fcst:
+65:32607022:d=2017022600:VGRD:10 m above ground:8 hour fcst:
+69:34403416:d=2017022600:APCP:surface:0-8 hour acc fcst:
+74:35831104:d=2017022600:BGRUN:surface:7-8 hour acc fcst:
+1705700000900
+17 057 00 0009
+02 26
+starting to truncate file 00
+9:3805378:d=2017022600:GUST:surface:9 hour fcst:
+14:7365571:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:9 hour fcst:
+32:9799937:d=2017022600:PRES:surface:9 hour fcst:
+33:10568566:d=2017022600:HGT:surface:9 hour fcst:
+59:28090233:d=2017022600:TMP:2 m above ground:9 hour fcst:
+64:31947244:d=2017022600:UGRD:10 m above ground:9 hour fcst:
+65:32636767:d=2017022600:VGRD:10 m above ground:9 hour fcst:
+69:34455216:d=2017022600:APCP:surface:0-9 hour acc fcst:
+74:35920479:d=2017022600:BGRUN:surface:8-9 hour acc fcst:
+1705700001000
+17 057 00 0010
+02 26
+starting to truncate file 00
+9:3934197:d=2017022600:GUST:surface:10 hour fcst:
+14:7503702:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:10 hour fcst:
+32:10074331:d=2017022600:PRES:surface:10 hour fcst:
+33:10844270:d=2017022600:HGT:surface:10 hour fcst:
+59:28393212:d=2017022600:TMP:2 m above ground:10 hour fcst:
+64:32265062:d=2017022600:UGRD:10 m above ground:10 hour fcst:
+65:32959330:d=2017022600:VGRD:10 m above ground:10 hour fcst:
+69:34790109:d=2017022600:APCP:surface:0-10 hour acc fcst:
+74:36314597:d=2017022600:BGRUN:surface:9-10 hour acc fcst:
+1705700001100
+17 057 00 0011
+02 26
+starting to truncate file 00
+9:3876883:d=2017022600:GUST:surface:11 hour fcst:
+14:7449790:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:11 hour fcst:
+32:10023351:d=2017022600:PRES:surface:11 hour fcst:
+33:10791994:d=2017022600:HGT:surface:11 hour fcst:
+59:28359392:d=2017022600:TMP:2 m above ground:11 hour fcst:
+64:32246959:d=2017022600:UGRD:10 m above ground:11 hour fcst:
+65:32952576:d=2017022600:VGRD:10 m above ground:11 hour fcst:
+69:34792712:d=2017022600:APCP:surface:0-11 hour acc fcst:
+74:36374358:d=2017022600:BGRUN:surface:10-11 hour acc fcst:
+1705700001200
+17 057 00 0012
+02 26
+starting to truncate file 00
+9:3770014:d=2017022600:GUST:surface:12 hour fcst:
+14:7342037:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:12 hour fcst:
+32:9906790:d=2017022600:PRES:surface:12 hour fcst:
+33:10677374:d=2017022600:HGT:surface:12 hour fcst:
+59:28262352:d=2017022600:TMP:2 m above ground:12 hour fcst:
+64:32164217:d=2017022600:UGRD:10 m above ground:12 hour fcst:
+65:32870913:d=2017022600:VGRD:10 m above ground:12 hour fcst:
+69:34728558:d=2017022600:APCP:surface:0-12 hour acc fcst:
+74:36353741:d=2017022600:BGRUN:surface:11-12 hour acc fcst:
+1705700001300
+17 057 00 0013
+02 26
+starting to truncate file 00
+9:3742516:d=2017022600:GUST:surface:13 hour fcst:
+14:7326329:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:13 hour fcst:
+32:9921731:d=2017022600:PRES:surface:13 hour fcst:
+33:10691278:d=2017022600:HGT:surface:13 hour fcst:
+59:28289151:d=2017022600:TMP:2 m above ground:13 hour fcst:
+64:32197016:d=2017022600:UGRD:10 m above ground:13 hour fcst:
+65:32905263:d=2017022600:VGRD:10 m above ground:13 hour fcst:
+69:34755807:d=2017022600:APCP:surface:0-13 hour acc fcst:
+74:36435495:d=2017022600:BGRUN:surface:12-13 hour acc fcst:
+1705700001400
+17 057 00 0014
+02 26
+starting to truncate file 00
+9:3918277:d=2017022600:GUST:surface:14 hour fcst:
+14:7502808:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:14 hour fcst:
+32:10071012:d=2017022600:PRES:surface:14 hour fcst:
+33:10840342:d=2017022600:HGT:surface:14 hour fcst:
+59:28451126:d=2017022600:TMP:2 m above ground:14 hour fcst:
+64:32369556:d=2017022600:UGRD:10 m above ground:14 hour fcst:
+65:33079123:d=2017022600:VGRD:10 m above ground:14 hour fcst:
+69:34921961:d=2017022600:APCP:surface:0-14 hour acc fcst:
+74:36647155:d=2017022600:BGRUN:surface:13-14 hour acc fcst:
+1705700001500
+17 057 00 0015
+02 26
+starting to truncate file 00
+9:3921614:d=2017022600:GUST:surface:15 hour fcst:
+14:7501414:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:15 hour fcst:
+32:10183842:d=2017022600:PRES:surface:15 hour fcst:
+33:10952084:d=2017022600:HGT:surface:15 hour fcst:
+59:28575450:d=2017022600:TMP:2 m above ground:15 hour fcst:
+64:32502966:d=2017022600:UGRD:10 m above ground:15 hour fcst:
+65:33213432:d=2017022600:VGRD:10 m above ground:15 hour fcst:
+69:35056322:d=2017022600:APCP:surface:0-15 hour acc fcst:
+74:36825182:d=2017022600:BGRUN:surface:14-15 hour acc fcst:
+1705700001600
+17 057 00 0016
+02 26
+starting to truncate file 00
+9:3920234:d=2017022600:GUST:surface:16 hour fcst:
+14:7512528:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:16 hour fcst:
+32:10191700:d=2017022600:PRES:surface:16 hour fcst:
+33:10960950:d=2017022600:HGT:surface:16 hour fcst:
+59:28596718:d=2017022600:TMP:2 m above ground:16 hour fcst:
+64:32531471:d=2017022600:UGRD:10 m above ground:16 hour fcst:
+65:33233118:d=2017022600:VGRD:10 m above ground:16 hour fcst:
+69:35070943:d=2017022600:APCP:surface:0-16 hour acc fcst:
+74:36877551:d=2017022600:BGRUN:surface:15-16 hour acc fcst:
+1705700001700
+17 057 00 0017
+02 26
+starting to truncate file 00
+9:3940641:d=2017022600:GUST:surface:17 hour fcst:
+14:7516920:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:17 hour fcst:
+32:10198396:d=2017022600:PRES:surface:17 hour fcst:
+33:10967761:d=2017022600:HGT:surface:17 hour fcst:
+59:28611117:d=2017022600:TMP:2 m above ground:17 hour fcst:
+64:32551299:d=2017022600:UGRD:10 m above ground:17 hour fcst:
+65:33254288:d=2017022600:VGRD:10 m above ground:17 hour fcst:
+69:35086776:d=2017022600:APCP:surface:0-17 hour acc fcst:
+74:36929716:d=2017022600:BGRUN:surface:16-17 hour acc fcst:
+1705700001800
+17 057 00 0018
+02 26
+starting to truncate file 00
+9:3949859:d=2017022600:GUST:surface:18 hour fcst:
+14:7536699:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:18 hour fcst:
+32:10227727:d=2017022600:PRES:surface:18 hour fcst:
+33:10996836:d=2017022600:HGT:surface:18 hour fcst:
+59:28646716:d=2017022600:TMP:2 m above ground:18 hour fcst:
+64:32581753:d=2017022600:UGRD:10 m above ground:18 hour fcst:
+65:33286692:d=2017022600:VGRD:10 m above ground:18 hour fcst:
+69:35126631:d=2017022600:APCP:surface:0-18 hour acc fcst:
+74:37003496:d=2017022600:BGRUN:surface:17-18 hour acc fcst:
+1705700001900
+17 057 00 0019
+02 26
+starting to truncate file 00
+9:3911450:d=2017022600:GUST:surface:19 hour fcst:
+14:7509350:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:19 hour fcst:
+32:10165016:d=2017022600:PRES:surface:19 hour fcst:
+33:10933965:d=2017022600:HGT:surface:19 hour fcst:
+59:28586095:d=2017022600:TMP:2 m above ground:19 hour fcst:
+64:32505631:d=2017022600:UGRD:10 m above ground:19 hour fcst:
+65:33209541:d=2017022600:VGRD:10 m above ground:19 hour fcst:
+69:35057650:d=2017022600:APCP:surface:0-19 hour acc fcst:
+74:36966630:d=2017022600:BGRUN:surface:18-19 hour acc fcst:
+1705700002000
+17 057 00 0020
+02 26
+starting to truncate file 00
+9:3871919:d=2017022600:GUST:surface:20 hour fcst:
+14:6280583:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:20 hour fcst:
+32:8814603:d=2017022600:PRES:surface:20 hour fcst:
+33:9581728:d=2017022600:HGT:surface:20 hour fcst:
+59:27234323:d=2017022600:TMP:2 m above ground:20 hour fcst:
+64:31123798:d=2017022600:UGRD:10 m above ground:20 hour fcst:
+65:31824468:d=2017022600:VGRD:10 m above ground:20 hour fcst:
+69:33663622:d=2017022600:APCP:surface:0-20 hour acc fcst:
+74:35605752:d=2017022600:BGRUN:surface:19-20 hour acc fcst:
+1705700002100
+17 057 00 0021
+02 26
+starting to truncate file 00
+9:3804520:d=2017022600:GUST:surface:21 hour fcst:
+14:7398292:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:21 hour fcst:
+32:9925138:d=2017022600:PRES:surface:21 hour fcst:
+33:10691469:d=2017022600:HGT:surface:21 hour fcst:
+59:28335430:d=2017022600:TMP:2 m above ground:21 hour fcst:
+64:32190130:d=2017022600:UGRD:10 m above ground:21 hour fcst:
+65:32886756:d=2017022600:VGRD:10 m above ground:21 hour fcst:
+69:34717944:d=2017022600:APCP:surface:0-21 hour acc fcst:
+74:36694868:d=2017022600:BGRUN:surface:20-21 hour acc fcst:
+1705700002200
+17 057 00 0022
+02 26
+starting to truncate file 00
+9:3721482:d=2017022600:GUST:surface:22 hour fcst:
+14:7299455:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:22 hour fcst:
+32:9793231:d=2017022600:PRES:surface:22 hour fcst:
+33:10557091:d=2017022600:HGT:surface:22 hour fcst:
+59:28204125:d=2017022600:TMP:2 m above ground:22 hour fcst:
+64:32026774:d=2017022600:UGRD:10 m above ground:22 hour fcst:
+65:32717511:d=2017022600:VGRD:10 m above ground:22 hour fcst:
+69:34541951:d=2017022600:APCP:surface:0-22 hour acc fcst:
+74:36552682:d=2017022600:BGRUN:surface:21-22 hour acc fcst:
+1705700002300
+17 057 00 0023
+02 26
+starting to truncate file 00
+9:3625939:d=2017022600:GUST:surface:23 hour fcst:
+14:7195033:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:23 hour fcst:
+32:9675095:d=2017022600:PRES:surface:23 hour fcst:
+33:10437738:d=2017022600:HGT:surface:23 hour fcst:
+59:28095875:d=2017022600:TMP:2 m above ground:23 hour fcst:
+64:31876462:d=2017022600:UGRD:10 m above ground:23 hour fcst:
+65:32561737:d=2017022600:VGRD:10 m above ground:23 hour fcst:
+69:34365624:d=2017022600:APCP:surface:0-23 hour acc fcst:
+74:36403342:d=2017022600:BGRUN:surface:22-23 hour acc fcst:
+1705700002400
+17 057 00 0024
+02 26
+starting to truncate file 00
+9:3499638:d=2017022600:GUST:surface:24 hour fcst:
+14:7086584:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:24 hour fcst:
+32:9657959:d=2017022600:PRES:surface:24 hour fcst:
+33:10419558:d=2017022600:HGT:surface:24 hour fcst:
+59:28075879:d=2017022600:TMP:2 m above ground:24 hour fcst:
+64:31825729:d=2017022600:UGRD:10 m above ground:24 hour fcst:
+65:32507018:d=2017022600:VGRD:10 m above ground:24 hour fcst:
+69:34292746:d=2017022600:APCP:surface:0-1 day acc fcst:
+74:36347633:d=2017022600:BGRUN:surface:23-24 hour acc fcst:
+1705700002500
+17 057 00 0025
+02 26
+starting to truncate file 00
+9:3371868:d=2017022600:GUST:surface:25 hour fcst:
+14:6917009:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:25 hour fcst:
+32:9363781:d=2017022600:PRES:surface:25 hour fcst:
+33:10126410:d=2017022600:HGT:surface:25 hour fcst:
+59:27778638:d=2017022600:TMP:2 m above ground:25 hour fcst:
+64:31509593:d=2017022600:UGRD:10 m above ground:25 hour fcst:
+65:32188208:d=2017022600:VGRD:10 m above ground:25 hour fcst:
+69:33959773:d=2017022600:APCP:surface:0-25 hour acc fcst:
+74:36033871:d=2017022600:BGRUN:surface:24-25 hour acc fcst:
+1705700002600
+17 057 00 0026
+02 26
+starting to truncate file 00
+9:3299460:d=2017022600:GUST:surface:26 hour fcst:
+14:6836152:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:26 hour fcst:
+32:9171261:d=2017022600:PRES:surface:26 hour fcst:
+33:9934455:d=2017022600:HGT:surface:26 hour fcst:
+59:27576735:d=2017022600:TMP:2 m above ground:26 hour fcst:
+64:31314751:d=2017022600:UGRD:10 m above ground:26 hour fcst:
+65:31994849:d=2017022600:VGRD:10 m above ground:26 hour fcst:
+69:33756607:d=2017022600:APCP:surface:0-26 hour acc fcst:
+74:35850146:d=2017022600:BGRUN:surface:25-26 hour acc fcst:
+1705700002700
+17 057 00 0027
+02 26
+starting to truncate file 00
+9:3270605:d=2017022600:GUST:surface:27 hour fcst:
+14:6789345:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:27 hour fcst:
+32:9137784:d=2017022600:PRES:surface:27 hour fcst:
+33:9899479:d=2017022600:HGT:surface:27 hour fcst:
+59:27552116:d=2017022600:TMP:2 m above ground:27 hour fcst:
+64:31317603:d=2017022600:UGRD:10 m above ground:27 hour fcst:
+65:32000403:d=2017022600:VGRD:10 m above ground:27 hour fcst:
+69:33769183:d=2017022600:APCP:surface:0-27 hour acc fcst:
+74:35610215:d=2017022600:BGRUN:surface:26-27 hour acc fcst:
+1705700002800
+17 057 00 0028
+02 26
+starting to truncate file 00
+9:3277442:d=2017022600:GUST:surface:28 hour fcst:
+14:6804036:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:28 hour fcst:
+32:9178698:d=2017022600:PRES:surface:28 hour fcst:
+33:9940277:d=2017022600:HGT:surface:28 hour fcst:
+59:27610379:d=2017022600:TMP:2 m above ground:28 hour fcst:
+64:31434464:d=2017022600:UGRD:10 m above ground:28 hour fcst:
+65:32121750:d=2017022600:VGRD:10 m above ground:28 hour fcst:
+69:33907519:d=2017022600:APCP:surface:0-28 hour acc fcst:
+74:35768598:d=2017022600:BGRUN:surface:27-28 hour acc fcst:
+1705700002900
+17 057 00 0029
+02 26
+starting to truncate file 00
+9:3217886:d=2017022600:GUST:surface:29 hour fcst:
+14:6760189:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:29 hour fcst:
+32:9157713:d=2017022600:PRES:surface:29 hour fcst:
+33:9917869:d=2017022600:HGT:surface:29 hour fcst:
+59:27607157:d=2017022600:TMP:2 m above ground:29 hour fcst:
+64:31484829:d=2017022600:UGRD:10 m above ground:29 hour fcst:
+65:32178990:d=2017022600:VGRD:10 m above ground:29 hour fcst:
+69:33983925:d=2017022600:APCP:surface:0-29 hour acc fcst:
+74:35868913:d=2017022600:BGRUN:surface:28-29 hour acc fcst:
+1705700003000
+17 057 00 0030
+02 26
+starting to truncate file 00
+9:3202562:d=2017022600:GUST:surface:30 hour fcst:
+14:6756557:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:30 hour fcst:
+32:9172392:d=2017022600:PRES:surface:30 hour fcst:
+33:9933076:d=2017022600:HGT:surface:30 hour fcst:
+59:27647008:d=2017022600:TMP:2 m above ground:30 hour fcst:
+64:31566006:d=2017022600:UGRD:10 m above ground:30 hour fcst:
+65:32266252:d=2017022600:VGRD:10 m above ground:30 hour fcst:
+69:34091962:d=2017022600:APCP:surface:0-30 hour acc fcst:
+74:36001407:d=2017022600:BGRUN:surface:29-30 hour acc fcst:
+1705700003100
+17 057 00 0031
+02 26
+starting to truncate file 00
+9:3155484:d=2017022600:GUST:surface:31 hour fcst:
+14:6709258:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:31 hour fcst:
+32:9240657:d=2017022600:PRES:surface:31 hour fcst:
+33:10000411:d=2017022600:HGT:surface:31 hour fcst:
+59:27727947:d=2017022600:TMP:2 m above ground:31 hour fcst:
+64:31674776:d=2017022600:UGRD:10 m above ground:31 hour fcst:
+65:32379272:d=2017022600:VGRD:10 m above ground:31 hour fcst:
+69:34216624:d=2017022600:APCP:surface:0-31 hour acc fcst:
+74:36149369:d=2017022600:BGRUN:surface:30-31 hour acc fcst:
+1705700003200
+17 057 00 0032
+02 26
+starting to truncate file 00
+9:3172741:d=2017022600:GUST:surface:32 hour fcst:
+14:6736874:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:32 hour fcst:
+32:9162766:d=2017022600:PRES:surface:32 hour fcst:
+33:9922258:d=2017022600:HGT:surface:32 hour fcst:
+59:27660285:d=2017022600:TMP:2 m above ground:32 hour fcst:
+64:31635912:d=2017022600:UGRD:10 m above ground:32 hour fcst:
+65:32340805:d=2017022600:VGRD:10 m above ground:32 hour fcst:
+69:34194176:d=2017022600:APCP:surface:0-32 hour acc fcst:
+74:36149067:d=2017022600:BGRUN:surface:31-32 hour acc fcst:
+1705700003300
+17 057 00 0033
+02 26
+starting to truncate file 00
+9:3228375:d=2017022600:GUST:surface:33 hour fcst:
+14:6794005:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:33 hour fcst:
+32:9231129:d=2017022600:PRES:surface:33 hour fcst:
+33:9990980:d=2017022600:HGT:surface:33 hour fcst:
+59:27739150:d=2017022600:TMP:2 m above ground:33 hour fcst:
+64:31738274:d=2017022600:UGRD:10 m above ground:33 hour fcst:
+65:32445435:d=2017022600:VGRD:10 m above ground:33 hour fcst:
+69:34304487:d=2017022600:APCP:surface:0-33 hour acc fcst:
+74:36282357:d=2017022600:BGRUN:surface:32-33 hour acc fcst:
+1705700003400
+17 057 00 0034
+02 26
+starting to truncate file 00
+9:3134721:d=2017022600:GUST:surface:34 hour fcst:
+14:6731442:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:34 hour fcst:
+32:9168947:d=2017022600:PRES:surface:34 hour fcst:
+33:9928239:d=2017022600:HGT:surface:34 hour fcst:
+59:27684396:d=2017022600:TMP:2 m above ground:34 hour fcst:
+64:31702158:d=2017022600:UGRD:10 m above ground:34 hour fcst:
+65:32419227:d=2017022600:VGRD:10 m above ground:34 hour fcst:
+69:34282950:d=2017022600:APCP:surface:0-34 hour acc fcst:
+74:36282473:d=2017022600:BGRUN:surface:33-34 hour acc fcst:
+1705700003500
+17 057 00 0035
+02 26
+starting to truncate file 00
+9:3162779:d=2017022600:GUST:surface:35 hour fcst:
+14:6741183:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:35 hour fcst:
+32:9181690:d=2017022600:PRES:surface:35 hour fcst:
+33:9941822:d=2017022600:HGT:surface:35 hour fcst:
+59:27704493:d=2017022600:TMP:2 m above ground:35 hour fcst:
+64:31733841:d=2017022600:UGRD:10 m above ground:35 hour fcst:
+65:32443290:d=2017022600:VGRD:10 m above ground:35 hour fcst:
+69:34299522:d=2017022600:APCP:surface:0-35 hour acc fcst:
+74:36319419:d=2017022600:BGRUN:surface:34-35 hour acc fcst:
+1705700003600
+17 057 00 0036
+02 26
+starting to truncate file 00
+9:3067387:d=2017022600:GUST:surface:36 hour fcst:
+14:6672928:d=2017022600:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:36 hour fcst:
+32:9110305:d=2017022600:PRES:surface:36 hour fcst:
+33:9871128:d=2017022600:HGT:surface:36 hour fcst:
+59:27640520:d=2017022600:TMP:2 m above ground:36 hour fcst:
+64:31675241:d=2017022600:UGRD:10 m above ground:36 hour fcst:
+65:32385502:d=2017022600:VGRD:10 m above ground:36 hour fcst:
+69:34241637:d=2017022600:APCP:surface:0-36 hour acc fcst:
+74:36251518:d=2017022600:BGRUN:surface:35-36 hour acc fcst:
+1705703000000
+17 057 03 0000
+02 26
+starting to truncate file 03
+9:2416064:d=2017022603:GUST:surface:anl:
+14:3892467:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:anl:
+32:5944959:d=2017022603:PRES:surface:anl:
+33:6712784:d=2017022603:HGT:surface:anl:
+59:23761135:d=2017022603:TMP:2 m above ground:anl:
+64:27369529:d=2017022603:UGRD:10 m above ground:anl:
+65:27989170:d=2017022603:VGRD:10 m above ground:anl:
+69:29278811:d=2017022603:APCP:surface:0-0 day acc fcst:
+74:29430304:d=2017022603:BGRUN:surface:0-0 day acc fcst:
+1705703000100
+17 057 03 0001
+02 26
+starting to truncate file 03
+9:2736346:d=2017022603:GUST:surface:1 hour fcst:
+14:6103205:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:1 hour fcst:
+32:8349382:d=2017022603:PRES:surface:1 hour fcst:
+33:9115476:d=2017022603:HGT:surface:1 hour fcst:
+59:26473788:d=2017022603:TMP:2 m above ground:1 hour fcst:
+64:30139781:d=2017022603:UGRD:10 m above ground:1 hour fcst:
+65:30783153:d=2017022603:VGRD:10 m above ground:1 hour fcst:
+69:32444668:d=2017022603:APCP:surface:0-1 hour acc fcst:
+74:33373823:d=2017022603:BGRUN:surface:0-1 hour acc fcst:
+1705703000200
+17 057 03 0002
+02 26
+starting to truncate file 03
+9:3335526:d=2017022603:GUST:surface:2 hour fcst:
+14:6781475:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:2 hour fcst:
+32:9331707:d=2017022603:PRES:surface:2 hour fcst:
+33:10099214:d=2017022603:HGT:surface:2 hour fcst:
+59:27523971:d=2017022603:TMP:2 m above ground:2 hour fcst:
+64:31236164:d=2017022603:UGRD:10 m above ground:2 hour fcst:
+65:31896118:d=2017022603:VGRD:10 m above ground:2 hour fcst:
+69:33619456:d=2017022603:APCP:surface:0-2 hour acc fcst:
+74:34716671:d=2017022603:BGRUN:surface:1-2 hour acc fcst:
+1705703000300
+17 057 03 0003
+02 26
+starting to truncate file 03
+9:3486420:d=2017022603:GUST:surface:3 hour fcst:
+14:6966090:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:3 hour fcst:
+32:9473215:d=2017022603:PRES:surface:3 hour fcst:
+33:10241725:d=2017022603:HGT:surface:3 hour fcst:
+59:27695041:d=2017022603:TMP:2 m above ground:3 hour fcst:
+64:31449872:d=2017022603:UGRD:10 m above ground:3 hour fcst:
+65:32120572:d=2017022603:VGRD:10 m above ground:3 hour fcst:
+69:33874962:d=2017022603:APCP:surface:0-3 hour acc fcst:
+74:35128327:d=2017022603:BGRUN:surface:2-3 hour acc fcst:
+1705703000400
+17 057 03 0004
+02 26
+starting to truncate file 03
+9:3753112:d=2017022603:GUST:surface:4 hour fcst:
+14:7280609:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:4 hour fcst:
+32:9837395:d=2017022603:PRES:surface:4 hour fcst:
+33:10605034:d=2017022603:HGT:surface:4 hour fcst:
+59:28111788:d=2017022603:TMP:2 m above ground:4 hour fcst:
+64:31907349:d=2017022603:UGRD:10 m above ground:4 hour fcst:
+65:32584949:d=2017022603:VGRD:10 m above ground:4 hour fcst:
+69:34354122:d=2017022603:APCP:surface:0-4 hour acc fcst:
+74:35690885:d=2017022603:BGRUN:surface:3-4 hour acc fcst:
+1705703000500
+17 057 03 0005
+02 26
+starting to truncate file 03
+9:3904076:d=2017022603:GUST:surface:5 hour fcst:
+14:7442016:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:5 hour fcst:
+32:10009306:d=2017022603:PRES:surface:5 hour fcst:
+33:10779214:d=2017022603:HGT:surface:5 hour fcst:
+59:28212013:d=2017022603:TMP:2 m above ground:5 hour fcst:
+64:32039629:d=2017022603:UGRD:10 m above ground:5 hour fcst:
+65:32722453:d=2017022603:VGRD:10 m above ground:5 hour fcst:
+69:34504245:d=2017022603:APCP:surface:0-5 hour acc fcst:
+74:35809529:d=2017022603:BGRUN:surface:4-5 hour acc fcst:
+1705703000600
+17 057 03 0006
+02 26
+starting to truncate file 03
+9:3954326:d=2017022603:GUST:surface:6 hour fcst:
+14:7500257:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:6 hour fcst:
+32:10077854:d=2017022603:PRES:surface:6 hour fcst:
+33:10846503:d=2017022603:HGT:surface:6 hour fcst:
+59:28307442:d=2017022603:TMP:2 m above ground:6 hour fcst:
+64:32157991:d=2017022603:UGRD:10 m above ground:6 hour fcst:
+65:32846168:d=2017022603:VGRD:10 m above ground:6 hour fcst:
+69:34648301:d=2017022603:APCP:surface:0-6 hour acc fcst:
+74:36047033:d=2017022603:BGRUN:surface:5-6 hour acc fcst:
+1705703000700
+17 057 03 0007
+02 26
+starting to truncate file 03
+9:3957770:d=2017022603:GUST:surface:7 hour fcst:
+14:7497989:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:7 hour fcst:
+32:10080825:d=2017022603:PRES:surface:7 hour fcst:
+33:10849787:d=2017022603:HGT:surface:7 hour fcst:
+59:28334404:d=2017022603:TMP:2 m above ground:7 hour fcst:
+64:32200955:d=2017022603:UGRD:10 m above ground:7 hour fcst:
+65:32893774:d=2017022603:VGRD:10 m above ground:7 hour fcst:
+69:34720220:d=2017022603:APCP:surface:0-7 hour acc fcst:
+74:36195772:d=2017022603:BGRUN:surface:6-7 hour acc fcst:
+1705703000800
+17 057 03 0008
+02 26
+starting to truncate file 03
+9:3874581:d=2017022603:GUST:surface:8 hour fcst:
+14:7431123:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:8 hour fcst:
+32:10012370:d=2017022603:PRES:surface:8 hour fcst:
+33:10780850:d=2017022603:HGT:surface:8 hour fcst:
+59:28292904:d=2017022603:TMP:2 m above ground:8 hour fcst:
+64:32172446:d=2017022603:UGRD:10 m above ground:8 hour fcst:
+65:32876686:d=2017022603:VGRD:10 m above ground:8 hour fcst:
+69:34716576:d=2017022603:APCP:surface:0-8 hour acc fcst:
+74:36262079:d=2017022603:BGRUN:surface:7-8 hour acc fcst:
+1705703000900
+17 057 03 0009
+02 26
+starting to truncate file 03
+9:3861575:d=2017022603:GUST:surface:9 hour fcst:
+14:7427574:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:9 hour fcst:
+32:10003002:d=2017022603:PRES:surface:9 hour fcst:
+33:10772356:d=2017022603:HGT:surface:9 hour fcst:
+59:28305786:d=2017022603:TMP:2 m above ground:9 hour fcst:
+64:32197912:d=2017022603:UGRD:10 m above ground:9 hour fcst:
+65:32896003:d=2017022603:VGRD:10 m above ground:9 hour fcst:
+69:34733826:d=2017022603:APCP:surface:0-9 hour acc fcst:
+74:36325083:d=2017022603:BGRUN:surface:8-9 hour acc fcst:
+1705703001000
+17 057 03 0010
+02 26
+starting to truncate file 03
+9:3852124:d=2017022603:GUST:surface:10 hour fcst:
+14:7432360:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:10 hour fcst:
+32:9997474:d=2017022603:PRES:surface:10 hour fcst:
+33:10767169:d=2017022603:HGT:surface:10 hour fcst:
+59:28318768:d=2017022603:TMP:2 m above ground:10 hour fcst:
+64:32223942:d=2017022603:UGRD:10 m above ground:10 hour fcst:
+65:32932252:d=2017022603:VGRD:10 m above ground:10 hour fcst:
+69:34769791:d=2017022603:APCP:surface:0-10 hour acc fcst:
+74:36420758:d=2017022603:BGRUN:surface:9-10 hour acc fcst:
+1705703001100
+17 057 03 0011
+02 26
+starting to truncate file 03
+9:3930213:d=2017022603:GUST:surface:11 hour fcst:
+14:7503621:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:11 hour fcst:
+32:10186016:d=2017022603:PRES:surface:11 hour fcst:
+33:10954685:d=2017022603:HGT:surface:11 hour fcst:
+59:28523373:d=2017022603:TMP:2 m above ground:11 hour fcst:
+64:32439982:d=2017022603:UGRD:10 m above ground:11 hour fcst:
+65:33149386:d=2017022603:VGRD:10 m above ground:11 hour fcst:
+69:34991639:d=2017022603:APCP:surface:0-11 hour acc fcst:
+74:36698191:d=2017022603:BGRUN:surface:10-11 hour acc fcst:
+1705703001200
+17 057 03 0012
+02 26
+starting to truncate file 03
+9:3946389:d=2017022603:GUST:surface:12 hour fcst:
+14:7516822:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:12 hour fcst:
+32:10197530:d=2017022603:PRES:surface:12 hour fcst:
+33:10966240:d=2017022603:HGT:surface:12 hour fcst:
+59:28553084:d=2017022603:TMP:2 m above ground:12 hour fcst:
+64:32474011:d=2017022603:UGRD:10 m above ground:12 hour fcst:
+65:33183999:d=2017022603:VGRD:10 m above ground:12 hour fcst:
+69:35032893:d=2017022603:APCP:surface:0-12 hour acc fcst:
+74:36793696:d=2017022603:BGRUN:surface:11-12 hour acc fcst:
+1705703001300
+17 057 03 0013
+02 26
+starting to truncate file 03
+9:3986985:d=2017022603:GUST:surface:13 hour fcst:
+14:7584302:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:13 hour fcst:
+32:10253000:d=2017022603:PRES:surface:13 hour fcst:
+33:11023948:d=2017022603:HGT:surface:13 hour fcst:
+59:28619600:d=2017022603:TMP:2 m above ground:13 hour fcst:
+64:32550866:d=2017022603:UGRD:10 m above ground:13 hour fcst:
+65:33261048:d=2017022603:VGRD:10 m above ground:13 hour fcst:
+69:35108610:d=2017022603:APCP:surface:0-13 hour acc fcst:
+74:36913502:d=2017022603:BGRUN:surface:12-13 hour acc fcst:
+1705703001400
+17 057 03 0014
+02 26
+starting to truncate file 03
+9:4006919:d=2017022603:GUST:surface:14 hour fcst:
+14:7588091:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:14 hour fcst:
+32:10245600:d=2017022603:PRES:surface:14 hour fcst:
+33:11015663:d=2017022603:HGT:surface:14 hour fcst:
+59:28628715:d=2017022603:TMP:2 m above ground:14 hour fcst:
+64:32565199:d=2017022603:UGRD:10 m above ground:14 hour fcst:
+65:33278045:d=2017022603:VGRD:10 m above ground:14 hour fcst:
+69:35127022:d=2017022603:APCP:surface:0-14 hour acc fcst:
+74:36976045:d=2017022603:BGRUN:surface:13-14 hour acc fcst:
+1705703001500
+17 057 03 0015
+02 26
+starting to truncate file 03
+9:3994905:d=2017022603:GUST:surface:15 hour fcst:
+14:7595906:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:15 hour fcst:
+32:10281625:d=2017022603:PRES:surface:15 hour fcst:
+33:11051402:d=2017022603:HGT:surface:15 hour fcst:
+59:28669502:d=2017022603:TMP:2 m above ground:15 hour fcst:
+64:32602391:d=2017022603:UGRD:10 m above ground:15 hour fcst:
+65:33316556:d=2017022603:VGRD:10 m above ground:15 hour fcst:
+69:35172657:d=2017022603:APCP:surface:0-15 hour acc fcst:
+74:37062938:d=2017022603:BGRUN:surface:14-15 hour acc fcst:
+1705703001600
+17 057 03 0016
+02 26
+starting to truncate file 03
+9:3960799:d=2017022603:GUST:surface:16 hour fcst:
+14:7560566:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:16 hour fcst:
+32:10243654:d=2017022603:PRES:surface:16 hour fcst:
+33:11011171:d=2017022603:HGT:surface:16 hour fcst:
+59:28633197:d=2017022603:TMP:2 m above ground:16 hour fcst:
+64:32552487:d=2017022603:UGRD:10 m above ground:16 hour fcst:
+65:33257761:d=2017022603:VGRD:10 m above ground:16 hour fcst:
+69:35120543:d=2017022603:APCP:surface:0-16 hour acc fcst:
+74:37065145:d=2017022603:BGRUN:surface:15-16 hour acc fcst:
+1705703001700
+17 057 03 0017
+02 26
+starting to truncate file 03
+9:3913453:d=2017022603:GUST:surface:17 hour fcst:
+14:7525910:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:17 hour fcst:
+32:10195739:d=2017022603:PRES:surface:17 hour fcst:
+33:10964112:d=2017022603:HGT:surface:17 hour fcst:
+59:28593408:d=2017022603:TMP:2 m above ground:17 hour fcst:
+64:32487543:d=2017022603:UGRD:10 m above ground:17 hour fcst:
+65:33190194:d=2017022603:VGRD:10 m above ground:17 hour fcst:
+69:35050458:d=2017022603:APCP:surface:0-17 hour acc fcst:
+74:37034504:d=2017022603:BGRUN:surface:16-17 hour acc fcst:
+1705703001800
+17 057 03 0018
+02 26
+starting to truncate file 03
+9:3812861:d=2017022603:GUST:surface:18 hour fcst:
+14:7406695:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:18 hour fcst:
+32:10055275:d=2017022603:PRES:surface:18 hour fcst:
+33:10821719:d=2017022603:HGT:surface:18 hour fcst:
+59:28444618:d=2017022603:TMP:2 m above ground:18 hour fcst:
+64:32307394:d=2017022603:UGRD:10 m above ground:18 hour fcst:
+65:33004811:d=2017022603:VGRD:10 m above ground:18 hour fcst:
+69:34848422:d=2017022603:APCP:surface:0-18 hour acc fcst:
+74:36874553:d=2017022603:BGRUN:surface:17-18 hour acc fcst:
+1705703001900
+17 057 03 0019
+02 26
+starting to truncate file 03
+9:3730842:d=2017022603:GUST:surface:19 hour fcst:
+14:7336595:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:19 hour fcst:
+32:9963071:d=2017022603:PRES:surface:19 hour fcst:
+33:10727928:d=2017022603:HGT:surface:19 hour fcst:
+59:28353632:d=2017022603:TMP:2 m above ground:19 hour fcst:
+64:32187346:d=2017022603:UGRD:10 m above ground:19 hour fcst:
+65:32879166:d=2017022603:VGRD:10 m above ground:19 hour fcst:
+69:34716907:d=2017022603:APCP:surface:0-19 hour acc fcst:
+74:36788042:d=2017022603:BGRUN:surface:18-19 hour acc fcst:
+1705703002000
+17 057 03 0020
+02 26
+starting to truncate file 03
+9:3614315:d=2017022603:GUST:surface:20 hour fcst:
+14:6017420:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:20 hour fcst:
+32:8610243:d=2017022603:PRES:surface:20 hour fcst:
+33:9373846:d=2017022603:HGT:surface:20 hour fcst:
+59:27000467:d=2017022603:TMP:2 m above ground:20 hour fcst:
+64:30800812:d=2017022603:UGRD:10 m above ground:20 hour fcst:
+65:31488502:d=2017022603:VGRD:10 m above ground:20 hour fcst:
+69:33305859:d=2017022603:APCP:surface:0-20 hour acc fcst:
+74:35254382:d=2017022603:BGRUN:surface:19-20 hour acc fcst:
+1705703002100
+17 057 03 0021
+02 26
+starting to truncate file 03
+9:3532594:d=2017022603:GUST:surface:21 hour fcst:
+14:7103757:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:21 hour fcst:
+32:9695626:d=2017022603:PRES:surface:21 hour fcst:
+33:10458910:d=2017022603:HGT:surface:21 hour fcst:
+59:28093163:d=2017022603:TMP:2 m above ground:21 hour fcst:
+64:31848998:d=2017022603:UGRD:10 m above ground:21 hour fcst:
+65:32531693:d=2017022603:VGRD:10 m above ground:21 hour fcst:
+69:34326085:d=2017022603:APCP:surface:0-21 hour acc fcst:
+74:36299555:d=2017022603:BGRUN:surface:20-21 hour acc fcst:
+1705703002200
+17 057 03 0022
+02 26
+starting to truncate file 03
+9:3352522:d=2017022603:GUST:surface:22 hour fcst:
+14:6926621:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:22 hour fcst:
+32:9506430:d=2017022603:PRES:surface:22 hour fcst:
+33:10269256:d=2017022603:HGT:surface:22 hour fcst:
+59:27891821:d=2017022603:TMP:2 m above ground:22 hour fcst:
+64:31639185:d=2017022603:UGRD:10 m above ground:22 hour fcst:
+65:32319774:d=2017022603:VGRD:10 m above ground:22 hour fcst:
+69:34098746:d=2017022603:APCP:surface:0-22 hour acc fcst:
+74:36090533:d=2017022603:BGRUN:surface:21-22 hour acc fcst:
+1705703002300
+17 057 03 0023
+02 26
+starting to truncate file 03
+9:3389852:d=2017022603:GUST:surface:23 hour fcst:
+14:6936323:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:23 hour fcst:
+32:9393042:d=2017022603:PRES:surface:23 hour fcst:
+33:10155470:d=2017022603:HGT:surface:23 hour fcst:
+59:27776505:d=2017022603:TMP:2 m above ground:23 hour fcst:
+64:31522813:d=2017022603:UGRD:10 m above ground:23 hour fcst:
+65:32204517:d=2017022603:VGRD:10 m above ground:23 hour fcst:
+69:33981778:d=2017022603:APCP:surface:0-23 hour acc fcst:
+74:35991320:d=2017022603:BGRUN:surface:22-23 hour acc fcst:
+1705703002400
+17 057 03 0024
+02 26
+starting to truncate file 03
+9:3341278:d=2017022603:GUST:surface:24 hour fcst:
+14:6875822:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:24 hour fcst:
+32:9223468:d=2017022603:PRES:surface:24 hour fcst:
+33:9985416:d=2017022603:HGT:surface:24 hour fcst:
+59:27614396:d=2017022603:TMP:2 m above ground:24 hour fcst:
+64:31388626:d=2017022603:UGRD:10 m above ground:24 hour fcst:
+65:32072401:d=2017022603:VGRD:10 m above ground:24 hour fcst:
+69:33849315:d=2017022603:APCP:surface:0-1 day acc fcst:
+74:35867048:d=2017022603:BGRUN:surface:23-24 hour acc fcst:
+1705703002500
+17 057 03 0025
+02 26
+starting to truncate file 03
+9:3305920:d=2017022603:GUST:surface:25 hour fcst:
+14:6832593:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:25 hour fcst:
+32:9195263:d=2017022603:PRES:surface:25 hour fcst:
+33:9956296:d=2017022603:HGT:surface:25 hour fcst:
+59:27605283:d=2017022603:TMP:2 m above ground:25 hour fcst:
+64:31434305:d=2017022603:UGRD:10 m above ground:25 hour fcst:
+65:32122132:d=2017022603:VGRD:10 m above ground:25 hour fcst:
+69:33902941:d=2017022603:APCP:surface:0-25 hour acc fcst:
+74:35944985:d=2017022603:BGRUN:surface:24-25 hour acc fcst:
+1705703002600
+17 057 03 0026
+02 26
+starting to truncate file 03
+9:3213321:d=2017022603:GUST:surface:26 hour fcst:
+14:6745546:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:26 hour fcst:
+32:9242838:d=2017022603:PRES:surface:26 hour fcst:
+33:10003727:d=2017022603:HGT:surface:26 hour fcst:
+59:27671891:d=2017022603:TMP:2 m above ground:26 hour fcst:
+64:31550659:d=2017022603:UGRD:10 m above ground:26 hour fcst:
+65:32244631:d=2017022603:VGRD:10 m above ground:26 hour fcst:
+69:34052472:d=2017022603:APCP:surface:0-26 hour acc fcst:
+74:36124403:d=2017022603:BGRUN:surface:25-26 hour acc fcst:
+1705703002700
+17 057 03 0027
+02 26
+starting to truncate file 03
+9:3192257:d=2017022603:GUST:surface:27 hour fcst:
+14:6731770:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:27 hour fcst:
+32:9239071:d=2017022603:PRES:surface:27 hour fcst:
+33:9998477:d=2017022603:HGT:surface:27 hour fcst:
+59:27693558:d=2017022603:TMP:2 m above ground:27 hour fcst:
+64:31614459:d=2017022603:UGRD:10 m above ground:27 hour fcst:
+65:32313783:d=2017022603:VGRD:10 m above ground:27 hour fcst:
+69:34135581:d=2017022603:APCP:surface:0-27 hour acc fcst:
+74:36237580:d=2017022603:BGRUN:surface:26-27 hour acc fcst:
+1705703002800
+17 057 03 0028
+02 26
+starting to truncate file 03
+9:3171974:d=2017022603:GUST:surface:28 hour fcst:
+14:6728567:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:28 hour fcst:
+32:9250110:d=2017022603:PRES:surface:28 hour fcst:
+33:10009249:d=2017022603:HGT:surface:28 hour fcst:
+59:27719100:d=2017022603:TMP:2 m above ground:28 hour fcst:
+64:31670306:d=2017022603:UGRD:10 m above ground:28 hour fcst:
+65:32374776:d=2017022603:VGRD:10 m above ground:28 hour fcst:
+69:34212633:d=2017022603:APCP:surface:0-28 hour acc fcst:
+74:36343070:d=2017022603:BGRUN:surface:27-28 hour acc fcst:
+1705703002900
+17 057 03 0029
+02 26
+starting to truncate file 03
+9:3150126:d=2017022603:GUST:surface:29 hour fcst:
+14:6711029:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:29 hour fcst:
+32:9238550:d=2017022603:PRES:surface:29 hour fcst:
+33:9997668:d=2017022603:HGT:surface:29 hour fcst:
+59:27724911:d=2017022603:TMP:2 m above ground:29 hour fcst:
+64:31705874:d=2017022603:UGRD:10 m above ground:29 hour fcst:
+65:32410978:d=2017022603:VGRD:10 m above ground:29 hour fcst:
+69:34257858:d=2017022603:APCP:surface:0-29 hour acc fcst:
+74:36414558:d=2017022603:BGRUN:surface:28-29 hour acc fcst:
+1705703003000
+17 057 03 0030
+02 26
+starting to truncate file 03
+9:3108739:d=2017022603:GUST:surface:30 hour fcst:
+14:6682835:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:30 hour fcst:
+32:9105289:d=2017022603:PRES:surface:30 hour fcst:
+33:9863961:d=2017022603:HGT:surface:30 hour fcst:
+59:27595370:d=2017022603:TMP:2 m above ground:30 hour fcst:
+64:31596832:d=2017022603:UGRD:10 m above ground:30 hour fcst:
+65:32304920:d=2017022603:VGRD:10 m above ground:30 hour fcst:
+69:34161317:d=2017022603:APCP:surface:0-30 hour acc fcst:
+74:36341885:d=2017022603:BGRUN:surface:29-30 hour acc fcst:
+1705703003100
+17 057 03 0031
+02 26
+starting to truncate file 03
+9:3155235:d=2017022603:GUST:surface:31 hour fcst:
+14:6734730:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:31 hour fcst:
+32:9159207:d=2017022603:PRES:surface:31 hour fcst:
+33:9918730:d=2017022603:HGT:surface:31 hour fcst:
+59:27656973:d=2017022603:TMP:2 m above ground:31 hour fcst:
+64:31678107:d=2017022603:UGRD:10 m above ground:31 hour fcst:
+65:32387876:d=2017022603:VGRD:10 m above ground:31 hour fcst:
+69:34253962:d=2017022603:APCP:surface:0-31 hour acc fcst:
+74:36434478:d=2017022603:BGRUN:surface:30-31 hour acc fcst:
+1705703003200
+17 057 03 0032
+02 26
+starting to truncate file 03
+9:3128311:d=2017022603:GUST:surface:32 hour fcst:
+14:6720624:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:32 hour fcst:
+32:9143714:d=2017022603:PRES:surface:32 hour fcst:
+33:9903626:d=2017022603:HGT:surface:32 hour fcst:
+59:27654532:d=2017022603:TMP:2 m above ground:32 hour fcst:
+64:31690117:d=2017022603:UGRD:10 m above ground:32 hour fcst:
+65:32400352:d=2017022603:VGRD:10 m above ground:32 hour fcst:
+69:34269100:d=2017022603:APCP:surface:0-32 hour acc fcst:
+74:36473429:d=2017022603:BGRUN:surface:31-32 hour acc fcst:
+1705703003300
+17 057 03 0033
+02 26
+starting to truncate file 03
+9:3036350:d=2017022603:GUST:surface:33 hour fcst:
+14:6616232:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:33 hour fcst:
+32:9036925:d=2017022603:PRES:surface:33 hour fcst:
+33:9797085:d=2017022603:HGT:surface:33 hour fcst:
+59:27553635:d=2017022603:TMP:2 m above ground:33 hour fcst:
+64:31595837:d=2017022603:UGRD:10 m above ground:33 hour fcst:
+65:32307431:d=2017022603:VGRD:10 m above ground:33 hour fcst:
+69:34158367:d=2017022603:APCP:surface:0-33 hour acc fcst:
+74:36386498:d=2017022603:BGRUN:surface:32-33 hour acc fcst:
+1705703003400
+17 057 03 0034
+02 26
+starting to truncate file 03
+9:3042166:d=2017022603:GUST:surface:34 hour fcst:
+14:6623058:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:34 hour fcst:
+32:9045364:d=2017022603:PRES:surface:34 hour fcst:
+33:9806438:d=2017022603:HGT:surface:34 hour fcst:
+59:27568198:d=2017022603:TMP:2 m above ground:34 hour fcst:
+64:31612894:d=2017022603:UGRD:10 m above ground:34 hour fcst:
+65:32324823:d=2017022603:VGRD:10 m above ground:34 hour fcst:
+69:34181154:d=2017022603:APCP:surface:0-34 hour acc fcst:
+74:36433409:d=2017022603:BGRUN:surface:33-34 hour acc fcst:
+1705703003500
+17 057 03 0035
+02 26
+starting to truncate file 03
+9:3032985:d=2017022603:GUST:surface:35 hour fcst:
+14:6627958:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:35 hour fcst:
+32:9053976:d=2017022603:PRES:surface:35 hour fcst:
+33:9814601:d=2017022603:HGT:surface:35 hour fcst:
+59:27580351:d=2017022603:TMP:2 m above ground:35 hour fcst:
+64:31621344:d=2017022603:UGRD:10 m above ground:35 hour fcst:
+65:32333437:d=2017022603:VGRD:10 m above ground:35 hour fcst:
+69:34192717:d=2017022603:APCP:surface:0-35 hour acc fcst:
+74:36464523:d=2017022603:BGRUN:surface:34-35 hour acc fcst:
+1705703003600
+17 057 03 0036
+02 26
+starting to truncate file 03
+9:3024244:d=2017022603:GUST:surface:36 hour fcst:
+14:6606429:d=2017022603:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:36 hour fcst:
+32:9028835:d=2017022603:PRES:surface:36 hour fcst:
+33:9790440:d=2017022603:HGT:surface:36 hour fcst:
+59:27560467:d=2017022603:TMP:2 m above ground:36 hour fcst:
+64:31595138:d=2017022603:UGRD:10 m above ground:36 hour fcst:
+65:32306229:d=2017022603:VGRD:10 m above ground:36 hour fcst:
+69:34148513:d=2017022603:APCP:surface:0-36 hour acc fcst:
+74:36439710:d=2017022603:BGRUN:surface:35-36 hour acc fcst:
+1705706000000
+17 057 06 0000
+02 26
+starting to truncate file 06
+9:2590839:d=2017022606:GUST:surface:anl:
+14:4065913:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:anl:
+32:6157874:d=2017022606:PRES:surface:anl:
+33:6925744:d=2017022606:HGT:surface:anl:
+59:23996233:d=2017022606:TMP:2 m above ground:anl:
+64:27661548:d=2017022606:UGRD:10 m above ground:anl:
+65:28295515:d=2017022606:VGRD:10 m above ground:anl:
+69:29602620:d=2017022606:APCP:surface:0-0 day acc fcst:
+74:29798451:d=2017022606:BGRUN:surface:0-0 day acc fcst:
+1705706000100
+17 057 06 0001
+02 26
+starting to truncate file 06
+9:3019211:d=2017022606:GUST:surface:1 hour fcst:
+14:6418955:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:1 hour fcst:
+32:8750074:d=2017022606:PRES:surface:1 hour fcst:
+33:9517622:d=2017022606:HGT:surface:1 hour fcst:
+59:26896062:d=2017022606:TMP:2 m above ground:1 hour fcst:
+64:30636886:d=2017022606:UGRD:10 m above ground:1 hour fcst:
+65:31298633:d=2017022606:VGRD:10 m above ground:1 hour fcst:
+69:33031103:d=2017022606:APCP:surface:0-1 hour acc fcst:
+74:34193657:d=2017022606:BGRUN:surface:0-1 hour acc fcst:
+1705706000200
+17 057 06 0002
+02 26
+starting to truncate file 06
+9:3604613:d=2017022606:GUST:surface:2 hour fcst:
+14:7123520:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:2 hour fcst:
+32:9622096:d=2017022606:PRES:surface:2 hour fcst:
+33:10389371:d=2017022606:HGT:surface:2 hour fcst:
+59:27781521:d=2017022606:TMP:2 m above ground:2 hour fcst:
+64:31579038:d=2017022606:UGRD:10 m above ground:2 hour fcst:
+65:32255610:d=2017022606:VGRD:10 m above ground:2 hour fcst:
+69:34064260:d=2017022606:APCP:surface:0-2 hour acc fcst:
+74:35272610:d=2017022606:BGRUN:surface:1-2 hour acc fcst:
+1705706000300
+17 057 06 0003
+02 26
+starting to truncate file 06
+9:3901277:d=2017022606:GUST:surface:3 hour fcst:
+14:7430189:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:3 hour fcst:
+32:10004745:d=2017022606:PRES:surface:3 hour fcst:
+33:10774342:d=2017022606:HGT:surface:3 hour fcst:
+59:28238234:d=2017022606:TMP:2 m above ground:3 hour fcst:
+64:32066724:d=2017022606:UGRD:10 m above ground:3 hour fcst:
+65:32750431:d=2017022606:VGRD:10 m above ground:3 hour fcst:
+69:34585739:d=2017022606:APCP:surface:0-3 hour acc fcst:
+74:35939699:d=2017022606:BGRUN:surface:2-3 hour acc fcst:
+1705706000400
+17 057 06 0004
+02 26
+starting to truncate file 06
+9:4017065:d=2017022606:GUST:surface:4 hour fcst:
+14:7566121:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:4 hour fcst:
+32:10160642:d=2017022606:PRES:surface:4 hour fcst:
+33:10930628:d=2017022606:HGT:surface:4 hour fcst:
+59:28455817:d=2017022606:TMP:2 m above ground:4 hour fcst:
+64:32303432:d=2017022606:UGRD:10 m above ground:4 hour fcst:
+65:32991907:d=2017022606:VGRD:10 m above ground:4 hour fcst:
+69:34831240:d=2017022606:APCP:surface:0-4 hour acc fcst:
+74:36272433:d=2017022606:BGRUN:surface:3-4 hour acc fcst:
+1705706000500
+17 057 06 0005
+02 26
+starting to truncate file 06
+9:4036689:d=2017022606:GUST:surface:5 hour fcst:
+14:7584887:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:5 hour fcst:
+32:10194496:d=2017022606:PRES:surface:5 hour fcst:
+33:10964240:d=2017022606:HGT:surface:5 hour fcst:
+59:28537092:d=2017022606:TMP:2 m above ground:5 hour fcst:
+64:32403697:d=2017022606:UGRD:10 m above ground:5 hour fcst:
+65:33105085:d=2017022606:VGRD:10 m above ground:5 hour fcst:
+69:34904050:d=2017022606:APCP:surface:0-5 hour acc fcst:
+74:36475524:d=2017022606:BGRUN:surface:4-5 hour acc fcst:
+1705706000600
+17 057 06 0006
+02 26
+starting to truncate file 06
+9:3956265:d=2017022606:GUST:surface:6 hour fcst:
+14:7532449:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:6 hour fcst:
+32:10139728:d=2017022606:PRES:surface:6 hour fcst:
+33:10909507:d=2017022606:HGT:surface:6 hour fcst:
+59:28391189:d=2017022606:TMP:2 m above ground:6 hour fcst:
+64:32278038:d=2017022606:UGRD:10 m above ground:6 hour fcst:
+65:32983743:d=2017022606:VGRD:10 m above ground:6 hour fcst:
+69:34827386:d=2017022606:APCP:surface:0-6 hour acc fcst:
+74:36333222:d=2017022606:BGRUN:surface:5-6 hour acc fcst:
+1705706000700
+17 057 06 0007
+02 26
+starting to truncate file 06
+9:4042456:d=2017022606:GUST:surface:7 hour fcst:
+14:7616369:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:7 hour fcst:
+32:10219509:d=2017022606:PRES:surface:7 hour fcst:
+33:10990543:d=2017022606:HGT:surface:7 hour fcst:
+59:28495997:d=2017022606:TMP:2 m above ground:7 hour fcst:
+64:32395104:d=2017022606:UGRD:10 m above ground:7 hour fcst:
+65:33102787:d=2017022606:VGRD:10 m above ground:7 hour fcst:
+69:34946034:d=2017022606:APCP:surface:0-7 hour acc fcst:
+74:36519481:d=2017022606:BGRUN:surface:6-7 hour acc fcst:
+1705706000800
+17 057 06 0008
+02 26
+starting to truncate file 06
+9:4025690:d=2017022606:GUST:surface:8 hour fcst:
+14:7585161:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:8 hour fcst:
+32:10177735:d=2017022606:PRES:surface:8 hour fcst:
+33:10947808:d=2017022606:HGT:surface:8 hour fcst:
+59:28474016:d=2017022606:TMP:2 m above ground:8 hour fcst:
+64:32381564:d=2017022606:UGRD:10 m above ground:8 hour fcst:
+65:33090351:d=2017022606:VGRD:10 m above ground:8 hour fcst:
+69:34935716:d=2017022606:APCP:surface:0-8 hour acc fcst:
+74:36583842:d=2017022606:BGRUN:surface:7-8 hour acc fcst:
+1705706000900
+17 057 06 0009
+02 26
+starting to truncate file 06
+9:3923536:d=2017022606:GUST:surface:9 hour fcst:
+14:7515557:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:9 hour fcst:
+32:10095023:d=2017022606:PRES:surface:9 hour fcst:
+33:10864526:d=2017022606:HGT:surface:9 hour fcst:
+59:28409602:d=2017022606:TMP:2 m above ground:9 hour fcst:
+64:32329473:d=2017022606:UGRD:10 m above ground:9 hour fcst:
+65:33038559:d=2017022606:VGRD:10 m above ground:9 hour fcst:
+69:34875473:d=2017022606:APCP:surface:0-9 hour acc fcst:
+74:36589695:d=2017022606:BGRUN:surface:8-9 hour acc fcst:
+1705706001000
+17 057 06 0010
+02 26
+starting to truncate file 06
+9:4070634:d=2017022606:GUST:surface:10 hour fcst:
+14:7657699:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:10 hour fcst:
+32:10364931:d=2017022606:PRES:surface:10 hour fcst:
+33:11134389:d=2017022606:HGT:surface:10 hour fcst:
+59:28699731:d=2017022606:TMP:2 m above ground:10 hour fcst:
+64:32627580:d=2017022606:UGRD:10 m above ground:10 hour fcst:
+65:33337019:d=2017022606:VGRD:10 m above ground:10 hour fcst:
+69:35179790:d=2017022606:APCP:surface:0-10 hour acc fcst:
+74:36955321:d=2017022606:BGRUN:surface:9-10 hour acc fcst:
+1705706001100
+17 057 06 0011
+02 26
+starting to truncate file 06
+9:4082687:d=2017022606:GUST:surface:11 hour fcst:
+14:7672609:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:11 hour fcst:
+32:10376609:d=2017022606:PRES:surface:11 hour fcst:
+33:11145675:d=2017022606:HGT:surface:11 hour fcst:
+59:28723070:d=2017022606:TMP:2 m above ground:11 hour fcst:
+64:32657916:d=2017022606:UGRD:10 m above ground:11 hour fcst:
+65:33367725:d=2017022606:VGRD:10 m above ground:11 hour fcst:
+69:35207561:d=2017022606:APCP:surface:0-11 hour acc fcst:
+74:37034375:d=2017022606:BGRUN:surface:10-11 hour acc fcst:
+1705706001200
+17 057 06 0012
+02 26
+starting to truncate file 06
+9:4080058:d=2017022606:GUST:surface:12 hour fcst:
+14:7674539:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:12 hour fcst:
+32:10391400:d=2017022606:PRES:surface:12 hour fcst:
+33:11160851:d=2017022606:HGT:surface:12 hour fcst:
+59:28746354:d=2017022606:TMP:2 m above ground:12 hour fcst:
+64:32681951:d=2017022606:UGRD:10 m above ground:12 hour fcst:
+65:33384908:d=2017022606:VGRD:10 m above ground:12 hour fcst:
+69:35237022:d=2017022606:APCP:surface:0-12 hour acc fcst:
+74:37071059:d=2017022606:BGRUN:surface:11-12 hour acc fcst:
+1705706001300
+17 057 06 0013
+02 26
+starting to truncate file 06
+9:4047829:d=2017022606:GUST:surface:13 hour fcst:
+14:7651297:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:13 hour fcst:
+32:10362346:d=2017022606:PRES:surface:13 hour fcst:
+33:11131463:d=2017022606:HGT:surface:13 hour fcst:
+59:28724341:d=2017022606:TMP:2 m above ground:13 hour fcst:
+64:32644645:d=2017022606:UGRD:10 m above ground:13 hour fcst:
+65:33355862:d=2017022606:VGRD:10 m above ground:13 hour fcst:
+69:35215602:d=2017022606:APCP:surface:0-13 hour acc fcst:
+74:37104976:d=2017022606:BGRUN:surface:12-13 hour acc fcst:
+1705706001400
+17 057 06 0014
+02 26
+starting to truncate file 06
+9:3996363:d=2017022606:GUST:surface:14 hour fcst:
+14:7627442:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:14 hour fcst:
+32:10350571:d=2017022606:PRES:surface:14 hour fcst:
+33:11120146:d=2017022606:HGT:surface:14 hour fcst:
+59:28717836:d=2017022606:TMP:2 m above ground:14 hour fcst:
+64:32610134:d=2017022606:UGRD:10 m above ground:14 hour fcst:
+65:33310484:d=2017022606:VGRD:10 m above ground:14 hour fcst:
+69:35174509:d=2017022606:APCP:surface:0-14 hour acc fcst:
+74:37098307:d=2017022606:BGRUN:surface:13-14 hour acc fcst:
+1705706001500
+17 057 06 0015
+02 26
+starting to truncate file 06
+9:3899468:d=2017022606:GUST:surface:15 hour fcst:
+14:7524647:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:15 hour fcst:
+32:10195749:d=2017022606:PRES:surface:15 hour fcst:
+33:10962957:d=2017022606:HGT:surface:15 hour fcst:
+59:28575389:d=2017022606:TMP:2 m above ground:15 hour fcst:
+64:32435683:d=2017022606:UGRD:10 m above ground:15 hour fcst:
+65:33131983:d=2017022606:VGRD:10 m above ground:15 hour fcst:
+69:34988113:d=2017022606:APCP:surface:0-15 hour acc fcst:
+74:36960020:d=2017022606:BGRUN:surface:14-15 hour acc fcst:
+1705706001600
+17 057 06 0016
+02 26
+starting to truncate file 06
+9:3786030:d=2017022606:GUST:surface:16 hour fcst:
+14:7375716:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:16 hour fcst:
+32:10018182:d=2017022606:PRES:surface:16 hour fcst:
+33:10783307:d=2017022606:HGT:surface:16 hour fcst:
+59:28391422:d=2017022606:TMP:2 m above ground:16 hour fcst:
+64:32221141:d=2017022606:UGRD:10 m above ground:16 hour fcst:
+65:32911834:d=2017022606:VGRD:10 m above ground:16 hour fcst:
+69:34751851:d=2017022606:APCP:surface:0-16 hour acc fcst:
+74:36768964:d=2017022606:BGRUN:surface:15-16 hour acc fcst:
+1705706001700
+17 057 06 0017
+02 26
+starting to truncate file 06
+9:3650453:d=2017022606:GUST:surface:17 hour fcst:
+14:7247449:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:17 hour fcst:
+32:9861218:d=2017022606:PRES:surface:17 hour fcst:
+33:10627059:d=2017022606:HGT:surface:17 hour fcst:
+59:28234959:d=2017022606:TMP:2 m above ground:17 hour fcst:
+64:32031909:d=2017022606:UGRD:10 m above ground:17 hour fcst:
+65:32717764:d=2017022606:VGRD:10 m above ground:17 hour fcst:
+69:34532568:d=2017022606:APCP:surface:0-17 hour acc fcst:
+74:36590077:d=2017022606:BGRUN:surface:16-17 hour acc fcst:
+1705706001800
+17 057 06 0018
+02 26
+starting to truncate file 06
+9:3540251:d=2017022606:GUST:surface:18 hour fcst:
+14:7121828:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:18 hour fcst:
+32:9719619:d=2017022606:PRES:surface:18 hour fcst:
+33:10485466:d=2017022606:HGT:surface:18 hour fcst:
+59:28109484:d=2017022606:TMP:2 m above ground:18 hour fcst:
+64:31865527:d=2017022606:UGRD:10 m above ground:18 hour fcst:
+65:32548834:d=2017022606:VGRD:10 m above ground:18 hour fcst:
+69:34335651:d=2017022606:APCP:surface:0-18 hour acc fcst:
+74:36419864:d=2017022606:BGRUN:surface:17-18 hour acc fcst:
+1705706001900
+17 057 06 0019
+02 26
+starting to truncate file 06
+9:3441976:d=2017022606:GUST:surface:19 hour fcst:
+14:7000785:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:19 hour fcst:
+32:9590136:d=2017022606:PRES:surface:19 hour fcst:
+33:10355102:d=2017022606:HGT:surface:19 hour fcst:
+59:27969590:d=2017022606:TMP:2 m above ground:19 hour fcst:
+64:31720659:d=2017022606:UGRD:10 m above ground:19 hour fcst:
+65:32402007:d=2017022606:VGRD:10 m above ground:19 hour fcst:
+69:34176463:d=2017022606:APCP:surface:0-19 hour acc fcst:
+74:36285971:d=2017022606:BGRUN:surface:18-19 hour acc fcst:
+1705706002000
+17 057 06 0020
+02 26
+starting to truncate file 06
+9:3390368:d=2017022606:GUST:surface:20 hour fcst:
+14:5769766:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:20 hour fcst:
+32:8244245:d=2017022606:PRES:surface:20 hour fcst:
+33:9008207:d=2017022606:HGT:surface:20 hour fcst:
+59:26625110:d=2017022606:TMP:2 m above ground:20 hour fcst:
+64:30378007:d=2017022606:UGRD:10 m above ground:20 hour fcst:
+65:31061255:d=2017022606:VGRD:10 m above ground:20 hour fcst:
+69:32833205:d=2017022606:APCP:surface:0-20 hour acc fcst:
+74:34968325:d=2017022606:BGRUN:surface:19-20 hour acc fcst:
+1705706002100
+17 057 06 0021
+02 26
+starting to truncate file 06
+9:3270125:d=2017022606:GUST:surface:21 hour fcst:
+14:6819443:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:21 hour fcst:
+32:9190115:d=2017022606:PRES:surface:21 hour fcst:
+33:9953043:d=2017022606:HGT:surface:21 hour fcst:
+59:27582279:d=2017022606:TMP:2 m above ground:21 hour fcst:
+64:31367731:d=2017022606:UGRD:10 m above ground:21 hour fcst:
+65:32053976:d=2017022606:VGRD:10 m above ground:21 hour fcst:
+69:33831836:d=2017022606:APCP:surface:0-21 hour acc fcst:
+74:36001284:d=2017022606:BGRUN:surface:20-21 hour acc fcst:
+1705706002200
+17 057 06 0022
+02 26
+starting to truncate file 06
+9:3281890:d=2017022606:GUST:surface:22 hour fcst:
+14:6824538:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:22 hour fcst:
+32:9210431:d=2017022606:PRES:surface:22 hour fcst:
+33:9972726:d=2017022606:HGT:surface:22 hour fcst:
+59:27622053:d=2017022606:TMP:2 m above ground:22 hour fcst:
+64:31462203:d=2017022606:UGRD:10 m above ground:22 hour fcst:
+65:32152698:d=2017022606:VGRD:10 m above ground:22 hour fcst:
+69:33944343:d=2017022606:APCP:surface:0-22 hour acc fcst:
+74:36010234:d=2017022606:BGRUN:surface:21-22 hour acc fcst:
+1705706002300
+17 057 06 0023
+02 26
+starting to truncate file 06
+9:3263760:d=2017022606:GUST:surface:23 hour fcst:
+14:6814989:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:23 hour fcst:
+32:9217249:d=2017022606:PRES:surface:23 hour fcst:
+33:9978379:d=2017022606:HGT:surface:23 hour fcst:
+59:27646161:d=2017022606:TMP:2 m above ground:23 hour fcst:
+64:31535969:d=2017022606:UGRD:10 m above ground:23 hour fcst:
+65:32231742:d=2017022606:VGRD:10 m above ground:23 hour fcst:
+69:34031809:d=2017022606:APCP:surface:0-23 hour acc fcst:
+74:36128988:d=2017022606:BGRUN:surface:22-23 hour acc fcst:
+1705706002400
+17 057 06 0024
+02 26
+starting to truncate file 06
+9:3198459:d=2017022606:GUST:surface:24 hour fcst:
+14:6762188:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:24 hour fcst:
+32:9280465:d=2017022606:PRES:surface:24 hour fcst:
+33:10039637:d=2017022606:HGT:surface:24 hour fcst:
+59:27723101:d=2017022606:TMP:2 m above ground:24 hour fcst:
+64:31653410:d=2017022606:UGRD:10 m above ground:24 hour fcst:
+65:32354137:d=2017022606:VGRD:10 m above ground:24 hour fcst:
+69:34170905:d=2017022606:APCP:surface:0-1 day acc fcst:
+74:36264814:d=2017022606:BGRUN:surface:23-24 hour acc fcst:
+1705706002500
+17 057 06 0025
+02 26
+starting to truncate file 06
+9:3178796:d=2017022606:GUST:surface:25 hour fcst:
+14:6736933:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:25 hour fcst:
+32:9259773:d=2017022606:PRES:surface:25 hour fcst:
+33:10018659:d=2017022606:HGT:surface:25 hour fcst:
+59:27726699:d=2017022606:TMP:2 m above ground:25 hour fcst:
+64:31688924:d=2017022606:UGRD:10 m above ground:25 hour fcst:
+65:32391913:d=2017022606:VGRD:10 m above ground:25 hour fcst:
+69:34221194:d=2017022606:APCP:surface:0-25 hour acc fcst:
+74:36335329:d=2017022606:BGRUN:surface:24-25 hour acc fcst:
+1705706002600
+17 057 06 0026
+02 26
+starting to truncate file 06
+9:3140644:d=2017022606:GUST:surface:26 hour fcst:
+14:6713278:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:26 hour fcst:
+32:9243788:d=2017022606:PRES:surface:26 hour fcst:
+33:10003058:d=2017022606:HGT:surface:26 hour fcst:
+59:27722228:d=2017022606:TMP:2 m above ground:26 hour fcst:
+64:31711552:d=2017022606:UGRD:10 m above ground:26 hour fcst:
+65:32417411:d=2017022606:VGRD:10 m above ground:26 hour fcst:
+69:34258805:d=2017022606:APCP:surface:0-26 hour acc fcst:
+74:36399348:d=2017022606:BGRUN:surface:25-26 hour acc fcst:
+1705706002700
+17 057 06 0027
+02 26
+starting to truncate file 06
+9:2994661:d=2017022606:GUST:surface:27 hour fcst:
+14:6565842:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:27 hour fcst:
+32:8990818:d=2017022606:PRES:surface:27 hour fcst:
+33:9749470:d=2017022606:HGT:surface:27 hour fcst:
+59:27478057:d=2017022606:TMP:2 m above ground:27 hour fcst:
+64:31488628:d=2017022606:UGRD:10 m above ground:27 hour fcst:
+65:32195272:d=2017022606:VGRD:10 m above ground:27 hour fcst:
+69:34041939:d=2017022606:APCP:surface:0-27 hour acc fcst:
+74:36215780:d=2017022606:BGRUN:surface:26-27 hour acc fcst:
+1705706002800
+17 057 06 0028
+02 26
+starting to truncate file 06
+9:2968826:d=2017022606:GUST:surface:28 hour fcst:
+14:6544535:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:28 hour fcst:
+32:8957567:d=2017022606:PRES:surface:28 hour fcst:
+33:9716597:d=2017022606:HGT:surface:28 hour fcst:
+59:27453120:d=2017022606:TMP:2 m above ground:28 hour fcst:
+64:31480146:d=2017022606:UGRD:10 m above ground:28 hour fcst:
+65:32188372:d=2017022606:VGRD:10 m above ground:28 hour fcst:
+69:34042973:d=2017022606:APCP:surface:0-28 hour acc fcst:
+74:36240721:d=2017022606:BGRUN:surface:27-28 hour acc fcst:
+1705706002900
+17 057 06 0029
+02 26
+starting to truncate file 06
+9:3038307:d=2017022606:GUST:surface:29 hour fcst:
+14:6625223:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:29 hour fcst:
+32:9038407:d=2017022606:PRES:surface:29 hour fcst:
+33:9797368:d=2017022606:HGT:surface:29 hour fcst:
+59:27540791:d=2017022606:TMP:2 m above ground:29 hour fcst:
+64:31580585:d=2017022606:UGRD:10 m above ground:29 hour fcst:
+65:32289608:d=2017022606:VGRD:10 m above ground:29 hour fcst:
+69:34138135:d=2017022606:APCP:surface:0-29 hour acc fcst:
+74:36327505:d=2017022606:BGRUN:surface:28-29 hour acc fcst:
+1705706003000
+17 057 06 0030
+02 26
+starting to truncate file 06
+9:2999763:d=2017022606:GUST:surface:30 hour fcst:
+14:6575930:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:30 hour fcst:
+32:8986794:d=2017022606:PRES:surface:30 hour fcst:
+33:9745539:d=2017022606:HGT:surface:30 hour fcst:
+59:27495773:d=2017022606:TMP:2 m above ground:30 hour fcst:
+64:31544103:d=2017022606:UGRD:10 m above ground:30 hour fcst:
+65:32254119:d=2017022606:VGRD:10 m above ground:30 hour fcst:
+69:34095110:d=2017022606:APCP:surface:0-30 hour acc fcst:
+74:36307231:d=2017022606:BGRUN:surface:29-30 hour acc fcst:
+1705706003100
+17 057 06 0031
+02 26
+starting to truncate file 06
+9:3015949:d=2017022606:GUST:surface:31 hour fcst:
+14:6604978:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:31 hour fcst:
+32:9018874:d=2017022606:PRES:surface:31 hour fcst:
+33:9777732:d=2017022606:HGT:surface:31 hour fcst:
+59:27538944:d=2017022606:TMP:2 m above ground:31 hour fcst:
+64:31585908:d=2017022606:UGRD:10 m above ground:31 hour fcst:
+65:32295936:d=2017022606:VGRD:10 m above ground:31 hour fcst:
+69:34133869:d=2017022606:APCP:surface:0-31 hour acc fcst:
+74:36367487:d=2017022606:BGRUN:surface:30-31 hour acc fcst:
+1705706003200
+17 057 06 0032
+02 26
+starting to truncate file 06
+9:3015020:d=2017022606:GUST:surface:32 hour fcst:
+14:6603957:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:32 hour fcst:
+32:9025337:d=2017022606:PRES:surface:32 hour fcst:
+33:9784356:d=2017022606:HGT:surface:32 hour fcst:
+59:27547837:d=2017022606:TMP:2 m above ground:32 hour fcst:
+64:31588645:d=2017022606:UGRD:10 m above ground:32 hour fcst:
+65:32299922:d=2017022606:VGRD:10 m above ground:32 hour fcst:
+69:34131339:d=2017022606:APCP:surface:0-32 hour acc fcst:
+74:36384633:d=2017022606:BGRUN:surface:31-32 hour acc fcst:
+1705706003300
+17 057 06 0033
+02 26
+starting to truncate file 06
+9:3126881:d=2017022606:GUST:surface:33 hour fcst:
+14:6720408:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:33 hour fcst:
+32:9138865:d=2017022606:PRES:surface:33 hour fcst:
+33:9899399:d=2017022606:HGT:surface:33 hour fcst:
+59:27667158:d=2017022606:TMP:2 m above ground:33 hour fcst:
+64:31705720:d=2017022606:UGRD:10 m above ground:33 hour fcst:
+65:32417953:d=2017022606:VGRD:10 m above ground:33 hour fcst:
+69:34257285:d=2017022606:APCP:surface:0-33 hour acc fcst:
+74:36532600:d=2017022606:BGRUN:surface:32-33 hour acc fcst:
+1705706003400
+17 057 06 0034
+02 26
+starting to truncate file 06
+9:3012927:d=2017022606:GUST:surface:34 hour fcst:
+14:6596894:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:34 hour fcst:
+32:9001273:d=2017022606:PRES:surface:34 hour fcst:
+33:9762221:d=2017022606:HGT:surface:34 hour fcst:
+59:27535232:d=2017022606:TMP:2 m above ground:34 hour fcst:
+64:31574292:d=2017022606:UGRD:10 m above ground:34 hour fcst:
+65:32285633:d=2017022606:VGRD:10 m above ground:34 hour fcst:
+69:34111892:d=2017022606:APCP:surface:0-34 hour acc fcst:
+74:36411812:d=2017022606:BGRUN:surface:33-34 hour acc fcst:
+1705706003500
+17 057 06 0035
+02 26
+starting to truncate file 06
+9:2997071:d=2017022606:GUST:surface:35 hour fcst:
+14:6575906:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:35 hour fcst:
+32:8974121:d=2017022606:PRES:surface:35 hour fcst:
+33:9735382:d=2017022606:HGT:surface:35 hour fcst:
+59:27511624:d=2017022606:TMP:2 m above ground:35 hour fcst:
+64:31547411:d=2017022606:UGRD:10 m above ground:35 hour fcst:
+65:32259238:d=2017022606:VGRD:10 m above ground:35 hour fcst:
+69:34106171:d=2017022606:APCP:surface:0-35 hour acc fcst:
+74:36429266:d=2017022606:BGRUN:surface:34-35 hour acc fcst:
+1705706003600
+17 057 06 0036
+02 26
+starting to truncate file 06
+9:2967153:d=2017022606:GUST:surface:36 hour fcst:
+14:6562257:d=2017022606:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:36 hour fcst:
+32:8959591:d=2017022606:PRES:surface:36 hour fcst:
+33:9721391:d=2017022606:HGT:surface:36 hour fcst:
+59:27500509:d=2017022606:TMP:2 m above ground:36 hour fcst:
+64:31524102:d=2017022606:UGRD:10 m above ground:36 hour fcst:
+65:32234530:d=2017022606:VGRD:10 m above ground:36 hour fcst:
+69:34082129:d=2017022606:APCP:surface:0-36 hour acc fcst:
+74:36427162:d=2017022606:BGRUN:surface:35-36 hour acc fcst:
+1705709000000
+17 057 09 0000
+02 26
+starting to truncate file 09
+9:2678424:d=2017022609:GUST:surface:anl:
+14:4118411:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:anl:
+32:6226638:d=2017022609:PRES:surface:anl:
+33:6994909:d=2017022609:HGT:surface:anl:
+59:24070597:d=2017022609:TMP:2 m above ground:anl:
+64:27786396:d=2017022609:UGRD:10 m above ground:anl:
+65:28431062:d=2017022609:VGRD:10 m above ground:anl:
+69:29747203:d=2017022609:APCP:surface:0-0 day acc fcst:
+74:29942098:d=2017022609:BGRUN:surface:0-0 day acc fcst:
+1705709000100
+17 057 09 0001
+02 26
+starting to truncate file 09
+9:3110482:d=2017022609:GUST:surface:1 hour fcst:
+14:6545483:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:1 hour fcst:
+32:9047982:d=2017022609:PRES:surface:1 hour fcst:
+33:9817896:d=2017022609:HGT:surface:1 hour fcst:
+59:27217105:d=2017022609:TMP:2 m above ground:1 hour fcst:
+64:31001563:d=2017022609:UGRD:10 m above ground:1 hour fcst:
+65:31681797:d=2017022609:VGRD:10 m above ground:1 hour fcst:
+69:33444898:d=2017022609:APCP:surface:0-1 hour acc fcst:
+74:34668340:d=2017022609:BGRUN:surface:0-1 hour acc fcst:
+1705709000200
+17 057 09 0002
+02 26
+starting to truncate file 09
+9:3749367:d=2017022609:GUST:surface:2 hour fcst:
+14:7272356:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:2 hour fcst:
+32:9907979:d=2017022609:PRES:surface:2 hour fcst:
+33:10676965:d=2017022609:HGT:surface:2 hour fcst:
+59:28104388:d=2017022609:TMP:2 m above ground:2 hour fcst:
+64:31946595:d=2017022609:UGRD:10 m above ground:2 hour fcst:
+65:32642646:d=2017022609:VGRD:10 m above ground:2 hour fcst:
+69:34478942:d=2017022609:APCP:surface:0-2 hour acc fcst:
+74:35759026:d=2017022609:BGRUN:surface:1-2 hour acc fcst:
+1705709000300
+17 057 09 0003
+02 26
+starting to truncate file 09
+9:4068333:d=2017022609:GUST:surface:3 hour fcst:
+14:7627067:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:3 hour fcst:
+32:10241542:d=2017022609:PRES:surface:3 hour fcst:
+33:11011184:d=2017022609:HGT:surface:3 hour fcst:
+59:28506878:d=2017022609:TMP:2 m above ground:3 hour fcst:
+64:32377091:d=2017022609:UGRD:10 m above ground:3 hour fcst:
+65:33080523:d=2017022609:VGRD:10 m above ground:3 hour fcst:
+69:34949452:d=2017022609:APCP:surface:0-3 hour acc fcst:
+74:36398421:d=2017022609:BGRUN:surface:2-3 hour acc fcst:
+1705709000400
+17 057 09 0004
+02 26
+starting to truncate file 09
+9:4054813:d=2017022609:GUST:surface:4 hour fcst:
+14:7642645:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:4 hour fcst:
+32:10265270:d=2017022609:PRES:surface:4 hour fcst:
+33:11035966:d=2017022609:HGT:surface:4 hour fcst:
+59:28580720:d=2017022609:TMP:2 m above ground:4 hour fcst:
+64:32468277:d=2017022609:UGRD:10 m above ground:4 hour fcst:
+65:33175358:d=2017022609:VGRD:10 m above ground:4 hour fcst:
+69:35046262:d=2017022609:APCP:surface:0-4 hour acc fcst:
+74:36549211:d=2017022609:BGRUN:surface:3-4 hour acc fcst:
+1705709000500
+17 057 09 0005
+02 26
+starting to truncate file 09
+9:4151814:d=2017022609:GUST:surface:5 hour fcst:
+14:7748213:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:5 hour fcst:
+32:10378279:d=2017022609:PRES:surface:5 hour fcst:
+33:11149912:d=2017022609:HGT:surface:5 hour fcst:
+59:28608642:d=2017022609:TMP:2 m above ground:5 hour fcst:
+64:32513183:d=2017022609:UGRD:10 m above ground:5 hour fcst:
+65:33223082:d=2017022609:VGRD:10 m above ground:5 hour fcst:
+69:35094585:d=2017022609:APCP:surface:0-5 hour acc fcst:
+74:36718188:d=2017022609:BGRUN:surface:4-5 hour acc fcst:
+1705709000600
+17 057 09 0006
+02 26
+starting to truncate file 09
+9:4100014:d=2017022609:GUST:surface:6 hour fcst:
+14:7696949:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:6 hour fcst:
+32:10453188:d=2017022609:PRES:surface:6 hour fcst:
+33:11223147:d=2017022609:HGT:surface:6 hour fcst:
+59:28709201:d=2017022609:TMP:2 m above ground:6 hour fcst:
+64:32627315:d=2017022609:UGRD:10 m above ground:6 hour fcst:
+65:33339255:d=2017022609:VGRD:10 m above ground:6 hour fcst:
+69:35208781:d=2017022609:APCP:surface:0-6 hour acc fcst:
+74:36754694:d=2017022609:BGRUN:surface:5-6 hour acc fcst:
+1705709000700
+17 057 09 0007
+02 26
+starting to truncate file 09
+9:4094278:d=2017022609:GUST:surface:7 hour fcst:
+14:7683507:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:7 hour fcst:
+32:10431742:d=2017022609:PRES:surface:7 hour fcst:
+33:11203098:d=2017022609:HGT:surface:7 hour fcst:
+59:28710923:d=2017022609:TMP:2 m above ground:7 hour fcst:
+64:32636076:d=2017022609:UGRD:10 m above ground:7 hour fcst:
+65:33347842:d=2017022609:VGRD:10 m above ground:7 hour fcst:
+69:35215359:d=2017022609:APCP:surface:0-7 hour acc fcst:
+74:36837069:d=2017022609:BGRUN:surface:6-7 hour acc fcst:
+1705709000800
+17 057 09 0008
+02 26
+starting to truncate file 09
+9:4081546:d=2017022609:GUST:surface:8 hour fcst:
+14:7664883:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:8 hour fcst:
+32:10412703:d=2017022609:PRES:surface:8 hour fcst:
+33:11183254:d=2017022609:HGT:surface:8 hour fcst:
+59:28708184:d=2017022609:TMP:2 m above ground:8 hour fcst:
+64:32641616:d=2017022609:UGRD:10 m above ground:8 hour fcst:
+65:33345001:d=2017022609:VGRD:10 m above ground:8 hour fcst:
+69:35208136:d=2017022609:APCP:surface:0-8 hour acc fcst:
+74:36897059:d=2017022609:BGRUN:surface:7-8 hour acc fcst:
+1705709000900
+17 057 09 0009
+02 26
+starting to truncate file 09
+9:4049641:d=2017022609:GUST:surface:9 hour fcst:
+14:7661600:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:9 hour fcst:
+32:10388923:d=2017022609:PRES:surface:9 hour fcst:
+33:11158944:d=2017022609:HGT:surface:9 hour fcst:
+59:28698649:d=2017022609:TMP:2 m above ground:9 hour fcst:
+64:32637978:d=2017022609:UGRD:10 m above ground:9 hour fcst:
+65:33342721:d=2017022609:VGRD:10 m above ground:9 hour fcst:
+69:35206531:d=2017022609:APCP:surface:0-9 hour acc fcst:
+74:36943954:d=2017022609:BGRUN:surface:8-9 hour acc fcst:
+1705709001000
+17 057 09 0010
+02 26
+starting to truncate file 09
+9:4030783:d=2017022609:GUST:surface:10 hour fcst:
+14:7652237:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:10 hour fcst:
+32:10368374:d=2017022609:PRES:surface:10 hour fcst:
+33:11138239:d=2017022609:HGT:surface:10 hour fcst:
+59:28692757:d=2017022609:TMP:2 m above ground:10 hour fcst:
+64:32616262:d=2017022609:UGRD:10 m above ground:10 hour fcst:
+65:33328216:d=2017022609:VGRD:10 m above ground:10 hour fcst:
+69:35189846:d=2017022609:APCP:surface:0-10 hour acc fcst:
+74:36998051:d=2017022609:BGRUN:surface:9-10 hour acc fcst:
+1705709001100
+17 057 09 0011
+02 26
+starting to truncate file 09
+9:3975633:d=2017022609:GUST:surface:11 hour fcst:
+14:7590638:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:11 hour fcst:
+32:10293279:d=2017022609:PRES:surface:11 hour fcst:
+33:11062806:d=2017022609:HGT:surface:11 hour fcst:
+59:28622316:d=2017022609:TMP:2 m above ground:11 hour fcst:
+64:32509676:d=2017022609:UGRD:10 m above ground:11 hour fcst:
+65:33209109:d=2017022609:VGRD:10 m above ground:11 hour fcst:
+69:35066454:d=2017022609:APCP:surface:0-11 hour acc fcst:
+74:36871601:d=2017022609:BGRUN:surface:10-11 hour acc fcst:
+1705709001200
+17 057 09 0012
+02 26
+starting to truncate file 09
+9:3872476:d=2017022609:GUST:surface:12 hour fcst:
+14:7492684:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:12 hour fcst:
+32:10158434:d=2017022609:PRES:surface:12 hour fcst:
+33:10927038:d=2017022609:HGT:surface:12 hour fcst:
+59:28493061:d=2017022609:TMP:2 m above ground:12 hour fcst:
+64:32345817:d=2017022609:UGRD:10 m above ground:12 hour fcst:
+65:33040592:d=2017022609:VGRD:10 m above ground:12 hour fcst:
+69:34889065:d=2017022609:APCP:surface:0-12 hour acc fcst:
+74:36752045:d=2017022609:BGRUN:surface:11-12 hour acc fcst:
+1705709001300
+17 057 09 0013
+02 26
+starting to truncate file 09
+9:3742988:d=2017022609:GUST:surface:13 hour fcst:
+14:7349323:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:13 hour fcst:
+32:9988349:d=2017022609:PRES:surface:13 hour fcst:
+33:10754498:d=2017022609:HGT:surface:13 hour fcst:
+59:28334088:d=2017022609:TMP:2 m above ground:13 hour fcst:
+64:32155406:d=2017022609:UGRD:10 m above ground:13 hour fcst:
+65:32844291:d=2017022609:VGRD:10 m above ground:13 hour fcst:
+69:34671448:d=2017022609:APCP:surface:0-13 hour acc fcst:
+74:36587961:d=2017022609:BGRUN:surface:12-13 hour acc fcst:
+1705709001400
+17 057 09 0014
+02 26
+starting to truncate file 09
+9:3617723:d=2017022609:GUST:surface:14 hour fcst:
+14:7212713:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:14 hour fcst:
+32:9827156:d=2017022609:PRES:surface:14 hour fcst:
+33:10593989:d=2017022609:HGT:surface:14 hour fcst:
+59:28169021:d=2017022609:TMP:2 m above ground:14 hour fcst:
+64:31958528:d=2017022609:UGRD:10 m above ground:14 hour fcst:
+65:32642292:d=2017022609:VGRD:10 m above ground:14 hour fcst:
+69:34444331:d=2017022609:APCP:surface:0-14 hour acc fcst:
+74:36399079:d=2017022609:BGRUN:surface:13-14 hour acc fcst:
+1705709001500
+17 057 09 0015
+02 26
+starting to truncate file 09
+9:3521535:d=2017022609:GUST:surface:15 hour fcst:
+14:7100640:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:15 hour fcst:
+32:9704947:d=2017022609:PRES:surface:15 hour fcst:
+33:10470541:d=2017022609:HGT:surface:15 hour fcst:
+59:28062377:d=2017022609:TMP:2 m above ground:15 hour fcst:
+64:31823741:d=2017022609:UGRD:10 m above ground:15 hour fcst:
+65:32503248:d=2017022609:VGRD:10 m above ground:15 hour fcst:
+69:34279196:d=2017022609:APCP:surface:0-15 hour acc fcst:
+74:36265074:d=2017022609:BGRUN:surface:14-15 hour acc fcst:
+1705709001600
+17 057 09 0016
+02 26
+starting to truncate file 09
+9:3327953:d=2017022609:GUST:surface:16 hour fcst:
+14:6902170:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:16 hour fcst:
+32:9496875:d=2017022609:PRES:surface:16 hour fcst:
+33:10261088:d=2017022609:HGT:surface:16 hour fcst:
+59:27844390:d=2017022609:TMP:2 m above ground:16 hour fcst:
+64:31592488:d=2017022609:UGRD:10 m above ground:16 hour fcst:
+65:32271262:d=2017022609:VGRD:10 m above ground:16 hour fcst:
+69:34029074:d=2017022609:APCP:surface:0-16 hour acc fcst:
+74:36048415:d=2017022609:BGRUN:surface:15-16 hour acc fcst:
+1705709001700
+17 057 09 0017
+02 26
+starting to truncate file 09
+9:3364503:d=2017022609:GUST:surface:17 hour fcst:
+14:6914227:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:17 hour fcst:
+32:9493630:d=2017022609:PRES:surface:17 hour fcst:
+33:10257813:d=2017022609:HGT:surface:17 hour fcst:
+59:27843660:d=2017022609:TMP:2 m above ground:17 hour fcst:
+64:31582444:d=2017022609:UGRD:10 m above ground:17 hour fcst:
+65:32263423:d=2017022609:VGRD:10 m above ground:17 hour fcst:
+69:34018713:d=2017022609:APCP:surface:0-17 hour acc fcst:
+74:36062127:d=2017022609:BGRUN:surface:16-17 hour acc fcst:
+1705709001800
+17 057 09 0018
+02 26
+starting to truncate file 09
+9:3348510:d=2017022609:GUST:surface:18 hour fcst:
+14:6893060:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:18 hour fcst:
+32:9363711:d=2017022609:PRES:surface:18 hour fcst:
+33:10126105:d=2017022609:HGT:surface:18 hour fcst:
+59:27723779:d=2017022609:TMP:2 m above ground:18 hour fcst:
+64:31503897:d=2017022609:UGRD:10 m above ground:18 hour fcst:
+65:32188780:d=2017022609:VGRD:10 m above ground:18 hour fcst:
+69:33955970:d=2017022609:APCP:surface:0-18 hour acc fcst:
+74:36022731:d=2017022609:BGRUN:surface:17-18 hour acc fcst:
+1705709001900
+17 057 09 0019
+02 26
+starting to truncate file 09
+9:3334217:d=2017022609:GUST:surface:19 hour fcst:
+14:6873591:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:19 hour fcst:
+32:9358003:d=2017022609:PRES:surface:19 hour fcst:
+33:10120137:d=2017022609:HGT:surface:19 hour fcst:
+59:27738906:d=2017022609:TMP:2 m above ground:19 hour fcst:
+64:31581170:d=2017022609:UGRD:10 m above ground:19 hour fcst:
+65:32271744:d=2017022609:VGRD:10 m above ground:19 hour fcst:
+69:34052895:d=2017022609:APCP:surface:0-19 hour acc fcst:
+74:36147234:d=2017022609:BGRUN:surface:18-19 hour acc fcst:
+1705709002000
+17 057 09 0020
+02 26
+starting to truncate file 09
+9:3251983:d=2017022609:GUST:surface:20 hour fcst:
+14:5649477:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:20 hour fcst:
+32:8155611:d=2017022609:PRES:surface:20 hour fcst:
+33:8917270:d=2017022609:HGT:surface:20 hour fcst:
+59:26554735:d=2017022609:TMP:2 m above ground:20 hour fcst:
+64:30448007:d=2017022609:UGRD:10 m above ground:20 hour fcst:
+65:31144600:d=2017022609:VGRD:10 m above ground:20 hour fcst:
+69:32944971:d=2017022609:APCP:surface:0-20 hour acc fcst:
+74:35072650:d=2017022609:BGRUN:surface:19-20 hour acc fcst:
+1705709002100
+17 057 09 0021
+02 26
+starting to truncate file 09
+9:3216346:d=2017022609:GUST:surface:21 hour fcst:
+14:6772061:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:21 hour fcst:
+32:9281613:d=2017022609:PRES:surface:21 hour fcst:
+33:10041589:d=2017022609:HGT:surface:21 hour fcst:
+59:27703956:d=2017022609:TMP:2 m above ground:21 hour fcst:
+64:31638525:d=2017022609:UGRD:10 m above ground:21 hour fcst:
+65:32339516:d=2017022609:VGRD:10 m above ground:21 hour fcst:
+69:34157130:d=2017022609:APCP:surface:0-21 hour acc fcst:
+74:36317735:d=2017022609:BGRUN:surface:20-21 hour acc fcst:
+1705709002200
+17 057 09 0022
+02 26
+starting to truncate file 09
+9:3196298:d=2017022609:GUST:surface:22 hour fcst:
+14:6760925:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:22 hour fcst:
+32:9281678:d=2017022609:PRES:surface:22 hour fcst:
+33:10040076:d=2017022609:HGT:surface:22 hour fcst:
+59:27720030:d=2017022609:TMP:2 m above ground:22 hour fcst:
+64:31683849:d=2017022609:UGRD:10 m above ground:22 hour fcst:
+65:32387776:d=2017022609:VGRD:10 m above ground:22 hour fcst:
+69:34213590:d=2017022609:APCP:surface:0-22 hour acc fcst:
+74:36407507:d=2017022609:BGRUN:surface:21-22 hour acc fcst:
+1705709002300
+17 057 09 0023
+02 26
+starting to truncate file 09
+9:3174559:d=2017022609:GUST:surface:23 hour fcst:
+14:6743693:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:23 hour fcst:
+32:9263525:d=2017022609:PRES:surface:23 hour fcst:
+33:10022040:d=2017022609:HGT:surface:23 hour fcst:
+59:27714965:d=2017022609:TMP:2 m above ground:23 hour fcst:
+64:31705748:d=2017022609:UGRD:10 m above ground:23 hour fcst:
+65:32411150:d=2017022609:VGRD:10 m above ground:23 hour fcst:
+69:34248789:d=2017022609:APCP:surface:0-23 hour acc fcst:
+74:36471280:d=2017022609:BGRUN:surface:22-23 hour acc fcst:
+1705709002400
+17 057 09 0024
+02 26
+starting to truncate file 09
+9:3135738:d=2017022609:GUST:surface:24 hour fcst:
+14:6705623:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:24 hour fcst:
+32:9116792:d=2017022609:PRES:surface:24 hour fcst:
+33:9876153:d=2017022609:HGT:surface:24 hour fcst:
+59:27578567:d=2017022609:TMP:2 m above ground:24 hour fcst:
+64:31588094:d=2017022609:UGRD:10 m above ground:24 hour fcst:
+65:32294781:d=2017022609:VGRD:10 m above ground:24 hour fcst:
+69:34144040:d=2017022609:APCP:surface:0-1 day acc fcst:
+74:36392140:d=2017022609:BGRUN:surface:23-24 hour acc fcst:
+1705709002500
+17 057 09 0025
+02 26
+starting to truncate file 09
+9:3129209:d=2017022609:GUST:surface:25 hour fcst:
+14:6701792:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:25 hour fcst:
+32:9114326:d=2017022609:PRES:surface:25 hour fcst:
+33:9873046:d=2017022609:HGT:surface:25 hour fcst:
+59:27583955:d=2017022609:TMP:2 m above ground:25 hour fcst:
+64:31606548:d=2017022609:UGRD:10 m above ground:25 hour fcst:
+65:32313403:d=2017022609:VGRD:10 m above ground:25 hour fcst:
+69:34164165:d=2017022609:APCP:surface:0-25 hour acc fcst:
+74:36436959:d=2017022609:BGRUN:surface:24-25 hour acc fcst:
+1705709002600
+17 057 09 0026
+02 26
+starting to truncate file 09
+9:3086110:d=2017022609:GUST:surface:26 hour fcst:
+14:6679125:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:26 hour fcst:
+32:9091648:d=2017022609:PRES:surface:26 hour fcst:
+33:9850464:d=2017022609:HGT:surface:26 hour fcst:
+59:27569840:d=2017022609:TMP:2 m above ground:26 hour fcst:
+64:31604783:d=2017022609:UGRD:10 m above ground:26 hour fcst:
+65:32313281:d=2017022609:VGRD:10 m above ground:26 hour fcst:
+69:34162866:d=2017022609:APCP:surface:0-26 hour acc fcst:
+74:36461156:d=2017022609:BGRUN:surface:25-26 hour acc fcst:
+1705709002700
+17 057 09 0027
+02 26
+starting to truncate file 09
+9:2972217:d=2017022609:GUST:surface:27 hour fcst:
+14:6546683:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:27 hour fcst:
+32:8958461:d=2017022609:PRES:surface:27 hour fcst:
+33:9716810:d=2017022609:HGT:surface:27 hour fcst:
+59:27442074:d=2017022609:TMP:2 m above ground:27 hour fcst:
+64:31481431:d=2017022609:UGRD:10 m above ground:27 hour fcst:
+65:32190341:d=2017022609:VGRD:10 m above ground:27 hour fcst:
+69:34035613:d=2017022609:APCP:surface:0-27 hour acc fcst:
+74:36231375:d=2017022609:BGRUN:surface:26-27 hour acc fcst:
+1705709002800
+17 057 09 0028
+02 26
+starting to truncate file 09
+9:3068072:d=2017022609:GUST:surface:28 hour fcst:
+14:6635300:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:28 hour fcst:
+32:9045988:d=2017022609:PRES:surface:28 hour fcst:
+33:9804307:d=2017022609:HGT:surface:28 hour fcst:
+59:27534623:d=2017022609:TMP:2 m above ground:28 hour fcst:
+64:31569878:d=2017022609:UGRD:10 m above ground:28 hour fcst:
+65:32278948:d=2017022609:VGRD:10 m above ground:28 hour fcst:
+69:34111495:d=2017022609:APCP:surface:0-28 hour acc fcst:
+74:36324765:d=2017022609:BGRUN:surface:27-28 hour acc fcst:
+1705709002900
+17 057 09 0029
+02 26
+starting to truncate file 09
+9:3033639:d=2017022609:GUST:surface:29 hour fcst:
+14:6602203:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:29 hour fcst:
+32:9009963:d=2017022609:PRES:surface:29 hour fcst:
+33:9769193:d=2017022609:HGT:surface:29 hour fcst:
+59:27504296:d=2017022609:TMP:2 m above ground:29 hour fcst:
+64:31533542:d=2017022609:UGRD:10 m above ground:29 hour fcst:
+65:32242488:d=2017022609:VGRD:10 m above ground:29 hour fcst:
+69:34062027:d=2017022609:APCP:surface:0-29 hour acc fcst:
+74:36265713:d=2017022609:BGRUN:surface:28-29 hour acc fcst:
+1705709003000
+17 057 09 0030
+02 26
+starting to truncate file 09
+9:2994966:d=2017022609:GUST:surface:30 hour fcst:
+14:6572693:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:30 hour fcst:
+32:8978807:d=2017022609:PRES:surface:30 hour fcst:
+33:9739581:d=2017022609:HGT:surface:30 hour fcst:
+59:27479042:d=2017022609:TMP:2 m above ground:30 hour fcst:
+64:31504987:d=2017022609:UGRD:10 m above ground:30 hour fcst:
+65:32214981:d=2017022609:VGRD:10 m above ground:30 hour fcst:
+69:34034592:d=2017022609:APCP:surface:0-30 hour acc fcst:
+74:36259586:d=2017022609:BGRUN:surface:29-30 hour acc fcst:
+1705709003100
+17 057 09 0031
+02 26
+starting to truncate file 09
+9:2964761:d=2017022609:GUST:surface:31 hour fcst:
+14:6542490:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:31 hour fcst:
+32:8936732:d=2017022609:PRES:surface:31 hour fcst:
+33:9697057:d=2017022609:HGT:surface:31 hour fcst:
+59:27442994:d=2017022609:TMP:2 m above ground:31 hour fcst:
+64:31470417:d=2017022609:UGRD:10 m above ground:31 hour fcst:
+65:32181435:d=2017022609:VGRD:10 m above ground:31 hour fcst:
+69:34007676:d=2017022609:APCP:surface:0-31 hour acc fcst:
+74:36255840:d=2017022609:BGRUN:surface:30-31 hour acc fcst:
+1705709003200
+17 057 09 0032
+02 26
+starting to truncate file 09
+9:2947678:d=2017022609:GUST:surface:32 hour fcst:
+14:6524923:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:32 hour fcst:
+32:8918500:d=2017022609:PRES:surface:32 hour fcst:
+33:9679543:d=2017022609:HGT:surface:32 hour fcst:
+59:27428655:d=2017022609:TMP:2 m above ground:32 hour fcst:
+64:31455527:d=2017022609:UGRD:10 m above ground:32 hour fcst:
+65:32166223:d=2017022609:VGRD:10 m above ground:32 hour fcst:
+69:33997596:d=2017022609:APCP:surface:0-32 hour acc fcst:
+74:36277345:d=2017022609:BGRUN:surface:31-32 hour acc fcst:
+1705709003300
+17 057 09 0033
+02 26
+starting to truncate file 09
+9:2910244:d=2017022609:GUST:surface:33 hour fcst:
+14:6503597:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:33 hour fcst:
+32:8893826:d=2017022609:PRES:surface:33 hour fcst:
+33:9655413:d=2017022609:HGT:surface:33 hour fcst:
+59:27411755:d=2017022609:TMP:2 m above ground:33 hour fcst:
+64:31424658:d=2017022609:UGRD:10 m above ground:33 hour fcst:
+65:32134287:d=2017022609:VGRD:10 m above ground:33 hour fcst:
+69:33972738:d=2017022609:APCP:surface:0-33 hour acc fcst:
+74:36274675:d=2017022609:BGRUN:surface:32-33 hour acc fcst:
+1705709003400
+17 057 09 0034
+02 26
+starting to truncate file 09
+9:2902475:d=2017022609:GUST:surface:34 hour fcst:
+14:6505510:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:34 hour fcst:
+32:8878778:d=2017022609:PRES:surface:34 hour fcst:
+33:9640987:d=2017022609:HGT:surface:34 hour fcst:
+59:27393593:d=2017022609:TMP:2 m above ground:34 hour fcst:
+64:31367552:d=2017022609:UGRD:10 m above ground:34 hour fcst:
+65:32073668:d=2017022609:VGRD:10 m above ground:34 hour fcst:
+69:33910232:d=2017022609:APCP:surface:0-34 hour acc fcst:
+74:36228549:d=2017022609:BGRUN:surface:33-34 hour acc fcst:
+1705709003500
+17 057 09 0035
+02 26
+starting to truncate file 09
+9:2883183:d=2017022609:GUST:surface:35 hour fcst:
+14:6483794:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:35 hour fcst:
+32:8842992:d=2017022609:PRES:surface:35 hour fcst:
+33:9605900:d=2017022609:HGT:surface:35 hour fcst:
+59:27350705:d=2017022609:TMP:2 m above ground:35 hour fcst:
+64:31261716:d=2017022609:UGRD:10 m above ground:35 hour fcst:
+65:31962250:d=2017022609:VGRD:10 m above ground:35 hour fcst:
+69:33797214:d=2017022609:APCP:surface:0-35 hour acc fcst:
+74:36131347:d=2017022609:BGRUN:surface:34-35 hour acc fcst:
+1705709003600
+17 057 09 0036
+02 26
+starting to truncate file 09
+9:2872140:d=2017022609:GUST:surface:36 hour fcst:
+14:6454531:d=2017022609:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:36 hour fcst:
+32:8782134:d=2017022609:PRES:surface:36 hour fcst:
+33:9545135:d=2017022609:HGT:surface:36 hour fcst:
+59:27277413:d=2017022609:TMP:2 m above ground:36 hour fcst:
+64:31119216:d=2017022609:UGRD:10 m above ground:36 hour fcst:
+65:31810986:d=2017022609:VGRD:10 m above ground:36 hour fcst:
+69:33625177:d=2017022609:APCP:surface:0-36 hour acc fcst:
+74:35979602:d=2017022609:BGRUN:surface:35-36 hour acc fcst:
+1705712000000
+17 057 12 0000
+02 26
+starting to truncate file 12
+9:2200833:d=2017022612:GUST:surface:anl:
+14:3677108:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:anl:
+32:5697433:d=2017022612:PRES:surface:anl:
+33:6464608:d=2017022612:HGT:surface:anl:
+59:23551730:d=2017022612:TMP:2 m above ground:anl:
+64:27309377:d=2017022612:UGRD:10 m above ground:anl:
+65:27956615:d=2017022612:VGRD:10 m above ground:anl:
+69:29275599:d=2017022612:APCP:surface:0-0 day acc fcst:
+74:29500456:d=2017022612:BGRUN:surface:0-0 day acc fcst:
+1705712000100
+17 057 12 0001
+02 26
+starting to truncate file 12
+9:2571716:d=2017022612:GUST:surface:1 hour fcst:
+14:5978788:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:1 hour fcst:
+32:8513913:d=2017022612:PRES:surface:1 hour fcst:
+33:9284032:d=2017022612:HGT:surface:1 hour fcst:
+59:26619511:d=2017022612:TMP:2 m above ground:1 hour fcst:
+64:30443887:d=2017022612:UGRD:10 m above ground:1 hour fcst:
+65:31117330:d=2017022612:VGRD:10 m above ground:1 hour fcst:
+69:32826048:d=2017022612:APCP:surface:0-1 hour acc fcst:
+74:33836599:d=2017022612:BGRUN:surface:0-1 hour acc fcst:
+1705712000200
+17 057 12 0002
+02 26
+starting to truncate file 12
+9:3212386:d=2017022612:GUST:surface:2 hour fcst:
+14:6718913:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:2 hour fcst:
+32:9271639:d=2017022612:PRES:surface:2 hour fcst:
+33:10040633:d=2017022612:HGT:surface:2 hour fcst:
+59:27449603:d=2017022612:TMP:2 m above ground:2 hour fcst:
+64:31336612:d=2017022612:UGRD:10 m above ground:2 hour fcst:
+65:32034101:d=2017022612:VGRD:10 m above ground:2 hour fcst:
+69:33829433:d=2017022612:APCP:surface:0-2 hour acc fcst:
+74:34891938:d=2017022612:BGRUN:surface:1-2 hour acc fcst:
+1705712000300
+17 057 12 0003
+02 26
+starting to truncate file 12
+9:3613189:d=2017022612:GUST:surface:3 hour fcst:
+14:7136587:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:3 hour fcst:
+32:9785317:d=2017022612:PRES:surface:3 hour fcst:
+33:10555392:d=2017022612:HGT:surface:3 hour fcst:
+59:28029865:d=2017022612:TMP:2 m above ground:3 hour fcst:
+64:31946732:d=2017022612:UGRD:10 m above ground:3 hour fcst:
+65:32642644:d=2017022612:VGRD:10 m above ground:3 hour fcst:
+69:34471130:d=2017022612:APCP:surface:0-3 hour acc fcst:
+74:35636240:d=2017022612:BGRUN:surface:2-3 hour acc fcst:
+1705712000400
+17 057 12 0004
+02 26
+starting to truncate file 12
+9:3757384:d=2017022612:GUST:surface:4 hour fcst:
+14:7293957:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:4 hour fcst:
+32:9972524:d=2017022612:PRES:surface:4 hour fcst:
+33:10741870:d=2017022612:HGT:surface:4 hour fcst:
+59:28222778:d=2017022612:TMP:2 m above ground:4 hour fcst:
+64:32160564:d=2017022612:UGRD:10 m above ground:4 hour fcst:
+65:32861212:d=2017022612:VGRD:10 m above ground:4 hour fcst:
+69:34700499:d=2017022612:APCP:surface:0-4 hour acc fcst:
+74:36015677:d=2017022612:BGRUN:surface:3-4 hour acc fcst:
+1705712000500
+17 057 12 0005
+02 26
+starting to truncate file 12
+9:3810198:d=2017022612:GUST:surface:5 hour fcst:
+14:7361677:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:5 hour fcst:
+32:10051084:d=2017022612:PRES:surface:5 hour fcst:
+33:10819248:d=2017022612:HGT:surface:5 hour fcst:
+59:28346638:d=2017022612:TMP:2 m above ground:5 hour fcst:
+64:32298288:d=2017022612:UGRD:10 m above ground:5 hour fcst:
+65:33002522:d=2017022612:VGRD:10 m above ground:5 hour fcst:
+69:34854066:d=2017022612:APCP:surface:0-5 hour acc fcst:
+74:36164152:d=2017022612:BGRUN:surface:4-5 hour acc fcst:
+1705712000600
+17 057 12 0006
+02 26
+starting to truncate file 12
+9:3866738:d=2017022612:GUST:surface:6 hour fcst:
+14:7434068:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:6 hour fcst:
+32:10137734:d=2017022612:PRES:surface:6 hour fcst:
+33:10905850:d=2017022612:HGT:surface:6 hour fcst:
+59:28343960:d=2017022612:TMP:2 m above ground:6 hour fcst:
+64:32298060:d=2017022612:UGRD:10 m above ground:6 hour fcst:
+65:33003837:d=2017022612:VGRD:10 m above ground:6 hour fcst:
+69:34852246:d=2017022612:APCP:surface:0-6 hour acc fcst:
+74:36258980:d=2017022612:BGRUN:surface:5-6 hour acc fcst:
+1705712000700
+17 057 12 0007
+02 26
+starting to truncate file 12
+9:3790059:d=2017022612:GUST:surface:7 hour fcst:
+14:7376010:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:7 hour fcst:
+32:10063239:d=2017022612:PRES:surface:7 hour fcst:
+33:10832518:d=2017022612:HGT:surface:7 hour fcst:
+59:28288101:d=2017022612:TMP:2 m above ground:7 hour fcst:
+64:32223386:d=2017022612:UGRD:10 m above ground:7 hour fcst:
+65:32927871:d=2017022612:VGRD:10 m above ground:7 hour fcst:
+69:34767740:d=2017022612:APCP:surface:0-7 hour acc fcst:
+74:36225693:d=2017022612:BGRUN:surface:6-7 hour acc fcst:
+1705712000800
+17 057 12 0008
+02 26
+starting to truncate file 12
+9:3697446:d=2017022612:GUST:surface:8 hour fcst:
+14:7285538:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:8 hour fcst:
+32:9950278:d=2017022612:PRES:surface:8 hour fcst:
+33:10717952:d=2017022612:HGT:surface:8 hour fcst:
+59:28183941:d=2017022612:TMP:2 m above ground:8 hour fcst:
+64:32085800:d=2017022612:UGRD:10 m above ground:8 hour fcst:
+65:32787063:d=2017022612:VGRD:10 m above ground:8 hour fcst:
+69:34618458:d=2017022612:APCP:surface:0-8 hour acc fcst:
+74:36145772:d=2017022612:BGRUN:surface:7-8 hour acc fcst:
+1705712000900
+17 057 12 0009
+02 26
+starting to truncate file 12
+9:3600052:d=2017022612:GUST:surface:9 hour fcst:
+14:7171899:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:9 hour fcst:
+32:9805740:d=2017022612:PRES:surface:9 hour fcst:
+33:10570514:d=2017022612:HGT:surface:9 hour fcst:
+59:28048436:d=2017022612:TMP:2 m above ground:9 hour fcst:
+64:31911324:d=2017022612:UGRD:10 m above ground:9 hour fcst:
+65:32606111:d=2017022612:VGRD:10 m above ground:9 hour fcst:
+69:34427061:d=2017022612:APCP:surface:0-9 hour acc fcst:
+74:36015060:d=2017022612:BGRUN:surface:8-9 hour acc fcst:
+1705712001000
+17 057 12 0010
+02 26
+starting to truncate file 12
+9:3517257:d=2017022612:GUST:surface:10 hour fcst:
+14:7077972:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:10 hour fcst:
+32:9670623:d=2017022612:PRES:surface:10 hour fcst:
+33:10434540:d=2017022612:HGT:surface:10 hour fcst:
+59:27913854:d=2017022612:TMP:2 m above ground:10 hour fcst:
+64:31743571:d=2017022612:UGRD:10 m above ground:10 hour fcst:
+65:32431592:d=2017022612:VGRD:10 m above ground:10 hour fcst:
+69:34239774:d=2017022612:APCP:surface:0-10 hour acc fcst:
+74:35884260:d=2017022612:BGRUN:surface:9-10 hour acc fcst:
+1705712001100
+17 057 12 0011
+02 26
+starting to truncate file 12
+9:3437181:d=2017022612:GUST:surface:11 hour fcst:
+14:6979631:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:11 hour fcst:
+32:9544685:d=2017022612:PRES:surface:11 hour fcst:
+33:10307380:d=2017022612:HGT:surface:11 hour fcst:
+59:27799367:d=2017022612:TMP:2 m above ground:11 hour fcst:
+64:31593592:d=2017022612:UGRD:10 m above ground:11 hour fcst:
+65:32275348:d=2017022612:VGRD:10 m above ground:11 hour fcst:
+69:34065778:d=2017022612:APCP:surface:0-11 hour acc fcst:
+74:35757200:d=2017022612:BGRUN:surface:10-11 hour acc fcst:
+1705712001200
+17 057 12 0012
+02 26
+starting to truncate file 12
+9:3451449:d=2017022612:GUST:surface:12 hour fcst:
+14:6992981:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:12 hour fcst:
+32:9536324:d=2017022612:PRES:surface:12 hour fcst:
+33:10299460:d=2017022612:HGT:surface:12 hour fcst:
+59:27805597:d=2017022612:TMP:2 m above ground:12 hour fcst:
+64:31566612:d=2017022612:UGRD:10 m above ground:12 hour fcst:
+65:32243836:d=2017022612:VGRD:10 m above ground:12 hour fcst:
+69:34016016:d=2017022612:APCP:surface:0-12 hour acc fcst:
+74:35749957:d=2017022612:BGRUN:surface:11-12 hour acc fcst:
+1705712001300
+17 057 12 0013
+02 26
+starting to truncate file 12
+9:3328838:d=2017022612:GUST:surface:13 hour fcst:
+14:6860008:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:13 hour fcst:
+32:9386801:d=2017022612:PRES:surface:13 hour fcst:
+33:10148775:d=2017022612:HGT:surface:13 hour fcst:
+59:27647787:d=2017022612:TMP:2 m above ground:13 hour fcst:
+64:31393158:d=2017022612:UGRD:10 m above ground:13 hour fcst:
+65:32068384:d=2017022612:VGRD:10 m above ground:13 hour fcst:
+69:33830864:d=2017022612:APCP:surface:0-13 hour acc fcst:
+74:35597996:d=2017022612:BGRUN:surface:12-13 hour acc fcst:
+1705712001400
+17 057 12 0014
+02 26
+starting to truncate file 12
+9:3274276:d=2017022612:GUST:surface:14 hour fcst:
+14:6773132:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:14 hour fcst:
+32:9192698:d=2017022612:PRES:surface:14 hour fcst:
+33:9955938:d=2017022612:HGT:surface:14 hour fcst:
+59:27464712:d=2017022612:TMP:2 m above ground:14 hour fcst:
+64:31208591:d=2017022612:UGRD:10 m above ground:14 hour fcst:
+65:31886539:d=2017022612:VGRD:10 m above ground:14 hour fcst:
+69:33638627:d=2017022612:APCP:surface:0-14 hour acc fcst:
+74:35410904:d=2017022612:BGRUN:surface:13-14 hour acc fcst:
+1705712001500
+17 057 12 0015
+02 26
+starting to truncate file 12
+9:3271862:d=2017022612:GUST:surface:15 hour fcst:
+14:6771806:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:15 hour fcst:
+32:9204816:d=2017022612:PRES:surface:15 hour fcst:
+33:9967455:d=2017022612:HGT:surface:15 hour fcst:
+59:27490354:d=2017022612:TMP:2 m above ground:15 hour fcst:
+64:31260403:d=2017022612:UGRD:10 m above ground:15 hour fcst:
+65:31942832:d=2017022612:VGRD:10 m above ground:15 hour fcst:
+69:33689001:d=2017022612:APCP:surface:0-15 hour acc fcst:
+74:35490152:d=2017022612:BGRUN:surface:14-15 hour acc fcst:
+1705712001600
+17 057 12 0016
+02 26
+starting to truncate file 12
+9:3204742:d=2017022612:GUST:surface:16 hour fcst:
+14:6703132:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:16 hour fcst:
+32:9159214:d=2017022612:PRES:surface:16 hour fcst:
+33:9919650:d=2017022612:HGT:surface:16 hour fcst:
+59:27472760:d=2017022612:TMP:2 m above ground:16 hour fcst:
+64:31300875:d=2017022612:UGRD:10 m above ground:16 hour fcst:
+65:31988429:d=2017022612:VGRD:10 m above ground:16 hour fcst:
+69:33741247:d=2017022612:APCP:surface:0-16 hour acc fcst:
+74:35575109:d=2017022612:BGRUN:surface:15-16 hour acc fcst:
+1705712001700
+17 057 12 0017
+02 26
+starting to truncate file 12
+9:3197381:d=2017022612:GUST:surface:17 hour fcst:
+14:6706076:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:17 hour fcst:
+32:9179906:d=2017022612:PRES:surface:17 hour fcst:
+33:9939025:d=2017022612:HGT:surface:17 hour fcst:
+59:27511528:d=2017022612:TMP:2 m above ground:17 hour fcst:
+64:31391056:d=2017022612:UGRD:10 m above ground:17 hour fcst:
+65:32086629:d=2017022612:VGRD:10 m above ground:17 hour fcst:
+69:33855019:d=2017022612:APCP:surface:0-17 hour acc fcst:
+74:35715424:d=2017022612:BGRUN:surface:16-17 hour acc fcst:
+1705712001800
+17 057 12 0018
+02 26
+starting to truncate file 12
+9:3154989:d=2017022612:GUST:surface:18 hour fcst:
+14:6683118:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:18 hour fcst:
+32:9175542:d=2017022612:PRES:surface:18 hour fcst:
+33:9935016:d=2017022612:HGT:surface:18 hour fcst:
+59:27523712:d=2017022612:TMP:2 m above ground:18 hour fcst:
+64:31454051:d=2017022612:UGRD:10 m above ground:18 hour fcst:
+65:32155065:d=2017022612:VGRD:10 m above ground:18 hour fcst:
+69:33950008:d=2017022612:APCP:surface:0-18 hour acc fcst:
+74:35842101:d=2017022612:BGRUN:surface:17-18 hour acc fcst:
+1705712001900
+17 057 12 0019
+02 26
+starting to truncate file 12
+9:3173107:d=2017022612:GUST:surface:19 hour fcst:
+14:6717327:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:19 hour fcst:
+32:9121733:d=2017022612:PRES:surface:19 hour fcst:
+33:9880158:d=2017022612:HGT:surface:19 hour fcst:
+59:27485649:d=2017022612:TMP:2 m above ground:19 hour fcst:
+64:31449347:d=2017022612:UGRD:10 m above ground:19 hour fcst:
+65:32153658:d=2017022612:VGRD:10 m above ground:19 hour fcst:
+69:33970543:d=2017022612:APCP:surface:0-19 hour acc fcst:
+74:35899832:d=2017022612:BGRUN:surface:18-19 hour acc fcst:
+1705712002000
+17 057 12 0020
+02 26
+starting to truncate file 12
+9:3170246:d=2017022612:GUST:surface:20 hour fcst:
+14:5548389:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:20 hour fcst:
+32:7970778:d=2017022612:PRES:surface:20 hour fcst:
+33:8728893:d=2017022612:HGT:surface:20 hour fcst:
+59:26347596:d=2017022612:TMP:2 m above ground:20 hour fcst:
+64:30337325:d=2017022612:UGRD:10 m above ground:20 hour fcst:
+65:31044897:d=2017022612:VGRD:10 m above ground:20 hour fcst:
+69:32862759:d=2017022612:APCP:surface:0-20 hour acc fcst:
+74:34798057:d=2017022612:BGRUN:surface:19-20 hour acc fcst:
+1705712002100
+17 057 12 0021
+02 26
+starting to truncate file 12
+9:3179225:d=2017022612:GUST:surface:21 hour fcst:
+14:6756195:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:21 hour fcst:
+32:9189598:d=2017022612:PRES:surface:21 hour fcst:
+33:9947013:d=2017022612:HGT:surface:21 hour fcst:
+59:27580031:d=2017022612:TMP:2 m above ground:21 hour fcst:
+64:31592638:d=2017022612:UGRD:10 m above ground:21 hour fcst:
+65:32300973:d=2017022612:VGRD:10 m above ground:21 hour fcst:
+69:34125496:d=2017022612:APCP:surface:0-21 hour acc fcst:
+74:36095479:d=2017022612:BGRUN:surface:20-21 hour acc fcst:
+1705712002200
+17 057 12 0022
+02 26
+starting to truncate file 12
+9:3185399:d=2017022612:GUST:surface:22 hour fcst:
+14:6747853:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:22 hour fcst:
+32:9179073:d=2017022612:PRES:surface:22 hour fcst:
+33:9935054:d=2017022612:HGT:surface:22 hour fcst:
+59:27579869:d=2017022612:TMP:2 m above ground:22 hour fcst:
+64:31603738:d=2017022612:UGRD:10 m above ground:22 hour fcst:
+65:32311664:d=2017022612:VGRD:10 m above ground:22 hour fcst:
+69:34145153:d=2017022612:APCP:surface:0-22 hour acc fcst:
+74:36148350:d=2017022612:BGRUN:surface:21-22 hour acc fcst:
+1705712002300
+17 057 12 0023
+02 26
+starting to truncate file 12
+9:3181782:d=2017022612:GUST:surface:23 hour fcst:
+14:6752958:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:23 hour fcst:
+32:9181899:d=2017022612:PRES:surface:23 hour fcst:
+33:9939320:d=2017022612:HGT:surface:23 hour fcst:
+59:27593072:d=2017022612:TMP:2 m above ground:23 hour fcst:
+64:31621401:d=2017022612:UGRD:10 m above ground:23 hour fcst:
+65:32330141:d=2017022612:VGRD:10 m above ground:23 hour fcst:
+69:34163179:d=2017022612:APCP:surface:0-23 hour acc fcst:
+74:36196856:d=2017022612:BGRUN:surface:22-23 hour acc fcst:
+1705712002400
+17 057 12 0024
+02 26
+starting to truncate file 12
+9:3144714:d=2017022612:GUST:surface:24 hour fcst:
+14:6729501:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:24 hour fcst:
+32:9146205:d=2017022612:PRES:surface:24 hour fcst:
+33:9903143:d=2017022612:HGT:surface:24 hour fcst:
+59:27564887:d=2017022612:TMP:2 m above ground:24 hour fcst:
+64:31596764:d=2017022612:UGRD:10 m above ground:24 hour fcst:
+65:32305832:d=2017022612:VGRD:10 m above ground:24 hour fcst:
+69:34139953:d=2017022612:APCP:surface:0-1 day acc fcst:
+74:36207954:d=2017022612:BGRUN:surface:23-24 hour acc fcst:
+1705712002500
+17 057 12 0025
+02 26
+starting to truncate file 12
+9:3145026:d=2017022612:GUST:surface:25 hour fcst:
+14:6721747:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:25 hour fcst:
+32:9147426:d=2017022612:PRES:surface:25 hour fcst:
+33:9906005:d=2017022612:HGT:surface:25 hour fcst:
+59:27576539:d=2017022612:TMP:2 m above ground:25 hour fcst:
+64:31612454:d=2017022612:UGRD:10 m above ground:25 hour fcst:
+65:32323446:d=2017022612:VGRD:10 m above ground:25 hour fcst:
+69:34160591:d=2017022612:APCP:surface:0-25 hour acc fcst:
+74:36266020:d=2017022612:BGRUN:surface:24-25 hour acc fcst:
+1705712002600
+17 057 12 0026
+02 26
+starting to truncate file 12
+9:3280183:d=2017022612:GUST:surface:26 hour fcst:
+14:6875259:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:26 hour fcst:
+32:9210767:d=2017022612:PRES:surface:26 hour fcst:
+33:9970174:d=2017022612:HGT:surface:26 hour fcst:
+59:27648305:d=2017022612:TMP:2 m above ground:26 hour fcst:
+64:31680392:d=2017022612:UGRD:10 m above ground:26 hour fcst:
+65:32393532:d=2017022612:VGRD:10 m above ground:26 hour fcst:
+69:34242347:d=2017022612:APCP:surface:0-26 hour acc fcst:
+74:36380471:d=2017022612:BGRUN:surface:25-26 hour acc fcst:
+1705712002700
+17 057 12 0027
+02 26
+starting to truncate file 12
+9:3133940:d=2017022612:GUST:surface:27 hour fcst:
+14:6732492:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:27 hour fcst:
+32:9064855:d=2017022612:PRES:surface:27 hour fcst:
+33:9826289:d=2017022612:HGT:surface:27 hour fcst:
+59:27512580:d=2017022612:TMP:2 m above ground:27 hour fcst:
+64:31545432:d=2017022612:UGRD:10 m above ground:27 hour fcst:
+65:32258596:d=2017022612:VGRD:10 m above ground:27 hour fcst:
+69:34106636:d=2017022612:APCP:surface:0-27 hour acc fcst:
+74:36266007:d=2017022612:BGRUN:surface:26-27 hour acc fcst:
+1705712002800
+17 057 12 0028
+02 26
+starting to truncate file 12
+9:3096636:d=2017022612:GUST:surface:28 hour fcst:
+14:6684095:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:28 hour fcst:
+32:9000364:d=2017022612:PRES:surface:28 hour fcst:
+33:9762066:d=2017022612:HGT:surface:28 hour fcst:
+59:27454952:d=2017022612:TMP:2 m above ground:28 hour fcst:
+64:31480908:d=2017022612:UGRD:10 m above ground:28 hour fcst:
+65:32194240:d=2017022612:VGRD:10 m above ground:28 hour fcst:
+69:34037464:d=2017022612:APCP:surface:0-28 hour acc fcst:
+74:36185961:d=2017022612:BGRUN:surface:27-28 hour acc fcst:
+1705712002900
+17 057 12 0029
+02 26
+starting to truncate file 12
+9:3119530:d=2017022612:GUST:surface:29 hour fcst:
+14:6727205:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:29 hour fcst:
+32:9036278:d=2017022612:PRES:surface:29 hour fcst:
+33:9798371:d=2017022612:HGT:surface:29 hour fcst:
+59:27496042:d=2017022612:TMP:2 m above ground:29 hour fcst:
+64:31512877:d=2017022612:UGRD:10 m above ground:29 hour fcst:
+65:32225906:d=2017022612:VGRD:10 m above ground:29 hour fcst:
+69:34072448:d=2017022612:APCP:surface:0-29 hour acc fcst:
+74:36243564:d=2017022612:BGRUN:surface:28-29 hour acc fcst:
+1705712003000
+17 057 12 0030
+02 26
+starting to truncate file 12
+9:3096151:d=2017022612:GUST:surface:30 hour fcst:
+14:6709312:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:30 hour fcst:
+32:9098209:d=2017022612:PRES:surface:30 hour fcst:
+33:9861533:d=2017022612:HGT:surface:30 hour fcst:
+59:27560112:d=2017022612:TMP:2 m above ground:30 hour fcst:
+64:31561285:d=2017022612:UGRD:10 m above ground:30 hour fcst:
+65:32274187:d=2017022612:VGRD:10 m above ground:30 hour fcst:
+69:34100157:d=2017022612:APCP:surface:0-30 hour acc fcst:
+74:36288661:d=2017022612:BGRUN:surface:29-30 hour acc fcst:
+1705712003100
+17 057 12 0031
+02 26
+starting to truncate file 12
+9:3198296:d=2017022612:GUST:surface:31 hour fcst:
+14:6805970:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:31 hour fcst:
+32:9104452:d=2017022612:PRES:surface:31 hour fcst:
+33:9867026:d=2017022612:HGT:surface:31 hour fcst:
+59:27564439:d=2017022612:TMP:2 m above ground:31 hour fcst:
+64:31536340:d=2017022612:UGRD:10 m above ground:31 hour fcst:
+65:32245910:d=2017022612:VGRD:10 m above ground:31 hour fcst:
+69:34076350:d=2017022612:APCP:surface:0-31 hour acc fcst:
+74:36281589:d=2017022612:BGRUN:surface:30-31 hour acc fcst:
+1705712003200
+17 057 12 0032
+02 26
+starting to truncate file 12
+9:3076549:d=2017022612:GUST:surface:32 hour fcst:
+14:6695786:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:32 hour fcst:
+32:8994248:d=2017022612:PRES:surface:32 hour fcst:
+33:9757751:d=2017022612:HGT:surface:32 hour fcst:
+59:27447041:d=2017022612:TMP:2 m above ground:32 hour fcst:
+64:31358775:d=2017022612:UGRD:10 m above ground:32 hour fcst:
+65:32063244:d=2017022612:VGRD:10 m above ground:32 hour fcst:
+69:33889968:d=2017022612:APCP:surface:0-32 hour acc fcst:
+74:36117296:d=2017022612:BGRUN:surface:31-32 hour acc fcst:
+1705712003300
+17 057 12 0033
+02 26
+starting to truncate file 12
+9:3062809:d=2017022612:GUST:surface:33 hour fcst:
+14:6687457:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:33 hour fcst:
+32:8974798:d=2017022612:PRES:surface:33 hour fcst:
+33:9738542:d=2017022612:HGT:surface:33 hour fcst:
+59:27418186:d=2017022612:TMP:2 m above ground:33 hour fcst:
+64:31264371:d=2017022612:UGRD:10 m above ground:33 hour fcst:
+65:31960279:d=2017022612:VGRD:10 m above ground:33 hour fcst:
+69:33765683:d=2017022612:APCP:surface:0-33 hour acc fcst:
+74:36017533:d=2017022612:BGRUN:surface:32-33 hour acc fcst:
+1705712003400
+17 057 12 0034
+02 26
+starting to truncate file 12
+9:2993833:d=2017022612:GUST:surface:34 hour fcst:
+14:6573568:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:34 hour fcst:
+32:8825925:d=2017022612:PRES:surface:34 hour fcst:
+33:9589503:d=2017022612:HGT:surface:34 hour fcst:
+59:27260329:d=2017022612:TMP:2 m above ground:34 hour fcst:
+64:31049235:d=2017022612:UGRD:10 m above ground:34 hour fcst:
+65:31737102:d=2017022612:VGRD:10 m above ground:34 hour fcst:
+69:33537524:d=2017022612:APCP:surface:0-34 hour acc fcst:
+74:35809673:d=2017022612:BGRUN:surface:33-34 hour acc fcst:
+1705712003500
+17 057 12 0035
+02 26
+starting to truncate file 12
+9:3014781:d=2017022612:GUST:surface:35 hour fcst:
+14:6603519:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:35 hour fcst:
+32:8806348:d=2017022612:PRES:surface:35 hour fcst:
+33:9569556:d=2017022612:HGT:surface:35 hour fcst:
+59:27166196:d=2017022612:TMP:2 m above ground:35 hour fcst:
+64:30919985:d=2017022612:UGRD:10 m above ground:35 hour fcst:
+65:31600925:d=2017022612:VGRD:10 m above ground:35 hour fcst:
+69:33396764:d=2017022612:APCP:surface:0-35 hour acc fcst:
+74:35684667:d=2017022612:BGRUN:surface:34-35 hour acc fcst:
+1705712003600
+17 057 12 0036
+02 26
+starting to truncate file 12
+9:3041415:d=2017022612:GUST:surface:36 hour fcst:
+14:6627955:d=2017022612:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:36 hour fcst:
+32:8828231:d=2017022612:PRES:surface:36 hour fcst:
+33:9591608:d=2017022612:HGT:surface:36 hour fcst:
+59:27188298:d=2017022612:TMP:2 m above ground:36 hour fcst:
+64:30922755:d=2017022612:UGRD:10 m above ground:36 hour fcst:
+65:31598576:d=2017022612:VGRD:10 m above ground:36 hour fcst:
+69:33400823:d=2017022612:APCP:surface:0-36 hour acc fcst:
+74:35572839:d=2017022612:BGRUN:surface:35-36 hour acc fcst:
+1705715000000
+17 057 15 0000
+02 26
+starting to truncate file 15
+9:2243535:d=2017022615:GUST:surface:anl:
+14:3680531:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:anl:
+32:5703733:d=2017022615:PRES:surface:anl:
+33:6470906:d=2017022615:HGT:surface:anl:
+59:23565674:d=2017022615:TMP:2 m above ground:anl:
+64:27373915:d=2017022615:UGRD:10 m above ground:anl:
+65:28030098:d=2017022615:VGRD:10 m above ground:anl:
+69:29352442:d=2017022615:APCP:surface:0-0 day acc fcst:
+74:29535334:d=2017022615:BGRUN:surface:0-0 day acc fcst:
+1705715000100
+17 057 15 0001
+02 26
+starting to truncate file 15
+9:2675538:d=2017022615:GUST:surface:1 hour fcst:
+14:6089304:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:1 hour fcst:
+32:8467394:d=2017022615:PRES:surface:1 hour fcst:
+33:9236045:d=2017022615:HGT:surface:1 hour fcst:
+59:26597671:d=2017022615:TMP:2 m above ground:1 hour fcst:
+64:30457232:d=2017022615:UGRD:10 m above ground:1 hour fcst:
+65:31131359:d=2017022615:VGRD:10 m above ground:1 hour fcst:
+69:32844846:d=2017022615:APCP:surface:0-1 hour acc fcst:
+74:33910175:d=2017022615:BGRUN:surface:0-1 hour acc fcst:
+1705715000200
+17 057 15 0002
+02 26
+starting to truncate file 15
+9:3166571:d=2017022615:GUST:surface:2 hour fcst:
+14:6667912:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:2 hour fcst:
+32:9232826:d=2017022615:PRES:surface:2 hour fcst:
+33:10000697:d=2017022615:HGT:surface:2 hour fcst:
+59:27425282:d=2017022615:TMP:2 m above ground:2 hour fcst:
+64:31352986:d=2017022615:UGRD:10 m above ground:2 hour fcst:
+65:32046307:d=2017022615:VGRD:10 m above ground:2 hour fcst:
+69:33850042:d=2017022615:APCP:surface:0-2 hour acc fcst:
+74:34789124:d=2017022615:BGRUN:surface:1-2 hour acc fcst:
+1705715000300
+17 057 15 0003
+02 26
+starting to truncate file 15
+9:3487130:d=2017022615:GUST:surface:3 hour fcst:
+14:7032300:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:3 hour fcst:
+32:9677696:d=2017022615:PRES:surface:3 hour fcst:
+33:10444583:d=2017022615:HGT:surface:3 hour fcst:
+59:27920211:d=2017022615:TMP:2 m above ground:3 hour fcst:
+64:31864872:d=2017022615:UGRD:10 m above ground:3 hour fcst:
+65:32564390:d=2017022615:VGRD:10 m above ground:3 hour fcst:
+69:34402430:d=2017022615:APCP:surface:0-3 hour acc fcst:
+74:35505690:d=2017022615:BGRUN:surface:2-3 hour acc fcst:
+1705715000400
+17 057 15 0004
+02 26
+starting to truncate file 15
+9:3506512:d=2017022615:GUST:surface:4 hour fcst:
+14:7043004:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:4 hour fcst:
+32:9724095:d=2017022615:PRES:surface:4 hour fcst:
+33:10491914:d=2017022615:HGT:surface:4 hour fcst:
+59:27959811:d=2017022615:TMP:2 m above ground:4 hour fcst:
+64:31884945:d=2017022615:UGRD:10 m above ground:4 hour fcst:
+65:32585090:d=2017022615:VGRD:10 m above ground:4 hour fcst:
+69:34430985:d=2017022615:APCP:surface:0-4 hour acc fcst:
+74:35617656:d=2017022615:BGRUN:surface:3-4 hour acc fcst:
+1705715000500
+17 057 15 0005
+02 26
+starting to truncate file 15
+9:3635807:d=2017022615:GUST:surface:5 hour fcst:
+14:7188420:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:5 hour fcst:
+32:9867449:d=2017022615:PRES:surface:5 hour fcst:
+33:10635844:d=2017022615:HGT:surface:5 hour fcst:
+59:28131142:d=2017022615:TMP:2 m above ground:5 hour fcst:
+64:32023006:d=2017022615:UGRD:10 m above ground:5 hour fcst:
+65:32721154:d=2017022615:VGRD:10 m above ground:5 hour fcst:
+69:34579009:d=2017022615:APCP:surface:0-5 hour acc fcst:
+74:35843437:d=2017022615:BGRUN:surface:4-5 hour acc fcst:
+1705715000600
+17 057 15 0006
+02 26
+starting to truncate file 15
+9:3608087:d=2017022615:GUST:surface:6 hour fcst:
+14:7165208:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:6 hour fcst:
+32:9826707:d=2017022615:PRES:surface:6 hour fcst:
+33:10594170:d=2017022615:HGT:surface:6 hour fcst:
+59:28000189:d=2017022615:TMP:2 m above ground:6 hour fcst:
+64:31864191:d=2017022615:UGRD:10 m above ground:6 hour fcst:
+65:32556767:d=2017022615:VGRD:10 m above ground:6 hour fcst:
+69:34409266:d=2017022615:APCP:surface:0-6 hour acc fcst:
+74:35758095:d=2017022615:BGRUN:surface:5-6 hour acc fcst:
+1705715000700
+17 057 15 0007
+02 26
+starting to truncate file 15
+9:3578715:d=2017022615:GUST:surface:7 hour fcst:
+14:7138183:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:7 hour fcst:
+32:9769964:d=2017022615:PRES:surface:7 hour fcst:
+33:10534710:d=2017022615:HGT:surface:7 hour fcst:
+59:27952845:d=2017022615:TMP:2 m above ground:7 hour fcst:
+64:31787117:d=2017022615:UGRD:10 m above ground:7 hour fcst:
+65:32473470:d=2017022615:VGRD:10 m above ground:7 hour fcst:
+69:34306752:d=2017022615:APCP:surface:0-7 hour acc fcst:
+74:35740894:d=2017022615:BGRUN:surface:6-7 hour acc fcst:
+1705715000800
+17 057 15 0008
+02 26
+starting to truncate file 15
+9:3510627:d=2017022615:GUST:surface:8 hour fcst:
+14:7058808:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:8 hour fcst:
+32:9644683:d=2017022615:PRES:surface:8 hour fcst:
+33:10408076:d=2017022615:HGT:surface:8 hour fcst:
+59:27843404:d=2017022615:TMP:2 m above ground:8 hour fcst:
+64:31643115:d=2017022615:UGRD:10 m above ground:8 hour fcst:
+65:32324097:d=2017022615:VGRD:10 m above ground:8 hour fcst:
+69:34138564:d=2017022615:APCP:surface:0-8 hour acc fcst:
+74:35647141:d=2017022615:BGRUN:surface:7-8 hour acc fcst:
+1705715000900
+17 057 15 0009
+02 26
+starting to truncate file 15
+9:3331179:d=2017022615:GUST:surface:9 hour fcst:
+14:6868550:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:9 hour fcst:
+32:9436012:d=2017022615:PRES:surface:9 hour fcst:
+33:10198811:d=2017022615:HGT:surface:9 hour fcst:
+59:27651821:d=2017022615:TMP:2 m above ground:9 hour fcst:
+64:31405017:d=2017022615:UGRD:10 m above ground:9 hour fcst:
+65:32080903:d=2017022615:VGRD:10 m above ground:9 hour fcst:
+69:33871371:d=2017022615:APCP:surface:0-9 hour acc fcst:
+74:35437425:d=2017022615:BGRUN:surface:8-9 hour acc fcst:
+1705715001000
+17 057 15 0010
+02 26
+starting to truncate file 15
+9:3332395:d=2017022615:GUST:surface:10 hour fcst:
+14:6858781:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:10 hour fcst:
+32:9396640:d=2017022615:PRES:surface:10 hour fcst:
+33:10158367:d=2017022615:HGT:surface:10 hour fcst:
+59:27619434:d=2017022615:TMP:2 m above ground:10 hour fcst:
+64:31352729:d=2017022615:UGRD:10 m above ground:10 hour fcst:
+65:32026897:d=2017022615:VGRD:10 m above ground:10 hour fcst:
+69:33801542:d=2017022615:APCP:surface:0-10 hour acc fcst:
+74:35423206:d=2017022615:BGRUN:surface:9-10 hour acc fcst:
+1705715001100
+17 057 15 0011
+02 26
+starting to truncate file 15
+9:3301180:d=2017022615:GUST:surface:11 hour fcst:
+14:6819477:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:11 hour fcst:
+32:9239520:d=2017022615:PRES:surface:11 hour fcst:
+33:10001961:d=2017022615:HGT:surface:11 hour fcst:
+59:27473255:d=2017022615:TMP:2 m above ground:11 hour fcst:
+64:31203621:d=2017022615:UGRD:10 m above ground:11 hour fcst:
+65:31879662:d=2017022615:VGRD:10 m above ground:11 hour fcst:
+69:33642486:d=2017022615:APCP:surface:0-11 hour acc fcst:
+74:35307267:d=2017022615:BGRUN:surface:10-11 hour acc fcst:
+1705715001200
+17 057 15 0012
+02 26
+starting to truncate file 15
+9:3212147:d=2017022615:GUST:surface:12 hour fcst:
+14:6720578:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:12 hour fcst:
+32:9026506:d=2017022615:PRES:surface:12 hour fcst:
+33:9789602:d=2017022615:HGT:surface:12 hour fcst:
+59:27278230:d=2017022615:TMP:2 m above ground:12 hour fcst:
+64:31039637:d=2017022615:UGRD:10 m above ground:12 hour fcst:
+65:31728036:d=2017022615:VGRD:10 m above ground:12 hour fcst:
+69:33496440:d=2017022615:APCP:surface:0-12 hour acc fcst:
+74:35205227:d=2017022615:BGRUN:surface:11-12 hour acc fcst:
+1705715001300
+17 057 15 0013
+02 26
+starting to truncate file 15
+9:3202425:d=2017022615:GUST:surface:13 hour fcst:
+14:6703847:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:13 hour fcst:
+32:9027473:d=2017022615:PRES:surface:13 hour fcst:
+33:9788437:d=2017022615:HGT:surface:13 hour fcst:
+59:27314691:d=2017022615:TMP:2 m above ground:13 hour fcst:
+64:31137887:d=2017022615:UGRD:10 m above ground:13 hour fcst:
+65:31821054:d=2017022615:VGRD:10 m above ground:13 hour fcst:
+69:33592676:d=2017022615:APCP:surface:0-13 hour acc fcst:
+74:35336274:d=2017022615:BGRUN:surface:12-13 hour acc fcst:
+1705715001400
+17 057 15 0014
+02 26
+starting to truncate file 15
+9:3177365:d=2017022615:GUST:surface:14 hour fcst:
+14:6686694:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:14 hour fcst:
+32:9025986:d=2017022615:PRES:surface:14 hour fcst:
+33:9785931:d=2017022615:HGT:surface:14 hour fcst:
+59:27335338:d=2017022615:TMP:2 m above ground:14 hour fcst:
+64:31206392:d=2017022615:UGRD:10 m above ground:14 hour fcst:
+65:31896058:d=2017022615:VGRD:10 m above ground:14 hour fcst:
+69:33676929:d=2017022615:APCP:surface:0-14 hour acc fcst:
+74:35457460:d=2017022615:BGRUN:surface:13-14 hour acc fcst:
+1705715001500
+17 057 15 0015
+02 26
+starting to truncate file 15
+9:3156389:d=2017022615:GUST:surface:15 hour fcst:
+14:6685747:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:15 hour fcst:
+32:9048785:d=2017022615:PRES:surface:15 hour fcst:
+33:9807494:d=2017022615:HGT:surface:15 hour fcst:
+59:27374104:d=2017022615:TMP:2 m above ground:15 hour fcst:
+64:31289931:d=2017022615:UGRD:10 m above ground:15 hour fcst:
+65:31985750:d=2017022615:VGRD:10 m above ground:15 hour fcst:
+69:33773888:d=2017022615:APCP:surface:0-15 hour acc fcst:
+74:35592181:d=2017022615:BGRUN:surface:14-15 hour acc fcst:
+1705715001600
+17 057 15 0016
+02 26
+starting to truncate file 15
+9:3161519:d=2017022615:GUST:surface:16 hour fcst:
+14:6688105:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:16 hour fcst:
+32:9169287:d=2017022615:PRES:surface:16 hour fcst:
+33:9927501:d=2017022615:HGT:surface:16 hour fcst:
+59:27511666:d=2017022615:TMP:2 m above ground:16 hour fcst:
+64:31465937:d=2017022615:UGRD:10 m above ground:16 hour fcst:
+65:32166166:d=2017022615:VGRD:10 m above ground:16 hour fcst:
+69:33966394:d=2017022615:APCP:surface:0-16 hour acc fcst:
+74:35817130:d=2017022615:BGRUN:surface:15-16 hour acc fcst:
+1705715001700
+17 057 15 0017
+02 26
+starting to truncate file 15
+9:3180654:d=2017022615:GUST:surface:17 hour fcst:
+14:6718312:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:17 hour fcst:
+32:9125745:d=2017022615:PRES:surface:17 hour fcst:
+33:9883491:d=2017022615:HGT:surface:17 hour fcst:
+59:27483840:d=2017022615:TMP:2 m above ground:17 hour fcst:
+64:31468548:d=2017022615:UGRD:10 m above ground:17 hour fcst:
+65:32172691:d=2017022615:VGRD:10 m above ground:17 hour fcst:
+69:33990050:d=2017022615:APCP:surface:0-17 hour acc fcst:
+74:35888674:d=2017022615:BGRUN:surface:16-17 hour acc fcst:
+1705715001800
+17 057 15 0018
+02 26
+starting to truncate file 15
+9:3169458:d=2017022615:GUST:surface:18 hour fcst:
+14:6724636:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:18 hour fcst:
+32:9147271:d=2017022615:PRES:surface:18 hour fcst:
+33:9905258:d=2017022615:HGT:surface:18 hour fcst:
+59:27518119:d=2017022615:TMP:2 m above ground:18 hour fcst:
+64:31522988:d=2017022615:UGRD:10 m above ground:18 hour fcst:
+65:32230147:d=2017022615:VGRD:10 m above ground:18 hour fcst:
+69:34049558:d=2017022615:APCP:surface:0-18 hour acc fcst:
+74:35987668:d=2017022615:BGRUN:surface:17-18 hour acc fcst:
+1705715001900
+17 057 15 0019
+02 26
+starting to truncate file 15
+9:3160438:d=2017022615:GUST:surface:19 hour fcst:
+14:6722217:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:19 hour fcst:
+32:9146640:d=2017022615:PRES:surface:19 hour fcst:
+33:9904305:d=2017022615:HGT:surface:19 hour fcst:
+59:27528835:d=2017022615:TMP:2 m above ground:19 hour fcst:
+64:31542199:d=2017022615:UGRD:10 m above ground:19 hour fcst:
+65:32248229:d=2017022615:VGRD:10 m above ground:19 hour fcst:
+69:34076981:d=2017022615:APCP:surface:0-19 hour acc fcst:
+74:36052298:d=2017022615:BGRUN:surface:18-19 hour acc fcst:
+1705715002000
+17 057 15 0020
+02 26
+starting to truncate file 15
+9:3168592:d=2017022615:GUST:surface:20 hour fcst:
+14:5703822:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:20 hour fcst:
+32:8119361:d=2017022615:PRES:surface:20 hour fcst:
+33:8876699:d=2017022615:HGT:surface:20 hour fcst:
+59:26512084:d=2017022615:TMP:2 m above ground:20 hour fcst:
+64:30529888:d=2017022615:UGRD:10 m above ground:20 hour fcst:
+65:31234948:d=2017022615:VGRD:10 m above ground:20 hour fcst:
+69:33071312:d=2017022615:APCP:surface:0-20 hour acc fcst:
+74:35082514:d=2017022615:BGRUN:surface:19-20 hour acc fcst:
+1705715002100
+17 057 15 0021
+02 26
+starting to truncate file 15
+9:3153606:d=2017022615:GUST:surface:21 hour fcst:
+14:6708964:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:21 hour fcst:
+32:9120663:d=2017022615:PRES:surface:21 hour fcst:
+33:9878979:d=2017022615:HGT:surface:21 hour fcst:
+59:27524727:d=2017022615:TMP:2 m above ground:21 hour fcst:
+64:31547156:d=2017022615:UGRD:10 m above ground:21 hour fcst:
+65:32252565:d=2017022615:VGRD:10 m above ground:21 hour fcst:
+69:34084474:d=2017022615:APCP:surface:0-21 hour acc fcst:
+74:36134913:d=2017022615:BGRUN:surface:20-21 hour acc fcst:
+1705715002200
+17 057 15 0022
+02 26
+starting to truncate file 15
+9:3121821:d=2017022615:GUST:surface:22 hour fcst:
+14:6680041:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:22 hour fcst:
+32:9084093:d=2017022615:PRES:surface:22 hour fcst:
+33:9843447:d=2017022615:HGT:surface:22 hour fcst:
+59:27498026:d=2017022615:TMP:2 m above ground:22 hour fcst:
+64:31522943:d=2017022615:UGRD:10 m above ground:22 hour fcst:
+65:32230432:d=2017022615:VGRD:10 m above ground:22 hour fcst:
+69:34061192:d=2017022615:APCP:surface:0-22 hour acc fcst:
+74:36148357:d=2017022615:BGRUN:surface:21-22 hour acc fcst:
+1705715002300
+17 057 15 0023
+02 26
+starting to truncate file 15
+9:3107386:d=2017022615:GUST:surface:23 hour fcst:
+14:6707725:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:23 hour fcst:
+32:9112978:d=2017022615:PRES:surface:23 hour fcst:
+33:9872708:d=2017022615:HGT:surface:23 hour fcst:
+59:27536242:d=2017022615:TMP:2 m above ground:23 hour fcst:
+64:31560032:d=2017022615:UGRD:10 m above ground:23 hour fcst:
+65:32269903:d=2017022615:VGRD:10 m above ground:23 hour fcst:
+69:34104288:d=2017022615:APCP:surface:0-23 hour acc fcst:
+74:36229369:d=2017022615:BGRUN:surface:22-23 hour acc fcst:
+1705715002400
+17 057 15 0024
+02 26
+starting to truncate file 15
+9:3060361:d=2017022615:GUST:surface:24 hour fcst:
+14:6642927:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:24 hour fcst:
+32:8953409:d=2017022615:PRES:surface:24 hour fcst:
+33:9714833:d=2017022615:HGT:surface:24 hour fcst:
+59:27386492:d=2017022615:TMP:2 m above ground:24 hour fcst:
+64:31411315:d=2017022615:UGRD:10 m above ground:24 hour fcst:
+65:32122655:d=2017022615:VGRD:10 m above ground:24 hour fcst:
+69:33967252:d=2017022615:APCP:surface:0-1 day acc fcst:
+74:36124567:d=2017022615:BGRUN:surface:23-24 hour acc fcst:
+1705715002500
+17 057 15 0025
+02 26
+starting to truncate file 15
+9:3009396:d=2017022615:GUST:surface:25 hour fcst:
+14:6613083:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:25 hour fcst:
+32:8914287:d=2017022615:PRES:surface:25 hour fcst:
+33:9676170:d=2017022615:HGT:surface:25 hour fcst:
+59:27354718:d=2017022615:TMP:2 m above ground:25 hour fcst:
+64:31380257:d=2017022615:UGRD:10 m above ground:25 hour fcst:
+65:32092100:d=2017022615:VGRD:10 m above ground:25 hour fcst:
+69:33944066:d=2017022615:APCP:surface:0-25 hour acc fcst:
+74:36125993:d=2017022615:BGRUN:surface:24-25 hour acc fcst:
+1705715002600
+17 057 15 0026
+02 26
+starting to truncate file 15
+9:3042169:d=2017022615:GUST:surface:26 hour fcst:
+14:6648210:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:26 hour fcst:
+32:8938490:d=2017022615:PRES:surface:26 hour fcst:
+33:9699811:d=2017022615:HGT:surface:26 hour fcst:
+59:27383400:d=2017022615:TMP:2 m above ground:26 hour fcst:
+64:31408604:d=2017022615:UGRD:10 m above ground:26 hour fcst:
+65:32121042:d=2017022615:VGRD:10 m above ground:26 hour fcst:
+69:33950559:d=2017022615:APCP:surface:0-26 hour acc fcst:
+74:36146997:d=2017022615:BGRUN:surface:25-26 hour acc fcst:
+1705715002700
+17 057 15 0027
+02 26
+starting to truncate file 15
+9:3070961:d=2017022615:GUST:surface:27 hour fcst:
+14:6676082:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:27 hour fcst:
+32:9047089:d=2017022615:PRES:surface:27 hour fcst:
+33:9808376:d=2017022615:HGT:surface:27 hour fcst:
+59:27493135:d=2017022615:TMP:2 m above ground:27 hour fcst:
+64:31507041:d=2017022615:UGRD:10 m above ground:27 hour fcst:
+65:32218305:d=2017022615:VGRD:10 m above ground:27 hour fcst:
+69:34048504:d=2017022615:APCP:surface:0-27 hour acc fcst:
+74:36264192:d=2017022615:BGRUN:surface:26-27 hour acc fcst:
+1705715002800
+17 057 15 0028
+02 26
+starting to truncate file 15
+9:2976507:d=2017022615:GUST:surface:28 hour fcst:
+14:6594180:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:28 hour fcst:
+32:8939765:d=2017022615:PRES:surface:28 hour fcst:
+33:9701829:d=2017022615:HGT:surface:28 hour fcst:
+59:27386210:d=2017022615:TMP:2 m above ground:28 hour fcst:
+64:31368439:d=2017022615:UGRD:10 m above ground:28 hour fcst:
+65:32078182:d=2017022615:VGRD:10 m above ground:28 hour fcst:
+69:33909655:d=2017022615:APCP:surface:0-28 hour acc fcst:
+74:36142717:d=2017022615:BGRUN:surface:27-28 hour acc fcst:
+1705715002900
+17 057 15 0029
+02 26
+starting to truncate file 15
+9:3024848:d=2017022615:GUST:surface:29 hour fcst:
+14:6644277:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:29 hour fcst:
+32:9017435:d=2017022615:PRES:surface:29 hour fcst:
+33:9779496:d=2017022615:HGT:surface:29 hour fcst:
+59:27455187:d=2017022615:TMP:2 m above ground:29 hour fcst:
+64:31377684:d=2017022615:UGRD:10 m above ground:29 hour fcst:
+65:32083742:d=2017022615:VGRD:10 m above ground:29 hour fcst:
+69:33902448:d=2017022615:APCP:surface:0-29 hour acc fcst:
+74:36086826:d=2017022615:BGRUN:surface:28-29 hour acc fcst:
+1705715003000
+17 057 15 0030
+02 26
+starting to truncate file 15
+9:2991069:d=2017022615:GUST:surface:30 hour fcst:
+14:6609045:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:30 hour fcst:
+32:8967793:d=2017022615:PRES:surface:30 hour fcst:
+33:9730885:d=2017022615:HGT:surface:30 hour fcst:
+59:27396117:d=2017022615:TMP:2 m above ground:30 hour fcst:
+64:31252962:d=2017022615:UGRD:10 m above ground:30 hour fcst:
+65:31952083:d=2017022615:VGRD:10 m above ground:30 hour fcst:
+69:33750076:d=2017022615:APCP:surface:0-30 hour acc fcst:
+74:35953430:d=2017022615:BGRUN:surface:29-30 hour acc fcst:
+1705715003100
+17 057 15 0031
+02 26
+starting to truncate file 15
+9:2893211:d=2017022615:GUST:surface:31 hour fcst:
+14:6505378:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:31 hour fcst:
+32:8769704:d=2017022615:PRES:surface:31 hour fcst:
+33:9533213:d=2017022615:HGT:surface:31 hour fcst:
+59:27190951:d=2017022615:TMP:2 m above ground:31 hour fcst:
+64:30990829:d=2017022615:UGRD:10 m above ground:31 hour fcst:
+65:31681644:d=2017022615:VGRD:10 m above ground:31 hour fcst:
+69:33473627:d=2017022615:APCP:surface:0-31 hour acc fcst:
+74:35697572:d=2017022615:BGRUN:surface:30-31 hour acc fcst:
+1705715003200
+17 057 15 0032
+02 26
+starting to truncate file 15
+9:2893402:d=2017022615:GUST:surface:32 hour fcst:
+14:6484106:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:32 hour fcst:
+32:8672900:d=2017022615:PRES:surface:32 hour fcst:
+33:9435760:d=2017022615:HGT:surface:32 hour fcst:
+59:27078749:d=2017022615:TMP:2 m above ground:32 hour fcst:
+64:30843539:d=2017022615:UGRD:10 m above ground:32 hour fcst:
+65:31526279:d=2017022615:VGRD:10 m above ground:32 hour fcst:
+69:33312472:d=2017022615:APCP:surface:0-32 hour acc fcst:
+74:35551919:d=2017022615:BGRUN:surface:31-32 hour acc fcst:
+1705715003300
+17 057 15 0033
+02 26
+starting to truncate file 15
+9:2910912:d=2017022615:GUST:surface:33 hour fcst:
+14:6493993:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:33 hour fcst:
+32:8671282:d=2017022615:PRES:surface:33 hour fcst:
+33:9434983:d=2017022615:HGT:surface:33 hour fcst:
+59:27081866:d=2017022615:TMP:2 m above ground:33 hour fcst:
+64:30818367:d=2017022615:UGRD:10 m above ground:33 hour fcst:
+65:31497193:d=2017022615:VGRD:10 m above ground:33 hour fcst:
+69:33284753:d=2017022615:APCP:surface:0-33 hour acc fcst:
+74:35537700:d=2017022615:BGRUN:surface:32-33 hour acc fcst:
+1705715003400
+17 057 15 0034
+02 26
+starting to truncate file 15
+9:2962250:d=2017022615:GUST:surface:34 hour fcst:
+14:6524645:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:34 hour fcst:
+32:8706842:d=2017022615:PRES:surface:34 hour fcst:
+33:9469425:d=2017022615:HGT:surface:34 hour fcst:
+59:27048442:d=2017022615:TMP:2 m above ground:34 hour fcst:
+64:30774379:d=2017022615:UGRD:10 m above ground:34 hour fcst:
+65:31451837:d=2017022615:VGRD:10 m above ground:34 hour fcst:
+69:33239110:d=2017022615:APCP:surface:0-34 hour acc fcst:
+74:35510001:d=2017022615:BGRUN:surface:33-34 hour acc fcst:
+1705715003500
+17 057 15 0035
+02 26
+starting to truncate file 15
+9:2962725:d=2017022615:GUST:surface:35 hour fcst:
+14:6530891:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:35 hour fcst:
+32:8730175:d=2017022615:PRES:surface:35 hour fcst:
+33:9492616:d=2017022615:HGT:surface:35 hour fcst:
+59:27075937:d=2017022615:TMP:2 m above ground:35 hour fcst:
+64:30804933:d=2017022615:UGRD:10 m above ground:35 hour fcst:
+65:31484816:d=2017022615:VGRD:10 m above ground:35 hour fcst:
+69:33285000:d=2017022615:APCP:surface:0-35 hour acc fcst:
+74:35434667:d=2017022615:BGRUN:surface:34-35 hour acc fcst:
+1705715003600
+17 057 15 0036
+02 26
+starting to truncate file 15
+9:3177512:d=2017022615:GUST:surface:36 hour fcst:
+14:6723813:d=2017022615:var discipline=0 center=59 local_table=1 parmcat=3 parm=198:mean sea level:36 hour fcst:
+32:8922292:d=2017022615:PRES:surface:36 hour fcst:
+33:9685542:d=2017022615:HGT:surface:36 hour fcst:
+59:27290455:d=2017022615:TMP:2 m above ground:36 hour fcst:
+64:31041825:d=2017022615:UGRD:10 m above ground:36 hour fcst:
+65:31729064:d=2017022615:VGRD:10 m above ground:36 hour fcst:
+69:33552514:d=2017022615:APCP:surface:0-36 hour acc fcst:
+74:35629047:d=2017022615:BGRUN:surface:35-36 hour acc fcst:
