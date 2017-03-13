@@ -97,11 +97,13 @@ def download_hrrrAK_sfc(item):
         #           % (yesterday.year-2000, yesterday.month, yesterday.day, hour, forecast)
         # Append the file name with ".temp" because we'll truncate and remove
         # this file to reduce file size.
+        print "Downloading:", OUTDIR+NEWFILE
         ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE+'.temp', 'wb').write)
         ftp.quit()
 
         # 2)
         # Truncate some variables. Get only the variables Taylor wants.
+        print "Truncate:", OUTDIR+NEWFILE
         os.system("wgrib2 %s -match '^(9|14|32|33|59|64|65|69|74):' -\grib %s" \
                   % (OUTDIR+NEWFILE+'.temp', OUTDIR+NEWFILE))
         os.system("rm %s" % (OUTDIR+NEWFILE+'.temp'))
@@ -135,10 +137,11 @@ def download_hrrrAK_prs(item):
 
         # Save the file similar to the standard hrrr file naming convention
         # except insert an X to represent that this is the experimental version
-        NEWFILE = 'hrrrX.t%sz.wrfprsf%s.grib2' % (hour, forecast)
+        NEWFILE = 'hrrrAK.t%sz.wrfprsf%s.grib2' % (hour, forecast)
         # name the file with Taylor's convention
         #NEWFILE = 'hrrr_ak_prs_%02d%02d%02d%s' \
         #          % (yesterday.year-2000, yesterday.month, yesterday.day, hour)
+        print "Downloading:", OUTDIR+NEWFILE
         ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
         ftp.quit()
 
@@ -148,6 +151,9 @@ def download_hrrrAK_prs(item):
 
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':
+
+    print "\n================================================"
+    print "Downloading HRRR Alaska"
 
     timer1 = datetime.now()
 
@@ -191,4 +197,21 @@ if __name__ == '__main__':
     p.map(download_hrrrAK_prs, prs_filenames)
 
     print "Time to download HRRR-AK:", datetime.now() - timer1
-    
+
+    import smtplib
+    # Send the Email
+    sender = 'brian.blaylock@utah.edu'
+    receivers = ['blaylockbk@gmail.com']
+
+    message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
+    To: HRRR Check <brian.blaylock@utah.edu>
+    Subject: Alaska HRRR Download %s
+
+    """ % (yesterday) + '\n\nFinished downloading hrrrAK: %s\nTotalTime: %s' % (datetime.now(), datetime.now()-timer1)
+
+    try:
+        smtpObj = smtplib.SMTP('localhost')
+        smtpObj.sendmail(sender, receivers, message)
+        print "Successfully sent email"
+    except SMTPException:
+        print "Error: unable to send email"

@@ -86,6 +86,7 @@ def download_hrrrX_sfc(item):
         # Save the file similar to the standard hrrr file naming convention
         # except insert an X to represent that this is the experimental version
         NEWFILE = 'hrrrX.t%sz.wrfsfcf%s.grib2' % (hour, forecast)
+        print "Downloading:", OUTDIR+NEWFILE
         ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
         ftp.quit()
 
@@ -117,6 +118,7 @@ def download_hrrrX_prs(item):
         # Save the file similar to the standard hrrr file naming convention
         # except insert an X to represent that this is the experimental version
         NEWFILE = 'hrrrX.t%sz.wrfprsf%s.grib2' % (hour, forecast)
+        print "Downloading:", OUTDIR+NEWFILE
         ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
         ftp.quit()
 
@@ -125,6 +127,9 @@ def download_hrrrX_prs(item):
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':
 
+    print "\n================================================"
+    print "Downloading experimental HRRR"
+    
     timer1 = datetime.now()
 
     # Multiprocessing :)
@@ -175,3 +180,21 @@ if __name__ == '__main__':
     p = multiprocessing.Pool(num_proc)
     p.map(download_hrrrX_prs, prs_filenames)
     """
+
+    import smtplib
+    # Send the Email
+    sender = 'brian.blaylock@utah.edu'
+    receivers = ['blaylockbk@gmail.com']
+
+    message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
+    To: HRRR Check <brian.blaylock@utah.edu>
+    Subject: Exp HRRR Download %s
+
+    """ % (yesterday) + '\n\nFinished downloading hrrrX: %s\nTotalTime: %s' % (datetime.now(), datetime.now()-timer1)
+
+    try:
+        smtpObj = smtplib.SMTP('localhost')
+        smtpObj.sendmail(sender, receivers, message)
+        print "Successfully sent email"
+    except SMTPException:
+        print "Error: unable to send email"

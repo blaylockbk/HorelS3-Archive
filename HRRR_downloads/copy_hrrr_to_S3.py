@@ -57,6 +57,8 @@ def copy_to_horelS3(from_here, to_there):
     os.system('rclone --config %s copy %s horelS3:%s' \
               % (config_file, from_here, to_there))
 
+print "\n================================================"
+print "Moving HRRR to S3"
 
 for model_type in [1, 2, 3]:
     """

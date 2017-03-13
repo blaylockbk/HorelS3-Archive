@@ -48,7 +48,6 @@ def reporthook(a, b, c):
     """
     Report download progress in megabytes
     """
-    # ',' at the end of the line is important!
     print "% 3.1f%% of %.2f MB\r" % (min(100, float(a * b) / c * 100), c/1000000.),
 
 def download_hrrr_sfc(hour,
@@ -75,12 +74,13 @@ def download_hrrr_sfc(hour,
     # New URL for downloading HRRRv2+
     URL = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/hrrr.%04d%02d%02d/' \
           % (DATE.year, DATE.month, DATE.day)
-
     for f in forecast:
         FileName = 'hrrr.t%02dz.wrf%sf%02d.grib2' % (hour, field, f)
-
+        print ""
+        print "NOMADS:", URL+FileName
         # Download and save the file
-        urllib.urlretrieve(URL+FileName, OUTDIR+FileName, reporthook)
+        print 'Downloading:', OUTDIR+FileName
+        urllib.urlretrieve(URL+FileName, OUTDIR+FileName)
         print 'Saved:', OUTDIR+FileName
         URL_list.append(URL+FileName)
 
@@ -116,7 +116,8 @@ def download_hrrr_prs(hour,
         FileName = 'hrrr.t%02dz.wrf%sf%02d.grib2' % (hour, field, f)
 
         # Download and save the file
-        urllib.urlretrieve(URL+FileName, OUTDIR+FileName, reporthook)
+        print 'Downloading:', OUTDIR+FileName
+        urllib.urlretrieve(URL+FileName, OUTDIR+FileName)
         print 'Saved:', OUTDIR+FileName
         URL_list.append(URL+FileName)
 
@@ -141,12 +142,15 @@ def download_hrrr_bufr(DATE,
                 % (stations[i], DATE.year, DATE.month, DATE.day, h)
             NEWNAME = '%s_%04d%02d%02d%02d.buf' \
                     % (rename[i], DATE.year, DATE.month, DATE.day, h)
-            urllib.urlretrieve(URL+FILE, OUTDIR+NEWNAME, reporthook)
+            urllib.urlretrieve(URL+FILE, OUTDIR+NEWNAME)
             URL_list.append(URL+FILE)
 
     return URL_list
 
 if __name__ == '__main__':
+
+    print "\n================================================"
+    print "Downloading operational HRRR"
 
     timer1 = datetime.now()
 
@@ -171,3 +175,21 @@ if __name__ == '__main__':
                                    rename=rename)
 
     print "Time to download operational HRRR:", datetime.now() - timer1
+
+    import smtplib
+    # Send the Email
+    sender = 'brian.blaylock@utah.edu'
+    receivers = ['blaylockbk@gmail.com']
+
+    message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
+    To: HRRR Check <brian.blaylock@utah.edu>
+    Subject: Oper HRRR Download %s
+
+    """ % (yesterday) + '\n\nFinished downloading hrrr: %s\nTotalTime: %s' % (datetime.now(), datetime.now()-timer1)
+
+    try:
+        smtpObj = smtplib.SMTP('localhost')
+        smtpObj.sendmail(sender, receivers, message)
+        print "Successfully sent email"
+    except SMTPException:
+        print "Error: unable to send email"

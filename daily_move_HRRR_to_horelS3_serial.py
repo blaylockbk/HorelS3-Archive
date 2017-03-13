@@ -21,9 +21,11 @@ Requirements:
 from datetime import datetime, timedelta
 import os
 import numpy as np
+import stat
 
 # Date to transfer (yesterday's data)
-DATE = datetime.today() - timedelta(days=1)
+#DATE = datetime.today() - timedelta(days=1)
+DATE = datetime(2017, 3, 11)
 
 # rclone config file
 config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
@@ -31,23 +33,6 @@ config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
 model_options = {1:'hrrr', 2:'hrrrX', 3:'hrrr_alaska'} # name in horel-group/archive
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}       # name in horelS3:
 types = ['sfc', 'prs', 'buf']                          # model file types
-
-def create_grb_idx(this_file):
-    """
-    Create the .ctl and .idx file for the grib2 file.
-    A few important notes:
-    1. Uses the script 'g2ctl.pl', originally from Jim's processing
-       /uufs/chpc.utah.edu/sys/pkg/ldm/oper/models/base/g2ctl.pl
-    2. Requires GrADS, so make sure you "module load grads" before running the
-       python script.
-    """
-    #print ""
-    #print "========= Messages from creating .ctl and .idx files =============="
-    ## Create the .ctl file
-    #os.system('/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/g2ctl.pl ' + this_file + '>' + this_file + '.ctl')
-    ## Create the .idx file (gribmap is a GrADS function)
-    #os.system('gribmap -i ' + this_file +'.ctl -0')
-    #print "==================================================================="
 
 def copy_to_horelS3(from_here, to_there):
     """
@@ -117,12 +102,12 @@ for M in model_options.keys():
         forecasts = np.arange(0, 19)
 
     # Open file for printing output log. Organize into directories by year and month.
-    log_path = 'logs/%s_%04d-%02d' % (model, DATE.year, DATE.month)
-    if not os.path.exists(log_path):
-        os.makedirs(log_path)
-    log = open('%s/%s_%04d-%02d-%02d.txt' % (log_path, model, DATE.year, DATE.month, DATE.day), 'w')
-    log.write('Moving %s files\nDate: %s\n' % (model, DATE))
-    log.write('Origin: ' + DIR)
+    #log_path = 'logs/%s_%04d-%02d' % (model, DATE.year, DATE.month)
+    #if not os.path.exists(log_path):
+    #    os.makedirs(log_path)
+    #log = open('%s/%s_%04d-%02d-%02d.txt' % (log_path, model, DATE.year, DATE.month, DATE.day), 'w')
+    #log.write('Moving %s files\nDate: %s\n' % (model, DATE))
+    #log.write('Origin: ' + DIR)
 
     # Do lots of loops...file type (t), hour of day (h), forecast hour (f).
     # loop for each type: sfc, prs, buf
@@ -135,12 +120,12 @@ for M in model_options.keys():
         # Build the new S3 directory path name (e.g. HRRR/oper/sfc/20171201)
         DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d' \
                     % (model_S3_names[model_type], t, DATE.year, DATE.month, DATE.day)
-        log.write('  \n\nCopy to: horelS3:'+DIR_S3+'\n')
-        log.write("========== Checking for "+model + ' ' + t +" files ====================\n")
+        #log.write('  \n\nCopy to: horelS3:'+DIR_S3+'\n')
+        #log.write("========== Checking for "+model + ' ' + t +" files ====================\n")
 
         # loop for each hour (0,24)
         for h in range(0, 24):
-            log.write('Hour %02d:' % (h))
+            #log.write('Hour %02d:' % (h))
 
             # loop for each forecast hour, depenent on model type.
             for f in forecasts:
@@ -187,9 +172,9 @@ for M in model_options.keys():
                         if os.path.isfile(FILE):
                             # If the bufr file exists, then copy to S3
                             copy_to_horelS3(FILE, DIR_S3)
-                            log.write('[%s]' % b)
-                        else:
-                            log.write('[    ]')
+                            #log.write('[%s]' % b)
+#                        else:
+#                            #log.write('[    ]')
                     continue
 
                 # Check if the grib2 file exists. If it does, then copy the file to S3
@@ -200,13 +185,13 @@ for M in model_options.keys():
                         copy_to_horelS3_rename(FILE, DIR_S3, rename_AK)
                     else:
                         copy_to_horelS3(FILE, DIR_S3)
-                    log.write('[f%02d]' % (f))
-                else:
-                    log.write('[   ]')
-            log.write('\n')
-    log.close()
+                    #log.write('[f%02d]' % (f))
+ #               else:
+                    #log.write('[   ]')
+            #log.write('\n')
+    #log.close()
 
-    DATE += timedelta(days=1)
+    
 
 
 # Meteo19 Crontab: 

@@ -11,14 +11,12 @@ Run this on wx1, wx2, wx3, and wx4 to test the S3 archive I/O
 """
 
 import os
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 import numpy as np
+import stat
 
-month = 11
-
-DATE = datetime(2016, month, 1)
-eDATE = datetime(2016, month+1, 1)
-
+DATE = date(2016, 9, 1)
+eDATE = date(2017, 1, 1)
 
 base = DATE
 days = (eDATE - DATE).days
@@ -34,41 +32,44 @@ for m in models:
             print "working on", m, t, d
             # Create a list of files for the day
             S3_DIR = 'HRRR/%s/%s/%04d%02d%02d/' \
-                      % (m, t, DATE.year, DATE.month, DATE.day)
-            file_list_name = '%s-%s-%04d%02d%02d.txt' \
-                              % (m, t, DATE.year, DATE.month, DATE.day)
-            os.system('rclone ls horelS3:%s | cut -c 11- > temp/%s' \
-                       % (S3_DIR, file_list_name))
-            DATE += timedelta(days=1)
+                      % (m, t, d.year, d.month, d.day)
+            s3_list = os.popen('rclone ls horelS3:%s | cut -c 11-' \
+                            % (S3_DIR)).read().split('\n')
 
-            # Create the directory in the horel-group/archive/HRRR space to
-            # match the S3 directory structure.
-            HG_DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/' + S3_DIR
-            if not os.path.exists(HG_DIR):
-                os.makedirs(HG_DIR)
+            # Only proceed if s3_list isn't empty
+            if s3_list != ['']:
 
-            # For each file in the list (that ends in .grib2), download the file.
-            f = open('temp/'+file_list_name)
-            for line in f:
-                line = line[:-1] # get rid of the /n at the end of each line.
-                if line[-6:] == '.grib2':
-                    # Download from S3 with rclone
-                    dwnld_rename = '%s-%s-%04d%02d%02d.%s' \
-                                    % (m, t, DATE.year, DATE.month, DATE.day, line)
-                    cmd_copy = 'rclone-beta/rclone copyto horelS3:%s%s temp/%s' \
-                                % (S3_DIR, line, dwnld_rename)
-                    print cmd_copy
-                    os.system(cmd_copy)
+                # Create the directory in the horel-group/archive/HRRR space to
+                # match the S3 directory structure.
+                HG_DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/' + S3_DIR
+                if not os.path.exists(HG_DIR):
+                    os.makedirs(HG_DIR)
+                    os.chmod(HG_DIR, stat.S_IRWXU | \
+                        stat.S_IRGRP | stat.S_IXGRP | \
+                        stat.S_IROTH | stat.S_IXOTH)
 
-                    # Make the idx file and put in horel-group/archive/HRRR
-                    idx_name = line+'.idx'
-                    cmd_create = 'wgrib2 temp/%s -t -var -lev -ftime > %s' \
-                                  % (dwnld_rename, HG_DIR+idx_name)
-                    print cmd_create
-                    os.system(cmd_create)
+                # For each file in the list (that ends in .grib2), download the file.
+                for f in s3_list:
+                    if f[-6:] == '.grib2':
+                        # Download from S3 with rclone
+                        # (must use copyto becuase we are renameing the file)
+                        dwnld_rename = '%s-%s-%04d%02d%02d.%s' \
+                                        % (m, t, d.year, d.month, d.day, f)
+                        cmd_copy = 'rclone-beta/rclone copyto horelS3:%s%s temp/%s' \
+                                    % (S3_DIR, f, dwnld_rename)
+                        print cmd_copy
+                        os.system(cmd_copy)
 
-                # Remove the downloaded file and the list
-                os.system('rm temp/%s' % (dwnld_rename))
-            os.system('rm temp/%s' % (file_list_name))
+                        # Make the idx file and put in horel-group/archive/HRRR
+                        idx_name = f+'.idx'
+                        cmd_create = 'wgrib2 temp/%s -t -var -lev -ftime > %s' \
+                                    % (dwnld_rename, HG_DIR+idx_name)
+                        print cmd_create
+                        os.system(cmd_create)
+
+                    # Remove the downloaded file
+                    os.system('rm temp/%s' % (dwnld_rename))
+            else:
+                print "does not exist:", m, t, d
 
 print "Month %s- Time to complete:" % (month), datetime.now()-timer1 

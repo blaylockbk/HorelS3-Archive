@@ -16,7 +16,7 @@ setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/HRRR_do
 
 # Load some modules
 module load rclone
-module load python/2.7.3 # until meso1 upgrades to centOS 7, then get python/2.7.11
+module load python/2.7.3 # until meso1 upgrades to centOS 7, then load python/2.7.11
 module load wgrib2
 
 # Download HRRR to horel-group archive
@@ -26,6 +26,9 @@ python ${SCRIPTDIR}/download_hrrr_multipro.py
 
 # Copy from horel-group/archive to Horel S3 archive, create .idx, and change permissions to public
 python ${SCRIPTDIR}/copy_hrrr_to_S3.py
+
+# Email the files that are now on S3
+python ${SCRIPTDIR}/email_log.py
 
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`
