@@ -17,6 +17,7 @@ This Script does the following:
 """
 
 import urllib
+import urllib2
 from datetime import datetime, timedelta
 import os
 import stat
@@ -124,29 +125,6 @@ def download_hrrr_prs(hour,
     # Return the list of URLs we downloaded from for troubleshooting
     return URL_list
 
-def download_hrrr_bufr(DATE,
-                       stations=['725720'],
-                       rename=['kslc'],
-                       hour=range(0, 24)):
-    """
-    Special case for downloading HRRR bufr soundings.
-    """
-    URL_list = []
-
-    URL = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/hrrr.%04d%02d%02d/bufrsnd.t%02dz/' \
-          % (DATE.year, DATE.month, DATE.day, DATE.hour)
-
-    for h in hour:
-        for i in range(len(stations)):
-            FILE = 'bufr.%s.%04d%02d%02d%02d' \
-                % (stations[i], DATE.year, DATE.month, DATE.day, h)
-            NEWNAME = '%s_%04d%02d%02d%02d.buf' \
-                    % (rename[i], DATE.year, DATE.month, DATE.day, h)
-            urllib.urlretrieve(URL+FILE, OUTDIR+NEWNAME)
-            URL_list.append(URL+FILE)
-
-    return URL_list
-
 if __name__ == '__main__':
 
     print "\n================================================"
@@ -165,14 +143,6 @@ if __name__ == '__main__':
 
     # Download pressure fields
     prs_URLs = p.map(download_hrrr_prs, hour_list)
-
-    # Just download bufr soundings in serial. These are quick.
-    # Download bufr soundings: KSLC, KODG, KPVU
-    stations = ['725720', '725724', '725750'] #station numbers
-    rename = ['kslc', 'kpvu', 'kodg']         #station labels
-    bufr_URLs = download_hrrr_bufr(yesterday,
-                                   stations=stations,
-                                   rename=rename)
 
     print "Time to download operational HRRR:", datetime.now() - timer1
 

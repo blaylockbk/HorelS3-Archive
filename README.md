@@ -263,3 +263,5 @@ Make a single file public (navigate to `/uufs/chpc.utah.edu/common/home/horel-gr
 `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`
 
 * Come up with ways to get data from the archive URL via curl comands.
+
+## About 70 GB of data is stored every day. That means we'll fill up our 30 TB limit around the begining of August, 2017.
