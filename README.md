@@ -145,7 +145,8 @@ For example, to get TMP:2 m temperature from a file:
       * File example: `hrrrAK.t00.wrfsfcf00.grib2`
 
 **A visulatizaion of HRRR file available on the S3 archive can be explored on the web interface download page found [here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html).**
-![Download Page Image](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/images/hrrr_dwnld_page.PNG)
+![MesoWest Logo, why doesn't this work??](MesoWest_20th_black.png "Powered by MesoWest")
+![Download Page Image](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/images/hrrr_dwnld_page.PNG "Download Page Image")
 
 
 ## Scripts and contents of this repository
