@@ -9,13 +9,13 @@ _February 22, 2017_
 ## Introduction
 In January 2017, CHPC allocated the Horel Group 30 TB on the S3 (Simple Storage
 Service) archive space. This space is used for the Horel archive. Presently, it 
-only houses the HRRR archive (> 12 TB), but more data will be moved to S3. 
+only houses the HRRR archive (> 20 TB), but more data will be moved to S3. 
 
 You can view and access data via:
 * `rclone` in your linux terminal (you can also get rclone for your PC)
 * URL and cURL commands: [http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR).
 
-## Access via rclone
+## Access data via rclone
 [rclone](http://rclone.org/) allows you to sync files and directories between
 your linux computer and the S3 buckets (and other cloud services).
 Before getting started, first review the CHPC rclone tutorial 
@@ -41,11 +41,13 @@ set up on your CHPC account. Load rclone (I do this is in my `.custom.csh` file)
       7. Region: Choose "other-v2-signature" (option `10`).  
       8. Endpoint: Enter `https://pando-rgw01.chpc.utah.edu`.
       9. Location: Seclection option `1` for none.
-    
-### Basic Examples
+
+Completing this makes a .rclone.conf file in your home directory
+
+### Basic Comand Examples
 These examples can be used if you named the archive source `horelS3` (like I did
 for the meteo19 ldm user). If you named your source differently when you
-configured rclone, simple replace the name before the colon.
+configured rclone, simply replace the name before the colon.
 
 |      What do you want to do?                |       Command     | Notes  |
 |---------------------------------------------|-------------------|--------|
@@ -71,27 +73,34 @@ here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
 
 ## Access via URL and curl comands
 You can view _some_ of the file contents here: 
-[http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR)
+[http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR).
 The trouble is that it shows everything in the HRRR bucket without letting you
 view the files for each specific directory. Also, not every file is listed becuase
 the list is limited to 1000 files.
 
 ### Download a file:
-Download a file from the browser address:  
+#### Download a file from a browser. For example, go to this URL...  
 [https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2](`https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`)
 
-Download with wget  
+#### Download with wget  
 `wget https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
 
-Download with cURL   
+#### Download with cURL   
 `curl -O https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
 
-Download with cURL and rename  
+#### Download with cURL and rename  
 `curl -o hrrr20170101_00zf00.grib2 https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
 
-## S3 Archive Contents
+#### Download a single variable with cURL
+If you know the byte range of the variable you are interested, you can get just that variable. Byte ranges for each variable are located 
+online here:
+[https://api.mesowest.utah.edu/archive/HRRR/]('https://api.mesowest.utah.edu/archive/HRRR/')  
+For example, to get TMP:2 m temperature from a file:  
+`curl -o 20161101_00zf00_2mTemp.grib2 --range 33120613-34368741 https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20161101/hrrr.t00z.wrfsfcf00.grib2`
 
-### `horelS3:HRRR/`
+## S3 Archive Contents and URL Structure
+
+### **`horelS3:HRRR/`**
 |      Important Dates            |   What happened?  | Notes  |
 |---------------------------------|-------------------|--------|
 | 2015-Apr-18 | Began downloading HRRR sfc and prs analyses | HRRRv1 Some days/hours may be missing|
@@ -102,109 +111,137 @@ Download with cURL and rename
 | 2016-Aug-24 | Began downloading HRRR sfc 18 hr forecasts| HRRRv2 increased forecasts from 15 to 18 hours.|
 | 2016-Dec-01 | Began downloading experimental HRRR sfc analyses| HRRRv3: Runs aren't always available becuase this is an experimental model.|
 
-* #### `oper/` Operational HRRR
-  * `sfc/` Surface fields
-    * _`YYYYMMDD/`_
+* #### **`oper/`** Operational HRRR
+  * **`sfc/`** Surface fields
+    * _**`YYYYMMDD/`**_
       * Analysis and forecast hours (f00-f18) for all hours (00-23).
       * File example: `hrrr.t00.wrfsfcf00.grib2`
 
-  * `prs/` Pressure fields
-    * _`YYYYMMDD/`_
+  * **`prs/`** Pressure fields
+    * **_`YYYYMMDD/`_**
       * Analysis hour (f00) only for all hours (00-23).
       * File example: `hrrr.t00.wrfprsf00.grib2`
-  * `buf/` Bufr soundings
-    * _`YYYYMMDD/`_
+  * **`buf/`** Bufr soundings
+    * **_`YYYYMMDD/`_**
       * All hours (00-23). Each file contains analysis and forecast soundings.
       * Only for Salt Lake City (kslc), Ogden (kogd), and Provo (kpvu)
       * File example: `kslc_2017010100.buf`
  
-* #### `exp/` Experimental HRRR
-  * `sfc/` Surface fields
-    * _`YYYYMMDD/`_
+* #### **`exp/`** Experimental HRRR
+  * **`sfc/`** Surface fields
+    * **_`YYYYMMDD/`_**
       * Analysis hour (f00) for all hours, if available.
       * File example: `hrrrX.t00.wrfsfcf00.grib2`
 
-* #### `alaska/` HRRR Alaska (Experimental)
-  * `sfc/` Surface fields
-    * _`YYYYMMDD/`_
+* #### **`alaska/`** HRRR Alaska (Experimental)
+  * **`sfc/`** Surface fields
+    * **_`YYYYMMDD/`_**
       * Analysis and 36 hour forecasts (f00-f36), if available. Runs initialize
       every three hours at 0z, 3z, 6z, 9z, 12z, 15z, 18z, 21z.
       * File example: `hrrrAK.t00.wrfsfcf00.grib2`
-  * `prs/` Pressure fields
-    * _`YYYYMMDD/`_
+  * **`prs/`** Pressure fields
+    * **_`YYYYMMDD/`_**
       * Analysis hours (f00) for run hours, if available
       * File example: `hrrrAK.t00.wrfsfcf00.grib2`
 
-**Log files: The scripts below create a log file for each day located in the
-[logs](https://github.com/blaylockbk/HorelS3-Archive/tree/master/logs) 
-directory. Use these log files to review what data is available. 
-Files are organized and named by the model type and the date 
-(e.g. `logs/hrrr_2017-01/hrrr_2017-01-01.txt`). The file shows a check box for all the 
-forecast hours and hours of the day that were found in the horel-group/archive.
-An attempt to move the file to the S3 archive was made. However, a check mark 
-in the log file does not garuntee the file was successfully moved to the S3 archive.**
-
-More details about the HRRR archive **[here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html)**.
+**A visulatizaion of HRRR file available on the S3 archive can be explored on the web interface download page found [here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html).**
+![]('http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/images/hrrr_dwnld_page.PNG')
 
 
-## Scripts
+## Scripts and contents of this repository
+
+### `remaining_S3_disk_space.py`
++ A script that reports how much space is left on the S3 archive, using 
+total files from a single day as an estimate. Reports when the archive
+will be filled up. Last I checked, I estimate S3 will be full mid-August. 
+
+### **`HRRR_downloads`** (directory)
+Contents of this directory contain scripts for downloading HRRR data. These are
+run by cron at 6:05 PM Mountain Time. These are the most up-to-date scripts.
++ **old_dwnld_scirpts**: don't worry about these
++ `HRRR_downloads.csh`: called by CRON at 6:05 on meso1 by the mesohorse user. Does the following:
+  + loads modules
+  + `download_hrrr_bufr.py`
+  + `downlaod_hrrrAK_multipro.py`
+  + `downlaod_hrrrX_multipro.py`
+  + `downlaod_hrrr_multipro.py`
+  + `copy_hrr_to_S3.py`: copies files from horel-group/archive to S3, creates
+  a .idx file for each grib2 file and puts in horel-group/archive/HRRR, and changes permissions   of each new file on S3 to public.
+  + `email_log.py`: sends me an email to confirm the files are now on the S3 archive.
+
+### `rclone-beta` (directory)
+Contains the beta version of rclone that allows you to rename files with copyto and moveto
+
+### `s3cmd-1.6.1` (directory)
+Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. (see below Q&A for usage)
+
+### `temp` (directory)
+A place that bufr soundings are temporarily downloaded to. They are deleted
+the next time HRRR_download.csh is executed.
+
+---
+
+The following scripts were used to move large amounts of files from the horel-group/archive
+to the S3 archive when we first got started.
+
 ### `move_HRRR_to_horelS3_multipro.py`
->A python script that utilizes multiprocessing to simultaneously execute an rclone 
-command that copies HRRR files from the `horel-group/archive/models/hrrr` to
-the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
-bump this up to 24. (Hummm, would that increase the speed?? Or is that I/O like
-rush hour traffic at point of the mountain jamming those copper wires??)
-The idea is to sustain a continuous data transfer even while one process is creating
-the .ctl and .idx files, which takes a second or two. So, it seems using just 
-four processors makes the most sense.  
->
->For a range of dates (different day on each processor):  
->  1. Loops through all data types (sfc, prs, buf), hours of the day, and forecast
->  hours.
->  2. Checks if files exist in horel-group/archive.
->  3. Creates .idx and .ctl files for .grib2 files.
->  4. Copys the files to horelS3:HRRR to the appropriate directory
->  5. Creates a log of files that were found. Find log files [here](https://github.com/blaylockbk/HorelS3-Archive/tree/master/logs).
->
-> **This script should be run by the meteo19 ldm user.**
->When you log into meteo19 as ldm, you must:
->* `module load rclone`
->* `module load grads` (required to create .idx files)
++ A python script that utilizes multiprocessing to simultaneously execute an    rclone 
+ command that copies HRRR files from the `horel-group/archive/models/hrrr` to
+ the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
+ bump this up to 24. (Hummm, would that increase the speed?? Or is that I/O  like
+ rush hour traffic at point of the mountain jamming those copper wires??)
+ The idea is to sustain a continuous data transfer, so, it seems using just 
+ four processors makes the most sense.  
++ **This script should be run by the meso1 mesohorse user.**
+ When you log into meso1 as the mesohorse user, remember to load modules:
+ * `module load rclone`
+
++ For a range of dates (different day on each processor):  
+    1. Loops through all data types (sfc, prs, buf), hours of the day, and forecast
+  hours.
+    2. Checks if files exist in horel-group/archive.
+    3. Copys the files to horelS3:HRRR to the appropriate directory
+
 
 ### `move_HRRR_to_horelS3_serial.py`
->Same as above, but run in serial (one date at at time) with a while loop.
++ Same as above, but run in serial (one date at at time) with a while loop.
 
 ### `daily_move_HRRR_to_horelS3_serial.py`
->Same as above, but this script will only move yesterday's HRRR data to the S3
-archive. This script is (will be) called by gl1 crontab?
++ Same as above, but this script will only move yesterday's HRRR data to the S3
+archive.
 
 ### `untar_move_HRRR_to_horelS3.py`
->A modified version of the top script with the added function to
-untar HRRR files from the compressed archive directory.
->**This script must be run on wx4**
->  1. Untars HRRR files into a temporary directory on WX4 (`/scratch/local/Brian_untar_HRRR/`).
->  2. Moves to S3 (same as above).
->  3. Removes the uncompressed files.
->
->This script doesn't use multiprocessing because we have to untar a bunch of 
++ A modified version of the top script with the added function to
+untar HRRR files from the compressed horel-group/archive directory.
++ **This script must be run on wx4**. Remember to `module load rclone`.
+  1. Untars HRRR files into a temporary directory on wx4: `/scratch/local/Brian_untar_HRRR/`.
+  2. Moves to S3 (same as above).
+  3. Removes the uncompressed files.
+
++ This script doesn't use multiprocessing because we have to untar a bunch of 
 files in the scratch space. Since I don't want to fill this all up so fast
 we'll only do one day at a time with a while loop.
 
-### `g2ctl.pl`
->A pearl script that creates the .idx and GrADS .ctl files for a grib2 file.
-You don't have to do anything with this. Just know it's here and that it is 
-required to create those grib2 index files.
-When I copy the grib2 file to the S3 archive, I create these index files and 
-move them to the S3 archive. This script is called by the above python scripts.
+### `create_idx.py`
++ Creates .idx files for each HRRR grib2 file for a range of dates.
+These .idx files are stored in horel-group/archive/HRRR where is can be
+accessed online here: [https://api.mesowest.utah.edu/archive/HRRR/](https://api.mesowest.utah.edu/archive/HRRR/).
+
+
 
 ---
-# Answers to other questions you might have...
+---
+
+# Q&A: Answers to other questions you might have...
 ## How do I rename a file when I copy it to S3?
 You have to use the rclone-beta version if you want to rename files on the S3 
 archive. Use the `copyto` and `moveto` commands.
 
+rclone-beta is installed here:
+`/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/rclone`
+
 ## How do I list files in alpha-numeric order?
-rclone wont do this for you, but you can pipe the output to the sort command.
+rclone sort file names for you, but you can pipe the output to the sort command.
 For example:  
 `rclone ls horelS3:HRRR/oper/sfc/20170109/ | sort -k 2`  
 Where the "k" specifies which field to sort by. The first field is file size and
@@ -227,22 +264,24 @@ You have to use `s3cmd` to change the files from public to private. You
 would want to do this for each file added to the S3 archive that you want 
 to be downloadable from the download URL.
 
-s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1`  
+s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd`  
 
+#### Make public (first navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1` directory)
+A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`  
+A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-public --recursive`
+
+#### Make private
+A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-private`  
+A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-private --recursive`
+
+## How is `rclone` and `s3cmd` configured?
 Configuration files for the mesohorse user:  
 `/scratch/local/mesohorse/.s3cfg`  
 `/scratch/local/mesohorse/.rclone-conf`
 
-#### Make public (first navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1` directory)
-A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`
-A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-public --recursive`
-
-#### Make private
-A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-private`
-A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-private --recursive`
-
 ## How much space is left and when will the S3 archive fill up?
-run the script `remaining_S3_disk_space.py` which produces output like this...
+My current estimates are that the 30 TB on S3 will fill up around mid-August.
+For an update, run the script `remaining_S3_disk_space.py` which produces output like this...
 > Horel S3 Usage  
   ==================================  
   Allocation : 30.00 TB  
@@ -263,47 +302,10 @@ run the script `remaining_S3_disk_space.py` which produces output like this...
   S3 will fill up on August 19, 2017 with present usage.  
   ==================================  
 
+## Where can I find examples on how to download HRRR data?
+Check out the scripting tips here: [Scripting Tips](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_script_tips.html)
 
-____
-## To do list:
-* Implement a script to add new HRRR files to the S3 archive as soon as 
-they are downloaded each day. (This whole download system needs to be more 
-robust. I'd like to rewrite the download scripts in 
-python becuase the datetime module is so much easier to use than shell
-scripting dates.)
-* Make file contents available online
->Brian,  
->In order to make buckets web accessible (public) you need to you need to use 
-s3cmd as rclone doesn’t >yet have the functionality to set this.  I went ahead 
-and made the HRRR bucket and all it’s contents public.  >If you need to make 
-adjustments here are the commands:
->
->Make public:
->        `s3cmd setacl s3://HRRR --acl-public --recursive`
->
->Make private:
->        `s3cmd setacl s3://HRRR --acl-private --recursive`
->
->Give it a look.  I noticed that my browser address line didn’t like the HRRR 
-name prepended to the >front of the rados gateways name because of the caps, 
-but was fine with it being appended thusly:
->https://pando-rgw01.chpc.utah.edu/HRRR.   You will also notice that as you web
-browse to that page that the >style is not right and it is displaying what 
-looks like raw XML.  I haven’t figured out how or if I can I can >adjust by 
-http settings and make that look better.
->
->--
->Sam Liston (sam.liston@utah.edu)
+___
+___
 
-s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1`  
-
-Configuration files on mesohorse user:  
-`/scratch/local/mesohorse/.s3cfg`  
-`/scratch/local/mesohorse/.rclone-conf`
-
-Make a single file public (navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1`)
-`./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`
-
-* Come up with ways to get data from the archive URL via curl comands.
-
-## About 70 GB of data is stored every day. That means we'll fill up our 30 TB limit around the begining of August, 2017.
+###### Send questions to Brian Blaylock (brian.blaylock@utah.edu)
