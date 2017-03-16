@@ -197,21 +197,3 @@ if __name__ == '__main__':
     p.map(download_hrrrAK_prs, prs_filenames)
 
     print "Time to download HRRR-AK:", datetime.now() - timer1
-
-    import smtplib
-    # Send the Email
-    sender = 'brian.blaylock@utah.edu'
-    receivers = ['blaylockbk@gmail.com']
-
-    message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
-    To: HRRR Check <brian.blaylock@utah.edu>
-    Subject: Alaska HRRR Download %s
-
-    """ % (yesterday) + '\n\nFinished downloading hrrrAK: %s\nTotalTime: %s' % (datetime.now(), datetime.now()-timer1)
-
-    try:
-        smtpObj = smtplib.SMTP('localhost')
-        smtpObj.sendmail(sender, receivers, message)
-        print "Successfully sent email"
-    except SMTPException:
-        print "Error: unable to send email"

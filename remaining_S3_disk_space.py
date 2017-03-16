@@ -2,34 +2,37 @@
 # March 13, 2017
 
 """
+Answers these thought provoking questions...
 How much space is there remaining on the S3 Archive?
-How many days left until we are filled?
+How many days left until the S3 archive is filled?
+(Uses files from a single day as an estimate of how much space is used)
 """
 
 import os
-import numpy as np
 from datetime import date, timedelta
+import numpy as np
 
-# Date 
+# ------ Stuff you may want to change -----------------------------------------
+# Date (file sizes for this date are used to estimate a daily usage)
 DATE = date.today() - timedelta(days=1)
+
+# Allocation (30 TB initially issued January 2017)
+allocation = 30 * 10**12
+# -----------------------------------------------------------------------------
 
 # Units
 TB = 10.**12
 GB = 10.**9
 
-# Allocation (30 TB)
-allocation = 30 * 10**12
-
-# Get the current byte size
+# Get the current byte size (this takes awhile)
+print "Getting total S3 size (this takes awhile)"
+print "using %s as an estimate of daily usage" % (DATE)
 cmd_total_size = "rclone ls horelS3:HRRR | cut -c 1-10"
 file_sizes = os.popen(cmd_total_size).read().split(' \n')
 file_sizes = np.array(file_sizes[:-1]).astype(int)
 
 total_bytes = np.sum(file_sizes)
 
-print "Allocation: %.2f TB" % (allocation/TB)
-print "Total size: %.2f TB" % (total_bytes/TB)
-print ""
 # Get daily HRRR size for each model
 model = ['oper', 'exp', 'alaska']
 variables = ['sfc', 'prs', 'buf']
@@ -47,14 +50,25 @@ for m in model:
         day_size = np.sum(np.array(day_size[:-1]).astype(int))
         sizes[m][v] = day_size
 
+print ""
+print "  Horel S3 Usage"
+print "  =================================="
+print "  Allocation : %.2f TB" % (allocation/TB)
+print "  Total size : %.2f TB" % (total_bytes/TB)
+print "  Remaining  : %.2f TB" % (allocation/TB - total_bytes/TB)
+print "  =================================="
+print "  Usage on %s" % DATE
 sum_day = 0
 for m in model:
     for v in variables:
-        print "%s %s: %.2f GB" % (m, v, sizes[m][v]/GB)
+        print "    %-6s %-6s: %0.2f GB" % (m, v, sizes[m][v]/GB)
         sum_day += sizes[m][v]
 
-# Remaining days 
+# Days remaining before S3 is full
 days_remaining = (allocation-total_bytes)/sum_day
 
 # When will we run out of space?
-print "S3 will fill up on", date.today() + timedelta(days=days_remaining)
+print ""
+print "  Approx. %s days until full" % (days_remaining)
+print "  S3 will fill up on %s with present usage" % (date.today() + timedelta(days=days_remaining)).strftime('%B %d, %Y')
+print "  =================================="

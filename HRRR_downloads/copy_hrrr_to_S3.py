@@ -31,7 +31,7 @@ config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
 
 model_HG_names = {1:'hrrr', 2:'hrrrX', 3:'hrrrAK'} # name in horel-group/archive
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}   # name in horelS3:
-file_types = ['sfc', 'prs', 'buf']                 # model file file_types
+file_types = ['sfc', 'prs']                 # model file file_types
 # =============================================================================
 
 def create_idx(for_this_file, put_here):
@@ -96,10 +96,6 @@ for model_type in [1, 2, 3]:
 
     # loop for each type: sfc, prs, buf
     for t in file_types:
-        # Skip known conditions that don't exist
-        if t == 'buf' and (model == 'hrrrAK' or model == 'hrrrX'):
-            # no bufer files for alaska for experimental HRRR, so don't even check
-            continue
 
         # Build the new S3 directory path name (e.g. HRRR/oper/sfc/20171201)
         DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
@@ -128,30 +124,16 @@ for model_type in [1, 2, 3]:
                 print "      hour  =", h
                 print "      forec =", f
 
-                if t != 'buf':
-                    # File format example: hrrr.t00z.wrfsfcf00.grib2
-                    FILE = DIR + '%s.t%02dz.wrf%sf%02d.grib2' % (model, h, t, f)
-                    # Check if the grib2 file exists.
-                    # If it does, then copy the file to S3 and create a .idx file.
-                    if os.path.isfile(FILE):
-                        copy_to_horelS3(FILE, DIR_S3)
-                        create_idx(FILE, DIR_S3)
-                        log.write('[f%02d]' % (f))
-                    else:
-                        log.write('[   ]')
-
-                # Bufr files are a special case, so do this stuff...
+                # File format example: hrrr.t00z.wrfsfcf00.grib2
+                FILE = DIR + '%s.t%02dz.wrf%sf%02d.grib2' % (model, h, t, f)
+                # Check if the grib2 file exists.
+                # If it does, then copy the file to S3 and create a .idx file.
+                if os.path.isfile(FILE):
+                    copy_to_horelS3(FILE, DIR_S3)
+                    create_idx(FILE, DIR_S3)
+                    log.write('[f%02d]' % (f))
                 else:
-                    for b in ['kslc', 'kpvu', 'kogd']:
-                        # File path and name for bufr soundings stations (e.g. kslc_2017010223.buf)
-                        FILE = DIR + '%s_%04d%02d%02d%02d.buf' \
-                                    % (b, DATE.year, DATE.month, DATE.day, h)
-                        if os.path.isfile(FILE):
-                            # If the bufr file exists, then copy to S3
-                            copy_to_horelS3(FILE, DIR_S3)
-                            log.write('[%s]' % b)
-                        else:
-                            log.write('[    ]')
+                    log.write('[   ]')
 
             log.write('\n')
 

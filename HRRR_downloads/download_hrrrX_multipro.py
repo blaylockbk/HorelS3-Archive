@@ -180,21 +180,3 @@ if __name__ == '__main__':
     p = multiprocessing.Pool(num_proc)
     p.map(download_hrrrX_prs, prs_filenames)
     """
-
-    import smtplib
-    # Send the Email
-    sender = 'brian.blaylock@utah.edu'
-    receivers = ['blaylockbk@gmail.com']
-
-    message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
-    To: HRRR Check <brian.blaylock@utah.edu>
-    Subject: Exp HRRR Download %s
-
-    """ % (yesterday) + '\n\nFinished downloading hrrrX: %s\nTotalTime: %s' % (datetime.now(), datetime.now()-timer1)
-
-    try:
-        smtpObj = smtplib.SMTP('localhost')
-        smtpObj.sendmail(sender, receivers, message)
-        print "Successfully sent email"
-    except SMTPException:
-        print "Error: unable to send email"

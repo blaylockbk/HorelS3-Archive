@@ -198,12 +198,12 @@ When I copy the grib2 file to the S3 archive, I create these index files and
 move them to the S3 archive. This script is called by the above python scripts.
 
 ---
-## Answers to other questions you might have...
-### How do I rename a file when I copy it to S3?
+# Answers to other questions you might have...
+## How do I rename a file when I copy it to S3?
 You have to use the rclone-beta version if you want to rename files on the S3 
 archive. Use the `copyto` and `moveto` commands.
 
-### How do I list files in alpha-numeric order?
+## How do I list files in alpha-numeric order?
 rclone wont do this for you, but you can pipe the output to the sort command.
 For example:  
 `rclone ls horelS3:HRRR/oper/sfc/20170109/ | sort -k 2`  
@@ -213,7 +213,7 @@ the second field (2) is the file name.
 You can sort direcotry contents like this:  
 `rclone lsd horelS3:HRRR/oper/sfc | sort -k 4`
 
-### How do you get the total size of a bucket or directory?
+## How do you get the total size of a bucket or directory?
 With some creative linux commands...
 
 How big is a bucket, in Terabytes?  
@@ -221,6 +221,48 @@ How big is a bucket, in Terabytes?
 
 How big is a directory, in Gigabytes?  
 `rclone ls horelS3:HRRR/oper/sfc/20161213 | cut -c 1-10 | awk '{total += $0} END{print "sum(GB)="total/1000000000}'`
+
+## How do you make a directory or files public/private?
+You have to use `s3cmd` to change the files from public to private. You 
+would want to do this for each file added to the S3 archive that you want 
+to be downloadable from the download URL.
+
+s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1`  
+
+Configuration files for the mesohorse user:  
+`/scratch/local/mesohorse/.s3cfg`  
+`/scratch/local/mesohorse/.rclone-conf`
+
+#### Make public (first navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1` directory)
+A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`
+A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-public --recursive`
+
+#### Make private
+A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-private`
+A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-private --recursive`
+
+## How much space is left and when will the S3 archive fill up?
+run the script `remaining_S3_disk_space.py` which produces output like this...
+> Horel S3 Usage  
+  ==================================  
+  Allocation : 30.00 TB  
+  Total size : 19.11 TB  
+  Remaining  : 10.89 TB  
+  ==================================  
+  Usage on 2017-03-13  
+    oper   sfc   : 54.22 GB  
+    oper   prs   : 8.88 GB  
+    oper   buf   : 0.01 GB  
+    exp    sfc   : 2.78 GB  
+    exp    prs   : 0.00 GB  
+    exp    buf   : 0.00 GB  
+    alaska sfc   : 1.20 GB  
+    alaska prs   : 1.66 GB  
+    alaska buf   : 0.00 GB  
+  Approx. 158 days until full  
+  S3 will fill up on August 19, 2017 with present usage.  
+  ==================================  
+
 
 ____
 ## To do list:

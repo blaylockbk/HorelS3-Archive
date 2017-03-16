@@ -1,6 +1,13 @@
 # Brian Blaylock
 # March 14, 2017                                  It's pi day (3.14)
 
+"""
+Downloading Bufr soundings has so many special conditions, so just download
+and move to S3 in this script to keep things simple in the other scripts.
+
+Modified from the old code by Trevor Alcott
+"""
+
 from string import *
 from math import *
 from time import *
@@ -11,6 +18,8 @@ import stat
 SCRIPTDIR = '/uufs/chpc.utah.edu/sys/pkg/ldm/oper/models/hrrr_so3s/'
 temp = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/temp/'
 arcdir = '/uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/BB_test/oper/buf/'
+
+rclone = '/uufs/chpc.utah.edu/sys/installdir/rclone/1.29/bin/rclone'
 
 model = 'hrrr'
 sites = ['kslc', 'kogd', 'kpvu']
@@ -46,22 +55,21 @@ for site in sites:
             iday = int((ls[4].split(' ')[8])[4:6])
             ihour = int((ls[4].split(' ')[8])[7:9])
             print "time:", iyear, imonth, iday, ihour
-            HRRR_DIR = arcdir + '20%02d%02d%02d/' % (iyear, imonth, iday)
+
+            HG_DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/20%02d%02d%02d/BB_test/models/hrrr/' % (iyear, imonth, iday)
             S3_DIR = 'horelS3:HRRR/oper/buf/20%02d%02d%02d/' % (iyear, imonth, iday)
-            if not os.path.exists(HRRR_DIR):
-                os.makedirs(HRRR_DIR)
-                os.chmod(HRRR_DIR, stat.S_IRWXU | \
-                         stat.S_IRGRP | stat.S_IXGRP | \
-                         stat.S_IROTH | stat.S_IXOTH)
-            archivefile = HRRR_DIR + '%s_20%02d%02d%02d%02d.buf' \
+            if not os.path.exists(HG_DIR):
+                os.makedirs(HG_DIR)
+                os.system('chmod 775 -R' + HG_DIR)
+            archivefile = HG_DIR + '%s_20%02d%02d%02d%02d.buf' \
                           % (site, iyear, imonth, iday, ihour)
-            os.system('mv ' + localfile + ' ' + archivefile)
-            print 'moved to:', archivefile
+            os.system('cp ' + localfile + ' ' + archivefile)
+            print 'copied to:', archivefile
 
             # Copy to S3 archive
             from_here = archivefile
             to_here = S3_DIR
-            os.system('rclone copy %s %s' % (from_here, to_here))
+            os.system(rclone + ' copy %s %s' % (from_here, to_here))
             print 'copied to S3 archive'
 
 # plot sounding

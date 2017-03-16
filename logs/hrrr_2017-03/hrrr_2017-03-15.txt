@@ -1,8 +1,8 @@
 Moving hrrr files
-Date: 2017-03-14
-Origin: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170314/BB_test/models/hrrr/  
+Date: 2017-03-15
+Origin: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170315/BB_test/models/hrrr/  
 
-Copy to: horelS3:HRRR/oper/sfc/20170314/
+Copy to: horelS3:HRRR/oper/sfc/20170315/
 ========== Checking for hrrr sfc files ====================
 Hour 00:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f14][f15][f16][f17][f18]
 Hour 01:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f14][f15][f16][f17][f18]
@@ -30,7 +30,7 @@ Hour 22:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f
 Hour 23:[f00][f01][f02][f03][f04][f05][f06][f07][f08][f09][f10][f11][f12][f13][f14][f15][f16][f17][f18]
   
 
-Copy to: horelS3:HRRR/oper/prs/20170314/
+Copy to: horelS3:HRRR/oper/prs/20170315/
 ========== Checking for hrrr prs files ====================
 Hour 00:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]
 Hour 01:[f00][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ][   ]

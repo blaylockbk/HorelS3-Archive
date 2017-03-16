@@ -145,21 +145,3 @@ if __name__ == '__main__':
     prs_URLs = p.map(download_hrrr_prs, hour_list)
 
     print "Time to download operational HRRR:", datetime.now() - timer1
-
-    import smtplib
-    # Send the Email
-    sender = 'brian.blaylock@utah.edu'
-    receivers = ['blaylockbk@gmail.com']
-
-    message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
-    To: HRRR Check <brian.blaylock@utah.edu>
-    Subject: Oper HRRR Download %s
-
-    """ % (yesterday) + '\n\nFinished downloading hrrr: %s\nTotalTime: %s' % (datetime.now(), datetime.now()-timer1)
-
-    try:
-        smtpObj = smtplib.SMTP('localhost')
-        smtpObj.sendmail(sender, receivers, message)
-        print "Successfully sent email"
-    except SMTPException:
-        print "Error: unable to send email"
