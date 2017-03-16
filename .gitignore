@@ -4,5 +4,8 @@ Thumbs.db
 # Don't send the compiled rclone software to github
 rclone-beta/
 
+# Don't send the compiled s3cmd software to github
+s3cmd-1.6.1/
+
 # Don't send anything in the temp directory
 temp/
