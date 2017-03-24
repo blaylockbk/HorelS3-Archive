@@ -83,14 +83,14 @@ for model_type in [1, 2, 3]:
         hours = np.arange(0, 24)
 
     # Open file for printing output log. Organize into directories by year and month.
-    log_path = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/logs/%s_%04d-%02d' \
-               % (model, DATE.year, DATE.month)
-    if not os.path.exists(log_path):
-        os.makedirs(log_path)
+#    log_path = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/logs/%s_%04d-%02d' \
+#               % (model, DATE.year, DATE.month)
+#    if not os.path.exists(log_path):
+#        os.makedirs(log_path)
 
-    log = open('%s/%s_%04d-%02d-%02d.txt' % (log_path, model, DATE.year, DATE.month, DATE.day), 'w')
-    log.write('Moving %s files\nDate: %s\n' % (model, DATE))
-    log.write('Origin: ' + DIR)
+#    log = open('%s/%s_%04d-%02d-%02d.txt' % (log_path, model, DATE.year, DATE.month, DATE.day), 'w')
+#    log.write('Moving %s files\nDate: %s\n' % (model, DATE))
+#    log.write('Origin: ' + DIR)
 
     # Do lots of loops...file types (t), hour of day (h), forecast hour (f).
 
@@ -100,12 +100,12 @@ for model_type in [1, 2, 3]:
         # Build the new S3 directory path name (e.g. HRRR/oper/sfc/20171201)
         DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
                     % (model_S3_names[model_type], t, DATE.year, DATE.month, DATE.day)
-        log.write('  \n\nCopy to: horelS3:'+DIR_S3+'\n')
-        log.write("========== Checking for "+model + ' ' + t +" files ====================\n")
+#        log.write('  \n\nCopy to: horelS3:'+DIR_S3+'\n')
+#        log.write("========== Checking for "+model + ' ' + t +" files ====================\n")
 
         # loop for each hour (0,24)
         for h in hours:
-            log.write('Hour %02d:' % (h))
+#            log.write('Hour %02d:' % (h))
 
             # loop for each forecast hour, depenent on model type.
             for f in forecasts:
@@ -131,15 +131,16 @@ for model_type in [1, 2, 3]:
                 if os.path.isfile(FILE):
                     copy_to_horelS3(FILE, DIR_S3)
                     create_idx(FILE, DIR_S3)
-                    log.write('[f%02d]' % (f))
+#                    log.write('[f%02d]' % (f))
                 else:
-                    log.write('[   ]')
+                    print ""
+#                    log.write('[   ]')
 
-            log.write('\n')
+#            log.write('\n')
 
         # Change permissions of S3 directory to public
         s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
         os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
 
-    log.close()
+#    log.close()
     print "Timer, copy from horel-gropu/archvie to S3:", datetime.now() - timer1
