@@ -14,6 +14,8 @@ from time import *
 from datetime import *
 import os, sys, urllib, time, urllib2
 import stat
+from queue import Queue
+from threading import Thread
 
 SCRIPTDIR = '/uufs/chpc.utah.edu/sys/pkg/ldm/oper/models/hrrr_so3s/'
 temp = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/temp/'
@@ -30,8 +32,10 @@ for site in sites:
     bufrfile = '%s*.buf' % (temp)
     os.system('rm -f '+bufrfile)
 
-    for hour in range(0, 24):
-        webfile = 'ftp://ftp.meteo.psu.edu/pub/bufkit/HRRR/%02d/hrrr_%s.buf' % (hour, site)
+def download_bufr(hour):
+    for site in sites:
+        webfile = 'ftp://ftp.meteo.psu.edu/pub/bufkit/HRRR/%02d/hrrr_%s.buf' \
+                  % (hour, site)
         # Since we don't know the time yet, we save the file as this temporary name
         # and when we find the file's time we will move it to the archive with the
         # correct name.
@@ -56,13 +60,15 @@ for site in sites:
             ihour = int((ls[4].split(' ')[8])[7:9])
             print "time:", iyear, imonth, iday, ihour
 
-            HG_DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/20%02d%02d%02d/BB_test/models/hrrr/' % (iyear, imonth, iday)
-            S3_DIR = 'horelS3:HRRR/oper/buf/20%02d%02d%02d/' % (iyear, imonth, iday)
+            HG_DIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/20%02d%02d%02d/BB_test/models/hrrr/' \
+                     % (iyear, imonth, iday)
+            S3_DIR = 'horelS3:HRRR/oper/buf/20%02d%02d%02d/' \
+                     % (iyear, imonth, iday)
             if not os.path.exists(HG_DIR):
                 os.makedirs(HG_DIR)
                 os.system('chmod 775 -R' + HG_DIR)
             archivefile = HG_DIR + '%s_20%02d%02d%02d%02d.buf' \
-                          % (site, iyear, imonth, iday, ihour)
+                            % (site, iyear, imonth, iday, ihour)
             os.system('cp ' + localfile + ' ' + archivefile)
             print 'copied to:', archivefile
 
@@ -72,7 +78,42 @@ for site in sites:
             os.system(rclone + ' copy %s %s' % (from_here, to_here))
             print 'copied to S3 archive'
 
+def worker():
+    """
+    This is what the thread will do when called and given input.
+    """
+    while True:
+        item = q.get()
+        print "Work on:", item
+        download_bufr(item)
+        q.task_done()
+
 # plot sounding
 #  anl if analysis only
 #  for if all hrrr times
 #    os.system('/usr/local/bin/python '+SCRIPTDIR+'sounding.py '+ model+' '+site+' 20%02d'%iyear + ' %02d'%imonth + ' %02d'%iday + ' %02d'%ihour+' anl' ) 
+
+
+# --- Download with multithreading for faster processing ----------------------
+hour_list = range(0, 24)
+
+# Multithreading :P (Faster and more efficient than multiprocessing when downloading)
+timer1 = datetime.now()
+
+# Set up number of threads
+num_of_threads = 10
+
+# Initalize a queue for each thread. The thread will do the "worker" function
+q = Queue()
+for i in range(num_of_threads):
+    t = Thread(target=worker)
+    t.daemon = True
+    t.start()
+
+# Add a task to the queue
+for item in hour_list:
+    q.put(item)
+
+q.join()       # block until all tasks are done
+
+print "Time to download HRRR bufr (Threads):", datetime.now() - timer1

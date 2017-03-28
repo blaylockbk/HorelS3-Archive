@@ -25,7 +25,7 @@ import stat
 
 # Date to transfer (yesterday's data)
 #DATE = datetime.today() - timedelta(days=1)
-DATE = datetime(2017, 3, 12)
+DATE = datetime(2017, 3, 25)
 
 # rclone config file
 config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
