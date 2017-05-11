@@ -18,7 +18,7 @@ This Script does the following:
 
 import urllib
 import urllib2
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 import os
 import stat
 import multiprocessing # :)
@@ -31,7 +31,16 @@ from threading import Thread
 # ----------------------------------------------------------------------------
 # download HRRR files from yesterday (if run after 6:00 PM local then today's
 # UTC time is yesterday)
-yesterday = datetime.today() #-timedelta(days=1)
+# Dates, start and end
+if datetime.now().hour < 12:
+    # if it before noon (local) then get yesterdays date
+    # 1) maybe the download script ran long and it's just after midnight
+    # 2) mabye you need to rerun this script in the morning
+    yesterday = datetime.today() -timedelta(days=1)
+else:
+    # it's probably after 6 local
+    yesterday = datetime.today()
+
 DATE = yesterday
 
 # Put the downloaded files in the horel-group/archive. Mkdir if it doesn't exist
@@ -142,6 +151,7 @@ def worker():
         print "Work on:", item
         download_hrrr_sfc(item)
         download_hrrr_prs(item)
+        download_hrrr_sfc(item, field='subh', forecast=range(0,19))
         q.task_done()
 
 if __name__ == '__main__':
@@ -193,3 +203,5 @@ if __name__ == '__main__':
     q.join()       # block until all tasks are done
 
     print "Time to download operational HRRR (Threads):", datetime.now() - timer1
+
+    exit()

@@ -11,3 +11,7 @@ daily after 6:00 PM Mountain Time and downloads the "previous UTC day."
 * download_hrrrX.py
 * download_hrrrAK.py
 * copy_to_S3.py
+
+#### Some useful wgrib commands
+Reduce a grib2 file to matched variables  
+`wgrib2 original.grib2 -match '^(9|14|32|33):' -\grib new.grib2`

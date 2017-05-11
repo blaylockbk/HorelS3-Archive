@@ -47,7 +47,14 @@ prs_fxx = [0]
 # ----------------------------------------------------------------------------
 # Date.today() returns the local time date. If it's after 6:00 PM local, then,
 # acording to the UTC clock, that date is "yesterday."
-yesterday = date.today() #-timedelta(days=1)
+if datetime.now().hour < 12:
+    # if it before noon (local) then get yesterdays date
+    # 1) maybe the download script ran long and it's just after midnight
+    # 2) mabye you need to rerun this script in the morning
+    yesterday = datetime.today() -timedelta(days=1)
+else:
+    # it's probably after 6 local
+    yesterday = datetime.today()
 
 # Directory to save the downloads. Create it if it doesn't exist
 OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/BB_test/models/hrrrAK/' \
@@ -158,7 +165,7 @@ if __name__ == '__main__':
     timer1 = datetime.now()
 
     # Multiprocessing :)
-    num_proc = 3
+    num_proc = 6
     p = multiprocessing.Pool(num_proc)
 
     """
@@ -197,3 +204,5 @@ if __name__ == '__main__':
     p.map(download_hrrrAK_prs, prs_filenames)
 
     print "Time to download HRRR-AK:", datetime.now() - timer1
+
+    exit()

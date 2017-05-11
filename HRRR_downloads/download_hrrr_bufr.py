@@ -101,7 +101,7 @@ hour_list = range(0, 24)
 timer1 = datetime.now()
 
 # Set up number of threads
-num_of_threads = 10
+num_of_threads = 5
 
 # Initalize a queue for each thread. The thread will do the "worker" function
 q = Queue()
@@ -117,3 +117,4 @@ for item in hour_list:
 q.join()       # block until all tasks are done
 
 print "Time to download HRRR bufr (Threads):", datetime.now() - timer1
+exit()

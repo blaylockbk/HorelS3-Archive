@@ -13,6 +13,8 @@ Requirements:
 What this script does:
 1) For each model type [hrrr, hrrrX, hrrrAK], copy the file to the horelS3
    archive. Special cases for each model.
+2) Changes permissions to public, so it can be downloaded via http
+3) Create .idx file and save in hore-group/archive/HRRR
 """
 
 from datetime import date, datetime, timedelta
@@ -24,14 +26,21 @@ import numpy as np
 #                      Introductory Stuff
 # =============================================================================
 # Dates, start and end
-DATE = date.today() #-timedelta(days=1)
+if datetime.now().hour < 15:
+    # if it before noon (local) then get yesterdays date
+    # 1) maybe the download script ran long and it's just after midnight
+    # 2) mabye you need to rerun this script in the morning
+    DATE = date.today() -timedelta(days=1)
+else:
+    # it's probably after 6 local
+    DATE = date.today()
 
 # rclone config file
 config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
 
 model_HG_names = {1:'hrrr', 2:'hrrrX', 3:'hrrrAK'} # name in horel-group/archive
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}   # name in horelS3:
-file_types = ['sfc', 'prs']                 # model file file_types
+file_types = ['sfc', 'prs', 'subh']                 # model file file_types
 # =============================================================================
 
 def create_idx(for_this_file, put_here):

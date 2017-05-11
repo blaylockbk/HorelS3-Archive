@@ -19,10 +19,10 @@ module load python/2.7.3          # until meso1 upgrades to centOS 7, then load 
 module load wgrib2
 
 # Download HRRR to horel-group archive
-python ${SCRIPTDIR}/download_hrrr_bufr.py
 python ${SCRIPTDIR}/download_hrrr_multipro.py
 python ${SCRIPTDIR}/download_hrrrAK_multipro.py
 python ${SCRIPTDIR}/download_hrrrX_multipro.py
+python ${SCRIPTDIR}/download_hrrr_bufr.py
 
 # Copy from horel-group/archive to Horel S3 archive,
 # create .idx, and change S3 archive permissions to public.

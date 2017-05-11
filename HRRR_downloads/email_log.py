@@ -1,4 +1,4 @@
-# Brian Blaylock
+    # Brian Blaylock
 # March 13, 2017                        Had Sunday dinner at Rachel's yesterday
 
 """
@@ -7,13 +7,21 @@ Check the HRRR files made it to the S3 archive and email a list to myself
 
 import smtplib
 import os
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 # Variables
-DATE = date.today()
+if datetime.now().hour < 12:
+    # if it before noon (local) then get yesterdays date
+    # 1) maybe the download script ran long and it's just after midnight
+    # 2) mabye you need to rerun this script in the morning
+    DATE = datetime.today() -timedelta(days=1)
+else:
+    # it's probably after 6 local
+    DATE = datetime.today()
+
 
 model = ['oper', 'exp', 'alaska']
-variable = ['sfc', 'prs', 'buf']
+variable = ['sfc', 'prs', 'subh', 'buf']
 
 checked = ''
 for m in model:
@@ -22,6 +30,8 @@ for m in model:
         if (m == 'exp' or m == 'alaska') and v == 'buf':
             continue
         if m == 'exp' and v == 'prs':
+            continue
+        if m in ['exp', 'alaska'] and v == 'subh':
             continue
 
         # Special forecast and hour ranges for each model type

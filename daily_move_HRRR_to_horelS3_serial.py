@@ -25,7 +25,7 @@ import stat
 
 # Date to transfer (yesterday's data)
 #DATE = datetime.today() - timedelta(days=1)
-DATE = datetime(2017, 3, 25)
+DATE = datetime(2017, 4, 8)
 
 # rclone config file
 config_file = '/uufs/chpc.utah.edu/sys/pkg/ldm/.rclone.conf' # meteo19 LDM user
@@ -175,6 +175,9 @@ for M in model_options.keys():
                             #log.write('[%s]' % b)
 #                        else:
 #                            #log.write('[    ]')
+                        # Change permissions of S3 directory to public
+                        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+                        os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
                     continue
 
                 # Check if the grib2 file exists. If it does, then copy the file to S3
@@ -191,7 +194,9 @@ for M in model_options.keys():
             #log.write('\n')
     #log.close()
 
-    
+                # Change permissions of S3 directory to public
+                s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+                os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
 
 
 # Meteo19 Crontab: 
