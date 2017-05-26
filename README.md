@@ -7,13 +7,17 @@ Brian Blaylock
 _February 22, 2017_
 
 ## Introduction
-In January 2017, CHPC allocated the Horel Group 30 TB on the S3 (Simple Storage
+In January 2017, CHPC allocated the Horel Group 30 TB on the Pando S3 (Simple Storage
 Service) archive space. This space is used for the Horel archive. Presently, it 
-only houses the HRRR archive (> 20 TB), but more data will be moved to S3. 
+only houses the HRRR archive (> 20 TB), but more data will be moved to Pando. 
+
+Pando is named after the large vast of aspen trees in Utah, thought to be the
+largest and oldest living organism on earth.
 
 You can view and access data via:
 * `rclone` in your linux terminal (you can also get rclone for your PC)
 * URL and cURL commands: [http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR).
+* Archive FAQ and interactive download page: [http://hrrr.chpc.utah.edu/](http://hrrr.chpc.utah.edu/)
 
 ## Access data via rclone
 [rclone](http://rclone.org/) allows you to sync files and directories between
@@ -98,7 +102,7 @@ online here:
 For example, to get TMP:2 m temperature from a file:  
 `curl -o 20161101_00zf00_2mTemp.grib2 --range 33120613-34368741 https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20161101/hrrr.t00z.wrfsfcf00.grib2`
 
-## S3 Archive Contents and URL Structure
+## Pando Archive Contents and URL Structure
 
 ### **`horelS3:HRRR/`**
 |      Important Dates            |   What happened?  | Notes  |
@@ -150,23 +154,22 @@ For example, to get TMP:2 m temperature from a file:
 ## Scripts and contents of this repository
 
 ### `remaining_S3_disk_space.py`
-+ A script that reports how much space is left on the S3 archive, using 
++ A script that reports how much space is left on our Pando allocation, using 
 total files from a single day as an estimate. Reports when the archive
 will be filled up. Last I checked, I estimate S3 will be full mid-August. 
 
 ### **`HRRR_downloads`** (directory)
 Contents of this directory contain scripts for downloading HRRR data. These are
 run by cron at 6:05 PM Mountain Time. These are the most up-to-date scripts.
-+ **old_dwnld_scirpts**: don't worry about these
++ **old_dwnld_scirpts**: don't worry about these. They are old
 + `HRRR_downloads.csh`: called by CRON at 6:05 on meso1 by the mesohorse user. Does the following:
   + loads modules
-  + `download_hrrr_bufr.py`
-  + `downlaod_hrrrAK_multipro.py`
-  + `downlaod_hrrrX_multipro.py`
-  + `downlaod_hrrr_multipro.py`
-  + `copy_hrr_to_S3.py`: copies files from horel-group/archive to S3, creates
-  a .idx file for each grib2 file and puts in horel-group/archive/HRRR, and changes permissions   of each new file on S3 to public.
-  + `email_log.py`: sends me an email to confirm the files are now on the S3 archive.
+  + `download_hrrr_bufr.py`       Downloads bufr files from Penn State and copies to Pando.
+  + `downlaod_hrrrAK_multipro.py` Download HRRR from ESRL and copies to Pando.
+  + `downlaod_hrrrX_multipro.py`  Download HRRR from ESRL and copies to Pando.
+  + `downlaod_hrrr_multipro.py`   Download HRRR from NOMADS and copies to Pando.
++ `HRRR_check.csh`: call by CRON at 11:05 PM on meso1 by the mesohorse user.
+  + `email_log.py`: sends me an email to confirm the files are now on the Pando archive.
 
 ### `rclone-beta` (directory)
 Contains the beta version of rclone that allows you to rename files with copyto and moveto

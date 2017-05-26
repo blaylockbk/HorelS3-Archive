@@ -55,6 +55,14 @@ if not os.path.exists(OUTDIR):
                    # User can read, write, execute
                    # Group can read and execute
                    # Others can read and execute
+
+# rclone config file
+config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
+
+# Naming convention
+model_HG_names = {1:'hrrr', 2:'hrrrX', 3:'hrrrAK'} # name in horel-group/archive
+model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}   # name in horelS3:
+file_types = ['sfc', 'prs', 'subh']                 # model file file_types
 # ----------------------------------------------------------------------------
 
 ## Delete the previous day's download
@@ -63,6 +71,28 @@ DELDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/BB_te
     % (previous_day.year, previous_day.month, previous_day.day)
 os.system('rm -r '+DELDIR)
 
+def create_idx(for_this_file, put_here):
+    """
+    Create a .idx file and move to horel-group/archive/HRRR
+    """
+    file_name = for_this_file.split('/')[-1]
+    idx_dir = '/uufs/chpc.utah.edu/common/home/horel-group/archive/' + put_here
+    if not os.path.exists(idx_dir):
+        os.makedirs(idx_dir)
+    idx_name = idx_dir + file_name + '.idx'
+    os.system('wgrib2 ' + for_this_file + ' -t -var -lev -ftime > ' + idx_name)
+    print "created idx file:", idx_name
+
+def copy_to_horelS3(from_here, to_there):
+    """
+    Copy the file to the horelS3: archive using rclone
+    Input:
+        from_here - string of full path and file name you want to copy
+        to_there  - string of path on the horelS3 archive
+    """
+    # Copy the file from_here to_there (the path will be created if it doesn't exist)
+    os.system('rclone --config %s copy %s horelS3:%s' \
+              % (config_file, from_here, to_there))
 
 def reporthook(a, b, c):
     """
@@ -103,6 +133,20 @@ def download_hrrr_sfc(hour,
         urllib.urlretrieve(URL+FileName, OUTDIR+FileName)
         print 'Saved:', OUTDIR+FileName
         URL_list.append(URL+FileName)
+
+        # Move FILE to S3
+        FILE = OUTDIR+FileName
+        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
+                    % ('oper', field, DATE.year, DATE.month, DATE.day)
+        if os.path.isfile(FILE):
+            copy_to_horelS3(FILE, DIR_S3)
+            create_idx(FILE, DIR_S3)
+        else:
+            print "%s does not exist", FILE
+
+    # Change permissions of S3 directory to public
+    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+    os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
     #
     # Return the list of URLs we downloaded from for troubleshooting
     return URL_list
@@ -138,6 +182,20 @@ def download_hrrr_prs(hour,
         urllib.urlretrieve(URL+FileName, OUTDIR+FileName)
         print 'Saved:', OUTDIR+FileName
         URL_list.append(URL+FileName)
+
+        # Move FILE to S3
+        FILE = OUTDIR+FileName
+        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
+                    % ('oper', field, DATE.year, DATE.month, DATE.day)
+        if os.path.isfile(FILE):
+            copy_to_horelS3(FILE, DIR_S3)
+            create_idx(FILE, DIR_S3)
+        else:
+            print "%s does not exist", FILE
+
+    # Change permissions of S3 directory to public
+    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+    os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
     #
     # Return the list of URLs we downloaded from for troubleshooting
     return URL_list
@@ -145,13 +203,39 @@ def download_hrrr_prs(hour,
 def worker():
     """
     This is what the thread will do when called and given input.
+    If the thread hangs, then try a second time.
     """
     while True:
         item = q.get()
         print "Work on:", item
-        download_hrrr_sfc(item)
-        download_hrrr_prs(item)
-        download_hrrr_sfc(item, field='subh', forecast=range(0,19))
+
+        try:
+            download_hrrr_sfc(item)
+        except:
+            try:
+                print "\n>> I tried, so I'll try sfc again <<\n"
+                download_hrrr_sfc(item)
+            except:
+                print "\n>> I tried, and tried, but couldn't get sfc <<\n"
+
+        try:
+            download_hrrr_prs(item)
+        except:
+            try:
+                print "\n>> I tried, so I'll try prs again <<\n"
+                download_hrrr_prs(item)
+            except:
+                print "\n>> I tried, and tried, but couldn't get prs <<\n"
+        
+        try:
+            download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
+        except:
+            try:
+                print "\n>> I tried, so I'll try subh again <<\n"
+                download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
+            except:
+                print "\n>> I tried, and treid, but couldn't get subh <<\n"
+
         q.task_done()
 
 if __name__ == '__main__':
@@ -183,8 +267,9 @@ if __name__ == '__main__':
     print "Time to download operational HRRR (Multiprocessor):", datetime.now() - timer1
     """
 
-    # Download with Multiprocessing
-    # Multithreading :P (Much faster than multiprocessing when downloading)
+
+    # Multithreading :P 
+    # Much faster than multiprocessing when downloading, but threads will hang.
     timer1 = datetime.now()
 
     # Set up number of threads

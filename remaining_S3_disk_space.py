@@ -35,7 +35,7 @@ total_bytes = np.sum(file_sizes)
 
 # Get daily HRRR size for each model
 model = ['oper', 'exp', 'alaska']
-variables = ['sfc', 'prs', 'buf']
+variables = ['sfc', 'prs', 'buf', 'subh']
 
 sizes = {}
 
@@ -51,7 +51,7 @@ for m in model:
         sizes[m][v] = day_size
 
 print ""
-print "  Horel S3 Usage"
+print "  Horel Pando Usage"
 print "  =================================="
 print "  Allocation : %.2f TB" % (allocation/TB)
 print "  Total size : %.2f TB" % (total_bytes/TB)
@@ -70,5 +70,5 @@ days_remaining = (allocation-total_bytes)/sum_day
 # When will we run out of space?
 print ""
 print "  Approx. %s days until full" % (days_remaining)
-print "  S3 will fill up on %s with present usage" % (date.today() + timedelta(days=days_remaining)).strftime('%B %d, %Y')
+print "  Pando will fill up on %s with present usage" % (date.today() + timedelta(days=days_remaining)).strftime('%B %d, %Y')
 print "  =================================="

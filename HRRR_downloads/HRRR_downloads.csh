@@ -18,15 +18,15 @@ module load rclone
 module load python/2.7.3          # until meso1 upgrades to centOS 7, then load python/2.7.11
 module load wgrib2
 
-# Download HRRR to horel-group archive
+# Download HRRR to horel-group archive and copy to Pando S3 archive
 python ${SCRIPTDIR}/download_hrrr_multipro.py
 python ${SCRIPTDIR}/download_hrrrAK_multipro.py
 python ${SCRIPTDIR}/download_hrrrX_multipro.py
-python ${SCRIPTDIR}/download_hrrr_bufr.py
+#python ${SCRIPTDIR}/download_hrrr_bufr.py
 
 # Copy from horel-group/archive to Horel S3 archive,
 # create .idx, and change S3 archive permissions to public.
-python ${SCRIPTDIR}/copy_hrrr_to_S3.py
+# python ${SCRIPTDIR}/copy_hrrr_to_S3.py
 
 # Email a list of files that are now on S3
 python ${SCRIPTDIR}/email_log.py

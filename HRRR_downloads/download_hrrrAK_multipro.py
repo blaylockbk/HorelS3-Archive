@@ -52,9 +52,11 @@ if datetime.now().hour < 12:
     # 1) maybe the download script ran long and it's just after midnight
     # 2) mabye you need to rerun this script in the morning
     yesterday = datetime.today() -timedelta(days=1)
+    DATE = yesterday
 else:
     # it's probably after 6 local
     yesterday = datetime.today()
+    DATE = yesterday
 
 # Directory to save the downloads. Create it if it doesn't exist
 OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%04d%02d%02d/BB_test/models/hrrrAK/' \
@@ -71,7 +73,33 @@ if not os.path.exists(OUTDIR):
 
 # Credentials for logging into ESRL FTP database
 user, password = get_ESRL_credentials()
+
+# rclone config file
+config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
 # ----------------------------------------------------------------------------
+
+def create_idx(for_this_file, put_here):
+    """
+    Create a .idx file and move to horel-group/archive/HRRR
+    """
+    file_name = for_this_file.split('/')[-1]
+    idx_dir = '/uufs/chpc.utah.edu/common/home/horel-group/archive/' + put_here
+    if not os.path.exists(idx_dir):
+        os.makedirs(idx_dir)
+    idx_name = idx_dir + file_name + '.idx'
+    os.system('wgrib2 ' + for_this_file + ' -t -var -lev -ftime > ' + idx_name)
+    print "created idx file:", idx_name
+
+def copy_to_horelS3(from_here, to_there):
+    """
+    Copy the file to the horelS3: archive using rclone
+    Input:
+        from_here - string of full path and file name you want to copy
+        to_there  - string of path on the horelS3 archive
+    """
+    # Copy the file from_here to_there (the path will be created if it doesn't exist)
+    os.system('rclone --config %s copy %s horelS3:%s' \
+              % (config_file, from_here, to_there))
 
 def download_hrrrAK_sfc(item):
     """
@@ -117,6 +145,22 @@ def download_hrrrAK_sfc(item):
 
         print "Saved:", OUTDIR+NEWFILE
 
+        # Move to Pando S3 archive
+        FILE = OUTDIR+NEWFILE
+        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
+                    % ('alaska', 'sfc', DATE.year, DATE.month, DATE.day)
+        if os.path.isfile(FILE):
+            copy_to_horelS3(FILE, DIR_S3)
+            create_idx(FILE, DIR_S3)
+        else:
+            print "%s does not exist", FILE
+
+        print "Moved to Pando:", FILE
+
+        # Change permissions of S3 directory to public
+        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+        os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
+
 
 def download_hrrrAK_prs(item):
     """
@@ -155,6 +199,22 @@ def download_hrrrAK_prs(item):
         # Don't truncate any variables.
 
         print "Saved:", OUTDIR+NEWFILE
+
+        # Move to Pando S3 archive
+        FILE = OUTDIR+NEWFILE
+        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
+                    % ('alaska', 'prs', DATE.year, DATE.month, DATE.day)
+        if os.path.isfile(FILE):
+            copy_to_horelS3(FILE, DIR_S3)
+            create_idx(FILE, DIR_S3)
+        else:
+            print "%s does not exist", FILE
+
+        print "Moved to Pando:", FILE
+
+        # Change permissions of S3 directory to public
+        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+        os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
 
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':
