@@ -106,6 +106,7 @@ def download_hrrr_sfc(hour,
     """
     Downloads HRRR grib2 files from the nomads server
     http://nomads.ncep.noaa.gov/
+    Also can be used to download subh field.
 
     Input:
         hour - a list of hours you want to download
@@ -226,7 +227,6 @@ def worker():
                 download_hrrr_prs(item)
             except:
                 print "\n>> I tried, and tried, but couldn't get prs <<\n"
-        
         try:
             download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
         except:
@@ -250,6 +250,7 @@ if __name__ == '__main__':
 
 
     hour_list = range(0, 24)
+    hour_list = [7]
 
     """# Download with Multiprocessing :)
     # Multiprocessing :) (Takes over a half hour!)

@@ -1,4 +1,4 @@
-    # Brian Blaylock
+# Brian Blaylock
 # March 13, 2017                        Had Sunday dinner at Rachel's yesterday
 
 """
@@ -8,10 +8,11 @@ Check the HRRR files made it to the S3 archive and email a list to myself
 import smtplib
 import os
 from datetime import date, datetime, timedelta
+from download_hrrr_multipro import download_hrrr_sfc, download_hrrr_prs
 
 # Variables
 if datetime.now().hour < 12:
-    # if it before noon (local) then get yesterdays date
+    # if it's before noon (local) then get yesterdays date
     # 1) maybe the download script ran long and it's just after midnight
     # 2) mabye you need to rerun this script in the morning
     DATE = datetime.today() -timedelta(days=1)
@@ -70,6 +71,27 @@ for m in model:
                                     % (name, h, v, f)
                     if look_for_this in s3_list:
                         checked += '[f%02d]' % (f)
+
+                    # If the sfc or subh file doesn't exist, try downloading it again
+                    elif m == 'oper' and (v == 'sfc' or v == 'subh'):
+                        print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this)
+                        download_hrrr_sfc(h, field=v, forecast=[f])
+                        # Regenerate the s3_list and check
+                        s3_list = os.popen('rclone ls horelS3:HRRR/%s/%s/%04d%02d%02d/ | cut -c 11-' \
+                            % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
+                        if look_for_this in s3_list:
+                            checked += '[*f%02d]' % (f)
+
+                    # If the prs file doesn't exist, try downloading it again
+                    elif m == 'oper' and v == 'prs' and f == 0:
+                        print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this), h
+                        download_hrrr_prs(h, field=v, forecast=[f])
+                        # Regenerate the s3_list and check
+                        s3_list = os.popen('rclone ls horelS3:HRRR/%s/%s/%04d%02d%02d/ | cut -c 11-' \
+                            % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
+                        if look_for_this in s3_list:
+                            checked += '[*f%02d]' % (f)
+
                     else:
                         checked += '[   ]'
                 checked += '\n'

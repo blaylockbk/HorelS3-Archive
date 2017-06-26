@@ -31,6 +31,9 @@ python ${SCRIPTDIR}/download_hrrrX_multipro.py
 # Email a list of files that are now on S3
 python ${SCRIPTDIR}/email_log.py
 
+# Download Subregion
+python ${SCRIPTDIR}/download_hrrr_native_subregion_BRIANHEAD.py
+
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`
 exit
