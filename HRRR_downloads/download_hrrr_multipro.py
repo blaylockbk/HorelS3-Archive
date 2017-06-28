@@ -100,9 +100,9 @@ def reporthook(a, b, c):
     """
     print "% 3.1f%% of %.2f MB\r" % (min(100, float(a * b) / c * 100), c/1000000.),
 
-def download_hrrr_sfc(hour,
-                      field='sfc',
-                      forecast=range(0, 19)):
+def download_hrrr(hour,
+                  field='sfc',
+                  forecast=range(0, 19)):
     """
     Downloads HRRR grib2 files from the nomads server
     http://nomads.ncep.noaa.gov/
@@ -152,14 +152,17 @@ def download_hrrr_sfc(hour,
     # Return the list of URLs we downloaded from for troubleshooting
     return URL_list
 
-def download_hrrr_nat_subsection(hour,
-                                 latitude=37.716,
-                                 longitude=-112.844,
-                                 name='BRIANHEAD',
-                                 subregion_size=2.5,
-                                 field='nat',
-                                 forecast=range(0, 19)):
+def download_hrrr_subsection(hour,
+                             latitude=37.716,
+                             longitude=-112.844,
+                             name='BRIANHEAD',
+                             subregion_size=2.5,
+                             field='nat',
+                             forecast=range(0, 19)):
     """
+    !! NEED TO BUILD IN CAPABILITY TO INPUT DICTIONARY OF PLACES FOR MULTIPLE
+    !! SUBSECTIONS WITH A SINGLE DOWNLOAD OF THE NATIVE GRID
+
     Downloads HRRR grib2 files from the nomads server
     http://nomads.ncep.noaa.gov/
 
@@ -221,144 +224,87 @@ def download_hrrr_nat_subsection(hour,
     # Return the list of URLs we downloaded from for troubleshooting
     return FileNames
 
-def download_hrrr_prs(hour,
-                      field='prs',
-                      forecast=[0]):
-    """
-    Downloads HRRR grib2 files from the nomads server
-    http://nomads.ncep.noaa.gov/
-
-    Input:
-        hour - the hours you want to download
-        fields - the field you want to download
-                 Options are fields ['prs', 'sfc','subh', 'nat']
-                 pressure fields (~350 MB), surface fields (~6 MB),
-                 native fields (~510 MB)!
-        forecast - a list of forecast hour you wish to download from that hour
-                   Default all forecast hours (0-18)
-    """
-    # We'll store the URLs we download from and return them for troubleshooting
-    URL_list = []
-    #
-    # Build the URL string we want to download. One for each field, hour, and forecast
-    # New URL for downloading HRRRv2+
-    URL = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/hrrr.%04d%02d%02d/' \
-          % (DATE.year, DATE.month, DATE.day)
-    #
-    for f in forecast:
-        FileName = 'hrrr.t%02dz.wrf%sf%02d.grib2' % (hour, field, f)
-        # Download and save the file
-        print 'Downloading:', OUTDIR+FileName
-        urllib.urlretrieve(URL+FileName, OUTDIR+FileName)
-        print 'Saved:', OUTDIR+FileName
-        URL_list.append(URL+FileName)
-
-        # Move FILE to S3
-        FILE = OUTDIR+FileName
-        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
-                    % ('oper', field, DATE.year, DATE.month, DATE.day)
-        if os.path.isfile(FILE):
-            copy_to_horelS3(FILE, DIR_S3)
-            create_idx(FILE, DIR_S3)
-        else:
-            print "%s does not exist", FILE
-
-    # Change permissions of S3 directory to public
-    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
-    os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
-    #
-    # Return the list of URLs we downloaded from for troubleshooting
-    return URL_list
-
 def worker():
     """
-    This is what the thread will do when called and given input.
-    If the thread hangs, then try a second time.
-    item is the hour
+    This is what each thread will do when called and given input (the input is
+    the hour). If the download fails (thread hangs, download incomplete, etc.)
+    then try a second time. But don't worry. If it fails again, a final try is
+    made in the email_log.py script.
     """
     while True:
         item = q.get()
-        print "Work on hour:", item
-        """ This wasn't catching any errors. Now I catch errors in the email.
+        print "Working on hour:", item
+
+        # Download surface grids
         try:
-            download_hrrr_sfc(item)
+            download_hrrr(item, field='sfc', forecast=range(0, 19))
         except:
             try:
-                print "\n>> I tried, so I'll try sfc again <<\n"
-                download_hrrr_sfc(item)
+                print "\n>> I tried, but I'll try sfc again <<\n"
+                download_hrrr(item, field='sfc', forecast=range(0, 19))
             except:
-                print "\n>> I tried, and tried, but couldn't get sfc <<\n"
+                print "\n>> I tried, and tried, but couldn't get surface grids <<\n"
 
+        # Download pressure grids
         try:
-            download_hrrr_prs(item)
+            download_hrrr(item, field='prs', forecast=[0])
         except:
             try:
-                print "\n>> I tried, so I'll try prs again <<\n"
-                download_hrrr_prs(item)
+                print "\n>> I tried, but I'll try prs again <<\n"
+                download_hrrr(item, field='prs', forecast=[0])
             except:
-                print "\n>> I tried, and tried, but couldn't get prs <<\n"
+                print "\n>> I tried, and tried, but couldn't get pressure grids <<\n"
 
+        # Download sub-hourly grids
         try:
-            download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
+            download_hrrr(item, field='subh', forecast=range(0, 19))
         except:
             try:
                 print "\n>> I tried, so I'll try subh again <<\n"
-                download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
+                download_hrrr(item, field='subh', forecast=range(0, 19))
             except:
-                print "\n>> I tried, and treid, but couldn't get subh <<\n"
-        """
-        download_hrrr_sfc(item)
-        download_hrrr_prs(item)
-        download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
-        download_hrrr_nat_subsection(item)
+                print "\n>> I tried, and tried, but couldn't get subhourly grids <<\n"
+
+        # Download native grids
+        try:
+            download_hrrr_subsection(item)
+        except:
+            try:
+                print "\n>> I tried, so I'll try nat again <<\n"
+                download_hrrr_subsection(item)
+            except:
+                print "\n>> I tried, and tried, but couldn't get native grids <<\n"
+
 
         q.task_done()
 
 if __name__ == '__main__':
 
-    """
-    Downloading with multithreading is more efficient and faster than
-    downloading with multiprocessing.
-    """
-
     print "\n================================================"
-    print "Downloading operational HRRR"
-
+    print "          Downloading operational HRRR"
+    print "================================================\n"
 
     hour_list = range(0, 24)
     #hour_list = [7]
 
-    """# Download with Multiprocessing :)
-    # Multiprocessing :) (Takes over a half hour!)
-    # Each processor will work on a single hour at a time
-    timer1 = datetime.now()
-    num_proc = 3
-    p = multiprocessing.Pool(num_proc)
-
-    # Download surface fields
-    sfc_URLs = p.map(download_hrrr_sfc, hour_list)
-
-    # Download pressure fields
-    prs_URLs = p.map(download_hrrr_prs, hour_list)
-
-    print "Time to download operational HRRR (Multiprocessor):", datetime.now() - timer1
-    """
-
-
-    # Multithreading :P 
-    # Much faster than multiprocessing when downloading, but threads will hang.
+    # Download with Multithreading :P
+    # I think mulitthreading is much faster than multiprocessing when
+    # downloading, and jobs are done on one processor and it's easier to supply
+    # multiple arguments to a function. But threads can hang.
     timer1 = datetime.now()
 
     # Set up number of threads
     num_of_threads = 10
-    # Initalize a queue for each thread. The Thread will do the "worker" function
+
+    # Initalize a queue for each thread. The thread will do the "worker" function
     q = Queue()
     for i in range(num_of_threads):
         t = Thread(target=worker)
         t.daemon = True
         t.start()
 
-    # Add a task to the queue
+    # Add a task to the queue. The thread already knows the day to work on,
+    # we only need to supply each thread with the hour it needs to work on.
     for item in hour_list:
         q.put(item)
 

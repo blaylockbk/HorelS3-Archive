@@ -8,7 +8,7 @@ Check the HRRR files made it to the S3 archive and email a list to myself
 import smtplib
 import os
 from datetime import date, datetime, timedelta
-from download_hrrr_multipro import download_hrrr_sfc, download_hrrr_prs
+from download_hrrr_multipro import download_hrrr
 
 # Variables
 if datetime.now().hour < 18:
@@ -16,7 +16,7 @@ if datetime.now().hour < 18:
     # trying to get yesterdays date still because the download script failed.
     DATE = datetime.today() -timedelta(days=1)
 else:
-    # it's probably after 6 local
+    # it's probably after 3:00 PM
     DATE = datetime.today()
 
 
@@ -78,7 +78,7 @@ for m in model:
                     # If the sfc or subh file doesn't exist, try downloading it again
                     elif m == 'oper' and (v == 'sfc' or v == 'subh'):
                         print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this)
-                        download_hrrr_sfc(h, field=v, forecast=[f])
+                        download_hrrr(h, field=v, forecast=[f])
                         # Regenerate the s3_list and check
                         s3_list = os.popen('rclone ls horelS3:HRRR/%s/%s/%04d%02d%02d/ | cut -c 11-' \
                             % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
@@ -90,7 +90,7 @@ for m in model:
                     # If the prs file doesn't exist, try downloading it again
                     elif m == 'oper' and v == 'prs' and f == 0:
                         print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this), h
-                        download_hrrr_prs(h, field=v, forecast=[f])
+                        download_hrrr(h, field=v, forecast=[f])
                         # Regenerate the s3_list and check
                         s3_list = os.popen('rclone ls horelS3:HRRR/%s/%s/%04d%02d%02d/ | cut -c 11-' \
                             % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
@@ -98,12 +98,23 @@ for m in model:
                             checked += '[*f%02d]' % (f)
                         else:
                             checked += '[    ]'
+
+                    # If the nat file doesn't exist, try downloading it again
+                    elif m == 'oper' and v == 'nat':
+                        print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this), h
+                        download_hrrr_subsection(h, field=v, forecast=[f])
+                        # Regenerate the s3_list and check
+                        s3_list = os.popen('rclone ls horelS3:HRRR/%s/%s/%04d%02d%02d/ | cut -c 11-' \
+                            % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
+                        if look_for_this in s3_list:
+                            checked += '[*f%02d]' % (f)
+                        else:
+                            checked += '[    ]'
+
                     else:
                         checked += '[   ]'
 
                 checked += '\n'
-
-
 
 
 # Send the Email
