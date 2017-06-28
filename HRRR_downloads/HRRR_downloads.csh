@@ -32,7 +32,7 @@ python ${SCRIPTDIR}/download_hrrrX_multipro.py
 python ${SCRIPTDIR}/email_log.py
 
 # Download Subregion
-python ${SCRIPTDIR}/download_hrrr_native_subregion_BRIANHEAD.py
+#python ${SCRIPTDIR}/download_hrrr_native_subregion_BRIANHEAD.py
 
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`

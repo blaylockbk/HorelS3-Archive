@@ -15,8 +15,8 @@ from datetime import date, datetime, timedelta
 import numpy as np
 import stat
 
-DATE = date(2017, 1, 7)
-eDATE = date(2017, 1, 8)
+DATE = date(2017, 6, 26)
+eDATE = date(2017, 6, 27)
 
 base = DATE
 days = (eDATE - DATE).days

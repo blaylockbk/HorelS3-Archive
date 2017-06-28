@@ -11,10 +11,9 @@ from datetime import date, datetime, timedelta
 from download_hrrr_multipro import download_hrrr_sfc, download_hrrr_prs
 
 # Variables
-if datetime.now().hour < 12:
-    # if it's before noon (local) then get yesterdays date
-    # 1) maybe the download script ran long and it's just after midnight
-    # 2) mabye you need to rerun this script in the morning
+if datetime.now().hour < 18:
+    # If it's before 3:00 PM (local) it's still work day, and I'm probably
+    # trying to get yesterdays date still because the download script failed.
     DATE = datetime.today() -timedelta(days=1)
 else:
     # it's probably after 6 local
@@ -22,7 +21,7 @@ else:
 
 
 model = ['oper', 'exp', 'alaska']
-variable = ['sfc', 'prs', 'subh', 'buf']
+variable = ['sfc', 'prs', 'subh', 'buf', 'nat']
 
 checked = ''
 for m in model:
@@ -32,7 +31,7 @@ for m in model:
             continue
         if m == 'exp' and v == 'prs':
             continue
-        if m in ['exp', 'alaska'] and v == 'subh':
+        if m in ['exp', 'alaska'] and (v == 'subh' or v == 'nat'):
             continue
 
         # Special forecast and hour ranges for each model type
@@ -67,7 +66,11 @@ for m in model:
             else:
                 checked += 'Hour %02d:' % (h)
                 for f in forecasts:
-                    look_for_this = '%s.t%02dz.wrf%sf%02d.grib2' \
+                    if v == 'nat':
+                        look_for_this = '%s.t%02dz.wrf%sf%02d.grib2.BRIANHEAD' \
+                                    % (name, h, v, f)
+                    else:
+                        look_for_this = '%s.t%02dz.wrf%sf%02d.grib2' \
                                     % (name, h, v, f)
                     if look_for_this in s3_list:
                         checked += '[f%02d]' % (f)
@@ -81,6 +84,8 @@ for m in model:
                             % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
                         if look_for_this in s3_list:
                             checked += '[*f%02d]' % (f)
+                        else:
+                            checked += '[    ]'
 
                     # If the prs file doesn't exist, try downloading it again
                     elif m == 'oper' and v == 'prs' and f == 0:
@@ -91,9 +96,11 @@ for m in model:
                             % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
                         if look_for_this in s3_list:
                             checked += '[*f%02d]' % (f)
-
+                        else:
+                            checked += '[    ]'
                     else:
                         checked += '[   ]'
+
                 checked += '\n'
 
 

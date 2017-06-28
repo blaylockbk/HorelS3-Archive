@@ -152,6 +152,75 @@ def download_hrrr_sfc(hour,
     # Return the list of URLs we downloaded from for troubleshooting
     return URL_list
 
+def download_hrrr_nat_subsection(hour,
+                                 latitude=37.716,
+                                 longitude=-112.844,
+                                 name='BRIANHEAD',
+                                 subregion_size=2.5,
+                                 field='nat',
+                                 forecast=range(0, 19)):
+    """
+    Downloads HRRR grib2 files from the nomads server
+    http://nomads.ncep.noaa.gov/
+
+    Input:
+        hour - the hours you want to download
+        latitude - the latitude of center point of the subsection (default SLC rawinsonde)
+        longitude - the longitude of the center point of the subsection (default SLC rawinsonde)
+        subregion_size - the size of the subregion to get. In degrees lat/lon,
+                         we will get a box the size of 2*subregion_sizex2*subregion_size
+                         centered over the latitude/longitude point.
+        fields - the field you want to download
+                 Options are fields ['prs', 'sfc','subh', 'nat']
+                 pressure fields (~350 MB), surface fields (~6 MB),
+                 native fields (~600 MB)!
+        forecast - a list of forecast hour you wish to download from that hour
+                   Default all forecast hours (0-18)
+    """
+    # We'll store the URLs we download from and return them for troubleshooting
+    URL_list = []
+    FileNames = []
+    #
+    # Build the URL string we want to download. One for each field, hour, and forecast
+    # New URL for downloading HRRRv2+
+    URL = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/hrrr.%04d%02d%02d/' \
+          % (DATE.year, DATE.month, DATE.day)
+    #
+    for f in forecast:
+        FileName = 'hrrr.t%02dz.wrf%sf%02d.grib2' % (hour, field, f)
+        newFileName = '%s.%s' % (FileName, name)
+        FileNames.append(OUTDIR+FileName)
+        # Download and save the file
+        print 'Downloading:', OUTDIR+FileName
+        #urllib.urlretrieve(URL+FileName, OUTDIR+FileName, reporthook=reporthook) # print download progress
+        urllib.urlretrieve(URL+FileName, OUTDIR+FileName)
+        print 'Saved:', OUTDIR+FileName
+        URL_list.append(URL+FileName)
+
+        os.system('wgrib2 %s -small_grib %s:%s %s:%s %s' % (OUTDIR+FileName, longitude-subregion_size, longitude+subregion_size, latitude-subregion_size, latitude+subregion_size, OUTDIR+newFileName))
+
+        # Move FILE to S3
+        print "\nMoving %s to Pando" % (OUTDIR+newFileName)
+        FILE = OUTDIR+newFileName
+        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
+                    % ('oper', field, DATE.year, DATE.month, DATE.day)
+        if os.path.isfile(FILE):
+            copy_to_horelS3(FILE, DIR_S3)
+            create_idx(FILE, DIR_S3)
+        else:
+            print "%s does not exist" % FILE
+
+        os.system('rm '+ OUTDIR+FileName) # Delete the large subregion now
+        # os.system('rm '+ OUTDIR+newFileName) # These are deleted later, the next day
+
+    # Change permissions of S3 directory to public
+    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+    os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
+
+    #
+    # Return the list of URLs we downloaded from for troubleshooting
+    return FileNames
+
 def download_hrrr_prs(hour,
                       field='prs',
                       forecast=[0]):
@@ -205,11 +274,12 @@ def worker():
     """
     This is what the thread will do when called and given input.
     If the thread hangs, then try a second time.
+    item is the hour
     """
     while True:
         item = q.get()
-        print "Work on:", item
-
+        print "Work on hour:", item
+        """ This wasn't catching any errors. Now I catch errors in the email.
         try:
             download_hrrr_sfc(item)
         except:
@@ -227,6 +297,7 @@ def worker():
                 download_hrrr_prs(item)
             except:
                 print "\n>> I tried, and tried, but couldn't get prs <<\n"
+
         try:
             download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
         except:
@@ -235,6 +306,11 @@ def worker():
                 download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
             except:
                 print "\n>> I tried, and treid, but couldn't get subh <<\n"
+        """
+        download_hrrr_sfc(item)
+        download_hrrr_prs(item)
+        download_hrrr_sfc(item, field='subh', forecast=range(0, 19))
+        download_hrrr_nat_subsection(item)
 
         q.task_done()
 
@@ -250,7 +326,7 @@ if __name__ == '__main__':
 
 
     hour_list = range(0, 24)
-    hour_list = [7]
+    #hour_list = [7]
 
     """# Download with Multiprocessing :)
     # Multiprocessing :) (Takes over a half hour!)
