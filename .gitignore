@@ -9,3 +9,5 @@ s3cmd-1.6.1/
 
 # Don't send anything in the temp directory
 temp/
+
+*.pyc
