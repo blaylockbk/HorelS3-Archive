@@ -5,23 +5,34 @@
 Check the HRRR files made it to the S3 archive and email a list to myself
 """
 
+import sys
 import smtplib
 import os
 from datetime import date, datetime, timedelta
-from download_hrrr_multipro import download_hrrr
+from download_hrrr_multipro import download_hrrr, download_hrrr_subsection
+
+# If comand line argment given to retry, then try to download missing files
+try:
+    if sys.argv[1] == 'retry':
+        retry = True
+    else:
+        retry = False
+except:
+    retry = False
 
 # Variables
-if datetime.now().hour < 18:
-    # If it's before 3:00 PM (local) it's still work day, and I'm probably
+if datetime.now().hour < 12:
+    # If it's before 5:00 PM (local) it's still work day, and I'm probably
     # trying to get yesterdays date still because the download script failed.
     DATE = datetime.today() -timedelta(days=1)
 else:
     # it's probably after 3:00 PM
     DATE = datetime.today()
 
+# DATE = datetime(2017, 1, 1)                                                  # Check a custom date
 
 model = ['oper', 'exp', 'alaska']
-variable = ['sfc', 'prs', 'subh', 'buf', 'nat']
+variable = ['sfc', 'prs', 'subh', 'buf']
 
 checked = ''
 for m in model:
@@ -66,17 +77,13 @@ for m in model:
             else:
                 checked += 'Hour %02d:' % (h)
                 for f in forecasts:
-                    if v == 'nat':
-                        look_for_this = '%s.t%02dz.wrf%sf%02d.grib2.BRIANHEAD' \
-                                    % (name, h, v, f)
-                    else:
-                        look_for_this = '%s.t%02dz.wrf%sf%02d.grib2' \
+                    look_for_this = '%s.t%02dz.wrf%sf%02d.grib2' \
                                     % (name, h, v, f)
                     if look_for_this in s3_list:
                         checked += '[f%02d]' % (f)
 
                     # If the sfc or subh file doesn't exist, try downloading it again
-                    elif m == 'oper' and (v == 'sfc' or v == 'subh'):
+                    elif retry is True and m == 'oper' and (v == 'sfc' or v == 'subh'):
                         print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this)
                         download_hrrr(h, field=v, forecast=[f])
                         # Regenerate the s3_list and check
@@ -88,21 +95,9 @@ for m in model:
                             checked += '[    ]'
 
                     # If the prs file doesn't exist, try downloading it again
-                    elif m == 'oper' and v == 'prs' and f == 0:
+                    elif retry is True and m == 'oper' and v == 'prs' and f == 0:
                         print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this), h
                         download_hrrr(h, field=v, forecast=[f])
-                        # Regenerate the s3_list and check
-                        s3_list = os.popen('rclone ls horelS3:HRRR/%s/%s/%04d%02d%02d/ | cut -c 11-' \
-                            % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
-                        if look_for_this in s3_list:
-                            checked += '[*f%02d]' % (f)
-                        else:
-                            checked += '[    ]'
-
-                    # If the nat file doesn't exist, try downloading it again
-                    elif m == 'oper' and v == 'nat':
-                        print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this), h
-                        download_hrrr_subsection(h, field=v, forecast=[f])
                         # Regenerate the s3_list and check
                         s3_list = os.popen('rclone ls horelS3:HRRR/%s/%s/%04d%02d%02d/ | cut -c 11-' \
                             % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')

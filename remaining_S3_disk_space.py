@@ -16,8 +16,8 @@ import numpy as np
 # Date (file sizes for this date are used to estimate a daily usage)
 DATE = date.today() - timedelta(days=1)
 
-# Allocation (30 TB initially issued January 2017)
-allocation = 30 * 10**12
+# Allocation (30 TB initially issued January 2017, added 30 TB June 2017)
+allocation = (30+30) * 10**12
 # -----------------------------------------------------------------------------
 
 # Units

@@ -6,7 +6,7 @@
 #
 # CRON tab on meso1 mesohorse user, run at 6:05 PM local time 
 # Download the HRRR files for "yesterday" UTC
-# Move HRRR Files to horelS3, create .idx, and change S3 directory to public
+# Move HRRR Files to horelS3, create .idx, and change S3 directory files to public
 # ----------------------------------------------------------------------------
 
 set dateStart = `date +%Y-%m-%d_%H:%M`
@@ -24,15 +24,10 @@ python ${SCRIPTDIR}/download_hrrrAK_multipro.py
 python ${SCRIPTDIR}/download_hrrrX_multipro.py
 #python ${SCRIPTDIR}/download_hrrr_bufr.py
 
-# Copy from horel-group/archive to Horel S3 archive,
-# create .idx, and change S3 archive permissions to public.
-# python ${SCRIPTDIR}/copy_hrrr_to_S3.py
-
-# Email a list of files that are now on S3
+# Email a list of files that are now on S3.
+# First send email of status, then retry missing files
 python ${SCRIPTDIR}/email_log.py
-
-# Download Subregion
-#python ${SCRIPTDIR}/download_hrrr_native_subregion_BRIANHEAD.py
+python ${SCRIPTDIR}/email_log.py retry
 
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`

@@ -285,7 +285,7 @@ if __name__ == '__main__':
     print "================================================\n"
 
     hour_list = range(0, 24)
-    #hour_list = [7]
+    #hour_list = [10]
 
     # Download with Multithreading :P
     # I think mulitthreading is much faster than multiprocessing when
