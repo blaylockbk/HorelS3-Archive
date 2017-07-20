@@ -200,8 +200,7 @@ if __name__ == '__main__':
     timer1 = datetime.now()
 
     # Multiprocessing :)
-    num_proc = 6
-    p = multiprocessing.Pool(num_proc)
+
 
     """
     Get a list of all available files from the FTP site, then
@@ -214,19 +213,21 @@ if __name__ == '__main__':
     ftp.login(user, password)
     ftp.cwd('hrrr/conus/wrftwo')
     # Get a list of the files...
-    sfc_filenames = ftp.nlst()
+    ftp_filenames = ftp.nlst()
     ftp.quit()
 
     # Only list the files for the desired forecast hours
-    sfc_flist = ['%02d00' % (f) for f in sfc_fxx]
-    sfc_filenames = [sfc_filenames[i] for i in range(len(sfc_filenames)) \
-                     if sfc_filenames[i][-4:] in sfc_flist]
+    sfc_fxxlist = ['%02d00' % (f) for f in sfc_fxx]
+    sfc_filenames = [ftp_filenames[i] for i in range(len(ftp_filenames)) \
+                     if ftp_filenames[i][-4:] in sfc_fxxlist]
 
     # Download from the list we collected
+    num_proc = 5
+    p = multiprocessing.Pool(num_proc)
     p.map(download_hrrrX_sfc, sfc_filenames)
+    p.close()
 
     print "Time to download hrrrX", datetime.now()-timer1
-
 
     """ # How to download pressure fields if you want to start getting those too
     # Get pressure fields

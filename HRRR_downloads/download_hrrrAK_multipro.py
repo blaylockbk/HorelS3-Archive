@@ -14,8 +14,7 @@ when I download from ESRL I am getting the data from "yesterday")
 This Script does the following:
 1) Downloads analyses and all forecast hours for HRRR Alaska sfc fields
    (found in the wrftwo directory on the ESRL FTP site). Saves as a .temp file.
-2) Truncates some of the variables to reduce file size with wgrib2. Removes the
-   .temp file.
+2) CANCELED THIS STEP: NO LONGER TRUNCATE THE SFC FILES
 3) Downloads analyses for HRRR Alaska pressure fields (found in the wrfprs
    directory on the ESRL FTP site). Taylor keeps the full file.
 
@@ -133,17 +132,12 @@ def download_hrrrAK_sfc(item):
         # Append the file name with ".temp" because we'll truncate and remove
         # this file to reduce file size.
         print "Downloading:", OUTDIR+NEWFILE
-        ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE+'.temp', 'wb').write)
+        ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
         ftp.quit()
-
-        # 2)
-        # Truncate some variables. Get only the variables Taylor wants.
-        print "Truncate:", OUTDIR+NEWFILE
-        os.system("wgrib2 %s -match '^(9|14|32|33|59|64|65|69|74):' -\grib %s" \
-                  % (OUTDIR+NEWFILE+'.temp', OUTDIR+NEWFILE))
-        os.system("rm %s" % (OUTDIR+NEWFILE+'.temp'))
-
+        
         print "Saved:", OUTDIR+NEWFILE
+
+        # 2) NO LONGER TRUNCATE THE FILE     
 
         # Move to Pando S3 archive
         FILE = OUTDIR+NEWFILE
@@ -224,10 +218,6 @@ if __name__ == '__main__':
 
     timer1 = datetime.now()
 
-    # Multiprocessing :)
-    num_proc = 6
-    p = multiprocessing.Pool(num_proc)
-
     """
     Get a list of all available files from the FTP site, then
     regenerate the list for files that have the desired forecast hours (fxx).
@@ -237,16 +227,19 @@ if __name__ == '__main__':
     ftp = FTP('gsdftp.fsl.noaa.gov')
     ftp.login(user, password)
     ftp.cwd('hrrr_ak/alaska/wrftwo')
-    sfc_filenames = ftp.nlst()
+    ftp_filenames = ftp.nlst()
     ftp.quit()
 
     # Only list the files for the desired forecast hours
-    sfc_flist = ['%02d00' % (f) for f in sfc_fxx]
-    sfc_filenames = [sfc_filenames[i] for i in range(len(sfc_filenames)) \
-                     if sfc_filenames[i][-4:] in sfc_flist]
+    sfc_fxxlist = ['%02d00' % (f) for f in sfc_fxx]
+    sfc_filenames = [ftp_filenames[i] for i in range(len(ftp_filenames)) \
+                        if ftp_filenames[i][-4:] in sfc_fxxlist]
 
     # Download surface fields on multiple processors
+    num_proc = 5
+    p = multiprocessing.Pool(num_proc)
     p.map(download_hrrrAK_sfc, sfc_filenames)
+    p.close()
 
     # Get pressure fields file names
     ftp = FTP('gsdftp.fsl.noaa.gov')
@@ -256,12 +249,15 @@ if __name__ == '__main__':
     ftp.quit()
 
     # Only list the files for the desired forecast hours
-    prs_flist = ['%02d00' % (f) for f in prs_fxx]
+    prs_fxxlist = ['%02d00' % (f) for f in prs_fxx]
     prs_filenames = [prs_filenames[i] for i in range(len(prs_filenames)) \
-                     if prs_filenames[i][-4:] in prs_flist]
+                     if prs_filenames[i][-4:] in prs_fxxlist]
 
     # Download pressure fields on multiple processors
+    num_proc = 5
+    p = multiprocessing.Pool(num_proc)
     p.map(download_hrrrAK_prs, prs_filenames)
+    p.close()
 
     print "Time to download HRRR-AK:", datetime.now() - timer1
 
