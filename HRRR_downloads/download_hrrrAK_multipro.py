@@ -126,34 +126,37 @@ def download_hrrrAK_sfc(item):
 
         # Save the file similar to the standard hrrr file naming convention
         NEWFILE = 'hrrrAK.t%sz.wrfsfcf%s.grib2' % (hour, forecast)
-        # or name the file with Taylor's convention
-        #NEWFILE = 'hrrr_ak_sfc_%02d%02d%02d%s_00%s' \
-        #           % (yesterday.year-2000, yesterday.month, yesterday.day, hour, forecast)
-        # Append the file name with ".temp" because we'll truncate and remove
-        # this file to reduce file size.
-        print "Downloading:", OUTDIR+NEWFILE
-        ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
-        ftp.quit()
-        
-        print "Saved:", OUTDIR+NEWFILE
-
-        # 2) NO LONGER TRUNCATE THE FILE     
-
-        # Move to Pando S3 archive
-        FILE = OUTDIR+NEWFILE
-        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
-                    % ('alaska', 'sfc', DATE.year, DATE.month, DATE.day)
-        if os.path.isfile(FILE):
-            copy_to_horelS3(FILE, DIR_S3)
-            create_idx(FILE, DIR_S3)
+        if os.path.isfile(OUTDIR+NEWFILE):
+            print "looks like that file already exists", OUTDIR+NEWFILE
         else:
-            print "%s does not exist", FILE
+            # or name the file with Taylor's convention
+            #NEWFILE = 'hrrr_ak_sfc_%02d%02d%02d%s_00%s' \
+            #           % (yesterday.year-2000, yesterday.month, yesterday.day, hour, forecast)
+            # Append the file name with ".temp" because we'll truncate and remove
+            # this file to reduce file size.
+            print "Downloading:", OUTDIR+NEWFILE
+            ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
+            ftp.quit()
+            
+            print "Saved:", OUTDIR+NEWFILE
 
-        print "Moved to Pando:", FILE
+            # 2) NO LONGER TRUNCATE THE FILE     
 
-        # Change permissions of S3 directory to public
-        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
-        os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
+            # Move to Pando S3 archive
+            FILE = OUTDIR+NEWFILE
+            DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
+                        % ('alaska', 'sfc', DATE.year, DATE.month, DATE.day)
+            if os.path.isfile(FILE):
+                copy_to_horelS3(FILE, DIR_S3)
+                create_idx(FILE, DIR_S3)
+            else:
+                print "%s does not exist", FILE
+
+            print "Moved to Pando:", FILE
+
+            # Change permissions of S3 directory to public
+            s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+            os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
 
 
 def download_hrrrAK_prs(item):
@@ -183,32 +186,35 @@ def download_hrrrAK_prs(item):
         # Save the file similar to the standard hrrr file naming convention
         # except insert an X to represent that this is the experimental version
         NEWFILE = 'hrrrAK.t%sz.wrfprsf%s.grib2' % (hour, forecast)
-        # name the file with Taylor's convention
-        #NEWFILE = 'hrrr_ak_prs_%02d%02d%02d%s' \
-        #          % (yesterday.year-2000, yesterday.month, yesterday.day, hour)
-        print "Downloading:", OUTDIR+NEWFILE
-        ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
-        ftp.quit()
-
-        # Don't truncate any variables.
-
-        print "Saved:", OUTDIR+NEWFILE
-
-        # Move to Pando S3 archive
-        FILE = OUTDIR+NEWFILE
-        DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
-                    % ('alaska', 'prs', DATE.year, DATE.month, DATE.day)
-        if os.path.isfile(FILE):
-            copy_to_horelS3(FILE, DIR_S3)
-            create_idx(FILE, DIR_S3)
+        if os.path.isfile(OUTDIR+NEWFILE):
+            print "looks like that file already exists", OUTDIR+NEWFILE
         else:
-            print "%s does not exist", FILE
+            # name the file with Taylor's convention
+            #NEWFILE = 'hrrr_ak_prs_%02d%02d%02d%s' \
+            #          % (yesterday.year-2000, yesterday.month, yesterday.day, hour)
+            print "Downloading:", OUTDIR+NEWFILE
+            ftp.retrbinary('RETR '+ item, open(OUTDIR+NEWFILE, 'wb').write)
+            ftp.quit()
 
-        print "Moved to Pando:", FILE
+            # Don't truncate any variables.
 
-        # Change permissions of S3 directory to public
-        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
-        os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
+            print "Saved:", OUTDIR+NEWFILE
+
+            # Move to Pando S3 archive
+            FILE = OUTDIR+NEWFILE
+            DIR_S3 = 'HRRR/%s/%s/%04d%02d%02d/' \
+                        % ('alaska', 'prs', DATE.year, DATE.month, DATE.day)
+            if os.path.isfile(FILE):
+                copy_to_horelS3(FILE, DIR_S3)
+                create_idx(FILE, DIR_S3)
+            else:
+                print "%s does not exist", FILE
+
+            print "Moved to Pando:", FILE
+
+            # Change permissions of S3 directory to public
+            s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+            os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % DIR_S3)
 
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':

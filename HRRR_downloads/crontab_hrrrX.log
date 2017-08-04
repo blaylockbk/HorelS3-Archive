@@ -1,0 +1,33 @@
+
+================================================
+Downloading experimental HRRR
+s3://HRRR/exp/sfc/20170803/hrrrX.t19z.wrfsfcf00.grib2: ACL set to Public  [18 of 18]
+s3://HRRR/exp/sfc/20170803/hrrrX.t18z.wrfsfcf00.grib2: ACL set to Public  [18 of 19]
+Time to download hrrrX 0:01:43.972349
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t04z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t09z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t05z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t08z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t11z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t16z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t03z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t06z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t12z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t02z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t07z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t14z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t19z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t19z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20170803/hrrrX.t19z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t19z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t01z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t10z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t18z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t18z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20170803/hrrrX.t18z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170803/BB_test/models/hrrrX/hrrrX.t18z.wrfsfcf00.grib2
+Begin: 2017-08-03_18:05
+End: 2017-08-03_18:06

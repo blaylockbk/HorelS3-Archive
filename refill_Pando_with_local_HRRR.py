@@ -79,11 +79,11 @@ def create_idx(for_this_file, put_here, rename):
 # =============================================================================
 
 # Date to transfer (yesterday's data)
-sDATE = datetime(2017, 7, 21)
-eDATE = datetime(2017, 7, 25)
+sDATE = datetime(2017, 8, 3)
+eDATE = datetime(2017, 8, 4)
 
 # Select a version you want to move from local to Pando: 'hrrr', 'hrrrX', or 'hrrrAK'
-model = version['hrrrAK']
+model = version['hrrrX']
 
 # =============================================================================
 # =============================================================================
