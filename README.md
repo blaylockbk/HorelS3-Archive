@@ -104,6 +104,9 @@ For example, to get TMP:2 m temperature from a file:
 
 ## Pando Archive Contents and URL Structure
 
+### **`horelS3:GOES16/`**
+GOES-16 Level 2 data (multiband format) from the [Amazon AWS NOAA archive](https://aws.amazon.com/public-datasets/goes/).
+
 ### **`horelS3:HRRR/`**
 |      Important Dates            |   What happened?  | Notes  |
 |---------------------------------|-------------------|--------|

@@ -265,6 +265,7 @@ def worker():
             except:
                 print "\n>> I tried, and tried, but couldn't get subhourly grids <<\n"
 
+        """
         # Download native grids
         try:
             download_hrrr_subsection(item)
@@ -274,7 +275,7 @@ def worker():
                 download_hrrr_subsection(item)
             except:
                 print "\n>> I tried, and tried, but couldn't get native grids <<\n"
-
+        """
 
         q.task_done()
 

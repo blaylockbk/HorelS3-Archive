@@ -114,7 +114,7 @@ for m in model:
 
 # Send the Email
 sender = 'brian.blaylock@utah.edu'
-receivers = ['blaylockbk@gmail.com']
+receivers = ['blaylockbk@gmail.com','taylor.mccorkle@utah.edu']
 
 message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
 To: HRRR Check <brian.blaylock@utah.edu>

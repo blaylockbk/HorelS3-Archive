@@ -33,7 +33,7 @@ from BB_MesoWest.get_token import get_ESRL_credentials
 # f00 is the analysis hour. Forecasts go out 18 hours.
 # Currently grabbing analyses for sfc files
 sfc_fxx = [0]
-#prs_fxx = [0] # Don't download any pressure fields.
+prs_fxx = [0] # Don't download any pressure fields.
 
 # ----------------------------------------------------------------------------
 #                        Introductory Stuff
@@ -235,7 +235,7 @@ if __name__ == '__main__':
 
     print "Time to download hrrrX", datetime.now()-timer1
 
-    """ # How to download pressure fields if you want to start getting those too
+    # How to download pressure fields if you want to start getting those too
     # Get pressure fields
     ftp = FTP('gsdftp.fsl.noaa.gov')
     ftp.login(user, password)
@@ -253,6 +253,6 @@ if __name__ == '__main__':
     num_proc = 3
     p = multiprocessing.Pool(num_proc)
     p.map(download_hrrrX_prs, prs_filenames)
-    """
+    
 
     exit()

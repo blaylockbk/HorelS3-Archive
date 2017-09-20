@@ -47,9 +47,9 @@ prs_fxx = [0]
 # Date.today() returns the local time date. If it's after 6:00 PM local, then,
 # acording to the UTC clock, that date is "yesterday."
 if datetime.now().hour < 12:
-    # if it before noon (local) then get yesterdays date
-    # 1) maybe the download script ran long and it's just after midnight
-    # 2) mabye you need to rerun this script in the morning
+    # if it before noon (local) then get yesterdays date. Reasons:
+    #   1) maybe the download script ran long and it's just after midnight
+    #   2) maybe you need to rerun this script in the morning
     yesterday = datetime.today() -timedelta(days=1)
     DATE = yesterday
 else:
