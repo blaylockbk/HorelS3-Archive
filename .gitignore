@@ -11,3 +11,4 @@ s3cmd-1.6.1/
 temp/
 
 *.pyc
+*.log

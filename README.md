@@ -310,6 +310,19 @@ For an update, run the script `remaining_S3_disk_space.py` which produces output
 ## Where can I find examples on how to download HRRR data?
 Check out the scripting tips here: [Scripting Tips](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_script_tips.html)
 
+## How do I configure `rclone` to access the NOAA's GOES-16 archive on Amazon AWS?
+Since the NOAA GOES-16 archive is a public and free bucket, it is really easy to access the data via `rclone`.
+
+Configure `rclone`
+
+    rclone config
+
+Name the remote something like `goes16AWS`. Select `2` for Amazon S3 access and press enter to select empty or default values. When asked if it is right, type `y` for yes.
+
+You are now on your way to accessing the Amazon GOES16 archive. To list the buckets in the `noaa-goes16 archive`, type:
+
+    rclone lsd goes16AWS:noaa-goes16 
+
 ___
 ___
 

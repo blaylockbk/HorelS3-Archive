@@ -1,1153 +1,158 @@
 
 ================================================
 Downloading HRRR Alaska
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf00.grib2: ACL set to Public  [1 of 1]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf13.grib2: ACL set to Public  [2 of 3]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf28.grib2: ACL set to Public  [3 of 3]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf21.grib2: ACL set to Public  [4 of 4]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf06.grib2: ACL set to Public  [4 of 5]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf01.grib2: ACL set to Public  [2 of 6]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf14.grib2: ACL set to Public  [4 of 7]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf29.grib2: ACL set to Public  [6 of 8]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf07.grib2: ACL set to Public  [8 of 9]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf22.grib2: ACL set to Public  [10 of 10]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf15.grib2: ACL set to Public  [5 of 11]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf08.grib2: ACL set to Public  [10 of 12]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf02.grib2: ACL set to Public  [3 of 14]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf23.grib2: ACL set to Public  [14 of 14]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf30.grib2: ACL set to Public  [9 of 15]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf09.grib2: ACL set to Public  [13 of 16]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf16.grib2: ACL set to Public  [7 of 17]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf03.grib2: ACL set to Public  [4 of 19]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf31.grib2: ACL set to Public  [12 of 19]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf24.grib2: ACL set to Public  [20 of 20]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf17.grib2: ACL set to Public  [9 of 23]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf10.grib2: ACL set to Public  [18 of 23]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf25.grib2: ACL set to Public  [23 of 23]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf04.grib2: ACL set to Public  [5 of 24]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf32.grib2: ACL set to Public  [15 of 25]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf18.grib2: ACL set to Public  [11 of 26]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf26.grib2: ACL set to Public  [27 of 27]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf11.grib2: ACL set to Public  [22 of 28]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf33.grib2: ACL set to Public  [17 of 29]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf05.grib2: ACL set to Public  [6 of 30]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf19.grib2: ACL set to Public  [13 of 31]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf27.grib2: ACL set to Public  [32 of 32]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf34.grib2: ACL set to Public  [20 of 34]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf12.grib2: ACL set to Public  [27 of 34]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf06.grib2: ACL set to Public  [7 of 35]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf20.grib2: ACL set to Public  [15 of 37]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf35.grib2: ACL set to Public  [23 of 37]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf13.grib2: ACL set to Public  [31 of 38]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf28.grib2: ACL set to Public  [39 of 39]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf07.grib2: ACL set to Public  [8 of 40]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf29.grib2: ACL set to Public  [41 of 41]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf36.grib2: ACL set to Public  [25 of 43]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf14.grib2: ACL set to Public  [34 of 43]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf21.grib2: ACL set to Public  [17 of 44]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf08.grib2: ACL set to Public  [9 of 45]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf30.grib2: ACL set to Public  [46 of 46]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf00.grib2: ACL set to Public  [28 of 47]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf15.grib2: ACL set to Public  [38 of 48]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf22.grib2: ACL set to Public  [19 of 49]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf16.grib2: ACL set to Public  [40 of 50]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf09.grib2: ACL set to Public  [10 of 52]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf31.grib2: ACL set to Public  [52 of 52]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf01.grib2: ACL set to Public  [31 of 53]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf23.grib2: ACL set to Public  [21 of 54]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf10.grib2: ACL set to Public  [11 of 55]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf32.grib2: ACL set to Public  [56 of 56]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf17.grib2: ACL set to Public  [45 of 57]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf02.grib2: ACL set to Public  [34 of 58]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf24.grib2: ACL set to Public  [23 of 59]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf11.grib2: ACL set to Public  [12 of 60]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf33.grib2: ACL set to Public  [61 of 61]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf18.grib2: ACL set to Public  [49 of 62]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf03.grib2: ACL set to Public  [37 of 63]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf25.grib2: ACL set to Public  [25 of 64]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf12.grib2: ACL set to Public  [13 of 66]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf34.grib2: ACL set to Public  [66 of 66]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf19.grib2: ACL set to Public  [53 of 67]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf04.grib2: ACL set to Public  [40 of 68]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf26.grib2: ACL set to Public  [27 of 69]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf35.grib2: ACL set to Public  [70 of 70]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf05.grib2: ACL set to Public  [42 of 71]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf36.grib2: ACL set to Public  [72 of 72]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf27.grib2: ACL set to Public  [28 of 73]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf20.grib2: ACL set to Public  [58 of 74]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf00.grib2: ACL set to Public  [75 of 76]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf29.grib2: ACL set to Public  [76 of 76]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf14.grib2: ACL set to Public  [76 of 77]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf07.grib2: ACL set to Public  [78 of 78]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf22.grib2: ACL set to Public  [79 of 79]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf01.grib2: ACL set to Public  [76 of 81]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf30.grib2: ACL set to Public  [79 of 81]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf15.grib2: ACL set to Public  [78 of 82]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf08.grib2: ACL set to Public  [82 of 83]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf02.grib2: ACL set to Public  [77 of 84]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf23.grib2: ACL set to Public  [85 of 85]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf31.grib2: ACL set to Public  [82 of 86]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf16.grib2: ACL set to Public  [80 of 87]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf09.grib2: ACL set to Public  [86 of 88]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf03.grib2: ACL set to Public  [78 of 89]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf24.grib2: ACL set to Public  [90 of 90]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf32.grib2: ACL set to Public  [85 of 91]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf17.grib2: ACL set to Public  [82 of 92]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf04.grib2: ACL set to Public  [79 of 93]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf25.grib2: ACL set to Public  [94 of 94]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf10.grib2: ACL set to Public  [91 of 95]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf33.grib2: ACL set to Public  [88 of 96]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf18.grib2: ACL set to Public  [84 of 97]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf05.grib2: ACL set to Public  [80 of 98]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf11.grib2: ACL set to Public  [95 of 99]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf26.grib2: ACL set to Public  [100 of 100]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf34.grib2: ACL set to Public  [91 of 101]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf06.grib2: ACL set to Public  [81 of 103]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf19.grib2: ACL set to Public  [87 of 103]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf12.grib2: ACL set to Public  [99 of 104]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf35.grib2: ACL set to Public  [94 of 105]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf20.grib2: ACL set to Public  [88 of 107]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf27.grib2: ACL set to Public  [107 of 107]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf07.grib2: ACL set to Public  [82 of 108]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf13.grib2: ACL set to Public  [103 of 109]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf36.grib2: ACL set to Public  [97 of 110]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf28.grib2: ACL set to Public  [111 of 111]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf21.grib2: ACL set to Public  [90 of 112]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf08.grib2: ACL set to Public  [83 of 113]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf14.grib2: ACL set to Public  [107 of 114]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf00.grib2: ACL set to Public  [100 of 115]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf22.grib2: ACL set to Public  [92 of 116]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf29.grib2: ACL set to Public  [117 of 117]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf09.grib2: ACL set to Public  [84 of 118]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf15.grib2: ACL set to Public  [111 of 119]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf01.grib2: ACL set to Public  [103 of 120]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf30.grib2: ACL set to Public  [121 of 121]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf10.grib2: ACL set to Public  [85 of 122]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf23.grib2: ACL set to Public  [95 of 123]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf16.grib2: ACL set to Public  [115 of 124]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf02.grib2: ACL set to Public  [106 of 125]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf31.grib2: ACL set to Public  [126 of 126]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf11.grib2: ACL set to Public  [86 of 127]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf24.grib2: ACL set to Public  [97 of 128]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf17.grib2: ACL set to Public  [119 of 129]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf25.grib2: ACL set to Public  [98 of 131]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf03.grib2: ACL set to Public  [110 of 131]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf32.grib2: ACL set to Public  [132 of 132]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf12.grib2: ACL set to Public  [87 of 133]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf18.grib2: ACL set to Public  [123 of 134]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf04.grib2: ACL set to Public  [112 of 135]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf26.grib2: ACL set to Public  [100 of 136]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf33.grib2: ACL set to Public  [137 of 137]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf13.grib2: ACL set to Public  [88 of 138]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf27.grib2: ACL set to Public  [102 of 140]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf19.grib2: ACL set to Public  [128 of 140]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf05.grib2: ACL set to Public  [116 of 141]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf00.grib2: ACL set to Public  [142 of 142]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf28.grib2: ACL set to Public  [103 of 144]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf06.grib2: ACL set to Public  [118 of 144]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf20.grib2: ACL set to Public  [132 of 146]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf34.grib2: ACL set to Public  [145 of 146]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf01.grib2: ACL set to Public  [147 of 147]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf15.grib2: ACL set to Public  [148 of 148]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf30.grib2: ACL set to Public  [149 of 149]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf21.grib2: ACL set to Public  [133 of 151]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf35.grib2: ACL set to Public  [147 of 151]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf02.grib2: ACL set to Public  [150 of 152]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf16.grib2: ACL set to Public  [152 of 153]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf36.grib2: ACL set to Public  [148 of 154]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf31.grib2: ACL set to Public  [155 of 155]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf08.grib2: ACL set to Public  [156 of 156]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf03.grib2: ACL set to Public  [152 of 157]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf23.grib2: ACL set to Public  [158 of 158]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf17.grib2: ACL set to Public  [155 of 159]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf32.grib2: ACL set to Public  [158 of 160]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf04.grib2: ACL set to Public  [153 of 161]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf09.grib2: ACL set to Public  [161 of 162]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf18.grib2: ACL set to Public  [157 of 163]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf24.grib2: ACL set to Public  [164 of 164]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf05.grib2: ACL set to Public  [154 of 167]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf33.grib2: ACL set to Public  [162 of 167]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf10.grib2: ACL set to Public  [165 of 167]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf19.grib2: ACL set to Public  [159 of 168]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf25.grib2: ACL set to Public  [169 of 169]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf06.grib2: ACL set to Public  [155 of 170]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf20.grib2: ACL set to Public  [161 of 171]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf11.grib2: ACL set to Public  [169 of 172]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf34.grib2: ACL set to Public  [166 of 173]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf26.grib2: ACL set to Public  [174 of 174]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf07.grib2: ACL set to Public  [156 of 175]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf21.grib2: ACL set to Public  [163 of 176]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf12.grib2: ACL set to Public  [173 of 177]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf27.grib2: ACL set to Public  [178 of 178]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf22.grib2: ACL set to Public  [164 of 179]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf35.grib2: ACL set to Public  [170 of 180]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf08.grib2: ACL set to Public  [157 of 181]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf13.grib2: ACL set to Public  [177 of 182]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf23.grib2: ACL set to Public  [166 of 183]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf28.grib2: ACL set to Public  [184 of 184]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf09.grib2: ACL set to Public  [158 of 185]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf36.grib2: ACL set to Public  [174 of 186]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf14.grib2: ACL set to Public  [181 of 187]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf00.grib2: ACL set to Public  [175 of 188]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf24.grib2: ACL set to Public  [168 of 189]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf10.grib2: ACL set to Public  [159 of 190]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf15.grib2: ACL set to Public  [185 of 192]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf29.grib2: ACL set to Public  [192 of 192]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf01.grib2: ACL set to Public  [178 of 193]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf25.grib2: ACL set to Public  [170 of 194]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf11.grib2: ACL set to Public  [160 of 196]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf16.grib2: ACL set to Public  [189 of 196]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf30.grib2: ACL set to Public  [197 of 197]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf02.grib2: ACL set to Public  [181 of 198]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf26.grib2: ACL set to Public  [172 of 199]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf12.grib2: ACL set to Public  [161 of 201]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf31.grib2: ACL set to Public  [201 of 201]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf17.grib2: ACL set to Public  [193 of 202]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf03.grib2: ACL set to Public  [184 of 203]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf18.grib2: ACL set to Public  [195 of 204]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf13.grib2: ACL set to Public  [162 of 205]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf04.grib2: ACL set to Public  [186 of 206]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf27.grib2: ACL set to Public  [175 of 207]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf32.grib2: ACL set to Public  [208 of 208]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf14.grib2: ACL set to Public  [163 of 210]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf14.grib2: ACL set to Public  [163 of 210]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf05.grib2: ACL set to Public  [189 of 210]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf05.grib2: ACL set to Public  [189 of 210]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf19.grib2: ACL set to Public  [201 of 211]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf28.grib2: ACL set to Public  [177 of 212]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf33.grib2: ACL set to Public  [213 of 213]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf20.grib2: ACL set to Public  [203 of 214]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf06.grib2: ACL set to Public  [191 of 215]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf21.grib2: ACL set to Public  [205 of 216]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf29.grib2: ACL set to Public  [178 of 217]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf34.grib2: ACL set to Public  [218 of 218]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf07.grib2: ACL set to Public  [193 of 219]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf22.grib2: ACL set to Public  [208 of 220]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf35.grib2: ACL set to Public  [221 of 221]
-s3://HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf36.grib2: ACL set to Public  [222 of 222]
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf01.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf01.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf01.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf01.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf02.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf02.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf02.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf02.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf03.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf03.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf03.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf03.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf04.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf04.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf04.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf04.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf05.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf05.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf05.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf05.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf06.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf06.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf06.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf06.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf07.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf07.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf07.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf07.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf08.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf08.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf08.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf08.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf09.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf09.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf09.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf09.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf10.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf10.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf10.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf10.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf11.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf11.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf11.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf11.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf12.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf12.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf12.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf12.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf36.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf36.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf36.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf36.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf01.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf01.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf01.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf01.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf02.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf02.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf02.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf02.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf03.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf03.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf03.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf03.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf04.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf04.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf04.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf04.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf05.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf05.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf05.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf05.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf06.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf06.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf06.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf06.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf07.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf07.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf07.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf07.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf08.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf08.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf08.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf08.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf09.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf09.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf09.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf09.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf10.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf10.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf10.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf10.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf11.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf11.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf11.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf11.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf12.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf12.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf12.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf12.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf13.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf13.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf13.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf13.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf01.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf01.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf01.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf01.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf02.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf02.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf02.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf02.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf03.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf03.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf03.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf03.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf04.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf04.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf04.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf04.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf05.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf05.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf05.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf05.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf06.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf06.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf06.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf06.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf07.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf07.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf07.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf07.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf08.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf08.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf08.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf08.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf09.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf09.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf09.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf09.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf10.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf10.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf10.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf10.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf11.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf11.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf11.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf11.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf12.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf12.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf12.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf12.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf13.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf13.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf13.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf13.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf14.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf14.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf14.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf14.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf28.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf28.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf28.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf28.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf29.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf29.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf29.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf29.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf30.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf30.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf30.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf30.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf31.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf31.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf31.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf31.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf32.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf32.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf32.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf32.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf33.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf33.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf33.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf33.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf34.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf34.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf34.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf34.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf35.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf35.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf35.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf35.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf36.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf36.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf36.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf36.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf01.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf01.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf01.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf01.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf02.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf02.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf02.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf02.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf03.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf03.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf03.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf03.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf04.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf04.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf04.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf04.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf05.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf05.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf05.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf05.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf29.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf29.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf29.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf29.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf30.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf30.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf30.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf30.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf31.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf31.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf31.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf31.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf32.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf32.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf32.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf32.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf33.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf33.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf33.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf33.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf34.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf34.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf34.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf34.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf35.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf35.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf35.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf35.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf36.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf36.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf36.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf36.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf01.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf01.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf01.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf01.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf02.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf02.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf02.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf02.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf03.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf03.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf03.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf03.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf04.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf04.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf04.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf04.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf05.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf05.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf05.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf05.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf06.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf06.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf06.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf06.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf15.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf15.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf15.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf15.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf16.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf16.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf16.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf16.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf17.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf17.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf17.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf17.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf18.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf18.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf18.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf18.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf19.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf19.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf19.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf19.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf20.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf20.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf20.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf20.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf21.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf21.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf21.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf21.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf22.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf22.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf22.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf22.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf23.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf23.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf23.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf23.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf24.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf24.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf24.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf24.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf25.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf25.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf25.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf25.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf26.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf26.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf26.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf26.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf27.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf27.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf27.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf27.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf28.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf28.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf28.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf28.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf29.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf29.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf29.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf29.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf21.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf21.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf21.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf21.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf22.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf22.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf22.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf22.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf23.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf23.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf23.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf23.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf24.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf24.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf24.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf24.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf25.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf25.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf25.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf25.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf26.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf26.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf26.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf26.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf27.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf27.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf27.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf27.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf28.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf28.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf28.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf28.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf29.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf29.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf29.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf29.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf30.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf30.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf30.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf30.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf31.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf31.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf31.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf31.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf32.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf32.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf32.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf32.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf33.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf33.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf33.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf33.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf34.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf34.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf34.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf34.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf35.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf35.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf35.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf35.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf14.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf14.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf14.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf14.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf15.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf15.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf15.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf15.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf16.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf16.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf16.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf16.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf17.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf17.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf17.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf17.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf18.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf18.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf18.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf18.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf19.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf19.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf19.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf19.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf20.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf20.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf20.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf20.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf21.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf21.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf21.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf21.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf22.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf22.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf22.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf22.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf23.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf23.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf23.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf23.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf24.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf24.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf24.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf24.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf25.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf25.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf25.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf25.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf26.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf26.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf26.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf26.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf27.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf27.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf27.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf27.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf28.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf28.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t06z.wrfsfcf28.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfsfcf28.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf30.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf30.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf30.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf30.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf31.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf31.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf31.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf31.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf32.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf32.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf32.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf32.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf33.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf33.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf33.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf33.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf34.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf34.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf34.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf34.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf35.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf35.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf35.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf35.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf36.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf36.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t12z.wrfsfcf36.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf36.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf01.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf01.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf01.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf01.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf02.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf02.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf02.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf02.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf03.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf03.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf03.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf03.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf04.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf04.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf04.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf04.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf05.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf05.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf05.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf05.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf06.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf06.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf06.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf06.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf07.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf07.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf07.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf07.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf13.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf13.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf13.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf13.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf14.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf14.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf14.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf14.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf15.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf15.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf15.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf15.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf16.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf16.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf16.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf16.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf17.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf17.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf17.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf17.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf18.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf18.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf18.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf18.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf19.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf19.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf19.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf19.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf20.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf20.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf20.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf20.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf21.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf21.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf21.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf21.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf22.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf22.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf22.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf22.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf23.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf23.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf23.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf23.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf24.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf24.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf24.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf24.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf25.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf25.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf25.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf25.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf26.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf26.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf26.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf26.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf27.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf27.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t00z.wrfsfcf27.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfsfcf27.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf07.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf07.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf07.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf07.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf08.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf08.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf08.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf08.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf09.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf09.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf09.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf09.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf10.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf10.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf10.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf10.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf11.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf11.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf11.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf11.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf12.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf12.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf12.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf12.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf13.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf13.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf13.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf13.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf14.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf14.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf14.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf14.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf15.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf15.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf15.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf15.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf16.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf16.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf16.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf16.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf17.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf17.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf17.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf17.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf18.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf18.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf18.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf18.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf19.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf19.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf19.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf19.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf20.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf20.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf20.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf20.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf21.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf21.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf21.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf21.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf08.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf08.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf08.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf08.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf09.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf09.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf09.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf09.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf10.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf10.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf10.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf10.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf11.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf11.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf11.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf11.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf12.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf12.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf12.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf12.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf13.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf13.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf13.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf13.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf14.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf14.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf14.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf14.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf15.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf15.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf15.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf15.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf16.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf16.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf16.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf16.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf17.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf17.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf17.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf17.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf18.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf18.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf18.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf18.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf19.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf19.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf19.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf19.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf20.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf20.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf20.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf20.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf21.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf21.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf21.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf21.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf22.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf22.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf22.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf22.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf06.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf06.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf06.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf06.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf07.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf07.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf07.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf07.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf08.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf08.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf08.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf08.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf09.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf09.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf09.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf09.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf10.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf10.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf10.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf10.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf11.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf11.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf11.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf11.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf12.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf12.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf12.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf12.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf13.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf13.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf13.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf13.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf14.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf14.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf14.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf14.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf15.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf15.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf15.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf15.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf16.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf16.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf16.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf16.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf17.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf17.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf17.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf17.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf18.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf18.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf18.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf18.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf19.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf19.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf19.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf19.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf20.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf20.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t03z.wrfsfcf20.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfsfcf20.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf22.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf22.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf22.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf22.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf23.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf23.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf23.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf23.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf24.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf24.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf24.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf24.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf25.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf25.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf25.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf25.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf26.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf26.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf26.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf26.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf27.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf27.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf27.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf27.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf28.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf28.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf28.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf28.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf29.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf29.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf29.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf29.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf30.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf30.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf30.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf30.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf31.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf31.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf31.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf31.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf32.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf32.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf32.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf32.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf33.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf33.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf33.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf33.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf34.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf34.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf34.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf34.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf35.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf35.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf35.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf35.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf36.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf36.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t09z.wrfsfcf36.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfsfcf36.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf23.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf23.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf23.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf23.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf24.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf24.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf24.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf24.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf25.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf25.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf25.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf25.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf26.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf26.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf26.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf26.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf27.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf27.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf27.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf27.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf28.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf28.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf28.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf28.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf29.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf29.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf29.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf29.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf30.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf30.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf30.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf30.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf31.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf31.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf31.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf31.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf32.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf32.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf32.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf32.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf33.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf33.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf33.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf33.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf34.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf34.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf34.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf34.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf35.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf35.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf35.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf35.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf36.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf36.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/sfc/20170920/hrrrAK.t15z.wrfsfcf36.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf36.grib2
-s3://HRRR/alaska/prs/20170920/hrrrAK.t06z.wrfprsf00.grib2: ACL set to Public  [1 of 1]
-s3://HRRR/alaska/prs/20170920/hrrrAK.t03z.wrfprsf00.grib2: ACL set to Public  [1 of 2]
-s3://HRRR/alaska/prs/20170920/hrrrAK.t00z.wrfprsf00.grib2: ACL set to Public  [1 of 3]
-s3://HRRR/alaska/prs/20170920/hrrrAK.t12z.wrfprsf00.grib2: ACL set to Public  [4 of 4]
-s3://HRRR/alaska/prs/20170920/hrrrAK.t09z.wrfprsf00.grib2: ACL set to Public  [4 of 5]
-s3://HRRR/alaska/prs/20170920/hrrrAK.t15z.wrfprsf00.grib2: ACL set to Public  [6 of 6]
-s3://HRRR/alaska/prs/20170920/hrrrAK.t18z.wrfprsf00.grib2: ACL set to Public  [7 of 7]
-Time to download HRRR-AK: 0:58:08.028840
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfprsf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfprsf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/prs/20170920/hrrrAK.t00z.wrfprsf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t00z.wrfprsf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfprsf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfprsf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/prs/20170920/hrrrAK.t12z.wrfprsf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfprsf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfprsf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfprsf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/prs/20170920/hrrrAK.t09z.wrfprsf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t09z.wrfprsf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfprsf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfprsf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/prs/20170920/hrrrAK.t06z.wrfprsf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t06z.wrfprsf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfprsf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfprsf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/prs/20170920/hrrrAK.t15z.wrfprsf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfprsf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfprsf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfprsf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/prs/20170920/hrrrAK.t03z.wrfprsf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t03z.wrfprsf00.grib2
-Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfprsf00.grib2
-Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfprsf00.grib2
-created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/alaska/prs/20170920/hrrrAK.t18z.wrfprsf00.grib2.idx
-Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfprsf00.grib2
-Begin: 2017-09-20_12:35
-End: 2017-09-20_13:33
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf26.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf27.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf28.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf29.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf30.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf31.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf32.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf33.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf34.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf35.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf36.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf01.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf04.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf05.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf06.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf07.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf08.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf09.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf10.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf11.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf12.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf13.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf14.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf15.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf16.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf13.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf14.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf15.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf16.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf17.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf18.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf19.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf20.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf21.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf22.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf23.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf24.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf25.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf30.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf31.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf32.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf33.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf34.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf35.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf36.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf01.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf02.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf03.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf04.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf05.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf02.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf03.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf04.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf05.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf06.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf07.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf08.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf09.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf10.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf11.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf12.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf13.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf14.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf28.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf29.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf30.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf31.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf32.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf33.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf34.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf35.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf36.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf01.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf02.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf03.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf15.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf16.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf17.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf18.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf19.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf20.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf21.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf22.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf23.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf24.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf25.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf26.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfsfcf27.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf17.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf18.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf19.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf20.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf21.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf22.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf23.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf24.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf25.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf26.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf27.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf28.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfsfcf29.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf32.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf33.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf34.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf35.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf36.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf01.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf02.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf03.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf04.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf05.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf06.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf07.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf08.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf09.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf10.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf11.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfsfcf12.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf06.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf07.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf08.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf09.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf10.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf11.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf12.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf13.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf14.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf15.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf16.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf17.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf18.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf19.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf20.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf21.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf22.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf23.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf24.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf25.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf26.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf27.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf28.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf29.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf30.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfsfcf31.grib2
+Time to download HRRR-AK: 0:00:14.135114
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t12z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t21z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t15z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20170920/BB_test/models/hrrrAK/hrrrAK.t18z.wrfprsf00.grib2
+Begin: 2017-09-21_06:35
+End: 2017-09-21_06:35
