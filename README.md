@@ -3,27 +3,30 @@
 ![MesoWest Logo, why doesn't this work??](MesoWest_20th_black.png "Powered by MesoWest")
 
 # Using the Horel S3 Archive Buckets  
-Brian Blaylock  
-_February 22, 2017_
+**Author:** Brian Blaylock  
+**Date:** February 22, 2017 _updated September 22, 2017_
 
 ## Introduction
-In January 2017, CHPC allocated the Horel Group 30 TB on the Pando S3 (Simple Storage
+In January 2017, CHPC allocated the Horel Group 60 TB on the Pando S3 (Simple Storage
 Service) archive space. This space is used for the Horel archive. Presently, it 
-only houses the HRRR archive (> 20 TB), but more data will be moved to Pando. 
+houses the HRRR archive (> 45 TB), and GOES-16 archvie.
 
 Pando is named after the large vast of aspen trees in Utah, thought to be the
 largest and oldest living organism on earth.
 
 You can view and access data via:
-* `rclone` in your linux terminal (you can also get rclone for your PC)
-* URL and cURL commands: [http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR).
-* Archive FAQ and interactive download page: [http://hrrr.chpc.utah.edu/](http://hrrr.chpc.utah.edu/)
+- `rclone` in your linux terminal (you can also get rclone for your PC)
+- Your browser also allows access to the public files...
+  - HRRR
+    - URL: [http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR)
+    - Archive FAQ and interactive download page: [http://hrrr.chpc.utah.edu/](http://hrrr.chpc.utah.edu/)
+  - GOES16  
+    - URL: [http://pando-rgw01.chpc.utah.edu/GOES16](http://pando-rgw01.chpc.utah.edu/GOES16)
 
 ## Access data via rclone
 [rclone](http://rclone.org/) allows you to sync files and directories between
 your linux computer and the S3 buckets (and other cloud services).
-Before getting started, first review the CHPC rclone tutorial 
-**[here](https://www.chpc.utah.edu/documentation/software/rclone.php)**.
+Before getting started, first review the [CHPC rclone tutorial](https://www.chpc.utah.edu/documentation/software/rclone.php).
 
 ### Configuration
 1. You must have 
@@ -32,7 +35,7 @@ set up on your CHPC account. Load rclone (I do this is in my `.custom.csh` file)
     
     `module load rclone`
 
-2. Set up the config file: **Note: These are the settings used for the meteo19 ldm user**
+2. Set up the config file: **Note: These are the settings used for the meteo1 mesohorse user**
 
     Type `rclone config`. You will be asked a series of questions. Use these options:  
               
@@ -40,13 +43,13 @@ set up on your CHPC account. Load rclone (I do this is in my `.custom.csh` file)
       2. Enter a name. You will reference the S3 archive with this name. I used `horelS3`.
       3. Type: Select option `2` for S3.  
       4. Select `false` when asked to "Get AWS credientials from runtime."  
-      5. Enter the access key. Ask me or John for this, unless you know where to find it.
+      5. Enter the access key. Ask Brian or John for this, unless you know where to find it.
       6. Enter the secret key. You'll have to ask for this, too.
       7. Region: Choose "other-v2-signature" (option `10`).  
       8. Endpoint: Enter `https://pando-rgw01.chpc.utah.edu`.
       9. Location: Seclection option `1` for none.
 
-Completing this makes a .rclone.conf file in your home directory
+Completing this makes a `.rclone.conf` file in your home directory
 
 ### Basic Comand Examples
 These examples can be used if you named the archive source `horelS3` (like I did
@@ -57,7 +60,7 @@ configured rclone, simply replace the name before the colon.
 |---------------------------------------------|-------------------|--------|
 | make a new bucket                           | `rclone mkdir horelS3:HRRR` |
 | make a new bucket/path                      | `rclone mkdir horelS3:HRRR/oper/sfc/` | `copy` will make the directory if it doesn't exist, so it isn't necessary to mkdir before copying|
-| list top-level buckets                      | `rclone lsd horelS3:` | `lsd` Only lists the directories |
+| list top-level buckets                      | `rclone lsd horelS3:` | `lsd` Only lists the directories in the path |
 | list buckets in bucket                      | `rclone lsd horelS3:HRRR` |
 | list buckets in path                        | `rclone lsd horelS3:HRRR/oper` |
 | list bucket contents                        | `rclone ls horelS3:HRRR` | `ls` will list everything in the bucket including all directory's contents, so this particular example isn't very useful |
@@ -65,7 +68,7 @@ configured rclone, simply replace the name before the colon.
 | list bucket contents                        | `rclone lsl horelS3:HRRR/oper/sfc/20161213` | `lsl` will list more details than `ls`|
 | copy file from your computer to S3          | `rclone copy ./file/name/on/linux/system horelS3:path/you/want/to/copy/to/`| You can't rename the files yet. You'll have to use rclone beta commands `copyto` and `moveto` functions available in rclone-beta.|
 | copy file from S3 to your curent directory  | `rclone copy horelS3:HRRR/oper/sfc/20161201/hrrr.t12z.wrfsfcf16.grib2 .` |
-| deleate a file or directory on S3 | *I'm not going to tell you how to do this* |
+| deleate a file or directory on S3 | *I'm not going to tell you how to do this becuase there is no undo button!!!* |
 
 You can do a little more, like rename a file on S3, with **rclone-beta**. This version is currently located 
 here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
@@ -102,10 +105,16 @@ online here:
 For example, to get TMP:2 m temperature from a file:  
 `curl -o 20161101_00zf00_2mTemp.grib2 --range 33120613-34368741 https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20161101/hrrr.t00z.wrfsfcf00.grib2`
 
+----------
+
 ## Pando Archive Contents and URL Structure
 
 ### **`horelS3:GOES16/`**
 GOES-16 Level 2 data (multiband format) from the [Amazon AWS NOAA archive](https://aws.amazon.com/public-datasets/goes/).
+* #### **`ABI-L2-MCMIPC/`** Advanced Baseline Imager, Level 2, multiband format Cloud Moisture products
+  * _**`YYYYMMDD/`**_  
+     Example File: `OR_ABI-L2-MCMIPC-M3_G16_s20172631727215_e20172631729588_c20172631730098.nc`  
+     File description on [Amazon](https://aws.amazon.com/public-datasets/goes/).
 
 ### **`horelS3:HRRR/`**
 |      Important Dates            |   What happened?  | Notes  |
@@ -117,6 +126,7 @@ GOES-16 Level 2 data (multiband format) from the [Amazon AWS NOAA archive](https
 | 2016-Aug-23 | HRRRv2 implemented at NCEP starting with 12z run|
 | 2016-Aug-24 | Began downloading HRRR sfc 18 hr forecasts| HRRRv2 increased forecasts from 15 to 18 hours.|
 | 2016-Dec-01 | Began downloading experimental HRRR sfc analyses| HRRRv3: Runs aren't always available becuase this is an experimental model.|
+| 2017-Oct-01 | Stopped downloading sub-hourly files| will start again when fire season begins (May 2018)|
 
 * #### **`oper/`** Operational HRRR
   * **`sfc/`** Surface fields
@@ -151,28 +161,32 @@ GOES-16 Level 2 data (multiband format) from the [Amazon AWS NOAA archive](https
       * Analysis hours (f00) for run hours, if available
       * File example: `hrrrAK.t00.wrfsfcf00.grib2`
 
-**A visulatizaion of HRRR file available on the S3 archive can be explored on the web interface download page found [here](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html).**
+**A visulatizaion of HRRR file available on the S3 archive can be explored on the [HRRR download page](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html).**
 
+-----
 
 ## Scripts and contents of this repository
 
 ### `remaining_S3_disk_space.py`
 + A script that reports how much space is left on our Pando allocation, using 
 total files from a single day as an estimate. Reports when the archive
-will be filled up. Last I checked, I estimate S3 will be full mid-August. 
+will be filled up. Last I checked, I estimate S3 will be full mid-December. 
+
+### **`GOES_downloads`** (directory)
+Download scripts for the GOES-16 data from the noaa-goes16 bucket on Amazon S3.
 
 ### **`HRRR_downloads`** (directory)
 Contents of this directory contain scripts for downloading HRRR data. These are
 run by cron at 6:05 PM Mountain Time. These are the most up-to-date scripts.
-+ **old_dwnld_scirpts**: don't worry about these. They are old
-+ `HRRR_downloads.csh`: called by CRON at 6:05 on meso1 by the mesohorse user. Does the following:
-  + loads modules
-  + `download_hrrr_bufr.py`       Downloads bufr files from Penn State and copies to Pando.
-  + `downlaod_hrrrAK_multipro.py` Download HRRR from ESRL and copies to Pando.
-  + `downlaod_hrrrX_multipro.py`  Download HRRR from ESRL and copies to Pando.
-  + `downlaod_hrrr_multipro.py`   Download HRRR from NOMADS and copies to Pando.
-+ `HRRR_check.csh`: call by CRON at 11:05 PM on meso1 by the mesohorse user.
-  + `email_log.py`: sends me an email to confirm the files are now on the Pando archive.
+- **old_dwnld_scirpts**: don't worry about these. They are old
+- `HRRR_downloads.csh`: called by CRON at 6:05 on meso1 by the mesohorse user. Does the following:
+  - loads modules
+  - `download_hrrr_bufr.py`       Downloads bufr files from Penn State and copies to Pando.
+  - `downlaod_hrrrAK_multipro.py` Download HRRR from ESRL and copies to Pando.
+  - `downlaod_hrrrX_multipro.py`  Download HRRR from ESRL and copies to Pando.
+  - `downlaod_hrrr_multipro.py`   Download HRRR from NOMADS and copies to Pando.
+- `HRRR_check.csh`: call by CRON at 11:05 PM on meso1 by the mesohorse user.
+  - `email_log.py`: sends me an email to confirm the files are now on the Pando archive.
 
 ### `rclone-beta` (directory)
 Contains the beta version of rclone that allows you to rename files with copyto and moveto
@@ -187,21 +201,22 @@ the next time HRRR_download.csh is executed.
 ---
 
 The following scripts were used to move large amounts of files from the horel-group/archive
-to the S3 archive when we first got started.
+to the Pando archive when we first got started.
 
 ### `move_HRRR_to_horelS3_multipro.py`
-+ A python script that utilizes multiprocessing to simultaneously execute an    rclone 
+- A python script that utilizes multiprocessing to simultaneously execute an    rclone 
  command that copies HRRR files from the `horel-group/archive/models/hrrr` to
  the `horelS3:HRRR` archive buckets. Default is to use 4 processors, but could
  bump this up to 24. (Hummm, would that increase the speed?? Or is that I/O  like
  rush hour traffic at point of the mountain jamming those copper wires??)
  The idea is to sustain a continuous data transfer, so, it seems using just 
  four processors makes the most sense.  
-+ **This script should be run by the meso1 mesohorse user.**
- When you log into meso1 as the mesohorse user, remember to load modules:
- * `module load rclone`
+- **This script should be run by the meso1 mesohorse user.**
+ 
+- When you log into meso1 as the mesohorse user, remember to load modules:
+  - `module load rclone`
 
-+ For a range of dates (different day on each processor):  
+- For a range of dates (different day on each processor):  
     1. Loops through all data types (sfc, prs, buf), hours of the day, and forecast
   hours.
     2. Checks if files exist in horel-group/archive.
@@ -209,35 +224,34 @@ to the S3 archive when we first got started.
 
 
 ### `move_HRRR_to_horelS3_serial.py`
-+ Same as above, but run in serial (one date at at time) with a while loop.
+- Same as above, but run in serial (one date at at time) with a while loop.
 
 ### `daily_move_HRRR_to_horelS3_serial.py`
-+ Same as above, but this script will only move yesterday's HRRR data to the S3
+- Same as above, but this script will only move yesterday's HRRR data to the S3
 archive.
 
 ### `untar_move_HRRR_to_horelS3.py`
-+ A modified version of the top script with the added function to
+- A modified version of the top script with the added function to
 untar HRRR files from the compressed horel-group/archive directory.
-+ **This script must be run on wx4**. Remember to `module load rclone`.
+- **This script must be run on wx4**. Remember to `module load rclone`.
   1. Untars HRRR files into a temporary directory on wx4: `/scratch/local/Brian_untar_HRRR/`.
   2. Moves to S3 (same as above).
   3. Removes the uncompressed files.
 
-+ This script doesn't use multiprocessing because we have to untar a bunch of 
+- This script doesn't use multiprocessing because we have to untar a bunch of 
 files in the scratch space. Since I don't want to fill this all up so fast
 we'll only do one day at a time with a while loop.
 
 ### `create_idx.py`
-+ Creates .idx files for each HRRR grib2 file for a range of dates.
+- Creates .idx files for each HRRR grib2 file for a range of dates.
 These .idx files are stored in horel-group/archive/HRRR where is can be
 accessed online here: [https://api.mesowest.utah.edu/archive/HRRR/](https://api.mesowest.utah.edu/archive/HRRR/).
 
 
-
 ---
 ---
 
-# Q&A: Answers to other questions you might have...
+# Q & A: Answers to other questions you might have...
 ## How do I rename a file when I copy it to S3?
 You have to use the rclone-beta version if you want to rename files on the S3 
 archive. Use the `copyto` and `moveto` commands.
