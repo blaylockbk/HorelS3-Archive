@@ -23,18 +23,18 @@ config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
 # ----------------------------------------------------------------------------
 
 
-def delete_yesterday():
+def delete_old():
     """
     Delete the yesterday's download in the archive space
     Hopefully it has been moved to Pando.
     """
-    yesterday = date.today()-timedelta(days=1)
+    yesterday = date.today()-timedelta(days=5)
     DELDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%s/BB_test/' \
              % (yesterday.strftime('%Y%m%d'))
-    os.system('rm -r '+DELDIR)
+    if os.path.exists('DELDIR'):
+        os.system('rm -r '+DELDIR)
 
 def download_goes16(DATE,
-                    OUTDIR,
                     domain='C',
                     product='ABI-L2-MCMIP',
                     bands=range(1,17)):
@@ -57,7 +57,7 @@ def download_goes16(DATE,
     """
 
     # List files in AWS bucket
-    PATH_AWS = 'noaa-goes16/%s/%s/%02d/' % (product+domain[0], DATE.strftime('%Y/%j'), DATE.hour)
+    PATH_AWS = 'noaa-goes16/%s/%s/' % (product+domain[0], DATE.strftime('%Y/%j'))
     rclone = '/uufs/chpc.utah.edu/sys/installdir/rclone/1.29/bin/rclone'
     ls = ' ls goes16AWS:%s | cut -c 11-' % (PATH_AWS)
     rclone_out = subprocess.check_output(rclone + ls, shell=True)
@@ -72,19 +72,35 @@ def download_goes16(DATE,
     Plist.remove('') # remove empty elements (last item in list)
 
     for i in Alist:
+        # What date does this file belong in? (looking at the scan start time)
+        scanDATE = datetime.strptime(i.split('_')[3], 's%Y%j%H%M%S%f')
+
+        # Where shall I put the file on horel-group/archive        
+        OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%s/BB_test/goes16/' \
+                 % (scanDATE.strftime('%Y%m%d'))
+        if not os.path.exists(OUTDIR):
+            os.makedirs(OUTDIR)
+            # Change directory permissions
+            os.chmod(OUTDIR, stat.S_IRWXU | \
+                            stat.S_IRGRP | stat.S_IXGRP | \
+                            stat.S_IROTH | stat.S_IXOTH)
+                            # User can read, write, execute
+                            # Group can read and execute
+                            # Others can read and execute
+
         # Check if the AWS file exists on Pando already. If it does, go to next
-        if i in Plist:
+        if i[3:] in Plist:
             print "Already in Pando:", i
             continue
 
-        # Download the file from Amazon AWS
+        # Download the file from Amazon AWS and copy to horel-group/archive
         #os.system(rclone+' --config %s copy goes16AWS:%s %s' % (config_file, PATH_AWS+i, OUTDIR))
         os.system('rclone copy goes16AWS:%s %s' % (PATH_AWS+i, OUTDIR))
         print "Downloaded from AWS:", PATH_AWS+i, 'to:', OUTDIR
 
         # Copy the file to Pando (little different than the AWS path)
         #os.system(rclone + ' --config %s copy %s horelS3:%s' % (config_file, OUTDIR+i, PATH_Pando))
-        os.system('rclone copy %s horelS3:%s' % (OUTDIR+i, PATH_Pando))
+        os.system('rclone copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
         print "Moved to Pando:", PATH_Pando
 
     # Change permissions of S3 directory to public
@@ -99,23 +115,10 @@ if __name__ == '__main__':
     print "================================================\n"
 
 
-    DATE = datetime.utcnow()-timedelta(days=1)
+    DATE = datetime.utcnow()                      
 
-    # Put the downloaded files in the horel-group/archive. Mkdir if it doesn't exist
-    OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%s/BB_test/goes16/' \
-        % (DATE.strftime('%Y%m%d'))
-    if not os.path.exists(OUTDIR):
-        os.makedirs(OUTDIR)
-        # Change directory permissions
-        os.chmod(OUTDIR, stat.S_IRWXU | \
-                         stat.S_IRGRP | stat.S_IXGRP | \
-                         stat.S_IROTH | stat.S_IXOTH)
-                         # User can read, write, execute
-                         # Group can read and execute
-                         # Others can read and execute
-
-    download_goes16(DATE, OUTDIR)
-    #delete_yesterday()
+    download_goes16(DATE)
+    delete_old()
 
 
 
