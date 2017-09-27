@@ -287,11 +287,13 @@ s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3
 
 #### Make public (first navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1` directory)
 A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`  
-A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-public --recursive`
+A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-public --recursive`  
+A new bucket: `./s3cmd setacl s3://GOES16 --acl-public`
 
 #### Make private
 A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-private`  
-A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-private --recursive`
+A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-private --recursive`  
+A new bucket: `./s3cmd setacl s3://GOES16 --acl-private`
 
 ## How is `rclone` and `s3cmd` configured?
 Configuration files for the mesohorse user:  

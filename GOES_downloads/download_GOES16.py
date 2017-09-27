@@ -5,11 +5,39 @@
 Download GOES-16 satellite data from Amazon AWS
 https://aws.amazon.com/public-datasets/goes/
 """
-
+import matplotlib as mpl
+mpl.use('Agg') #required for the CRON job. Says "do not open plot in a window"
 import subprocess
 from datetime import date, datetime, timedelta
 import os
 import stat
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
+
+## Reset the defaults (see more here: http://matplotlib.org/users/customizing.html)
+mpl.rcParams['figure.figsize'] = [15, 6]
+mpl.rcParams['figure.titlesize'] = 15
+mpl.rcParams['figure.titleweight'] = 'bold'
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+mpl.rcParams['axes.labelsize'] = 10
+mpl.rcParams['axes.titlesize'] = 12
+mpl.rcParams['lines.linewidth'] = 1.8
+mpl.rcParams['grid.linewidth'] = .25
+mpl.rcParams['figure.subplot.wspace'] = 0.05
+mpl.rcParams['figure.subplot.hspace'] = 0.05
+mpl.rcParams['legend.fontsize'] = 8
+mpl.rcParams['legend.framealpha'] = .75
+mpl.rcParams['legend.loc'] = 'best'
+mpl.rcParams['savefig.bbox'] = 'tight'
+mpl.rcParams['savefig.dpi'] = 100
+
+import sys
+sys.path.append('/uufs/chpc.utah.edu/common/home/u0553130/pyBKB_v2/')
+from BB_GOES16.get_GOES16 import get_GOES16_truecolor
+from BB_basemap.draw_maps import draw_Utah_map
+
 
 """
 Currently, I am only downloading the Multiband Level 2 formated data
@@ -20,6 +48,20 @@ the capability to download specific bands at their full resolution.
 # ----------------------------------------------------------------------------
 # rclone config file
 config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
+
+# CONUS Map object
+m = Basemap(projection='geos', lon_0='-89.5',
+            resolution='i', area_thresh=1000,
+            llcrnrx=-2684381.2,llcrnry=1524055.2,
+            urcrnrx=2323658.2,urcrnry=4528077.5)
+
+# Map of Utah
+mU = draw_Utah_map()
+
+# Load the Latitude and Longitude grid
+GOES16_latlon = '/uufs/chpc.utah.edu/common/home/horel-group/archive/GOES16/goes16_conus_latlon.npy'
+latlon = np.load(GOES16_latlon).item()
+
 # ----------------------------------------------------------------------------
 
 
@@ -34,6 +76,17 @@ def delete_old():
     if os.path.exists('DELDIR'):
         os.system('rm -r '+DELDIR)
 
+def make_map(FILE, OUTDIR):
+    """
+    Make a figure of the true color image and move to Pando
+    
+    Input:
+        FILE - the location of the file on horel-group/archive
+        OUTDIR - temporary place to save figure
+    """
+    
+
+
 def download_goes16(DATE,
                     domain='C',
                     product='ABI-L2-MCMIP',
@@ -43,7 +96,7 @@ def download_goes16(DATE,
     https://noaa-goes16.s3.amazonaws.com
     
     Input:
-        DATE - a datetime object that includes the hour.
+        DATE - a datetime object that includes.
         OUTDIR - where you want to download the file to for short time local storage.
         domain - F = full disk
                  C = CONUS
@@ -92,16 +145,52 @@ def download_goes16(DATE,
         if i[3:] in Plist:
             print "Already in Pando:", i
             continue
-
+    
         # Download the file from Amazon AWS and copy to horel-group/archive
         #os.system(rclone+' --config %s copy goes16AWS:%s %s' % (config_file, PATH_AWS+i, OUTDIR))
         os.system('rclone copy goes16AWS:%s %s' % (PATH_AWS+i, OUTDIR))
+        print ""
         print "Downloaded from AWS:", PATH_AWS+i, 'to:', OUTDIR
+        print ""
 
         # Copy the file to Pando (little different than the AWS path)
         #os.system(rclone + ' --config %s copy %s horelS3:%s' % (config_file, OUTDIR+i, PATH_Pando))
         os.system('rclone copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
+        print ""
         print "Moved to Pando:", PATH_Pando
+        print ""
+
+        # Create true color image of the file
+        G = get_GOES16_truecolor(OUTDIR+i[3:], only_RGB=False, night_IR=True)
+        plt.figure(1)
+        plt.clf()
+        plt.cla()
+        m.imshow(np.flipud(G['TrueColor']))
+        m.drawcoastlines()
+        m.drawstates()
+        m.drawcountries()
+        plt.title('GOES-16 True Color\n%s' % i[3:])
+        FIG = OUTDIR+i[3:-2]+'png'
+        plt.savefig(FIG)
+        # Move Figure to Pando
+        os.system('rclone copy %s horelS3:%s' % (FIG, PATH_Pando))
+    
+        # Draw Utah Map
+        newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
+                                color=G['rgb_tuple'],
+                                linewidth=0,
+                                latlon=True)
+        newmap.set_array(None) # must have this line if using pcolormesh and linewidth=0
+        mU.drawstates()
+        mU.drawcounties()
+        FIG = OUTDIR+i[3:-2]+'UTAH.png'
+        plt.savefig(FIG)
+        # Move Figure to Pando
+        os.system('rclone copy %s horelS3:%s' % (FIG, PATH_Pando))        
+        
+        print ""
+        print 'FIGURE:', PATH_Pando, FIG
+        print ""
 
     # Change permissions of S3 directory to public
     s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
@@ -110,15 +199,23 @@ def download_goes16(DATE,
 
 if __name__ == '__main__':
 
-    print "\n================================================"
-    print "    Downloading GOES-16 from NOAA AWS Archive"
-    print "================================================\n"
+    print "\n============================================================"
+    print " Downloading GOES-16 from NOAA AWS Archive and Copy to Pando  "
+    print "=============================================================\n"
 
-
-    DATE = datetime.utcnow()                      
-
+    
+    DATE = datetime.utcnow()
+    
     download_goes16(DATE)
-    delete_old()
+    #delete_old()
 
 
+    """
+    # backfill GOES-16 in Pando
+    dates = [DATE-timedelta(days=i) for i in range(10)]
 
+    import multiprocessing
+    num_proc = 5
+    p = multiprocessing.Pool(num_proc)
+    result = p.map(download_goes16, dates)
+    """
