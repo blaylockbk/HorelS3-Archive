@@ -255,6 +255,8 @@ def worker():
             except:
                 print "\n>> I tried, and tried, but couldn't get pressure grids <<\n"
 
+        """
+        # Turned off sub-hourly downloads on October 2, 2017. Will turn back on around May
         # Download sub-hourly grids
         try:
             download_hrrr(item, field='subh', forecast=range(0, 19))
@@ -264,6 +266,7 @@ def worker():
                 download_hrrr(item, field='subh', forecast=range(0, 19))
             except:
                 print "\n>> I tried, and tried, but couldn't get subhourly grids <<\n"
+        """
 
         """
         # Download native grids
