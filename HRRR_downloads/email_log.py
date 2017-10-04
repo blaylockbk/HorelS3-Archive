@@ -83,7 +83,8 @@ for m in model:
                         checked += '[f%02d]' % (f)
 
                     # If the sfc or subh file doesn't exist, try downloading it again
-                    elif retry is True and m == 'oper' and (v == 'sfc' or v == 'subh'):
+                    #elif retry is True and m == 'oper' and (v == 'sfc' or v == 'subh'):
+                    elif retry is True and m == 'oper' and v == 'sfc':
                         print "Did not find %s %s" % (DATE.strftime('%Y-%m-%d'), look_for_this)
                         download_hrrr(h, field=v, forecast=[f])
                         # Regenerate the s3_list and check

@@ -150,7 +150,7 @@ def download_goes16(DATE,
 
         # Copy the file to Pando (little different than the AWS path)
         #os.system(rclone + ' --config %s copy %s horelS3:%s' % (config_file, OUTDIR+i, PATH_Pando))
-        os.system('rclone copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
+        os.system('rclone move %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
         print ""
         print "Moved to Pando:", PATH_Pando
         print ""
@@ -169,7 +169,7 @@ def download_goes16(DATE,
             FIG = OUTDIR+i[3:-2]+'png'
             plt.savefig(FIG)
             # Move Figure to Pando
-            os.system('rclone copy %s horelS3:%s' % (FIG, PATH_Pando))
+            os.system('rclone move %s horelS3:%s' % (FIG, PATH_Pando))
         
             # Draw Utah Map
             newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
@@ -182,7 +182,7 @@ def download_goes16(DATE,
             FIG = OUTDIR+i[3:-2]+'UTAH.png'
             plt.savefig(FIG)
             # Move Figure to Pando
-            os.system('rclone copy %s horelS3:%s' % (FIG, PATH_Pando))        
+            os.system('rclone move %s horelS3:%s' % (FIG, PATH_Pando))        
             
             print ""
             print 'FIGURE:', PATH_Pando, FIG
@@ -206,8 +206,9 @@ if __name__ == '__main__':
     print "=============================================================\n"
 
     
-    base = datetime(2017, 8, 1)
-    days = (datetime.now() - base).days
+    base = datetime(2017, 9, 1)
+    eDATE = datetime(2017, 9, 15)
+    days = (eDATE - base).days
     DATES = np.array([base + timedelta(days=x) for x in range(0, days)])
         
     for D in DATES:
