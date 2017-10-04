@@ -145,12 +145,12 @@ def download_goes16(DATE,
         #os.system(rclone+' --config %s copy goes16AWS:%s %s' % (config_file, PATH_AWS+i, OUTDIR))
         os.system('rclone copy goes16AWS:%s %s' % (PATH_AWS+i, OUTDIR))
         print ""
-        print "Downloaded from AWS:", PATH_AWS+i, 'to:', OUTDIR
+        print "Downloaded from AWS:\n", PATH_AWS+i, '\nand moved to:\n', OUTDIR
         print ""
 
         # Copy the file to Pando (little different than the AWS path)
         #os.system(rclone + ' --config %s copy %s horelS3:%s' % (config_file, OUTDIR+i, PATH_Pando))
-        os.system('rclone move %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
+        os.system('rclone copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
         print ""
         print "Moved to Pando:", PATH_Pando
         print ""
@@ -168,6 +168,7 @@ def download_goes16(DATE,
             plt.title('GOES-16 True Color\n%s' % i[3:])
             FIG = OUTDIR+i[3:-2]+'png'
             plt.savefig(FIG)
+            print "saved CONUS image"
             # Move Figure to Pando
             os.system('rclone move %s horelS3:%s' % (FIG, PATH_Pando))
         
@@ -181,6 +182,7 @@ def download_goes16(DATE,
             mU.drawcounties()
             FIG = OUTDIR+i[3:-2]+'UTAH.png'
             plt.savefig(FIG)
+            print "saved UTAH image"
             # Move Figure to Pando
             os.system('rclone move %s horelS3:%s' % (FIG, PATH_Pando))        
             
@@ -206,7 +208,7 @@ if __name__ == '__main__':
     print "=============================================================\n"
 
     
-    base = datetime(2017, 9, 1)
+    base = datetime(2017, 9, 2)
     eDATE = datetime(2017, 9, 15)
     days = (eDATE - base).days
     DATES = np.array([base + timedelta(days=x) for x in range(0, days)])
@@ -216,5 +218,5 @@ if __name__ == '__main__':
         ============== Working on: %s ===============
         """ % (D.strftime('%Y %B %d'))
         download_goes16(D, replace=True)
-        delete_old(D)
+        #delete_old(D)
 
