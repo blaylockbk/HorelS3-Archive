@@ -13,3 +13,8 @@ temp/
 *.pyc
 
 *.log
+
+# Don't send potentially large files
+*.nc
+*.grib2
+*.h5
