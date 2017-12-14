@@ -1,27 +1,276 @@
 
 ================================================
 Downloading experimental HRRR
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t11z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t12z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t16z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t14z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t18z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t23z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t19z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t20z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t21z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t22z.wrfsfcf00.grib2
-Time to download hrrrX 0:00:03.256622
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t20z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t21z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t16z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t17z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t18z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t19z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t22z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20171004/BB_test/models/hrrrX/hrrrX.t23z.wrfprsf00.grib2
-Begin: 2017-10-05_06:05
-End: 2017-10-05_06:05
+2017/12/14 12:06:35 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:06:35 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:06:35 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+
+Transferred:    112287466 Bytes (19863.69 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        5.5s
+
+s3://HRRR/exp/sfc/20171214/hrrrX.t06z.wrfsfcf00.grib2: ACL set to Public  [1 of 1]
+2017/12/14 12:06:46 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:06:46 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:06:46 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+2017/12/14 12:06:46 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:06:46 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:06:46 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+2017/12/14 12:06:47 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:06:47 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:06:47 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+
+Transferred:    108345110 Bytes (15625.54 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        6.7s
+
+2017/12/14 12:06:53 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:06:53 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:06:53 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+s3://HRRR/exp/sfc/20171214/hrrrX.t00z.wrfsfcf00.grib2: ACL set to Public  [1 of 2]
+
+Transferred:    110132630 Bytes (12957.30 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        8.3s
+
+s3://HRRR/exp/sfc/20171214/hrrrX.t03z.wrfsfcf00.grib2: ACL set to Public  [2 of 3]
+
+Transferred:    109976147 Bytes (12602.97 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        8.5s
+
+s3://HRRR/exp/sfc/20171214/hrrrX.t04z.wrfsfcf00.grib2: ACL set to Public  [3 of 4]
+
+Transferred:    110897411 Bytes (12503.80 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        8.6s
+
+s3://HRRR/exp/sfc/20171214/hrrrX.t05z.wrfsfcf00.grib2: ACL set to Public  [4 of 5]
+2017/12/14 12:07:14 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:07:14 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:07:14 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+
+Transferred:    118728308 Bytes (20539.92 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        5.6s
+
+s3://HRRR/exp/sfc/20171214/hrrrX.t15z.wrfsfcf00.grib2: ACL set to Public  [6 of 6]
+2017/12/14 12:07:31 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:07:31 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:07:31 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+2017/12/14 12:07:32 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:07:32 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:07:32 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+
+Transferred:    118985313 Bytes (19555.89 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        5.9s
+
+
+Transferred:    113112560 Bytes (14623.33 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        7.5s
+
+s3://HRRR/exp/sfc/20171214/hrrrX.t07z.wrfsfcf00.grib2: ACL set to Public  [6 of 8]
+s3://HRRR/exp/sfc/20171214/hrrrX.t17z.wrfsfcf00.grib2: ACL set to Public  [8 of 8]
+2017/12/14 12:07:52 S3 bucket HRRR path exp/sfc/20171214/: Building file list
+2017/12/14 12:07:52 S3 bucket HRRR path exp/sfc/20171214/: Waiting for checks to finish
+2017/12/14 12:07:52 S3 bucket HRRR path exp/sfc/20171214/: Waiting for transfers to finish
+
+Transferred:    115715422 Bytes (20873.89 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:        5.4s
+
+s3://HRRR/exp/sfc/20171214/hrrrX.t13z.wrfsfcf00.grib2: ACL set to Public  [7 of 9]
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t05z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t05z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t05z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t05z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t03z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t03z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t03z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t03z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t15z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t04z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t04z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t04z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t04z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t17z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t06z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t06z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t06z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t06z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t07z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t07z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t07z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t07z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t00z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t00z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t00z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t00z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20171214/hrrrX.t13z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+Time to download hrrrX 0:02:50.197755
+2017/12/14 12:09:45 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:09:45 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:09:45 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+2017/12/14 12:09:52 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:09:52 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:09:52 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+
+Transferred:    347753377 Bytes (25449.74 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       13.3s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t03z.wrfprsf00.grib2: ACL set to Public  [1 of 1]
+2017/12/14 12:10:03 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:10:03 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:10:03 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+
+Transferred:    343967644 Bytes (21493.73 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       15.6s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t00z.wrfprsf00.grib2: ACL set to Public  [1 of 2]
+
+Transferred:    347300289 Bytes (23032.64 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       14.7s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t04z.wrfprsf00.grib2: ACL set to Public  [3 of 3]
+2017/12/14 12:12:15 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:12:15 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:12:15 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+
+Transferred:    352162544 Bytes (32258.42 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       10.6s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t06z.wrfprsf00.grib2: ACL set to Public  [4 of 4]
+2017/12/14 12:12:43 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:12:43 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:12:43 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+2017/12/14 12:12:55 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:12:55 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:12:55 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+
+Transferred:    349371726 Bytes (25678.00 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       13.2s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t05z.wrfprsf00.grib2: ACL set to Public  [4 of 5]
+
+Transferred:    352144520 Bytes (23271.73 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       14.7s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t07z.wrfprsf00.grib2: ACL set to Public  [6 of 6]
+2017/12/14 12:14:17 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:14:17 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:14:17 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+
+Transferred:    356075100 Bytes (21126.06 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       16.4s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t13z.wrfprsf00.grib2: ACL set to Public  [7 of 7]
+2017/12/14 12:14:39 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:14:39 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:14:39 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+
+Transferred:    359723077 Bytes (22667.08 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:       15.4s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t15z.wrfprsf00.grib2: ACL set to Public  [8 of 8]
+2017/12/14 12:15:11 S3 bucket HRRR path exp/prs/20171214/: Building file list
+2017/12/14 12:15:11 S3 bucket HRRR path exp/prs/20171214/: Waiting for checks to finish
+2017/12/14 12:15:11 S3 bucket HRRR path exp/prs/20171214/: Waiting for transfers to finish
+
+Transferred:    357629201 Bytes (20460.23 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            1
+Elapsed time:         17s
+
+s3://HRRR/exp/prs/20171214/hrrrX.t17z.wrfprsf00.grib2: ACL set to Public  [9 of 9]
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t00z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t00z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t00z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t00z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t06z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t06z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t06z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t06z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t13z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t13z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t13z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t13z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t03z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t03z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t03z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t03z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t05z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t05z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t05z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t05z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t15z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t15z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t15z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t15z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t04z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t04z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t04z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t04z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t07z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t07z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t07z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t07z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t17z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t17z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20171214/hrrrX.t17z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20171214/BB_test/models/hrrrX/hrrrX.t17z.wrfprsf00.grib2
+Begin: 2017-12-14_12:05
+End: 2017-12-14_12:15

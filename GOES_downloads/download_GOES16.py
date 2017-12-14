@@ -4,6 +4,11 @@
 """
 Download GOES-16 satellite data from Amazon AWS
 https://aws.amazon.com/public-datasets/goes/
+
+Updates/To Do:
+[X] 12/14/2017 - Updated for GOES16 East Position
+[ ]
+
 """
 import matplotlib as mpl
 mpl.use('Agg') #required for the CRON job. Says "do not open plot in a window"
@@ -14,6 +19,7 @@ import stat
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
+import pyproj
 
 ## Reset the defaults (see more here: http://matplotlib.org/users/customizing.html)
 mpl.rcParams['figure.figsize'] = [15, 6]
@@ -50,17 +56,17 @@ the capability to download specific bands at their full resolution.
 config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
 
 # CONUS Map object
-m = Basemap(projection='geos', lon_0='-89.5',
+m = Basemap(projection='geos', lon_0='-75.0',
             resolution='i', area_thresh=1000,
-            llcrnrx=-2684381.2,llcrnry=1524055.2,
-            urcrnrx=2323658.2,urcrnry=4528077.5)
+            llcrnrx=-3626269.5, llcrnry=1584175.9,
+            urcrnrx=1381770.0, urcrnry=4588198.0)
 
 # Map of Utah
 mU = draw_Utah_map()
 
 # Load the Latitude and Longitude grid
-GOES16_latlon = '/uufs/chpc.utah.edu/common/home/horel-group/archive/GOES16/goes16_conus_latlon.npy'
-latlon = np.load(GOES16_latlon).item()
+#GOES16_latlon = '/uufs/chpc.utah.edu/common/home/horel-group/archive/GOES16/goes16_conus_latlon.npy'
+#latlon = np.load(GOES16_latlon).item()
 
 # ----------------------------------------------------------------------------
 
@@ -166,9 +172,9 @@ def download_goes16(DATE,
         plt.clf()
         plt.cla()
         m.imshow(np.flipud(G['TrueColor']))
-        m.drawcoastlines()
-        m.drawstates()
-        m.drawcountries()
+        m.drawcoastlines(linewidth=.25)
+        m.drawstates(linewidth=0.25)
+        m.drawcountries(linewidth=0.25)
         plt.title('GOES-16 True Color\n%s' % i[3:])
         FIG = OUTDIR+i[3:-2]+'png'
         plt.savefig(FIG)
@@ -177,9 +183,8 @@ def download_goes16(DATE,
     
         # Draw Utah Map
         newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
-                                color=G['rgb_tuple'],
-                                linewidth=0,
-                                latlon=True)
+                               color=G['rgb_tuple'],
+                               linewidth=0)
         newmap.set_array(None) # must have this line if using pcolormesh and linewidth=0
         mU.drawstates()
         mU.drawcounties()
@@ -207,15 +212,10 @@ if __name__ == '__main__':
     DATE = datetime.utcnow()
     
     download_goes16(DATE)
-    #delete_old()
 
-
-    """
-    # backfill GOES-16 in Pando
-    dates = [DATE-timedelta(days=i) for i in range(10)]
-
-    import multiprocessing
-    num_proc = 5
-    p = multiprocessing.Pool(num_proc)
-    result = p.map(download_goes16, dates)
-    """
+    # Extra attempt to download yesterday's last hour due to day change,
+    # then remove yesterday's files from horel-group/archive
+    if DATE.hour == 0:
+        yesterday = DATE-timedelta(days=1)
+        download_goes16(yesterday)
+        delete_old(yesterday)

@@ -165,7 +165,7 @@ def download_goes16(DATE,
             m.drawcoastlines()
             m.drawstates()
             m.drawcountries()
-            plt.title('GOES-16 True Color\n%s' % i[3:])
+            plt.title('GOES-16 True Color (day) and IR (night)\n%s' % i[3:])
             FIG = OUTDIR+i[3:-2]+'png'
             plt.savefig(FIG)
             print "saved CONUS image"
@@ -208,8 +208,8 @@ if __name__ == '__main__':
     print "=============================================================\n"
 
     
-    base = datetime(2017, 9, 2)
-    eDATE = datetime(2017, 9, 15)
+    base = datetime(2017, 8, 3)
+    eDATE = datetime(2017, 10, 9)
     days = (eDATE - base).days
     DATES = np.array([base + timedelta(days=x) for x in range(0, days)])
         
@@ -217,6 +217,8 @@ if __name__ == '__main__':
         print """
         ============== Working on: %s ===============
         """ % (D.strftime('%Y %B %d'))
-        download_goes16(D, replace=True)
-        #delete_old(D)
+        download_goes16(D, replace=False)
+        delete_old(D)
+
+        
 

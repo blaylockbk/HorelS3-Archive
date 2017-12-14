@@ -23,6 +23,9 @@ You can view and access data via:
   - GOES16  
     - URL: [http://pando-rgw01.chpc.utah.edu/GOES16](http://pando-rgw01.chpc.utah.edu/GOES16)
 
+**Better web access to the bucket objects:**  
+[home.chpc.utah.edu/~u0553130/Brian_Blaylock/cgi-bin/generic_pando_download.cgi](home.chpc.utah.edu/~u0553130/Brian_Blaylock/cgi-bin/generic_pando_download.cgi)
+
 ## Access data via rclone
 [rclone](http://rclone.org/) allows you to sync files and directories between
 your linux computer and the S3 buckets (and other cloud services).
