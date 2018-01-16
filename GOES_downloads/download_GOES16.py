@@ -175,7 +175,8 @@ def download_goes16(DATE,
         m.drawcoastlines(linewidth=.25)
         m.drawstates(linewidth=0.25)
         m.drawcountries(linewidth=0.25)
-        plt.title('GOES-16 True Color\n%s' % i[3:])
+        plt.title('GOES-16 True Color and Night IR\n%s' % (G['DATE'].strftime('%Y %B %d, %H:%M UTC')))
+        plt.xlabel(i[3:])
         FIG = OUTDIR+i[3:-2]+'png'
         plt.savefig(FIG)
         # Move Figure to Pando
