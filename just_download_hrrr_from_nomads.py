@@ -29,9 +29,9 @@ def reporthook(a, b, c):
 
 
 model = 'hrrr'
-field = 'sfc'
-hour = range(0,24)
-fxx = range(0,19)
+field = 'prs'
+hour = range(0,1)
+fxx = range(0,1)
 DATE = date(2018, 1, 15)
 
 OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%s/BB_test/models/%s' % (DATE.strftime('%Y%m%d'), model)
@@ -39,8 +39,9 @@ OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%s/BB_test/models/
 
 
 # Loop through each hour and each forecast and download.
-for h in hour:
-    for f in fxx:
+
+for f in fxx:
+    for h in hour:
         # 1) Build the URL string we want to download.
         #    fname is the file name in the format
         #    [model].t[hh]z.wrf[field]f[xx].grib2

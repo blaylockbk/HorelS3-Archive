@@ -17,7 +17,6 @@ This Script does the following:
 """
 
 import urllib
-import urllib2
 from datetime import date, datetime, timedelta
 import os
 import stat
@@ -62,7 +61,7 @@ config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
 # Naming convention
 model_HG_names = {1:'hrrr', 2:'hrrrX', 3:'hrrrAK'} # name in horel-group/archive
 model_S3_names = {1:'oper', 2:'exp', 3:'alaska'}   # name in horelS3:
-file_types = ['sfc', 'prs', 'subh']                 # model file file_types
+file_types = ['sfc', 'prs', 'subh']                # model file file_types
 # ----------------------------------------------------------------------------
 
 ## Delete the previous day's download
