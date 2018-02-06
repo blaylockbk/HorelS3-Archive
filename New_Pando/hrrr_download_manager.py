@@ -23,38 +23,42 @@ What this script does:
 
 import os
 import urllib
+import getpass
+import socket
 from datetime import datetime, timedelta
-import multiprocessing #:)
+import multiprocessing.pool #:)
 
 import download_operational_hrrr
 import download_experimental_hrrr
+
+if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.edu':
+    print "--> You are %s on %s" % (getpass.getuser(), socket.gethostname())
+    print "--> Please run this operational download script with the mesohorse user on meso1."
+    exit()
 
 # ----------------------------------------------------------------------------
 #                        Set up and definitions
 # ----------------------------------------------------------------------------
 # Build a dictionary of what to download from each model.
-    # Note: The range of forecast hours you download are defined by each field
-    # Note: The hrrrak model only runs every 6 hours, range(0,24,6)
+    # Note: The range of forecast hours you download are controlled by each field
+    # Note: The hrrrak model only runs every 6 hours, i.e. range(0,24,6)
 models = {'hrrr':{'name':'Operational HRRR',
                   'source':'NOMADS',
                   'hours':range(0,24),
                   'fxx':{'sfc':range(0,19),
-                         'prs':[],
-                         'nat':range(0,1),
+                         'prs':range(0,1),
+                         'nat':[],
                          'subh':[]}},
-          
           'hrrrak':{'name':'Operational HRRR Alaska',
                     'source':'NOMADS',
                     'hours':range(0,24,6),
-                    'fxx':{'sfc':range(0,37),
-                           'prs':range(0,1)}},
-          
+                    'fxx':{'sfc':[],
+                           'prs':[]}},
           'hrrrX':{'name':'Experimental HRRR',
                    'source':'ESRL',
                    'hours':range(0,24),
                    'fxx':{'sfc':range(0,1),
                           'prs':[]}},
-
           'hrrrakX':{'name':'Experimental HRRR Alaska',
                    'source':'ESRL',
                    'hours':range(0, 24, 6),
@@ -85,7 +89,11 @@ else:
 #         https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.dummy
 def oper_hrrr_multipro(args):
     DATE, model, field, fxx, DIR = args
-    download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
+    try:
+        download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
+    except:
+        # Try again...???
+        download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
 
 oper_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, f, fxx, DIR] \
              for m in models.keys() if models[m]['source']=='NOMADS' \
@@ -100,6 +108,8 @@ p.close()
 p.join()
 
 
+
+"""
 #  --- Experimental HRRR ---
 #         Use multiprocessing because I've had issues with the ftp site timing
 #         out when using multithreading
@@ -118,7 +128,7 @@ exp_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, f, fxx, DIR] \
 p = multiprocessing.Pool(5)
 result = p.map(exp_hrrr_multipro, exp_args)
 p.close()
-
+"""
 
 ## 2) Copy each path directory to Pando
 #     Should I convert this to use threading??
@@ -132,7 +142,6 @@ for model in models:
         PATH = '%s/%s/%s/' % (model, field, DATE.strftime('%Y%m%d'))
         os.system('rclone --config %s copy %s %s' \
                 % (config_file, DIR+PATH, S3+PATH))
-
         # Set bucket permissions to public for URL access to each files
         s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
         os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH)              

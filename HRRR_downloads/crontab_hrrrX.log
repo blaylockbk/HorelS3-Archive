@@ -1,29 +1,24 @@
 
 ================================================
 Downloading experimental HRRR
-2018/02/02 12:06:10 Attempt 1/3 failed with 1 errors and: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc454-005a74b6a2-1356d-default
-2018/02/02 12:06:10 Attempt 2/3 failed with 1 errors and: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc457-005a74b6a2-1356d-default
-2018/02/02 12:06:10 Attempt 3/3 failed with 1 errors and: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc45d-005a74b6a2-1356d-default
-2018/02/02 12:06:10 Failed to copy: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc45d-005a74b6a2-1356d-default
-2018/02/02 12:06:10 Attempt 1/3 failed with 1 errors and: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc47e-005a74b6a2-1356d-default
-2018/02/02 12:06:10 Attempt 2/3 failed with 1 errors and: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc486-005a74b6a2-1356d-default
-2018/02/02 12:06:10 Attempt 3/3 failed with 1 errors and: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc489-005a74b6a2-1356d-default
-2018/02/02 12:06:10 Failed to copy: InvalidLocationConstraint: The specified location-constraint is not valid
-	status code: 400, request id: tx0000000000000001cc489-005a74b6a2-1356d-default
-Traceback (most recent call last):
-  File "/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/HRRR_downloads/download_hrrrX_multipro.py", line 233, in <module>
-    p.map(download_hrrrX_sfc, sfc_filenames)
-  File "/uufs/chpc.utah.edu/sys/pkg/python/2.7.3_rhel6/lib/python2.7/multiprocessing/pool.py", line 227, in map
-    return self.map_async(func, iterable, chunksize).get()
-  File "/uufs/chpc.utah.edu/sys/pkg/python/2.7.3_rhel6/lib/python2.7/multiprocessing/pool.py", line 528, in get
-    raise self._value
-OSError: [Errno 17] File exists: '/uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180202/'
-Begin: 2018-02-02_12:05
-End: 2018-02-02_12:06
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t18z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t19z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t14z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t20z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t21z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t16z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t12z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t22z.wrfsfcf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t23z.wrfsfcf00.grib2
+Time to download hrrrX 0:00:02.318266
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t18z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t19z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t20z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t21z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t22z.wrfprsf00.grib2
+looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t23z.wrfprsf00.grib2
+Begin: 2018-02-06_06:05
+End: 2018-02-06_06:05

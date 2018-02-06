@@ -124,7 +124,7 @@ def download_goes16(DATE,
     Alist.remove('') # remove empty elements (last item in list)
 
     # List files in Pando bucket
-    PATH_Pando = 'GOES16/%s/%s/' % (product+domain[0], DATE.strftime('%Y%m%d')) # Litte different than AWS path
+    PATH_Pando = 'GOES16/%s/%s/' % (product+domain[0], DATE.strftime('%Y%m%d')) # Little different than AWS path
     Pls = ' ls horelS3:%s | cut -c 11-' % (PATH_Pando)
     Prclone_out = subprocess.check_output(rclone + Pls, shell=True)
     Plist = Prclone_out.split('\n')

@@ -6,6 +6,7 @@ rclone-beta/
 
 # Don't send the compiled s3cmd software to github
 s3cmd-1.6.1/
+s3cmd-2.0.1/
 
 # Don't send anything in the temp directory
 temp/
