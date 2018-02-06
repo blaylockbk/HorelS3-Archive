@@ -4,27 +4,29 @@
 
 # Using the Horel S3 Archive Buckets  
 **Author:** Brian Blaylock  
-**Date:** February 22, 2017 _updated September 22, 2017_
+**Date:** February 22, 2017  
+_updated September 22, 2017_  
+_updated February 6, 2018 after New Pando rebuild_
 
 ## Introduction
 In January 2017, CHPC allocated the Horel Group 60 TB on the Pando S3 (Simple Storage
 Service) archive space. This space is used for the Horel archive. Presently, it 
-houses the HRRR archive (> 45 TB), and GOES-16 archvie.
+houses the HRRR archive (> 45 TB), and GOES-16 archive. [Pando failed](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/Pando_Failure.html) in January 2018, and the entire archive was lost. The archive has been rebuilt and we continued to archive HRRR and GOES data. We are currently working with [The Climate Corporation](https://climate.com/) who have generously offered to help us restore the lost HRRR sfc files. We hope to restore about 75% of what was lost.
 
-Pando is named after the large vast of aspen trees in Utah, thought to be the
-largest and oldest living organism on earth.
+[Pando](https://en.wikipedia.org/wiki/Pando_%28tree%29), latin for _I spread_, is named after the vast network of aspen trees in Utah, thought to be the largest and oldest living organism on earth.
 
-You can view and access data via:
+You can view and access data objects on Pando via:
 - `rclone` in your linux terminal (you can also get rclone for your PC)
 - Your browser also allows access to the public files...
   - HRRR
-    - URL: [http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR)
+    - URL: [http://pando-rgw01.chpc.utah.edu/hrrr](http://pando-rgw01.chpc.utah.edu/hrrr)
     - Archive FAQ and interactive download page: [http://hrrr.chpc.utah.edu/](http://hrrr.chpc.utah.edu/)
   - GOES16  
     - URL: [http://pando-rgw01.chpc.utah.edu/GOES16](http://pando-rgw01.chpc.utah.edu/GOES16)
 
-**Better web access to the bucket objects:**  
+**Generic web access to all buckets and objects on Pando:**  
 [home.chpc.utah.edu/~u0553130/Brian_Blaylock/cgi-bin/generic_pando_download.cgi](home.chpc.utah.edu/~u0553130/Brian_Blaylock/cgi-bin/generic_pando_download.cgi)
+
 
 ## Access data via rclone
 [rclone](http://rclone.org/) allows you to sync files and directories between
@@ -32,13 +34,11 @@ your linux computer and the S3 buckets (and other cloud services).
 Before getting started, first review the [CHPC rclone tutorial](https://www.chpc.utah.edu/documentation/software/rclone.php).
 
 ### Configuration
-1. You must have 
-[modules](https://chpc.utah.edu/documentation/software/modules.php) 
-set up on your CHPC account. Load rclone (I do this is in my `.custom.csh` file):
+1. The easiest way is to load rclone with [modules](https://chpc.utah.edu/documentation/software/modules.php). Load rclone (I do this is in my `.custom.csh` file). Some versions of rclone are different depending on the host's RedHat version.
     
     `module load rclone`
-
-2. Set up the config file: **Note: These are the settings used for the meteo1 mesohorse user**
+  
+2. Set up the config file: **Note: These are the settings used for the mesohorse user**
 
     Type `rclone config`. You will be asked a series of questions. Use these options:  
               
@@ -46,67 +46,70 @@ set up on your CHPC account. Load rclone (I do this is in my `.custom.csh` file)
       2. Enter a name. You will reference the S3 archive with this name. I used `horelS3`.
       3. Type: Select option `2` for S3.  
       4. Select `false` when asked to "Get AWS credientials from runtime."  
-      5. Enter the access key. Ask Brian or John for this, unless you know where to find it.
-      6. Enter the secret key. You'll have to ask for this, too.
+      5. Enter the access key. _Ask Brian or John for this, unless you know where to find it._
+      6. Enter the secret key. _You'll have to ask for this, too._
       7. Region: Choose "other-v2-signature" (option `10`).  
       8. Endpoint: Enter `https://pando-rgw01.chpc.utah.edu`.
-      9. Location: Seclection option `1` for none.
+      9. Location: Select option `1` for none.
 
-Completing this makes a `.rclone.conf` file in your home directory
+Completing this setup makes a `.rclone.conf` file in your home directory
 
-### Basic Comand Examples
-These examples can be used if you named the archive source `horelS3` (like I did
-for the meteo19 ldm user). If you named your source differently when you
-configured rclone, simply replace the name before the colon.
+### Basic Command Examples
+The full usage documentation for rclone is found at [rclone.org](https://rclone.org/docs/). The following examples are some of the more useful. These examples can be used if you named the archive source `horelS3` as described in the configuration step above. If you named your source differently when you configured rclone, simply replace the name before the colon.
 
 |      What do you want to do?                |       Command     | Notes  |
 |---------------------------------------------|-------------------|--------|
-| make a new bucket                           | `rclone mkdir horelS3:HRRR` |
-| make a new bucket/path                      | `rclone mkdir horelS3:HRRR/oper/sfc/` | `copy` will make the directory if it doesn't exist, so it isn't necessary to mkdir before copying|
+| make a new bucket                           | `rclone mkdir horelS3:hrrr` |
+| make a new bucket/path                      | `rclone mkdir horelS3:hrrr/oper/sfc/` | `copy` will make the directory if it doesn't exist, so it isn't necessary to mkdir before copying|
 | list top-level buckets                      | `rclone lsd horelS3:` | `lsd` Only lists the directories in the path |
-| list buckets in bucket                      | `rclone lsd horelS3:HRRR` |
-| list buckets in path                        | `rclone lsd horelS3:HRRR/oper` |
-| list bucket contents                        | `rclone ls horelS3:HRRR` | `ls` will list everything in the bucket including all directory's contents, so this particular example isn't very useful |
-| list bucket/path contents                   | `rclone ls horelS3:HRRR/oper/sfc/20171201` | currently, no way to sort alpha-numerically, unless you pipe the output to `sort -k 2` |
-| list bucket contents                        | `rclone lsl horelS3:HRRR/oper/sfc/20161213` | `lsl` will list more details than `ls`|
-| copy file from your computer to S3          | `rclone copy ./file/name/on/linux/system horelS3:path/you/want/to/copy/to/`| You can't rename the files yet. You'll have to use rclone beta commands `copyto` and `moveto` functions available in rclone-beta.|
-| copy file from S3 to your curent directory  | `rclone copy horelS3:HRRR/oper/sfc/20161201/hrrr.t12z.wrfsfcf16.grib2 .` |
-| deleate a file or directory on S3 | *I'm not going to tell you how to do this becuase there is no undo button!!!* |
+| list buckets in bucket                      | `rclone lsd horelS3:hrrr` |
+| list buckets in path                        | `rclone lsd horelS3:hrrr/oper` |
+| list bucket contents                        | `rclone ls horelS3:hrrr` | `ls` will list everything in the bucket including all directory's contents, so this particular example isn't very useful |
+| list bucket/path contents                   | `rclone ls horelS3:hrrr/oper/sfc/20171201` | currently, no way to sort alpha-numerically, unless you pipe the output to sort. Add the following: `| sort -k 2` |
+| list bucket contents                        | `rclone lsl horelS3:hrrr/oper/sfc/20161213` | `lsl` will list more details than `ls`|
+| copy file from your computer to S3          | `rclone copy ./file/name/on/linux/system horelS3:path/you/want/to/copy/to/`| You have to use the newest version of rclone to rename files when you copy. With version 1.38 (not installed on the meso boxes), use `copyto` or `moveto` in order to rename files when transferring to Pando|
+| copy file from S3 to your current directory  | `rclone copy horelS3:HRRR/oper/sfc/20161201/hrrr.t12z.wrfsfcf16.grib2 .` |
+| delete a file or directory on S3 | *I'm not going to tell you how to do this because there is no undo button!!!* |
 
-You can do a little more, like rename a file on S3, with **rclone-beta**. This version is currently located 
-here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
+With rclone version 1.38, you can do a little more like rename a file on S3. This version is not an installed module on the meso boxes because they don't have the updated RedHat software. But you can use **rclone-beta** that is located here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-beta/`
 
 |      What do you want to do?             |       Command     | Notes  |
 |------------------------------------------|-------------------|--------|
 | move file from computer to S3 and rename | `/path/to/rclone-beta/rclone moveto /this/path/and/file horelS3:HRRR/path/and/new-name` | will overwrite existing file? |
 | copy file from computer to S3 and rename | `/path/to/rclone-beta/rclone copyto /this/path/and/file horelS3:HRRR/path/and/new-name` | will not overwrite if file exists?? |
 
-## Access via URL and curl comands
+
+## Access via URL and curl commands
 You can view _some_ of the file contents here: 
-[http://pando-rgw01.chpc.utah.edu/HRRR](http://pando-rgw01.chpc.utah.edu/HRRR).
+[http://pando-rgw01.chpc.utah.edu/hrrr](http://pando-rgw01.chpc.utah.edu/hrrr).
 The trouble is that it shows everything in the HRRR bucket without letting you
-view the files for each specific directory. Also, not every file is listed becuase
-the list is limited to 1000 files.
+view the files for each specific directory. Also, not every file is listed because the list is limited to 1000 files.
 
 ### Download a file:
-#### Download a file from a browser. For example, go to this URL...  
-[https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2](`https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`)
+#### Download a file from a browser URL
+[https://pando-rgw01.chpc.utah.edu/hrrr/oper/sfc/20180101/hrrr.t00z.wrfsfcf00.grib2](`https://pando-rgw01.chpc.utah.edu/hrrr/oper/sfc/20180101/hrrr.t00z.wrfsfcf00.grib2`)
 
 #### Download with wget  
-`wget https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
+    wget https://pando-rgw01.chpc.utah.edu/hrrr/oper/sfc/20180101/hrrr.t00z.wrfsfcf00.grib2
 
 #### Download with cURL   
-`curl -O https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
+    curl -O https://pando-rgw01.chpc.utah.edu/hrrr/oper/sfc/20180101/hrrr.t00z.wrfsfcf00.grib2
 
 #### Download with cURL and rename  
-`curl -o hrrr20170101_00zf00.grib2 https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20170101/hrrr.t00z.wrfsfcf00.grib2`
+    curl -o hrrr20170101_00zf00.grib2 https://pando-rgw01.chpc.utah.edu/hrrr/oper/sfc/20180101/hrrr.t00z.wrfsfcf00.grib2
 
 #### Download a single variable with cURL
-If you know the byte range of the variable you are interested, you can get just that variable. Byte ranges for each variable are located 
-online here:
-[https://api.mesowest.utah.edu/archive/HRRR/]('https://api.mesowest.utah.edu/archive/HRRR/')  
-For example, to get TMP:2 m temperature from a file:  
-`curl -o 20161101_00zf00_2mTemp.grib2 --range 33120613-34368741 https://pando-rgw01.chpc.utah.edu/HRRR/oper/sfc/20161101/hrrr.t00z.wrfsfcf00.grib2`
+GRIB2 files have a useful ability. If you know the byte range of the variable you are interested, you can get just that variable rather than the full file by using cURL. 
+
+Byte ranges for each variable are located on Pando. Just add a `.idx` to the end of the file name you are interested:
+
+    https://pando-rgw01.chpc.utah.edu/hrrr/oper/sfc/20180101/hrrr.t00z.wrfsfcf00.grib2.idx
+
+For example, to get TMP:2 m temperature from a file:
+
+    curl -o 20180101_00zf00_2mTemp.grib2 --range 34884036-36136433 https://pando-rgw01.chpc.utah.edu/hrrr/oper/sfc/20180101/hrrr.t00z.wrfsfcf00.grib2
+
+_NOTE: If you can't view the .idx files from Pando in your browser, and instead prompts a download, then you many need to remove the .idx file from your list of default apps. I had to remove .idx from my Windows registry._
 
 ----------
 
@@ -119,7 +122,7 @@ GOES-16 Level 2 data (multiband format) from the [Amazon AWS NOAA archive](https
      Example File: `OR_ABI-L2-MCMIPC-M3_G16_s20172631727215_e20172631729588_c20172631730098.nc`  
      File description on [Amazon](https://aws.amazon.com/public-datasets/goes/).
 
-### **`horelS3:HRRR/`**
+### **`horelS3:hrrr/`**
 |      Important Dates            |   What happened?  | Notes  |
 |---------------------------------|-------------------|--------|
 | 2015-Apr-18 | Began downloading HRRR sfc and prs analyses | HRRRv1 Some days/hours may be missing|
@@ -130,6 +133,8 @@ GOES-16 Level 2 data (multiband format) from the [Amazon AWS NOAA archive](https
 | 2016-Aug-24 | Began downloading HRRR sfc 18 hr forecasts| HRRRv2 increased forecasts from 15 to 18 hours.|
 | 2016-Dec-01 | Began downloading experimental HRRR sfc analyses| HRRRv3: Runs aren't always available becuase this is an experimental model.|
 | 2017-Oct-01 | Stopped downloading sub-hourly files| will start again when fire season begins (May 2018)|
+| 2018-Jan | **Pando Failed and Rebuilt**| Start the archive again beginning January 1, 2018. Hope to recover past years with data from The Climate Company.|
+
 
 * #### **`oper/`** Operational HRRR
   * **`sfc/`** Surface fields
@@ -195,6 +200,9 @@ run by cron at 6:05 PM Mountain Time. These are the most up-to-date scripts.
 Contains the beta version of rclone that allows you to rename files with copyto and moveto
 
 ### `s3cmd-1.6.1` (directory)
+Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. (see below Q&A for usage)
+
+### `s3cmd-2.0.1` (directory)
 Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. (see below Q&A for usage)
 
 ### `temp` (directory)
@@ -286,17 +294,22 @@ You have to use `s3cmd` to change the files from public to private. You
 would want to do this for each file added to the S3 archive that you want 
 to be downloadable from the download URL.
 
-s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd`  
+s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd`  
 
-#### Make public (first navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1` directory)
+_NOTE: In order to set bucket names that are all lower case to public, I had to modify the configuration file.  In my `.s3cfg` file on the `host_bucket` line, remove the “s” after `$(bucket)`.  Once I did this I can could and make public whatever bucket name I want._
+
+First navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1` directory.
+
+#### Make public
+A new bucket: `./s3cmd setacl s3://GOES16 --acl-public`  
 A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-public`  
 A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-public --recursive`  
-A new bucket: `./s3cmd setacl s3://GOES16 --acl-public`
 
 #### Make private
+A new bucket: `./s3cmd setacl s3://GOES16 --acl-private`  
 A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/filename.grib2 --acl-private`  
 A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20170101/ --acl-private --recursive`  
-A new bucket: `./s3cmd setacl s3://GOES16 --acl-private`
+
 
 ## How is `rclone` and `s3cmd` configured?
 Configuration files for the mesohorse user:  

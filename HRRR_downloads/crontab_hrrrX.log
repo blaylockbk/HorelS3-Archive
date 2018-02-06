@@ -1,24 +1,1115 @@
 
 ================================================
 Downloading experimental HRRR
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t18z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t19z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t14z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t20z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t21z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t16z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t12z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t22z.wrfsfcf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t23z.wrfsfcf00.grib2
-Time to download hrrrX 0:00:02.318266
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t18z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t19z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t20z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t21z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t22z.wrfprsf00.grib2
-looks like that file already exists /uufs/chpc.utah.edu/common/home/horel-group/archive/20180205/BB_test/models/hrrrX/hrrrX.t23z.wrfprsf00.grib2
-Begin: 2018-02-06_06:05
-End: 2018-02-06_06:05
+2018/02/06 12:06:26 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:06:26 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:06:26 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 98 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8205a6600, 0x7f10cdb54010, 0xc820023a10, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820465c70, 0xc820465c70, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f10c421c100, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820464000, 0x7f10c419b068, 0xc8203f0000, 0x7f10c419b090, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f10c419b068, 0xc8203f0000, 0x7f10c419b090, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f10cdb68758, 0xc82000b3e0, 0x0, 0x0, 0x7f10cdb53d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203ae0c0, 0x7f10cdb68758, 0xc82000b3e0, 0xc8202d2020)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t04z.wrfsfcf00.grib2: ACL set to Public  [1 of 1]
+2018/02/06 12:06:33 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:06:33 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:06:33 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+2018/02/06 12:06:33 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:06:33 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:06:33 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 95 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201de540, 0x7f540b7d3010, 0xc820023620, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043dcc0, 0xc82043dcc0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f540b7e6f20, 0xc8200581f0, 0xc8200166c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820458000, 0x7f540b7e6ea8, 0xc82044b400, 0x7f540b7e6ed0, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f540b7e6ea8, 0xc82044b400, 0x7f540b7e6ed0, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f540880d1f0, 0xc82000b3e0, 0x0, 0x0, 0x7f540b7d2d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82000a840, 0x7f540880d1f0, 0xc82000b3e0, 0xc82037f200)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 73 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc820556420, 0x7fcbe4c29010, 0xc8201c1320, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc8204540f0, 0xc8204540f0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fcbe0761000, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204e0000, 0x7fcbe07e1868, 0xc8204e2000, 0x7fcbe07e1890, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7fcbe07e1868, 0xc8204e2000, 0x7fcbe07e1890, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fcbe081fae0, 0xc82000b3e0, 0x0, 0x0, 0x7fcbe4c28d38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201de9c0, 0x7fcbe081fae0, 0xc82000b3e0, 0xc820396c20)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t00z.wrfsfcf00.grib2: ACL set to Public  [1 of 3]
+s3://HRRR/exp/sfc/20180206/hrrrX.t08z.wrfsfcf00.grib2: ACL set to Public  [3 of 3]
+2018/02/06 12:06:36 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:06:36 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:06:36 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+2018/02/06 12:06:38 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:06:38 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:06:38 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 83 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203a0720, 0x7f989bcad010, 0xc820023560, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043def0, 0xc82043def0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f98981a6028, 0xc8200581d8, 0xc8200166c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820458000, 0x7f989bcc2b78, 0xc8203ea0a0, 0x7f989bcc2ba0, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f989bcc2b78, 0xc8203ea0a0, 0x7f989bcc2ba0, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f98982a79f0, 0xc82000b3e0, 0x0, 0x0, 0x7f989bcacd38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82000a780, 0x7f98982a79f0, 0xc82000b3e0, 0xc82036b720)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t06z.wrfsfcf00.grib2: ACL set to Public  [3 of 4]
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 101 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201de780, 0x7f84cc0c9010, 0xc820023650, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82040fe50, 0xc82040fe50, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f84cc0de2e0, 0xc8200581e0, 0xc8200166c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820392000, 0x7f84cc0de268, 0xc8203e8140, 0x7f84cc0de290, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f84cc0de268, 0xc8203e8140, 0x7f84cc0de290, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f84c86009f0, 0xc82000b3e0, 0x0, 0x0, 0x7f84cc0c8d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201de120, 0x7f84c86009f0, 0xc82000b3e0, 0xc82044ca50)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t02z.wrfsfcf00.grib2: ACL set to Public  [2 of 5]
+2018/02/06 12:07:29 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:07:29 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:07:29 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 122 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82057a4e0, 0x7f1f771bb010, 0xc820023a10, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820459f90, 0xc820459f90, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f1f771d1558, 0xc8200581e0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820458000, 0x7f1f74175838, 0xc8203ea0a0, 0x7f1f74175860, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f1f74175838, 0xc8203ea0a0, 0x7f1f74175860, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f1f771d0bb0, 0xc82000b3e0, 0x0, 0x0, 0x7f1f771bad38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203a2180, 0x7f1f771d0bb0, 0xc82000b3e0, 0xc820358f20)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t05z.wrfsfcf00.grib2: ACL set to Public  [4 of 6]
+2018/02/06 12:07:41 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:07:41 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:07:41 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 139 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82000a540, 0x7f4cfcb3f280, 0xc82009fe90, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc8204140f0, 0xc8204140f0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f4cfc1b3800, 0xc8200b01d0, 0xc820016300, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc82042e050, 0x7f4cfcb484e8, 0xc8204fe780, 0x7f4cfc2b4000, 0xc8200995c0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82009b2c0, 0x7f4cfcb484e8, 0xc8204fe780, 0x7f4cfc2b4000, 0xc8200995c0, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f4cfc2731f0, 0xc82009b2c0, 0x0, 0x0, 0x7f4cfcb3efa8, 0xc8200995c0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82058a120, 0x7f4cfc2731f0, 0xc82009b2c0, 0xc820439530)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+2018/02/06 12:07:44 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:07:44 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:07:44 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+s3://HRRR/exp/sfc/20180206/hrrrX.t09z.wrfsfcf00.grib2: ACL set to Public  [7 of 7]
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 89 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203c02a0, 0x7f0074674fe8, 0xc820303bc0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82045e0f0, 0xc82045e0f0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f00764b85e8, 0xc8200b01e0, 0xc82010e9c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820446050, 0x7f00764b8570, 0xc820464c80, 0x7f00764b8598, 0xc820099600, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82009b2c0, 0x7f00764b8570, 0xc820464c80, 0x7f00764b8598, 0xc820099600, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f006c1749f0, 0xc82009b2c0, 0x0, 0x0, 0x7f0074674d10, 0xc820099600)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8202f82a0, 0x7f006c1749f0, 0xc82009b2c0, 0xc820458c50)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+2018/02/06 12:07:47 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:07:47 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:07:47 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+s3://HRRR/exp/sfc/20180206/hrrrX.t01z.wrfsfcf00.grib2: ACL set to Public  [2 of 8]
+2018/02/06 12:07:49 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:07:49 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:07:49 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 86 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203fc540, 0x7f5a2822bfe8, 0xc820023fb0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820445ef0, 0xc820445ef0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f5a29675158, 0xc8200b01d0, 0xc82010e9c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820460000, 0x7f5a296750b8, 0xc820482140, 0x7f5a296750e0, 0xc8200995c0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82009b2c0, 0x7f5a296750b8, 0xc820482140, 0x7f5a296750e0, 0xc8200995c0, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f5a2120d9c0, 0xc82009b2c0, 0x0, 0x0, 0x7f5a2822bd10, 0xc8200995c0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82009b020, 0x7f5a2120d9c0, 0xc82009b2c0, 0xc8204583e0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 76 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201de0c0, 0x7f5a08842010, 0xc82012bb30, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043c280, 0xc82043c280, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f5a04339000, 0xc8200581d8, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204b4000, 0x7f5a05881b28, 0xc82044b040, 0x7f5a05881b50, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f5a05881b28, 0xc82044b040, 0x7f5a05881b50, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f5a05880210, 0xc82000b3e0, 0x0, 0x0, 0x7f5a08841d38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc820538900, 0x7f5a05880210, 0xc82000b3e0, 0xc82038ffa0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t03z.wrfsfcf00.grib2: ACL set to Public  [4 of 9]
+s3://HRRR/exp/sfc/20180206/hrrrX.t07z.wrfsfcf00.grib2: ACL set to Public  [8 of 10]
+2018/02/06 12:08:07 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:08:07 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:08:07 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 104 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82000bc80, 0x7fa5c26ad010, 0xc820023890, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043bf40, 0xc82043bf40, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fa5b81fa000, 0xc8200581d8, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820338000, 0x7fa5b837b868, 0xc8203ea1e0, 0x7fa5b837b890, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7fa5b837b868, 0xc8203ea1e0, 0x7fa5b837b890, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fa5c00279f0, 0xc82000b3e0, 0x0, 0x0, 0x7fa5c26acd38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201de0c0, 0x7fa5c00279f0, 0xc82000b3e0, 0xc8202dba00)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t10z.wrfsfcf00.grib2: ACL set to Public  [11 of 11]
+2018/02/06 12:08:36 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:08:36 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:08:36 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+2018/02/06 12:08:38 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:08:38 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:08:38 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+2018/02/06 12:08:39 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:08:39 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:08:39 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 87 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203ae5a0, 0x7f3803a27010, 0xc820391cb0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820385ef0, 0xc820385ef0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f37f973d078, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820384050, 0x7f37f973d000, 0xc8203f7040, 0x7f37f973d028, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f37f973d000, 0xc8203f7040, 0x7f37f973d028, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f37fa17d2e0, 0xc82000b3e0, 0x0, 0x0, 0x7f3803a26d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203ae180, 0x7f37fa17d2e0, 0xc82000b3e0, 0xc820311bd0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 90 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82056e420, 0x7f6ce32c7010, 0xc8201c07e0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820459a40, 0xc820459a40, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f6ce32dca20, 0xc8200581c8, 0xc8200166c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820376000, 0x7f6ce32dc9a8, 0xc8205580a0, 0x7f6ce32dc9d0, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f6ce32dc9a8, 0xc8205580a0, 0x7f6ce32dc9d0, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f6ce02c19f0, 0xc82000b3e0, 0x0, 0x0, 0x7f6ce32c6d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82056e0c0, 0x7f6ce02c19f0, 0xc82000b3e0, 0xc82038fd60)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 88 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82058c420, 0x7f325c3d0fe8, 0xc82009ffb0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820431f90, 0xc820431f90, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f325482a878, 0xc8200b01c0, 0xc82010e9c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820430050, 0x7f325482a800, 0xc82046cbe0, 0x7f325482a828, 0xc820099580, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82009b2c0, 0x7f325482a800, 0xc82046cbe0, 0x7f325482a828, 0xc820099580, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f325d8105a8, 0xc82009b2c0, 0x0, 0x0, 0x7f325c3d0d10, 0xc820099580)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203c2180, 0x7f325d8105a8, 0xc82009b2c0, 0xc82041c210)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t12z.wrfsfcf00.grib2: ACL set to Public  [12 of 12]
+s3://HRRR/exp/sfc/20180206/hrrrX.t14z.wrfsfcf00.grib2: ACL set to Public  [13 of 14]
+s3://HRRR/exp/sfc/20180206/hrrrX.t14z.wrfsfcf00.grib2: ACL set to Public  [13 of 14]
+s3://HRRR/exp/sfc/20180206/hrrrX.t16z.wrfsfcf00.grib2: ACL set to Public  [14 of 14]
+s3://HRRR/exp/sfc/20180206/hrrrX.t16z.wrfsfcf00.grib2: ACL set to Public  [14 of 14]
+2018/02/06 12:09:07 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:09:07 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:09:07 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 43 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203c6720, 0x7f1fa74d5010, 0xc82044bf80, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82042fe50, 0xc82042fe50, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f1fa444d030, 0xc8200581e8, 0xc8200169c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820414050, 0x7f1fa74dc8a8, 0xc82034f9a0, 0x7f1fa74dc8d0, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f1fa74dc8a8, 0xc82034f9a0, 0x7f1fa74dc8d0, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f1fa74daf38, 0xc82000b3e0, 0x0, 0x0, 0x7f1fa74d4d38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203c60c0, 0x7f1fa74daf38, 0xc82000b3e0, 0xc820426ac0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t11z.wrfsfcf00.grib2: ACL set to Public  [12 of 15]
+2018/02/06 12:09:21 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:09:21 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:09:21 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 75 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8202f66c0, 0x7f3f190e01b8, 0xc8204c60f0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820417f90, 0xc820417f90, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f3f187d5878, 0xc8200b01c8, 0xc820016300, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820416000, 0x7f3f187d5800, 0xc8203b8c80, 0x7f3f187d5828, 0xc820099580, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82009b2c0, 0x7f3f187d5800, 0xc8203b8c80, 0x7f3f187d5828, 0xc820099580, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f3f18915ae0, 0xc82009b2c0, 0x0, 0x0, 0x7f3f190dfee0, 0xc820099580)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82000a2a0, 0x7f3f18915ae0, 0xc82009b2c0, 0xc820410be0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t13z.wrfsfcf00.grib2: ACL set to Public  [14 of 16]
+2018/02/06 12:09:36 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:09:36 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:09:36 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 84 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc820572300, 0x7f91505c4010, 0xc820023b60, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820392140, 0xc820392140, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f914c13c000, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820392050, 0x7f91505d98e8, 0xc82044b5e0, 0x7f91505d9910, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f91505d98e8, 0xc82044b5e0, 0x7f91505d9910, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f914c1fc1f0, 0xc82000b3e0, 0x0, 0x0, 0x7f91505c3d38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201de0c0, 0x7f914c1fc1f0, 0xc82000b3e0, 0xc820333f70)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t15z.wrfsfcf00.grib2: ACL set to Public  [16 of 17]
+2018/02/06 12:09:39 S3 bucket HRRR path exp/sfc/20180206/: Building file list
+2018/02/06 12:09:39 S3 bucket HRRR path exp/sfc/20180206/: Waiting for checks to finish
+2018/02/06 12:09:39 S3 bucket HRRR path exp/sfc/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 63 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82000a5a0, 0x7fedcee86010, 0xc8201c1590, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043bf40, 0xc82043bf40, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fedcee9afa0, 0xc8200581e8, 0xc8200166c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820454000, 0x7fedcee9af28, 0xc82044afa0, 0x7fedcee9af50, 0xc820019880, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7fedcee9af28, 0xc82044afa0, 0x7fedcee9af50, 0xc820019880, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fedcc881ae0, 0xc82000b3e0, 0x0, 0x0, 0x7fedcee85d38, 0xc820019880)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82058a0c0, 0x7fedcc881ae0, 0xc82000b3e0, 0xc82035a1c0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/sfc/20180206/hrrrX.t17z.wrfsfcf00.grib2: ACL set to Public  [18 of 18]
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t06z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t06z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t06z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t06z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t07z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t07z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t07z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t07z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t04z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t04z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t04z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t04z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t05z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t05z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t05z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t05z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t10z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t10z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t10z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t10z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t11z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t11z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t11z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t11z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t08z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t08z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t08z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t08z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t09z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t09z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t09z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t09z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t12z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t12z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t12z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t12z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t13z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t13z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t00z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t00z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t00z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t00z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t01z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t01z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t01z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t01z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t14z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t14z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t14z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t14z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t15z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t15z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t02z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t02z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t02z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t02z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t03z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t03z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t03z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t03z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t16z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t16z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t16z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t16z.wrfsfcf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/sfc/20180206/hrrrX.t17z.wrfsfcf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t17z.wrfsfcf00.grib2
+Time to download hrrrX 0:04:38.438844
+2018/02/06 12:11:26 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:11:26 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:11:26 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+2018/02/06 12:11:29 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:11:29 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:11:29 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+2018/02/06 12:11:30 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:11:30 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:11:30 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 106 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201ea540, 0x7f2d0b7b3010, 0xc820023500, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc8204e7a90, 0xc8204e7a90, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f2d0b7c9900, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204e6000, 0x7f2d0866b000, 0xc8203f6f00, 0x7f2d0866b028, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f2d0866b000, 0xc8203f6f00, 0x7f2d0866b028, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f2d086eb1f0, 0xc82000b3e0, 0x0, 0x0, 0x7f2d0b7b2d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203ae660, 0x7f2d086eb1f0, 0xc82000b3e0, 0xc8203a9c20)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t04z.wrfprsf00.grib2: ACL set to Public  [1 of 1]
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 143 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201e03c0, 0x7f2c5d74a010, 0xc820502030, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043bef0, 0xc82043bef0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f2c588c1180, 0xc820058200, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820454000, 0x7f2c58941068, 0xc82044afa0, 0x7f2c58941090, 0xc820019900, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f2c58941068, 0xc82044afa0, 0x7f2c58941090, 0xc820019900, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f2c589809f0, 0xc82000b3e0, 0x0, 0x0, 0x7f2c5d749d38, 0xc820019900)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203a1380, 0x7f2c589809f0, 0xc82000b3e0, 0xc82036b3f0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t02z.wrfprsf00.grib2: ACL set to Public  [1 of 2]
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 83 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc820414840, 0x7fca14255a80, 0xc82009fbf0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc8204e5f40, 0xc8204e5f40, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fca16449ca0, 0xc82012e170, 0xc820158540, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204e4000, 0x7fca16449c28, 0xc820462780, 0x7fca16449c50, 0xc820145280, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82013b020, 0x7fca16449c28, 0xc820462780, 0x7fca16449c50, 0xc820145280, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fca1425da58, 0xc82013b020, 0x0, 0x0, 0x7fca142557a8, 0xc820145280)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82034eea0, 0x7fca1425da58, 0xc82013b020, 0xc820470ee0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t00z.wrfprsf00.grib2: ACL set to Public  [1 of 3]
+2018/02/06 12:12:35 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:12:35 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:12:35 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 78 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82056c420, 0x7f5724153010, 0xc8200236e0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043c410, 0xc82043c410, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f572068b800, 0xc8200581d8, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820458000, 0x7f572070d068, 0xc82044b400, 0x7f572070d090, 0xc8200197c0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f572070d068, 0xc82044b400, 0x7f572070d090, 0xc8200197c0, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f572078d1f0, 0xc82000b3e0, 0x0, 0x0, 0x7f5724152d38, 0xc8200197c0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203a0360, 0x7f572078d1f0, 0xc82000b3e0, 0xc82044cbf0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t05z.wrfprsf00.grib2: ACL set to Public  [4 of 4]
+2018/02/06 12:13:36 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:13:36 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:13:36 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+
+Transferred:    345866401 Bytes (47522.67 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            0
+Elapsed time:        7.1s
+Transferring:
+ *                    hrrrX.t01z.wrfprsf00.grib2: 100% done. avg: 50694.0, cur: 45505.4 kByte/s. ETA: 0s
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 78 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203ae600, 0x7fb4af927010, 0xc820023890, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820449f40, 0xc820449f40, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fb4ac79f800, 0xc8200581e0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820464000, 0x7fb4ac75f800, 0xc8203f6140, 0x7fb4ac75f828, 0xc820019900, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7fb4ac75f800, 0xc8203f6140, 0x7fb4ac75f828, 0xc820019900, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fb4af93b878, 0xc82000b3e0, 0x0, 0x0, 0x7fb4af926d38, 0xc820019900)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82000ac60, 0x7fb4af93b878, 0xc82000b3e0, 0xc820366e70)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+2018/02/06 12:13:43 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:13:43 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:13:43 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+s3://HRRR/exp/prs/20180206/hrrrX.t01z.wrfprsf00.grib2: ACL set to Public  [2 of 5]
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 71 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc820576060, 0x7fd83b30d010, 0xc82045bc80, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820444050, 0xc820444050, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fd8380458b0, 0xc8200581e0, 0xc8200166c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820460000, 0x7fd838045838, 0xc8203f20a0, 0x7fd838045860, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b440, 0x7fd838045838, 0xc8203f20a0, 0x7fd838045860, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fd83b31d2f0, 0xc82000b440, 0x0, 0x0, 0x7fd83b30cd38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82000a6c0, 0x7fd83b31d2f0, 0xc82000b440, 0xc820383300)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t03z.wrfprsf00.grib2: ACL set to Public  [4 of 6]
+2018/02/06 12:15:13 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:15:13 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:15:13 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 31 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82000a480, 0x7fb276a2e010, 0xc8204c8000, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc8204d5ef0, 0xc8204d5ef0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fb274469d40, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204d4000, 0x7fb2742e8068, 0xc8204c60a0, 0x7fb2742e8090, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7fb2742e8068, 0xc8204c60a0, 0x7fb2742e8090, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fb2743e81f0, 0xc82000b3e0, 0x0, 0x0, 0x7fb276a2dd38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82053e300, 0x7fb2743e81f0, 0xc82000b3e0, 0xc82037b250)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t06z.wrfprsf00.grib2: ACL set to Public  [7 of 7]
+2018/02/06 12:15:44 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:15:44 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:15:44 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 82 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82000a480, 0x7f1e51088010, 0xc8204da030, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820455f40, 0xc820455f40, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f1e4c1be030, 0xc8200581d8, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820454050, 0x7f1e4c07d038, 0xc820394aa0, 0x7f1e4c07d060, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f1e4c07d038, 0xc820394aa0, 0x7f1e4c07d060, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f1e4ccbf9f0, 0xc82000b3e0, 0x0, 0x0, 0x7f1e51087d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8203a00c0, 0x7f1e4ccbf9f0, 0xc82000b3e0, 0xc82036b2d0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t08z.wrfprsf00.grib2: ACL set to Public  [8 of 8]
+2018/02/06 12:16:03 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:16:03 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:16:03 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 45 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8202008a0, 0x7f9af4d6d0b8, 0xc8201ec000, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820445e50, 0xc820445e50, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f9af45a88a0, 0xc8200b01d0, 0xc82010e900, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820426050, 0x7f9af4d6fb60, 0xc82037e960, 0x7f9af4d6fb88, 0xc82009b580, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc8200992c0, 0x7f9af4d6fb60, 0xc82037e960, 0x7f9af4d6fb88, 0xc82009b580, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f9af6ba6e98, 0xc8200992c0, 0x0, 0x0, 0x7f9af4d6cde0, 0xc82009b580)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8202005a0, 0x7f9af6ba6e98, 0xc8200992c0, 0xc82046da90)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t10z.wrfprsf00.grib2: ACL set to Public  [9 of 9]
+2018/02/06 12:17:22 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:17:22 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:17:22 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+2018/02/06 12:17:24 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:17:24 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:17:24 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 99 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201e47e0, 0x7f27da9f0010, 0xc820455e90, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc8204383c0, 0xc8204383c0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f27d80a9800, 0xc8200581d0, 0xc8200169c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820448000, 0x7f27d8069800, 0xc820458820, 0x7f27d8069828, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f27d8069800, 0xc820458820, 0x7f27d8069828, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f27d81e90e0, 0xc82000b3e0, 0x0, 0x0, 0x7f27da9efd38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201e4d80, 0x7f27d81e90e0, 0xc82000b3e0, 0xc820430230)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 90 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8202f8660, 0x7faa51217fe8, 0xc820303ad0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820417ef0, 0xc820417ef0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7faa50051328, 0xc8200b01d8, 0xc820016300, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204300a0, 0x7faa53059d28, 0xc82046cbe0, 0x7faa53059d50, 0xc82009b580, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc8200992c0, 0x7faa53059d28, 0xc82046cbe0, 0x7faa53059d50, 0xc82009b580, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7faa500509f0, 0xc8200992c0, 0x0, 0x0, 0x7faa51217d10, 0xc82009b580)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8205b8420, 0x7faa500509f0, 0xc8200992c0, 0xc82043bd50)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t07z.wrfprsf00.grib2: ACL set to Public  [8 of 11]
+s3://HRRR/exp/prs/20180206/hrrrX.t09z.wrfprsf00.grib2: ACL set to Public  [10 of 11]
+2018/02/06 12:17:40 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:17:40 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:17:40 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 72 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203ac540, 0x7f351c26c010, 0xc8200237d0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820465ea0, 0xc820465ea0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f35187a6828, 0xc8200581c0, 0xc8200166c0, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820332050, 0x7f351c27ce70, 0xc82033d360, 0x7f351c27ce98, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f351c27ce70, 0xc82033d360, 0x7f351c27ce98, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f351c27c2c0, 0xc82000b3e0, 0x0, 0x0, 0x7f351c26bd38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201ea0c0, 0x7f351c27c2c0, 0xc82000b3e0, 0xc8201e7420)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t11z.wrfprsf00.grib2: ACL set to Public  [12 of 12]
+2018/02/06 12:21:02 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:21:02 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:21:02 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 106 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201de180, 0x7f5ccfbca010, 0xc82041e000, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043c0a0, 0xc82043c0a0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f5ccc2054c0, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820458050, 0x7f5cc437a068, 0xc82044b5e0, 0x7f5cc437a090, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f5cc437a068, 0xc82044b5e0, 0x7f5cc437a090, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f5ccc204bb8, 0xc82000b3e0, 0x0, 0x0, 0x7f5ccfbc9d38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201de120, 0x7f5ccc204bb8, 0xc82000b3e0, 0xc82045c210)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t14z.wrfprsf00.grib2: ACL set to Public  [13 of 13]
+2018/02/06 12:21:11 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:21:11 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:21:11 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 97 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82039e840, 0x7f3c06749010, 0xc820023980, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043def0, 0xc82043def0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f3c04083000, 0xc8200581c8, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820458000, 0x7f3c0675e368, 0xc8203e2000, 0x7f3c0675e390, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f3c0675e368, 0xc8203e2000, 0x7f3c0675e390, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f3c0675d9a8, 0xc82000b3e0, 0x0, 0x0, 0x7f3c06748d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82039e300, 0x7f3c0675d9a8, 0xc82000b3e0, 0xc82035a250)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t12z.wrfprsf00.grib2: ACL set to Public  [13 of 14]
+2018/02/06 12:21:38 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:21:38 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:21:38 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 48 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc82000acc0, 0x7f1789b87010, 0xc82012bb30, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc8204e7e00, 0xc8204e7e00, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f178027b000, 0xc8200581e0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204e6000, 0x7f17801ba000, 0xc82044afa0, 0x7f17801ba028, 0xc820019880, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7f17801ba000, 0xc82044afa0, 0x7f17801ba028, 0xc820019880, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f1781781890, 0xc82000b3e0, 0x0, 0x0, 0x7f1789b86d38, 0xc820019880)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82000ac60, 0x7f1781781890, 0xc82000b3e0, 0xc82037eb50)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t16z.wrfprsf00.grib2: ACL set to Public  [15 of 15]
+2018/02/06 12:23:30 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:23:30 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:23:30 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+2018/02/06 12:23:34 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:23:34 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:23:34 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 90 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203ae5a0, 0x7fc3bef53010, 0xc820023b60, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc820448050, 0xc820448050, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fc3bc8cd090, 0xc8200581d0, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc8204640a0, 0x7fc386b7e000, 0xc8203f6140, 0x7fc386b7e028, 0xc820019800, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7fc386b7e000, 0xc8203f6140, 0x7fc386b7e028, 0xc820019800, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fc3bc98dae0, 0xc82000b3e0, 0x0, 0x0, 0x7fc3bef52d38, 0xc820019800)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc8201ea120, 0x7fc3bc98dae0, 0xc82000b3e0, 0xc820468720)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t15z.wrfprsf00.grib2: ACL set to Public  [15 of 16]
+
+Transferred:    357381045 Bytes (46927.21 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            0
+Elapsed time:        7.4s
+Transferring:
+ *                    hrrrX.t13z.wrfprsf00.grib2: 100% done. avg: 47644.5, cur: 47853.4 kByte/s. ETA: 0s
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 63 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8203a20c0, 0x7fae35ef5010, 0xc8204539e0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82043bef0, 0xc82043bef0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7fae340ef000, 0xc8200581d8, 0xc820016a80, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc820454050, 0x7fae341f0028, 0xc82044afa0, 0x7fae341f0050, 0xc820019840, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82000b3e0, 0x7fae341f0028, 0xc82044afa0, 0x7fae341f0050, 0xc820019840, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7fae35f09708, 0xc82000b3e0, 0x0, 0x0, 0x7fae35ef4d38, 0xc820019840)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82056c2a0, 0x7fae35f09708, 0xc82000b3e0, 0xc82035a6c0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t13z.wrfprsf00.grib2: ACL set to Public  [14 of 17]
+2018/02/06 12:24:25 S3 bucket HRRR path exp/prs/20180206/: Building file list
+2018/02/06 12:24:25 S3 bucket HRRR path exp/prs/20180206/: Waiting for checks to finish
+2018/02/06 12:24:25 S3 bucket HRRR path exp/prs/20180206/: Waiting for transfers to finish
+
+Transferred:    358932280 Bytes (56919.24 kByte/s)
+Errors:                 0
+Checks:                 0
+Transferred:            0
+Elapsed time:        6.1s
+Transferring:
+ *                    hrrrX.t17z.wrfprsf00.grib2: 100% done. avg: 57699.6, cur: 60274.2 kByte/s. ETA: 0s
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x1 addr=0x0 pc=0x8b43a5]
+
+goroutine 107 [running]:
+panic(0xadd0e0, 0xc820014150)
+	/usr/local/go/src/runtime/panic.go:464 +0x3e6
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*multiuploader).upload(0xc8201fa000, 0x7f88bc391268, 0xc820452030, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:559 +0xaa5
+github.com/aws/aws-sdk-go/service/s3/s3manager.(*uploader).upload(0xc82041a0f0, 0xc82041a0f0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:361 +0x9ca
+github.com/aws/aws-sdk-go/service/s3/s3manager.Uploader.Upload(0x500000, 0x2, 0x0, 0x2710, 0x7f88b486a878, 0xc8200b01c8, 0xc82010e900, 0x0, 0x0, 0x0, ...)
+	/home/ncw/Code/Go/src/github.com/aws/aws-sdk-go/service/s3/s3manager/upload.go:329 +0x15a
+github.com/ncw/rclone/s3.(*Object).Update(0xc82043a000, 0x7f88b486a800, 0xc82021e460, 0x7f88b486a828, 0xc820099540, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:787 +0x4ef
+github.com/ncw/rclone/s3.(*Fs).Put(0xc82009b2c0, 0x7f88b486a800, 0xc82021e460, 0x7f88b486a828, 0xc820099540, 0x0, 0x0, 0x0, 0x0)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/s3/s3.go:505 +0x10c
+github.com/ncw/rclone/fs.Copy(0x7f88be1ce680, 0xc82009b2c0, 0x0, 0x0, 0x7f88bc390f90, 0xc820099540)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:236 +0x1934
+github.com/ncw/rclone/fs.PairCopier(0xc82009a9c0, 0x7f88be1ce680, 0xc82009b2c0, 0xc820441b10)
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:382 +0x1d7
+created by github.com/ncw/rclone/fs.syncCopyMove
+	/home/ncw/Code/Go/src/github.com/ncw/rclone/fs/operations.go:597 +0x619
+s3://HRRR/exp/prs/20180206/hrrrX.t17z.wrfprsf00.grib2: ACL set to Public  [18 of 18]
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t00z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t00z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t00z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t00z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t01z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t01z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t01z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t01z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t08z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t08z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t08z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t08z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t09z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t09z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t09z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t09z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t14z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t14z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t14z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t14z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t15z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t15z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t15z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t15z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t04z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t04z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t04z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t04z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t05z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t05z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t05z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t05z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t06z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t06z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t06z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t06z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t07z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t07z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t07z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t07z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t12z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t12z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t12z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t12z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t13z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t13z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t13z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t13z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t02z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t02z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t02z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t02z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t03z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t03z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t03z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t03z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t10z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t10z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t10z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t10z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t11z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t11z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t11z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t11z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t16z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t16z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t16z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t16z.wrfprsf00.grib2
+Downloading: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t17z.wrfprsf00.grib2
+Saved: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t17z.wrfprsf00.grib2
+created idx file: /uufs/chpc.utah.edu/common/home/horel-group/archive/HRRR/exp/prs/20180206/hrrrX.t17z.wrfprsf00.grib2.idx
+Moved to Pando: /uufs/chpc.utah.edu/common/home/horel-group/archive/20180206/BB_test/models/hrrrX/hrrrX.t17z.wrfprsf00.grib2
+Begin: 2018-02-06_12:05
+End: 2018-02-06_12:24

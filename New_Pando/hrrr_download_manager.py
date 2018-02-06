@@ -15,9 +15,9 @@ Experimental HRRR: ftp://gsdftp.fsl.noaa.gov
 
 What this script does:
 1) Download .grib2 and .idx files and store on horel-group7
-    1.2 Create .png sample of grib2 file
-    1.3 Create .idx file for grib2 files from ESRL
-
+    1.1 Download grib2 file from source
+    1.2 Create .idx file for grib2 files from ESRL
+    1.3 Create .png sample of grib2 file
 2) Sync files to Pando and set bucket permission to public
 """
 
@@ -36,12 +36,20 @@ if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.
     print "--> Please run this operational download script with the mesohorse user on meso1."
     exit()
 
-# ----------------------------------------------------------------------------
-#                        Set up and definitions
-# ----------------------------------------------------------------------------
-# Build a dictionary of what to download from each model.
-    # Note: The range of forecast hours you download are controlled by each field
-    # Note: The hrrrak model only runs every 6 hours, i.e. range(0,24,6)
+# -----------------------------------------------------------------------------
+#                           Download Controls
+# -----------------------------------------------------------------------------
+# The models dictionary describes what to download from each model.
+#  Initial keys used in the file names: ['hrrr', 'hrrrak', 'hrrrX', 'hrrrakX']
+#     name   : not used, only to describe to you what it is
+#     source : 'NOMADS' for operational models, 'ESRL' for experimental models
+#     hours  : The model run hours you want to download. Most hrrr models
+#              run hourly, except the Alaska model runs every six hours.
+#              i.e. range(0, 24, 6)
+#     fxx    : The forecast hours you want to download is defined for each
+#              grid type ['sfc', 'prs', 'nat', 'subh']. Leave as an empty 
+#              list to not download any files for that field.
+
 models = {'hrrr':{'name':'Operational HRRR',
                   'source':'NOMADS',
                   'hours':range(0,24),
@@ -77,10 +85,9 @@ if datetime.utcnow().hour < 6:
 else:
     DATE = datetime.utcnow()
 
-
-# ----------------------------------------------------------------------------
-#                        Main Tasks
-# ----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#                           Main Tasks
+# -----------------------------------------------------------------------------
 ## 1) Download HRRR files from source
 # 
 #  --- Operational HRRR ---
@@ -88,14 +95,14 @@ else:
 #         https://stackoverflow.com/questions/2846653/how-to-use-threading-in-python
 #         https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.dummy
 def oper_hrrr_multipro(args):
-    DATE, model, field, fxx, DIR = args
+    DATE, model, field, fxx = args
     try:
         download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
     except:
         # Try again...???
         download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
 
-oper_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, f, fxx, DIR] \
+oper_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, f, fxx] \
              for m in models.keys() if models[m]['source']=='NOMADS' \
              for h in models[m]['hours'] \
              for f in models[m]['fxx'].keys() if len(models[m]['fxx'][f]) > 0 \
@@ -131,17 +138,13 @@ p.close()
 """
 
 ## 2) Copy each path directory to Pando
-#     Should I convert this to use threading??
 #     Note: Do not use sync, in case a file is removed from horel-group7
-config_file = '/scratch/local/mesohorse/.rclone.conf'    # meso1 mesohorse user
 
 # HRRR Destination Path we want to sync (same for directory and s3 bucket)
 # Sync all model and field directories for the date.
-for model in models:
-    for field in models[model]['fxx']:
-        PATH = '%s/%s/%s/' % (model, field, DATE.strftime('%Y%m%d'))
-        os.system('rclone --config %s copy %s %s' \
-                % (config_file, DIR+PATH, S3+PATH))
-        # Set bucket permissions to public for URL access to each files
-        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
-        os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH)              
+rclone = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone'
+os.system('%s sync %s %s' % (rclone, DIR+'hrrr/', S3+'hrrr/'))
+
+# Set bucket permissions to public for URL access to each files
+s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd'
+os.system(s3cmd + ' setacl s3://hrrr/ --acl-public --recursive')

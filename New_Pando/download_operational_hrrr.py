@@ -69,20 +69,23 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default'):
     if not os.path.isfile(DIR+PATH+FILE) or os.path.getsize(DIR+PATH+FILE) < 5*10e6:
         # Build the URL string we want to download operational HRRR (HRRRv2+)
         URL = NOMADS+FILE
-        # Download and save the grib2 file and the .idx file
-        print 'Downloading:', URL
-        urllib.urlretrieve(URL, DIR+PATH+FILE, reporthook)
-        urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx', reporthook)
-        if idx:
-            try:
-                urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx')
-            except:
-                print ""
-                print "NEED TO MANUALLY CREATE .idx"
-                create_idx(DIR+PATH+FILE)
-
-        if png:
-            create_png()
-        print 'Saved:', DIR+PATH+FILE
+        # Only Download the file if it exists, if it's greater than 50 MB:
+        if int(urllib.urlopen(URL).info()['Content-Length']) > 5e7:
+            # Download and save the grib2 file and the .idx file
+            print 'Downloading:', URL
+            urllib.urlretrieve(URL, DIR+PATH+FILE, reporthook)
+            urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx', reporthook)
+            if idx:
+                try:
+                    urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx')
+                except:
+                    print "NEED TO MANUALLY CREATE .idx", DIR+PATH+FILE
+                    create_idx(DIR+PATH+FILE)
+            if png:
+                create_png()
+                print 'Saved:', DIR+PATH+FILE
+        else:
+            print 'DOES NOT EXIST: %s' % URL
+        
     else:
         print "**File Exists**", DIR+PATH+FILE
