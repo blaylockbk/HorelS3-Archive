@@ -16,6 +16,8 @@ temp/
 
 *.log
 
+*.txt
+
 # Don't send potentially large files
 *.nc
 *.grib2

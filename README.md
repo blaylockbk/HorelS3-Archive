@@ -42,15 +42,15 @@ Before getting started, first review the [CHPC rclone tutorial](https://www.chpc
 
     Type `rclone config`. You will be asked a series of questions. Use these options:  
               
-      1. Select `n` for new remote.  
-      2. Enter a name. You will reference the S3 archive with this name. I used `horelS3`.
-      3. Type: Select option `2` for S3.  
-      4. Select `false` when asked to "Get AWS credientials from runtime."  
-      5. Enter the access key. _Ask Brian or John for this, unless you know where to find it._
-      6. Enter the secret key. _You'll have to ask for this, too._
-      7. Region: Choose "other-v2-signature" (option `10`).  
-      8. Endpoint: Enter `https://pando-rgw01.chpc.utah.edu`.
-      9. Location: Select option `1` for none.
+      1. Select `n` for new remote  
+      2. Enter a name. You will reference the S3 archive with this name. I used `horelS3`
+      3. Type: Select option `2` for S3  
+      4. "Get AWS credentials from runtime": Set to `False`  
+      5. Enter the access key: _Ask Brian or John for this, unless you know where to find it_
+      6. Enter the secret key: _You'll have to ask for this, too_
+      7. Region: leave blank (press `enter` to skip)
+      8. Endpoint: Enter `https://pando-rgw01.chpc.utah.edu`
+      9. Location: Select option `1` for none
 
 Completing this setup makes a `.rclone.conf` file in your home directory
 

@@ -235,6 +235,8 @@ if __name__ == '__main__':
 
     print "Time to download hrrrX", datetime.now()-timer1
 
+
+
     # How to download pressure fields if you want to start getting those too
     # Get pressure fields
     ftp = FTP('gsdftp.fsl.noaa.gov')

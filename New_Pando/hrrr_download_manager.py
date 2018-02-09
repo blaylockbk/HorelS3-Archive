@@ -45,7 +45,7 @@ if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.
 #     source : 'NOMADS' for operational models, 'ESRL' for experimental models
 #     hours  : The model run hours you want to download. Most hrrr models
 #              run hourly, except the Alaska model runs every six hours.
-#              i.e. range(0, 24, 6)
+#              i.e. range(0, 24, 3)
 #     fxx    : The forecast hours you want to download is defined for each
 #              grid type ['sfc', 'prs', 'nat', 'subh']. Leave as an empty 
 #              list to not download any files for that field.
@@ -57,11 +57,11 @@ models = {'hrrr':{'name':'Operational HRRR',
                          'prs':range(0,1),
                          'nat':[],
                          'subh':[]}},
-          'hrrrak':{'name':'Operational HRRR Alaska',
-                    'source':'NOMADS',
-                    'hours':range(0,24,6),
+          'hrrrak':{'name':'Operational HRRR Alaska',     # temporary download "operational" alaska from ESRL before it becomes operational
+                    'source':'ESRL',
+                    'hours':range(0,24,3),
                     'fxx':{'sfc':[],
-                           'prs':[]}},
+                           'prs':[0]}},
           'hrrrX':{'name':'Experimental HRRR',
                    'source':'ESRL',
                    'hours':range(0,24),
@@ -85,6 +85,7 @@ if datetime.utcnow().hour < 6:
 else:
     DATE = datetime.utcnow()
 
+
 # -----------------------------------------------------------------------------
 #                           Main Tasks
 # -----------------------------------------------------------------------------
@@ -100,7 +101,10 @@ def oper_hrrr_multipro(args):
         download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
     except:
         # Try again...???
-        download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
+        try:
+            download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
+        except:
+            print "THIS DID NOT WORK", args
 
 oper_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, f, fxx] \
              for m in models.keys() if models[m]['source']=='NOMADS' \
@@ -118,33 +122,27 @@ p.join()
 
 """
 #  --- Experimental HRRR ---
-#         Use multiprocessing because I've had issues with the ftp site timing
-#         out when using multithreading
-def exp_hrrr_multipro(args):
-    DATE, model, field, fxx, DIR = args
-    return [DATE, model, field, fxx, DIR]
-    download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
-
-exp_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, f, fxx, DIR] \
-            for m in models.keys() if models[m]['source']=='ESRL' \
-            for h in models[m]['hours'] \
-            for f in models[m]['fxx'].keys() if len(models[m]['fxx'][f]) > 0 \
-            for fxx in models[m]['fxx'][f]]
-
-# Multiprocessing
-p = multiprocessing.Pool(5)
-result = p.map(exp_hrrr_multipro, exp_args)
-p.close()
+#         In serial because we are not downloading too much
 """
+#for m in [m for m in models.keys() if models[m]['source']=='ESRL']:
+#    download_experimental_hrrr.get_grib2(m, models[m], DIR, idx=True, png=True)
+
+
+
+print ""
+print "Finished what I can download."
+print ""
 
 ## 2) Copy each path directory to Pando
 #     Note: Do not use sync, in case a file is removed from horel-group7
-
+print "   --- rclone ---"
 # HRRR Destination Path we want to sync (same for directory and s3 bucket)
 # Sync all model and field directories for the date.
+PATH = 'hrrr/sfc/%s/' % DATE.strftime('%Y%m%d')
 rclone = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone'
-os.system('%s sync %s %s' % (rclone, DIR+'hrrr/', S3+'hrrr/'))
+os.system('%s sync %s %s' % (rclone, DIR+PATH, S3+PATH))
 
+print "   --- s3cmd  ---"
 # Set bucket permissions to public for URL access to each files
 s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd'
-os.system(s3cmd + ' setacl s3://hrrr/ --acl-public --recursive')
+os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH)

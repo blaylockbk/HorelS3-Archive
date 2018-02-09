@@ -33,8 +33,8 @@ python ${SCRIPTDIR}/hrrr_download_manager.py
 
 # Email a list of files that are now on S3.
 # First send email of status, then retry missing files
-python ${SCRIPTDIR}/email_log.py
-python ${SCRIPTDIR}/email_log.py retry
+python ${SCRIPTDIR}/../HRRR_downloads/email_log.py
+#python ${SCRIPTDIR}/../email_log.py retry
 
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`

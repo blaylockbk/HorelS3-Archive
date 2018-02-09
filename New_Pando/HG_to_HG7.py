@@ -31,6 +31,7 @@ def create_idx(for_this_file):
 def work_on_copying_a_date(DATE):
     #MODELS = ['hrrr', 'hrrrX', 'hrrrak']
     MODELS = ['hrrr', 'hrrrX']
+    #MODELS = ['hrrrak']
     for model in MODELS:
         if model == 'hrrr':
             HG_model = model
@@ -46,9 +47,9 @@ def work_on_copying_a_date(DATE):
             HG_model = 'hrrr_alaska'
             HG_name = 'hrrrAK'
             fields = ['prs', 'sfc']
-            fxx = range(0, 37)    
+            fxx = range(0, 1)    
         # Extract the hour
-        h = DATE.strftime('%H')
+        h = DATE.hour
 
         for field in fields:
             fromDIR = '%s/%s/models/%s/' % (HG, DATE.strftime('%Y%m%d'), HG_model)
@@ -60,20 +61,24 @@ def work_on_copying_a_date(DATE):
                 print ""
             for f in fxx:
                 if model in ['hrrr', 'hrrrX']:
-                    FILE = '%s.t%sz.wrf%sf%02d.grib2' % (HG_name, h, field, f)
+                    FILE = '%s.t%02dz.wrf%sf%02d.grib2' % (HG_name, DATE.hour, field, f)
                 elif model == 'hrrrak':
-                    FILE = 'hrrr_ak_%s_%s%s_%04d.grib2' % (field, DATE.strftime('%y%m%d'), h, f)
+                    if field == 'prs':
+                        FILE = 'hrrr_ak_%s_%s.grib2' % (field, DATE.strftime('%y%m%d%H'))
+                    elif field == 'sfc':
+                        FILE = 'hrrr_ak_%s_%s_%04d.grib2' % (field, DATE.strftime('%y%m%d%H'), f)
                 # Name of new file
-                newFILE = '%s.t%sz.wrf%sf%02d.grib2' % (model, h, field, f)
+                newFILE = '%s.t%02dz.wrf%sf%02d.grib2' % (model, DATE.hour, field, f)
+                print FILE
                 # Copy file
                 if os.path.exists(fromDIR+FILE) and not os.path.exists(toDIR+FILE):
                     # shutil.copy2() preseves the file metadata like creation time
-                    shutil.copy2(fromDIR+FILE, toDIR+FILE)
+                    shutil.copy2(fromDIR+FILE, toDIR+newFILE)
                     print "copied:", fromDIR+FILE
-                    print "to    :", toDIR+FILE 
+                    print "to    :", toDIR+newFILE 
                 # Create .idx file
-                if os.path.exists(toDIR+FILE) and not os.path.exists(toDIR+FILE+'.idx'):
-                    create_idx(toDIR+FILE)
+                if os.path.exists(toDIR+newFILE) and not os.path.exists(toDIR+FILE+'.idx'):
+                    create_idx(toDIR+newFILE)
     return 1
 
 # Directories to move data from
@@ -81,8 +86,8 @@ HG = '/uufs/chpc.utah.edu/common/home/horel-group/archive'
 HG7 = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando' 
 
 # Date range to move from
-sDATE = datetime(2017, 12, 28)
-eDATE = datetime(2018, 2, 1)
+sDATE = datetime(2018, 2, 1)
+eDATE = datetime(2018, 2, 5)
 DATES = [sDATE+timedelta(hours=D) for D in range(0, (eDATE-sDATE).days*24)]
 
 # Multithreading: Give each thread it's own hour to work on

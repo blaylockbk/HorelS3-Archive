@@ -58,7 +58,7 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default'):
     PATH = '%s/%s/%s/' % (model, field, DATE.strftime('%Y%m%d'))
     
     # Look for this file
-    FILE = '%s.t%sz.wrf%sf%02d.grib2' % (model, DATE.strftime('%H'), field, fxx)
+    FILE = '%s.t%02dz.wrf%sf%02d.grib2' % (model, DATE.hour, field, fxx)
 
     # If the destination DIR path does not exist, then create it
     if not os.path.exists(DIR+PATH):
