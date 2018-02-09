@@ -127,12 +127,3 @@ try:
     print "Successfully sent email"
 except SMTPException:
     print "Error: unable to send email"
-
-
-"""
-
-DATES = [datetime(2018,1,1)+timedelta(hours=i) for i in range(0,100)]
-
-DATES2 = (lambda x: x+timedelta(years=1))DATES
-
-"""

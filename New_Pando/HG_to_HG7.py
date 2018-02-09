@@ -29,9 +29,7 @@ def create_idx(for_this_file):
     print "--> Created idx file:"
 
 def work_on_copying_a_date(DATE):
-    #MODELS = ['hrrr', 'hrrrX', 'hrrrak']
-    MODELS = ['hrrr', 'hrrrX']
-    #MODELS = ['hrrrak']
+    MODELS = ['hrrr', 'hrrrX', 'hrrrak']
     for model in MODELS:
         if model == 'hrrr':
             HG_model = model
@@ -48,8 +46,6 @@ def work_on_copying_a_date(DATE):
             HG_name = 'hrrrAK'
             fields = ['prs', 'sfc']
             fxx = range(0, 1)    
-        # Extract the hour
-        h = DATE.hour
 
         for field in fields:
             fromDIR = '%s/%s/models/%s/' % (HG, DATE.strftime('%Y%m%d'), HG_model)
@@ -86,8 +82,8 @@ HG = '/uufs/chpc.utah.edu/common/home/horel-group/archive'
 HG7 = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando' 
 
 # Date range to move from
-sDATE = datetime(2018, 2, 1)
-eDATE = datetime(2018, 2, 5)
+sDATE = datetime(2017, 12, 28)
+eDATE = datetime(2018, 2, 9)
 DATES = [sDATE+timedelta(hours=D) for D in range(0, (eDATE-sDATE).days*24)]
 
 # Multithreading: Give each thread it's own hour to work on
