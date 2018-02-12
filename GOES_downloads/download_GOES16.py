@@ -69,30 +69,6 @@ mU = draw_Utah_map()
 #latlon = np.load(GOES16_latlon).item()
 
 # ----------------------------------------------------------------------------
-
-
-def delete_old():
-    """
-    Delete the yesterday's download in the archive space
-    Hopefully it has been moved to Pando.
-    """
-    yesterday = date.today()-timedelta(days=5)
-    DELDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%s/BB_test/' \
-             % (yesterday.strftime('%Y%m%d'))
-    if os.path.exists('DELDIR'):
-        os.system('rm -r '+DELDIR)
-
-def make_map(FILE, OUTDIR):
-    """
-    Make a figure of the true color image and move to Pando
-    
-    Input:
-        FILE - the location of the file on horel-group/archive
-        OUTDIR - temporary place to save figure
-    """
-    
-
-
 def download_goes16(DATE,
                     domain='C',
                     product='ABI-L2-MCMIP',
@@ -117,7 +93,7 @@ def download_goes16(DATE,
 
     # List files in AWS bucket
     PATH_AWS = 'noaa-goes16/%s/%s/' % (product+domain[0], DATE.strftime('%Y/%j'))
-    rclone = '/uufs/chpc.utah.edu/sys/installdir/rclone/1.29/bin/rclone'
+    rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
     ls = ' ls goes16AWS:%s | cut -c 11-' % (PATH_AWS)
     rclone_out = subprocess.check_output(rclone + ls, shell=True)
     Alist = rclone_out.split('\n')
@@ -133,19 +109,13 @@ def download_goes16(DATE,
     for i in Alist:
         # What date does this file belong in? (looking at the scan start time)
         scanDATE = datetime.strptime(i.split('_')[3], 's%Y%j%H%M%S%f')
+        print scanDATE
 
         # Where shall I put the file on horel-group/archive        
-        OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group/archive/%s/BB_test/goes16/' \
-                 % (scanDATE.strftime('%Y%m%d'))
+        OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/%s/%s/' \
+                 % (product+domain[0], scanDATE.strftime('%Y%m%d'))
         if not os.path.exists(OUTDIR):
             os.makedirs(OUTDIR)
-            # Change directory permissions
-            os.chmod(OUTDIR, stat.S_IRWXU | \
-                            stat.S_IRGRP | stat.S_IXGRP | \
-                            stat.S_IROTH | stat.S_IXOTH)
-                            # User can read, write, execute
-                            # Group can read and execute
-                            # Others can read and execute
 
         # Check if the AWS file exists on Pando already. If it does, go to next
         if i[3:] in Plist:
@@ -153,14 +123,12 @@ def download_goes16(DATE,
             continue
     
         # Download the file from Amazon AWS and copy to horel-group/archive
-        #os.system(rclone+' --config %s copy goes16AWS:%s %s' % (config_file, PATH_AWS+i, OUTDIR))
         os.system('rclone copy goes16AWS:%s %s' % (PATH_AWS+i, OUTDIR))
         print ""
         print "Downloaded from AWS:", PATH_AWS+i, 'to:', OUTDIR
         print ""
 
         # Copy the file to Pando (little different than the AWS path)
-        #os.system(rclone + ' --config %s copy %s horelS3:%s' % (config_file, OUTDIR+i, PATH_Pando))
         os.system('rclone copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
         print ""
         print "Moved to Pando:", PATH_Pando
@@ -199,7 +167,7 @@ def download_goes16(DATE,
         print ""
 
     # Change permissions of S3 directory to public
-    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-1.6.1/s3cmd'
+    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
     os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH_Pando)
     #
 
@@ -215,8 +183,6 @@ if __name__ == '__main__':
     download_goes16(DATE)
 
     # Extra attempt to download yesterday's last hour due to day change,
-    # then remove yesterday's files from horel-group/archive
     if DATE.hour == 0:
         yesterday = DATE-timedelta(days=1)
         download_goes16(yesterday)
-        delete_old(yesterday)

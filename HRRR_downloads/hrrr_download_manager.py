@@ -146,12 +146,12 @@ for PATH in PATHS:
     # Sync all model and field directories for the date to Pando.
     # Use `copy` and not `sync` in case a file is removed from horel-group7
     print "- rclone -",
-    rclone = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone'
+    rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
     os.system('%s sync %s %s' % (rclone, DIR+PATH, S3+PATH))
 
     # Set bucket permissions to public for URL access to each files
     print "- s3cmd -",
-    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd'
+    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
     os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH)
 
     print "DONE!"
