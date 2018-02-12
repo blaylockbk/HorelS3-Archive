@@ -85,6 +85,7 @@ if datetime.utcnow().hour < 6:
 else:
     DATE = datetime.utcnow()
 
+#`DATE = datetime(2018,2,10)
 
 # -----------------------------------------------------------------------------
 #                     Download GRIB2 files from NOMADS
@@ -99,7 +100,7 @@ def oper_hrrr_multipro(args):
     try:
         download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
     except:
-        # Try again...
+       # Try again...
         try:
             download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
         except:
