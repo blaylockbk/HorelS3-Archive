@@ -10,7 +10,7 @@
 
 set dateStart = `date +%Y-%m-%d_%H:%M`
 
-setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/New_Pando/"
+setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads"
 
 if (-e ${SCRIPTDIR}/hrrr.status) then
 	# mail -s "HRRR Processing: skipping process cycle" atmos-uunet@lists.utah.edu <<EOF
@@ -28,13 +28,12 @@ module load rclone
 module load python/2.7.3          # until meso1 upgrades to centOS 7, then load python/2.7.11
 module load wgrib2
 
-# Download HRRR to horel-group archive and copy to Pando S3 archive
+# Download HRRR to horel-group7 archive and copy to Pando S3 archive
 python ${SCRIPTDIR}/hrrr_download_manager.py
 
 # Email a list of files that are now on S3.
 # First send email of status, then retry missing files
-python ${SCRIPTDIR}/../HRRR_downloads/email_log.py
-#python ${SCRIPTDIR}/../email_log.py retry
+python ${SCRIPTDIR}/email_log.py
 
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`

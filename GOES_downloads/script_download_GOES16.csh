@@ -8,7 +8,7 @@
 
 set dateStart = `date +%Y-%m-%d_%H:%M`
 
-setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/GOES_downloads"
+setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/GOES_downloads"
 
 if (-e ${SCRIPTDIR}/goes16.status) then
 	# mail -s "GOES 16 Processing: skipping process cycle" atmos-uunet@lists.utah.edu <<EOF
@@ -26,7 +26,6 @@ module load rclone
 module load python/2.7.3          # until meso1 upgrades to centOS 7, then load python/2.7.11
 
 # Download GOES16 data and move to Pando
-echo 'hi'
 python ${SCRIPTDIR}/download_GOES16.py
 
 echo Begin: $dateStart
