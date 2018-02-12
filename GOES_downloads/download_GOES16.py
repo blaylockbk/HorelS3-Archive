@@ -186,3 +186,10 @@ if __name__ == '__main__':
     if DATE.hour == 0:
         yesterday = DATE-timedelta(days=1)
         download_goes16(yesterday)
+
+
+"""
+# GOES16
+/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/ horelS3:GOES16/
+/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd setacl s3://GOES16/ --acl-public --recursive
+"""
