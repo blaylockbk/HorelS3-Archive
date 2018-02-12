@@ -175,11 +175,6 @@ GOES-16 Level 2 data (multiband format) from the [Amazon AWS NOAA archive](https
 
 ## Scripts and contents of this repository
 
-### `remaining_S3_disk_space.py`
-+ A script that reports how much space is left on our Pando allocation, using 
-total files from a single day as an estimate. Reports when the archive
-will be filled up. Last I checked, I estimate S3 will be full mid-December. 
-
 ### **`GOES_downloads`** (directory)
 Download scripts for the GOES-16 data from the noaa-goes16 bucket on Amazon S3.
 
@@ -196,19 +191,11 @@ run by cron at 6:05 PM Mountain Time. These are the most up-to-date scripts.
 - `HRRR_check.csh`: call by CRON at 11:05 PM on meso1 by the mesohorse user.
   - `email_log.py`: sends me an email to confirm the files are now on the Pando archive.
 
-### `rclone-beta` (directory)
-Contains the beta version of rclone that allows you to rename files with copyto and moveto
-
-### `s3cmd-1.6.1` (directory)
-Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. (see below Q&A for usage)
+### `rclone-v1.39-linux-386` (directory)
+Contains the version of rclone you should use so we don't get stuck when CHPC updates rclone versions.
 
 ### `s3cmd-2.0.1` (directory)
 Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. (see below Q&A for usage)
-
-### `temp` (directory)
-A place that bufr soundings are temporarily downloaded to. They are deleted
-the next time HRRR_download.csh is executed.
-
 ---
 
 The following scripts were used to move large amounts of files from the horel-group/archive
@@ -317,27 +304,7 @@ Configuration files for the mesohorse user:
 `/scratch/local/mesohorse/.rclone-conf`
 
 ## How much space is left and when will the S3 archive fill up?
-My current estimates are that the 30 TB on S3 will fill up around mid-August.
-For an update, run the script `remaining_S3_disk_space.py` which produces output like this...
-> Horel S3 Usage  
-  ==================================  
-  Allocation : 30.00 TB  
-  Total size : 19.11 TB  
-  Remaining  : 10.89 TB  
-  ==================================  
-  Usage on 2017-03-13  
-    oper   sfc   : 54.22 GB  
-    oper   prs   : 8.88 GB  
-    oper   buf   : 0.01 GB  
-    exp    sfc   : 2.78 GB  
-    exp    prs   : 0.00 GB  
-    exp    buf   : 0.00 GB  
-    alaska sfc   : 1.20 GB  
-    alaska prs   : 1.66 GB  
-    alaska buf   : 0.00 GB  
-  Approx. 158 days until full  
-  S3 will fill up on August 19, 2017 with present usage.  
-  ==================================  
+The [Pando Usage Web Display (PUWD](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/) displays the the Pando allocation and usage for each bucket. The script that creates this display is run once a day and is located on [GitHub](https://github.com/blaylockbk/Web-Homepage/blob/master/Pando_archive/daily_usage.py).
 
 ## Where can I find examples on how to download HRRR data?
 Check out the scripting tips here: [Scripting Tips](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_script_tips.html)
