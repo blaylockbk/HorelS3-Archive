@@ -52,9 +52,6 @@ the capability to download specific bands at their full resolution.
 """
 
 # ----------------------------------------------------------------------------
-# rclone config file
-config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
-
 # CONUS Map object
 m = Basemap(projection='geos', lon_0='-75.0',
             resolution='i', area_thresh=1000,
@@ -122,14 +119,14 @@ def download_goes16(DATE,
             print "Already in Pando:", i
             continue
     
-        # Download the file from Amazon AWS and copy to horel-group/archive
-        os.system('rclone copy goes16AWS:%s %s' % (PATH_AWS+i, OUTDIR))
+        # Download the file from Amazon AWS and copy to horel-group7/Pando
+        os.system(rclone + ' copy goes16AWS:%s %s' % (PATH_AWS+i, OUTDIR))
         print ""
         print "Downloaded from AWS:", PATH_AWS+i, 'to:', OUTDIR
         print ""
 
         # Copy the file to Pando (little different than the AWS path)
-        os.system('rclone copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
+        os.system(rclone + ' copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
         print ""
         print "Moved to Pando:", PATH_Pando
         print ""
@@ -148,7 +145,7 @@ def download_goes16(DATE,
         FIG = OUTDIR+i[3:-2]+'png'
         plt.savefig(FIG)
         # Move Figure to Pando
-        os.system('rclone copy %s horelS3:%s' % (FIG, PATH_Pando))
+        os.system(rclone + ' copy %s horelS3:%s' % (FIG, PATH_Pando))
     
         # Draw Utah Map
         newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
@@ -160,7 +157,7 @@ def download_goes16(DATE,
         FIG = OUTDIR+i[3:-2]+'UTAH.png'
         plt.savefig(FIG)
         # Move Figure to Pando
-        os.system('rclone copy %s horelS3:%s' % (FIG, PATH_Pando))        
+        os.system(rclone + ' copy %s horelS3:%s' % (FIG, PATH_Pando))        
         
         print ""
         print 'FIGURE:', PATH_Pando, FIG
