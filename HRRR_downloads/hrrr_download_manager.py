@@ -78,9 +78,9 @@ models = {'hrrr':{'name':'Operational HRRR',
 DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
 S3 = 'horelS3:'
 
-# If the current time is before 0600 UTC, finish downloading files from
+# If the current time is before 0300 UTC, finish downloading files from
 # yesterday. Else, download files from today.
-if datetime.utcnow().hour < 6:
+if datetime.utcnow().hour < 3:
     DATE = datetime.utcnow()-timedelta(days=1)
 else:
     DATE = datetime.utcnow()

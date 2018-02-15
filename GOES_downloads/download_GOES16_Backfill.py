@@ -12,7 +12,10 @@ mpl.use('Agg') #required for the CRON job. Says "do not open plot in a window"
 import subprocess
 from datetime import date, datetime, timedelta
 import os
+import urllib
 import stat
+import socket
+import getpass
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
@@ -47,6 +50,11 @@ All the band data is in that file, but eventually I may want to built
 the capability to download specific bands at their full resolution.
 """
 
+if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso2.chpc.utah.edu':
+    print "--> You are %s on %s" % (getpass.getuser(), socket.gethostname())
+    print "--> Please run this script with the mesohorse user on meso2."
+    exit()
+
 # ----------------------------------------------------------------------------
 # rclone config file
 config_file = '/scratch/local/mesohorse/.rclone.conf' # meso1 mesohorse user
@@ -74,20 +82,77 @@ GOES16_latlon1 = '/uufs/chpc.utah.edu/common/home/horel-group/archive/GOES16/goe
 latlon1 = np.load(GOES16_latlon1).item()
 
 
+def reporthook(a, b, c):
+    """
+    Print download progress in megabytes.
+    Example:
+        urllib.urlretrieve(URL, OUTFILE, reporthook=reporthook)
+    """
+    print "% 3.1f%% of %.2f MB\r" % (min(100, float(a * b) / c * 100), c/1000000.),
+
+def make_plots(args):
+    """
+    Multiprocessing
+    Create CONUS and Utah images for each GOES16 file
+        FILE     - is the full path to the file to the NetCDF data file
+        FULLPATH - is the directory to save the image files
+        DATE     - datetime of interest
+    """
+    FILE, FULLPATH, DATE = args
+    try:
+        # Pick the correct satellite latitude
+        if DATE > datetime(2017, 12, 14):
+            m = m1
+            latlon = latlon1
+        else:
+            m = m0
+            latlon = latlon0
+
+        # Name of file, stripped of extensions
+        IMG_FILE = FILE[:-3]
+
+        if not os.path.isfile(FULLPATH+IMG_FILE+'.png'):
+            # Create true color image of the file
+            print FULLPATH+FILE
+            G = get_GOES16_truecolor(FULLPATH+FILE, only_RGB=False, night_IR=True)
+            plt.figure(1)
+            plt.clf()
+            plt.cla()
+            m.imshow(np.flipud(G['TrueColor']))
+            m.drawcoastlines(linewidth=.25)
+            m.drawstates(linewidth=0.25)
+            m.drawcountries(linewidth=0.25)
+            plt.title('GOES-16 True Color and Night IR\n%s' % (G['DATE'].strftime('%Y %B %d, %H:%M UTC')))
+            plt.xlabel(FILE)
+            FIG = FULLPATH+IMG_FILE+'.png'
+            plt.savefig(FIG)
+        
+            # Draw Utah Map
+            newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
+                                color=G['rgb_tuple'],
+                                linewidth=0)
+            newmap.set_array(None) # must have this line if using pcolormesh and linewidth=0
+            mU.drawstates()
+            mU.drawcounties()
+            FIG = FULLPATH+IMG_FILE+'.UTAH.png'
+            plt.savefig(FIG)
+    except:
+        print ""
+        print "FAILED: ", FULLPATH+FILE
+        print ""
+
 # ----------------------------------------------------------------------------
 
 def download_goes16(DATE,
                     domain='C',
                     product='ABI-L2-MCMIP',
-                    bands=range(1,17),
-                    replace=False):
+                    bands=range(1,17)):
     """
     Downloads GOES-16 NetCDF files from the Amazon AWS
     https://noaa-goes16.s3.amazonaws.com
     
     Input:
         DATE - a datetime object that includes.
-        OUTDIR - where you want to download the file to for short time local storage.
         domain - F = full disk
                  C = CONUS
                  M1 = Mesoscale 1
@@ -98,93 +163,64 @@ def download_goes16(DATE,
         bands - a list between 1 and 16. Default all the bands.
                 If you requested the multiband format, this doesn't do anything.
     """
-    # Pick the correct satellite latitude
-    if DATE > datetime(2017, 12, 14):
-        m = m1
-        latlon = latlon1
-    else:
-        m = m0
-        latlon = latlon0
 
-    # List files in AWS bucket
-    PATH_AWS = 'noaa-goes16/%s/%s/' % (product+domain[0], DATE.strftime('%Y/%j'))
-    PATH_OCC = ''
+    # Copy AWS bucket to horel-group7
     rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
-    ls = ' ls goes16AWS:%s | cut -c 11-' % (PATH_AWS)
-    rclone_out = subprocess.check_output(rclone + ls, shell=True)
-    Alist = rclone_out.split('\n')
-    Alist.remove('') # remove empty elements (last item in list)
-
-    # List files in Pando bucket
-    PATH_Pando = 'GOES16/%s/%s/' % (product+domain[0], DATE.strftime('%Y%m%d')) # Little different than AWS path
-    Pls = ' ls horelS3:%s | cut -c 11-' % (PATH_Pando)
-    Prclone_out = subprocess.check_output(rclone + Pls, shell=True)
-    Plist = Prclone_out.split('\n')
-    Plist.remove('') # remove empty elements (last item in list)
-
-    for i in Alist:
-        # What date does this file belong in? (looking at the scan start time)
-        scanDATE = datetime.strptime(i.split('_')[3], 's%Y%j%H%M%S%f')
-        print scanDATE
-
-        # Where shall I put the file on horel-group/archive        
-        OUTDIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/%s/%s/' \
-                 % (product+domain[0], scanDATE.strftime('%Y%m%d'))
-        if not os.path.exists(OUTDIR):
-            os.makedirs(OUTDIR)
-
-        # Check if the AWS file exists on Pando already. If it does, go to next
-        if i[3:] in Plist:
-            print "Already in Pando:", i
-            continue
     
-        # Download the file from Amazon AWS and copy to horel-group/archive
-        os.system(rclone+' copy goes16AWS:%s %s' % (PATH_AWS+i, OUTDIR))
-        print ""
-        print "Downloaded from AWS:", PATH_AWS+i, 'to:', OUTDIR
-        print ""
+    AWS = 'goes16AWS:noaa-goes16/%s/%s/' % (product+domain[0], DATE.strftime('%Y/%j'))
+    HG7 = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
+    PATH = 'GOES16/%s/%s/' % (product+domain[0], DATE.strftime('%Y%m%d'))
+    if not os.path.exists(HG7+PATH):
+                os.makedirs(HG7+PATH)
 
-        # Copy the file to Pando (little different than the AWS path)
-        os.system(rclone+' copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
-        print ""
-        print "Moved to Pando:", PATH_Pando
-        print ""
+    # Easiest to sync horel-group7 with AWS, but AWS only keeps files from
+    # last 60 days, so we'll need to download from OCC instead.
+    if DATE > datetime.now()-timedelta(days=60):        
+        for hour in range(0,24):
+            # Do not sync, because it will overwrite files. Copy will keep everything.
+            os.system('%s copy %s%02d/ %s' % (rclone, AWS, hour, HG7+PATH))
+    else:
+        # We need to download each file individually from OCC from the list of files on AWS
+        ls = ' ls %s | cut -c 11-' % (AWS)
+        rclone_out = subprocess.check_output(rclone + ls, shell=True)
+        Alist = rclone_out.split('\n')
+        Alist.remove('') # remove empty elements (last item in list)
 
-        # Create true color image of the file
-        G = get_GOES16_truecolor(OUTDIR+i[3:], only_RGB=False, night_IR=True)
-        plt.figure(1)
-        plt.clf()
-        plt.cla()
-        m.imshow(np.flipud(G['TrueColor']))
-        m.drawcoastlines(linewidth=.25)
-        m.drawstates(linewidth=0.25)
-        m.drawcountries(linewidth=0.25)
-        plt.title('GOES-16 True Color and Night IR\n%s' % (G['DATE'].strftime('%Y %B %d, %H:%M UTC')))
-        plt.xlabel(i[3:])
-        FIG = OUTDIR+i[3:-2]+'png'
-        plt.savefig(FIG)
-        # Move Figure to Pando
-        os.system(rclone+' copy %s horelS3:%s' % (FIG, PATH_Pando))
+        URL = 'https://osdc.rcc.uchicago.edu/%s' % (AWS.split(':')[1])
+        for i in Alist:
+            # Only download if it appears the file exists based on it's size.
+            print URL+i
+            try:
+                if not os.path.exists(HG7+PATH+i.split('/')[1]):
+                    if int(urllib.urlopen(URL+i).info()['Content-Length']) > 100000:
+                        urllib.urlretrieve(URL+i, HG7+PATH+i.split('/')[1], reporthook)
+                else:
+                    print 'EXISTS:', HG7+PATH+i.split('/')[1]
+            except:
+                print 'none in', URL+i
+
+    """
+    # For every .nc file in HG7, create a png for CONUS and UTAH if it does not exist
+    NC_FILES = filter(lambda x: x[-3:]=='.nc', os.listdir(HG7+PATH))
     
-        # Draw Utah Map
-        newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
-                               color=G['rgb_tuple'],
-                               linewidth=0)
-        newmap.set_array(None) # must have this line if using pcolormesh and linewidth=0
-        mU.drawstates()
-        mU.drawcounties()
-        FIG = OUTDIR+i[3:-2]+'UTAH.png'
-        plt.savefig(FIG)
-        # Move Figure to Pando
-        os.system(rclone+' copy %s horelS3:%s' % (FIG, PATH_Pando))        
-        
-        print ""
-        print 'FIGURE:', PATH_Pando, FIG
-        print ""
+    # Create the Plots with Multiprocessing
+    import multiprocessing
+    p = multiprocessing.Pool(10)
+    args = [[F, HG7+PATH, DATE] for F in NC_FILES]
+    result = p.map(make_plots, args)            
+    #for a in args:
+    #    make_plots(a)
+    """
+    
+    # Sync with Pando
+    print ' -- rclone --'
+    S3 = 'horelS3:'
+    os.system('%s sync %s %s' % (rclone, HG7+PATH, S3+PATH))
 
     # Change permissions of S3 directory to public
+    print ' -- s3cmd --'
     s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
-    os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH_Pando)
+    os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH)
     #
 
 if __name__ == '__main__':
@@ -193,16 +229,11 @@ if __name__ == '__main__':
     print " Downloading GOES-16 from NOAA AWS Archive and Copy to Pando  "
     print "=============================================================\n"   
 
-    base = datetime(2018, 1, 1)
+    base = datetime(2017, 7, 12)
     eDATE = datetime(2018, 2, 6)
     days = (eDATE - base).days
     DATES = np.array([base + timedelta(days=x) for x in range(0, days)])
         
     for D in DATES:
-        print """
-        ============== Working on: %s ===============
-        """ % (D.strftime('%Y %B %d'))
-        download_goes16(D, replace=False)
-
-        
-
+        print """============== Working on: %s ===============""" % (D.strftime('%Y %B %d'))
+        download_goes16(D)
