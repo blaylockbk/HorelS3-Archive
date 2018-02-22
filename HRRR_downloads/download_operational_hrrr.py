@@ -6,6 +6,7 @@
 from datetime import datetime
 import os
 import urllib
+import urllib2
 
 def create_png():
     """
@@ -63,29 +64,60 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default'):
     # If the destination DIR path does not exist, then create it
     if not os.path.exists(DIR+PATH):
         os.makedirs(DIR+PATH)
-    
-    # If the file does not exists or if it is smaller than 50 MB (maybe because
-    # the file is incomplete), then download it.
-    if not os.path.isfile(DIR+PATH+FILE) or os.path.getsize(DIR+PATH+FILE) < 5*10e6:
-        # Build the URL string we want to download operational HRRR (HRRRv2+)
-        URL = NOMADS+FILE
-        # Only Download the file if it exists, if it's greater than 50 MB:
-        if int(urllib.urlopen(URL).info()['Content-Length']) > 5e7:
-            # Download and save the grib2 file and the .idx file
-            print 'Downloading:', URL
-            urllib.urlretrieve(URL, DIR+PATH+FILE, reporthook)
-            urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx', reporthook)
-            if idx:
-                try:
-                    urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx')
-                except:
-                    print "NEED TO MANUALLY CREATE .idx", DIR+PATH+FILE
-                    create_idx(DIR+PATH+FILE)
-            if png:
-                create_png()
-                print 'Saved:', DIR+PATH+FILE
+
+    # If the .idx file exists and has the expected line numbers, then download
+    # the .idx file and the .grib2 file.
+    try:
+        idxpage = urllib2.urlopen(NOMADS+FILE+'.idx')
+    except:
+        idxpage = []
+    lines = sum(1 for line in idxpage)
+    print NOMADS+FILE, 'number of lines', lines
+
+    if field == 'sfc':
+        if fxx < 2:
+            expected_lines = 132
         else:
-            print 'DOES NOT EXIST: %s' % URL
-        
-    else:
-        print "**File Exists**", DIR+PATH+FILE
+            expected_lines = 135
+    elif field == 'prs':
+        if fxx < 2:
+            expected_lines = 684
+        else:
+            expected_lines = 687
+
+    if lines >= expected_lines:            
+        # If the file does not exists or if it is smaller than 100 MB (maybe because
+        # the file is incomplete), then download it.
+        if not os.path.isfile(DIR+PATH+FILE) or os.path.getsize(DIR+PATH+FILE) < 10e7:
+            # Build the URL string we want to download operational HRRR (HRRRv2+)
+            URL = NOMADS+FILE
+            # Only Download the file if it exists, if it's greater than 50 MB:
+            if int(urllib.urlopen(URL).info()['Content-Length']) > 10e7:
+                # Download and save the grib2 file and the .idx file
+                print 'Downloading:', URL
+                urllib.urlretrieve(URL, DIR+PATH+FILE, reporthook)
+                urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx', reporthook)
+                if idx:
+                    try:
+                        urllib.urlretrieve(URL+'.idx', DIR+PATH+FILE+'.idx')
+                    except:
+                        print "NEED TO MANUALLY CREATE .idx", DIR+PATH+FILE
+                        create_idx(DIR+PATH+FILE)
+                if png:
+                    create_png()
+                    print 'Saved:', DIR+PATH+FILE
+            else:
+                print 'DOES NOT EXIST: %s' % URL
+            
+        else:
+            print "**File Exists**", DIR+PATH+FILE
+
+if __name__ == '__main__':
+    
+    DATE = datetime.now()
+    model = 'hrrr'
+    field = 'sfc'
+    fxx = 0
+    DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
+    
+    get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)

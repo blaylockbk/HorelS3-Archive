@@ -10,11 +10,12 @@ import smtplib
 import os
 from datetime import date, datetime, timedelta
 import download_operational_hrrr
+import subprocess
 
 
 # If the current time is before 0600 UTC, finish downloading files from
 # yesterday. Else, download files from today.
-if datetime.utcnow().hour < 6:
+if datetime.utcnow().hour < 3:
     DATE = datetime.utcnow()-timedelta(days=1)
 else:
     DATE = datetime.utcnow()
@@ -76,6 +77,8 @@ for m in model:
 
                 checked += '\n'
 
+# Checke missing files based on correcte .idx line number
+missing = subprocess.check_output('python /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/look_for_bad_idx_files.py', shell=True)
 
 # Send the Email
 sender = 'brian.blaylock@utah.edu'
@@ -85,7 +88,7 @@ message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
 To: HRRR Check <brian.blaylock@utah.edu>
 Subject: Check HRRR moved to Pando archvie %s
 
-""" % (DATE) + checked + '\n\nFinished:%s' % (datetime.now())
+""" % (DATE) +'\nMissing in HRRR:\n'+missing +'\n\nChecked'+ checked + '\n\nFinished:%s' % (datetime.now()) 
 
 try:
     smtpObj = smtplib.SMTP('localhost')
