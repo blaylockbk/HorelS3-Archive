@@ -242,13 +242,13 @@ First navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-
 
 #### Make public
 A new bucket: `./s3cmd setacl s3://GOES16 --acl-public`  
-A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20180101/filename.grib2 --acl-public`  
-A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20180101/ --acl-public --recursive`  
+A single file: `./s3cmd setacl s3://hrrr/sfc/20180101/filename.grib2 --acl-public`  
+A directory: `./s3cmd setacl s3://hrrr/sfc/20180101/ --acl-public --recursive`  
 
 #### Make private
 A new bucket: `./s3cmd setacl s3://GOES16 --acl-private`  
-A single file: `./s3cmd setacl s3://HRRR/oper/sfc/20180101/filename.grib2 --acl-private`  
-A directory: `./s3cmd setacl s3://HRRR/oper/sfc/20180101/ --acl-private --recursive`  
+A single file: `./s3cmd setacl s3://hrrr/sfc/20180101/filename.grib2 --acl-private`  
+A directory: `./s3cmd setacl s3://hrrr/sfc/20180101/ --acl-private --recursive`  
 
 
 ## How is `rclone` and `s3cmd` configured?
