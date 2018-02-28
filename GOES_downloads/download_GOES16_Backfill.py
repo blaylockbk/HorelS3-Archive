@@ -229,7 +229,7 @@ if __name__ == '__main__':
     print " Downloading GOES-16 from NOAA AWS Archive and Copy to Pando  "
     print "=============================================================\n"   
 
-    base = datetime(2017, 10, 12)
+    base = datetime(2017, 11, 25)
     eDATE = datetime(2018, 2, 6)
     days = (eDATE - base).days
     DATES = np.array([base + timedelta(days=x) for x in range(0, days)])
