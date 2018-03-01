@@ -25,6 +25,8 @@ else:
 model = ['hrrr', 'hrrrX', 'hrrrak']
 variable = ['sfc', 'prs', 'subh', 'buf']
 
+rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
+
 checked = ''
 for m in model:
     for v in variable:
@@ -51,8 +53,8 @@ for m in model:
             name = 'hrrrak'
 
         # Make a list of the files from the HRRR S3 archive
-        s3_list = os.popen('rclone ls horelS3:%s/%s/%04d%02d%02d/ | cut -c 11-' \
-                            % (m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
+        s3_list = os.popen('%s ls horelS3:%s/%s/%04d%02d%02d/ | cut -c 11-' \
+                            % (rclone, m, v, DATE.year, DATE.month, DATE.day)).read().split('\n')
 
         checked += '\n\nChecking %s %s %s in S3\n---------------------\n' % (m, v, DATE)
         for h in hours:
@@ -77,7 +79,7 @@ for m in model:
 
                 checked += '\n'
 
-# Checke missing files based on correcte .idx line number
+# Checke missing files based on correct .idx line number
 missing = subprocess.check_output('python /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/look_for_bad_idx_files.py', shell=True)
 
 # Send the Email

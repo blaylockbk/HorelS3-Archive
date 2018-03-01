@@ -86,6 +86,10 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default'):
             expected_lines = 687
 
     if lines >= expected_lines:            
+        # Download the .idx if it doesn't exist
+        if not os.path.isfile(DIR+PATH+FILE+'.idx'):
+            urllib.urlretrieve(NOMADS+FILE+'.idx', DIR+PATH+FILE+'.idx', reporthook)
+
         # If the file does not exists or if it is smaller than 100 MB (maybe because
         # the file is incomplete), then download it.
         if not os.path.isfile(DIR+PATH+FILE) or os.path.getsize(DIR+PATH+FILE) < 10e7:
