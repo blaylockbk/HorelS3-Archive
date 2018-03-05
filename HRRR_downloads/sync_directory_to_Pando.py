@@ -20,13 +20,13 @@ fields = ['prs', 'sfc']
 DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
 S3 = 'horelS3:'
 
-for DATE in DATES:
+rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
+s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
+
+def sync_date(DATE):
     for field in fields:
         PATH = '%s/%s/%s/' % (model, field, DATE.strftime('%Y%m%d'))
-        if os.path.isdir(DIR+PATH):
-            rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
-            s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
-            
+        if os.path.isdir(DIR+PATH):            
             print 'Move to Pando: %s sync %s %s' % (rclone, DIR+PATH, S3+PATH)
             os.system('%s sync %s %s' % (rclone, DIR+PATH, S3+PATH))
 
@@ -35,3 +35,12 @@ for DATE in DATES:
             
         else:
             print "DOES NOT EXIST:", DIR+PATH
+
+
+import multiprocessing
+# Multiprocessing :)
+num_proc = multiprocessing.cpu_count() # use all processors
+num_proc = 1
+p = multiprocessing.Pool(num_proc)
+result = p.map(sync_date, DATES)
+p.close()
