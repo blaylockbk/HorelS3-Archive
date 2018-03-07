@@ -22,12 +22,12 @@ for field in fields:
     else:
         fxx = [0]
 
-    sDATE = datetime(2017, 12, 28)
+    sDATE = datetime.now()-timedelta(days=5)
     eDATE = datetime.now()
 
     DATES = [sDATE+timedelta(days=d) for d in range((eDATE-sDATE).days)]
 
-    print "Lines | File Path (%s)" % field
+    print "\nLines | File Path (%s)" % field
 
     for DATE in DATES:
         DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrr/%s/%s/' % (field, DATE.strftime('%Y%m%d'))
@@ -37,7 +37,7 @@ for field in fields:
                 FILE = 'hrrr.t%02dz.wrf%sf%02d.grib2.idx' % (h, field, f)
                 
                 if not os.path.isfile(DIR+FILE):
-                    print "DOES NOT EXIST", DIR+FILE
+                    print "DOES NOT EXIST, ", DIR+FILE[:-4]
                     continue
                 
                 lines = sum(1 for line in open(DIR+FILE))
@@ -49,6 +49,6 @@ for field in fields:
                     f02_f18 = 687
 
                 if f in [0, 1] and lines < f00_f01:
-                    print lines, DIR+FILE
+                    print "Lines: %s/%s, %s" % (lines, f00_f01, DIR+FILE[:-4])
                 elif f in range(2,19) and lines < f02_f18:
-                    print lines, DIR+FILE
+                    print "Lines: %s/%s, %s" % (lines, f02_f18, DIR+FILE[:-4])

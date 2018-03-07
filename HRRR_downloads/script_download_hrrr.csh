@@ -13,12 +13,12 @@ set dateStart = `date +%Y-%m-%d_%H:%M`
 setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads"
 
 if (-e ${SCRIPTDIR}/hrrr.status) then
-	# mail -s "HRRR Processing: skipping process cycle" atmos-uunet@lists.utah.edu <<EOF
-	# Skipping a HRRR Processing cycle on meso1: $yrz$monz$dayz/$hrz$min (UTC)
-# EOF
+	mail -s "HRRR Processing: skipping process cycle" blaylockbk@gmail.com <<EOF
+	Skipping a HRRR Processing cycle on meso1: $dateStart
+## EOF
 	echo "PREVIOUS HRRR PROCESS ON MESO1 STILL RUNNING"
-	echo "SEE YOU NEXT TIME!"
-	exit
+	#echo "SEE YOU NEXT TIME!"
+#	exit
 endif
 
 touch ${SCRIPTDIR}/hrrr.status

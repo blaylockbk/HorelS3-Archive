@@ -85,7 +85,7 @@ if datetime.utcnow().hour < 3:
 else:
     DATE = datetime.utcnow()
 
-#DATE = datetime(2018,2,28)
+#DATE = datetime(2018, 3, 6)
 
 # -----------------------------------------------------------------------------
 #                     Download GRIB2 files from NOMADS
