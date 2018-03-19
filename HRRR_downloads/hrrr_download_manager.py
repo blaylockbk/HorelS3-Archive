@@ -80,12 +80,12 @@ S3 = 'horelS3:'
 
 # If the current time is before 0300 UTC, finish downloading files from
 # yesterday. Else, download files from today.
-if datetime.utcnow().hour < 3:
+if datetime.utcnow().hour < 5:
     DATE = datetime.utcnow()-timedelta(days=1)
 else:
     DATE = datetime.utcnow()
 
-#DATE = datetime(2018, 3, 6)
+#DATE = datetime(2018, 3, 10)
 
 # -----------------------------------------------------------------------------
 #                     Download GRIB2 files from NOMADS
