@@ -10,7 +10,8 @@ Download HRRR, HRRRx, and HRRRak to New Pando: http://hrrr.chpc.utah.edu/
 This script should be run by the mesohorse user on meso1. 
 Run this 4 times a day to prevent any missing data from download failures.
 
-Operational HRRR: http://nomads.ncep.noaa.gov/
+ Operational HRRR: http://nomads.ncep.noaa.gov/
+    Parallel HRRR: http://para.nomads.ncep.noaa.gov/
 Experimental HRRR: ftp://gsdftp.fsl.noaa.gov
 
 What this script does:
@@ -42,13 +43,16 @@ if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.
 # The models dictionary describes what to download from each model.
 #  Initial keys used in the file names: ['hrrr', 'hrrrak', 'hrrrX', 'hrrrakX']
 #     name   : not used, only to describe to you what it is
-#     source : 'NOMADS' for operational models, 'ESRL' for experimental models
+#     source : 'NOMADS' for operational models
+#              'PARA' for parallel NOMADS
+#              'ESRL' for experimental models
 #     hours  : The model run hours you want to download. Most hrrr models
-#              run hourly, except the Alaska model runs every six hours.
+#              run hourly, except the Alaska model runs every three hours.
 #              i.e. range(0, 24, 3)
 #     fxx    : The forecast hours you want to download is defined for each
-#              grid type ['sfc', 'prs', 'nat', 'subh']. Leave as an empty 
-#              list to not download any files for that field.
+#              grid type using the keys ['sfc', 'prs', 'nat', 'subh'].
+#              The the key value as an empty list to not download any files
+#              for that field.
 
 models = {'hrrr':{'name':'Operational HRRR',
                   'source':'NOMADS',
@@ -57,10 +61,10 @@ models = {'hrrr':{'name':'Operational HRRR',
                          'prs':range(0,1),
                          'nat':[],
                          'subh':[]}},
-          'hrrrak':{'name':'Operational HRRR Alaska',     # temporary download "operational" alaska from ESRL before it becomes operational
-                    'source':'ESRL',
+          'hrrrak':{'name':'Parallel HRRR Alaska',     # temporary download "operational" alaska from ESRL before it becomes operational
+                    'source':'PARA',
                     'hours':range(0,24,3),
-                    'fxx':{'sfc':range(0,1),
+                    'fxx':{'sfc':range(0,37),          # 36 hour forecasts for 0, 6, 12, 18 UTC. 18 hour forecasts otherwise
                            'prs':[]}},
           'hrrrX':{'name':'Experimental HRRR',
                    'source':'ESRL',
@@ -85,10 +89,10 @@ if datetime.utcnow().hour < 5:
 else:
     DATE = datetime.utcnow()
 
-#DATE = datetime(2018, 4, 22)
+#DATE = datetime(2018, 5, 1)
 
 # -----------------------------------------------------------------------------
-#                     Download GRIB2 files from NOMADS
+#                   Download GRIB2 files from NOMADS or PARA
 # -----------------------------------------------------------------------------
 #
 # Download operational HRRR files
@@ -96,18 +100,18 @@ else:
 #       https://stackoverflow.com/questions/2846653/how-to-use-threading-in-python
 #       https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.dummy
 def oper_hrrr_multipro(args):
-    DATE, model, field, fxx = args
+    DATE, model, field, fxx, source = args
     try:
-        download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
+        download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, source=source)
     except:
        # Try again...
         try:
-            download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True)
+            download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, source=source)
         except:
             print "THIS DID NOT WORK", args
 
-oper_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, T, fxx] \
-             for m in models.keys() if models[m]['source']=='NOMADS' \
+oper_args = [[datetime(DATE.year, DATE.month, DATE.day, h), m, T, fxx, models[m]['source']] \
+             for m in models.keys() if models[m]['source']=='NOMADS' or models[m]['source']=='PARA' \
              for h in models[m]['hours'] \
              for T in models[m]['fxx'].keys() if len(models[m]['fxx'][T]) > 0 \
              for fxx in models[m]['fxx'][T]]
