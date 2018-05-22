@@ -89,7 +89,7 @@ if datetime.utcnow().hour < 5:
 else:
     DATE = datetime.utcnow()
 
-#DATE = datetime(2018, 5, 1)
+#DATE = datetime(2018, 5, 17)
 
 # -----------------------------------------------------------------------------
 #                   Download GRIB2 files from NOMADS or PARA
