@@ -41,14 +41,14 @@ mpl.rcParams['savefig.dpi'] = 100
 
 import sys
 sys.path.append('/uufs/chpc.utah.edu/common/home/u0553130/pyBKB_v2/')
+sys.path.append('B:\pyBKB_v2')
 from BB_GOES16.get_GOES16 import get_GOES16_truecolor
+from BB_GOES16.match_GLM_to_ABI import accumulate_GLM_flashes_for_ABI
 from BB_basemap.draw_maps import draw_Utah_map
 
 
 """
-Currently, I am only downloading the Multiband Level 2 formated data
-All the band data is in that file, but eventually I may want to built
-the capability to download specific bands at their full resolution.
+I only download the Multiband Level 2 formated data.
 """
 
 # ----------------------------------------------------------------------------
@@ -68,8 +68,7 @@ mU = draw_Utah_map()
 # ----------------------------------------------------------------------------
 def download_goes16(DATE,
                     domain='C',
-                    product='ABI-L2-MCMIP',
-                    bands=range(1,17)):
+                    product='ABI-L2-MCMIP'):
     """
     Downloads GOES-16 NetCDF files from the Amazon AWS
     https://noaa-goes16.s3.amazonaws.com
@@ -84,8 +83,6 @@ def download_goes16(DATE,
         product - ABI-L1b-Rad = Advanced Baseline Imager Level 1, Radiances
                   ABI-L2-CMIP = ABI Level 2, Cloud Moisture Product, Reflectance
                   ABI-L2-MCMIP = same as above, but multi band format
-        bands - a list between 1 and 16. Default all the bands.
-                If you requested the multiband format, this doesn't do anything.
     """
 
     # List files in AWS bucket
@@ -133,14 +130,16 @@ def download_goes16(DATE,
 
         # Create true color image of the file
         G = get_GOES16_truecolor(OUTDIR+i[3:], only_RGB=False, night_IR=True)
+        GLM = accumulate_GLM_flashes_for_ABI(i[3:])
         plt.figure(1)
         plt.clf()
         plt.cla()
         m.imshow(np.flipud(G['TrueColor']))
+        m.scatter(GLM['longitude'], GLM['latitude'], marker='+', color='yellow', latlon=True)
         m.drawcoastlines(linewidth=.25)
         m.drawstates(linewidth=0.25)
         m.drawcountries(linewidth=0.25)
-        plt.title('GOES-16 True Color and Night IR\n%s' % (G['DATE'].strftime('%Y %B %d, %H:%M UTC')))
+        plt.title('GOES-16 True Color, Night IR, and Lightning (GLM)\n%s' % (G['DATE'].strftime('%Y %B %d, %H:%M UTC')))
         plt.xlabel(i[3:])
         FIG = OUTDIR+i[3:-2]+'png'
         plt.savefig(FIG)
@@ -152,6 +151,7 @@ def download_goes16(DATE,
                                color=G['rgb_tuple'],
                                linewidth=0)
         newmap.set_array(None) # must have this line if using pcolormesh and linewidth=0
+        mU.scatter(GLM['longitude'], GLM['latitude'], marker='+', color='yellow', latlon=True)
         mU.drawstates()
         mU.drawcounties()
         FIG = OUTDIR+i[3:-2]+'UTAH.png'
