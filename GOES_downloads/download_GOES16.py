@@ -42,7 +42,7 @@ mpl.rcParams['savefig.dpi'] = 100
 import sys
 sys.path.append('/uufs/chpc.utah.edu/common/home/u0553130/pyBKB_v2/')
 sys.path.append('B:\pyBKB_v2')
-from BB_GOES16.get_GOES16 import get_GOES16_truecolor
+from BB_GOES16.get_GOES16 import get_GOES16_truecolor, get_GOES16_firetemperature
 from BB_GOES16.match_GLM_to_ABI import accumulate_GLM_flashes_for_ABI
 from BB_basemap.draw_maps import draw_Utah_map
 
@@ -54,7 +54,7 @@ I only download the Multiband Level 2 formated data.
 # ----------------------------------------------------------------------------
 # CONUS Map object
 m = Basemap(projection='geos', lon_0='-75.0',
-            resolution='i', area_thresh=1000,
+            resolution='i', area_thresh=10000,
             llcrnrx=-3626269.5, llcrnry=1584175.9,
             urcrnrx=1381770.0, urcrnry=4588198.0)
 
@@ -130,6 +130,8 @@ def download_goes16(DATE,
 
         # Create true color image of the file
         G = get_GOES16_truecolor(OUTDIR+i[3:], only_RGB=False, night_IR=True)
+        FT = get_GOES16_firetemperature(OUTDIR+i[3:], only_RGB=False)
+        max_RGB = np.nanmax([G['rgb_tuple'], FT['rgb_tuple']], axis=0)
         GLM = accumulate_GLM_flashes_for_ABI(i[3:])
         plt.figure(1)
         plt.clf()
@@ -148,8 +150,8 @@ def download_goes16(DATE,
     
         # Draw Utah Map
         newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
-                               color=G['rgb_tuple'],
-                               linewidth=0)
+                               color=max_RGB,
+                               linewidth=0) # when plotting on cylindrical coordinates, dont set latlon=True. Only if plotting over HRRR domain
         newmap.set_array(None) # must have this line if using pcolormesh and linewidth=0
         mU.scatter(GLM['longitude'], GLM['latitude'], marker='+', color='yellow', latlon=True)
         mU.drawstates()

@@ -58,8 +58,20 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
     # HRRR Source Path
     if source == 'NOMADS':
         # Download from operational products directory
-        NOMADS = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/%s.%s/' \
-                  % (model, DATE.strftime('%Y%m%d'))
+        if datetime.utcnow() < datetime(2018, 7, 11, 14):
+            NOMADS = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/%s.%s/' \
+                    % (model, DATE.strftime('%Y%m%d'))
+        else:
+            print "!!>> DOWNLOADING HRRR VERSION 3 <<!!"
+            if model =='hrrrak':
+                DOMAIN = 'alaska'
+                SHORT = 'ak.'
+            elif model == 'hrrr':
+                DOMAIN = 'conus'
+                SHORT = ''
+            NOMADS = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/hrrr.%s/%s/' \
+                    % (DATE.strftime('%Y%m%d'), DOMAIN)
+
     elif source == 'PARA':
         # Download from parallel products directory
         if model =='hrrrak':
