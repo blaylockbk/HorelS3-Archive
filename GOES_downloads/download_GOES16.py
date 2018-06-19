@@ -42,8 +42,8 @@ mpl.rcParams['savefig.dpi'] = 100
 import sys
 sys.path.append('/uufs/chpc.utah.edu/common/home/u0553130/pyBKB_v2/')
 sys.path.append('B:\pyBKB_v2')
-from BB_GOES16.get_GOES16 import get_GOES16_truecolor, get_GOES16_firetemperature
-from BB_GOES16.match_GLM_to_ABI import accumulate_GLM_flashes_for_ABI
+from BB_GOES16.get_ABI import get_GOES16_truecolor, get_GOES16_firetemperature, file_nearest
+from BB_GOES16.get_GLM import get_GLM_files_for_ABI, accumulate_GLM
 from BB_basemap.draw_maps import draw_Utah_map
 
 
@@ -132,7 +132,7 @@ def download_goes16(DATE,
         G = get_GOES16_truecolor(OUTDIR+i[3:], only_RGB=False, night_IR=True)
         FT = get_GOES16_firetemperature(OUTDIR+i[3:], only_RGB=False)
         max_RGB = np.nanmax([G['rgb_tuple'], FT['rgb_tuple']], axis=0)
-        GLM = accumulate_GLM_flashes_for_ABI(i[3:])
+        GLM = accumulate_GLM(get_GLM_files_for_ABI(i[3:]))
         plt.figure(1)
         plt.clf()
         plt.cla()
@@ -178,6 +178,7 @@ if __name__ == '__main__':
 
     
     DATE = datetime.utcnow()
+    #DATE = datetime(2018, 6, 11)
     
     download_goes16(DATE)
 

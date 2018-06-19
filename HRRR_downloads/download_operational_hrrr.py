@@ -59,9 +59,11 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
     if source == 'NOMADS':
         # Download from operational products directory
         if datetime.utcnow() < datetime(2018, 7, 11, 14):
+            # HRRR version 2
             NOMADS = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/%s.%s/' \
                     % (model, DATE.strftime('%Y%m%d'))
         else:
+            # HRRR version 3
             print "!!>> DOWNLOADING HRRR VERSION 3 <<!!"
             if model =='hrrrak':
                 DOMAIN = 'alaska'
@@ -106,28 +108,29 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
     lines = sum(1 for line in idxpage)
     print '%s Lines in File: %s.idx' % (lines, NOMADS+FILE)
 
-    if field == 'sfc':
-        if fxx < 2:
-            if model == 'hrrr':
-                expected_lines = 132
-            elif model == 'hrrrak':
-                expected_lines = 153
-        else:
-            if model == 'hrrr':
-                expected_lines = 135
-            elif model == 'hrrrak':
-                expected_lines = 156
-    elif field == 'prs':
-        if fxx < 2:
-            if model == 'hrrr':
-                expected_lines = 684
-            elif model == 'hrrrak':
-                expected_lines = 698
-        else:
-            if model == 'hrrr':
-                expected_lines = 687
-            elif model == 'hrrrak':
-                expected_lines = 701
+
+    if datetime.utcnow() < datetime(2018, 7, 11, 14):
+        # HRRR version 2
+        IDX_LINES = {'hrrr':{'sfc': [132, 135],
+                            'prs': [684, 687],
+                            'nat': [1107, 1110]},
+                    'hrrrak':{'sfc': [153, 156],
+                            'prs': [698, 701],
+                            'nat': [1121, 1124]}}
+    else:
+        # HRRR version 3
+        IDX_LINES = {'hrrr':{'sfc': [148, 151],
+                            'prs': [698, 701],
+                            'nat': [1123, 1126]},
+                    'hrrrak':{'sfc': [153, 156],
+                            'prs': [698, 701],
+                            'nat': [1121, 1124]}}
+
+    if fxx < 2:
+        expected_lines = IDX_LINES[model][field][0]
+    else:
+        expected_lines = IDX_LINES[model][field][1]
+
 
     if lines >= expected_lines:            
         # Download the .idx if it doesn't exist
@@ -166,9 +169,9 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
 
 if __name__ == '__main__':
     
-    DATE = datetime(2018, 5, 1, 0)
-    model = 'hrrrak'
-    field = 'sfc'
+    DATE = datetime.now()
+    model = 'hrrr'
+    field = 'nat'
     fxx = 0
     DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
     
