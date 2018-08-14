@@ -58,7 +58,7 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
     # HRRR Source Path
     if source == 'NOMADS':
         # Download from operational products directory
-        if datetime.utcnow() < datetime(2018, 7, 11, 14):
+        if datetime.utcnow() < datetime(2018, 7, 12, 14):
             # HRRR version 2
             NOMADS = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/%s.%s/' \
                     % (model, DATE.strftime('%Y%m%d'))
@@ -109,7 +109,7 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
     print '%s Lines in File: %s.idx' % (lines, NOMADS+FILE)
 
 
-    if datetime.utcnow() < datetime(2018, 7, 11, 14):
+    if datetime.utcnow() < datetime(2018, 7, 12, 14):
         # HRRR version 2
         IDX_LINES = {'hrrr':{'sfc': [132, 135],
                             'prs': [684, 687],

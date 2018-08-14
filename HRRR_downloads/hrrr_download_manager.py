@@ -35,7 +35,7 @@ import download_experimental_hrrr
 if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.edu':
     print "--> You are %s on %s" % (getpass.getuser(), socket.gethostname())
     print "--> Please run this operational download script with the mesohorse user on meso1."
-    exit()
+#    exit()
 
 # -----------------------------------------------------------------------------
 #                            Download Controls
@@ -59,10 +59,10 @@ models = {'hrrr':{'name':'Operational HRRR',
                   'hours':range(0,24),
                   'fxx':{'sfc':range(0,19),
                          'prs':range(0,1),
-                         'nat':[],
+                         'nat':[0],
                          'subh':[]}},
           'hrrrak':{'name':'Parallel HRRR Alaska',     # temporary download "operational" alaska from ESRL before it becomes operational
-                    'source':'PARA',
+                    'source':'NOMADS',
                     'hours':range(0,24,3),
                     'fxx':{'sfc':range(0,37),          # 36 hour forecasts for 0, 6, 12, 18 UTC. 18 hour forecasts otherwise
                            'prs':[]}},
@@ -89,7 +89,7 @@ if datetime.utcnow().hour < 5:
 else:
     DATE = datetime.utcnow()
 
-#DATE = datetime(2018, 5, 27)
+#DATE = datetime(2018, 8, 13)
 
 # -----------------------------------------------------------------------------
 #                   Download GRIB2 files from NOMADS or PARA
