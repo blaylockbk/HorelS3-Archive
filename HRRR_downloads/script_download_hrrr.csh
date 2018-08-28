@@ -38,6 +38,9 @@ python ${SCRIPTDIR}/email_log.py
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`
 
+# Remove old HRRR files that we want to risk (two years old)
+python ${SCRIPTDIR}/risk_old_hrrr.py
+
 rm -f ${SCRIPTDIR}/hrrr.status
 
 exit
