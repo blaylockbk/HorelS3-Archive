@@ -14,7 +14,7 @@ I am KEEPING the following:
 I am RISKING the following:
     F04, F05, F07, F08, F10, F11, F13, F14, F16, F17
 
-The risk files will only be removed if they are older than 760 days (25 months, or two years)
+The risk files will only be removed if they are older than 600 days (23 months)
 """
 
 from datetime import datetime, timedelta
@@ -30,7 +30,7 @@ if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.
 # List of dates from archive begining to 25 months ago. These are the dates we
 # want to risk on the Pando archive and not backup on horel-group7.
 sDATE = datetime(2016, 7, 15)
-eDATE = datetime.now()-timedelta(days=760)
+eDATE = datetime.now()-timedelta(days=600)
 DATES = [sDATE + timedelta(days=d) for d in range((eDATE-sDATE).days)]
 
 # In each DATE directory, remove the files we want to risk

@@ -169,10 +169,11 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
 
 if __name__ == '__main__':
     
-    DATE = datetime.now()
+    DATE = datetime(2018, 8, 29, 12)
     model = 'hrrr'
-    field = 'nat'
+    field = 'sfc'
     fxx = 0
     DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
     
-    get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, source='PARA')
+    get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, source='NOMADS')
+    
