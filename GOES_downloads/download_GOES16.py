@@ -173,12 +173,12 @@ def download_goes16(DATE,
 if __name__ == '__main__':
 
     print "\n============================================================"
-    print " Downloading GOES-16 from NOAA AWS Archive and Copy to Pando  "
+    print " Downloading GOES-16 ABI from NOAA AWS Archive and Copy to Pando  "
     print "=============================================================\n"
 
     
     DATE = datetime.utcnow()
-    #DATE = datetime(2018, 6, 11)
+    #DATE = datetime(2018, 9, 10, 12)
     
     download_goes16(DATE)
 

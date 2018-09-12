@@ -1,7 +1,13 @@
 # Brian Blaylock
-# May 30, 2018                                    Building a new deck this week
+# September 12, 2018              My wife and I are making a quilt with Grandma
 
 """
+Converted old code to use Python 3
+Before executing this script must do the following:
+
+    module load anaconda3
+    module load rclone
+
 Download : GOES-16 Geostationary Lightning Mapper (GLM)
     From : Amazon AWS
      URL : https://aws.amazon.com/public-datasets/goes/
@@ -13,19 +19,18 @@ import os
 import stat
 import numpy as np
 
-
 def download_goes16_GLM(DATE):
     """
     Downloads GOES-16 NetCDF files for the Geostation Lightning Mapper (GLM)
     from the Amazon AWS (https://noaa-goes16.s3.amazonaws.com)
     
     Input:
-        DATE - a datetime object for the date that you want to download from.
+        DATE   - a datetime object for the date that you want to download from.
     """
-    print "\n============================================================="
-    print "       Download GOES-16 Geostationary Lightning Mapper        "
-    print "                         %s        " % DATE.strftime('%d %B %Y')
-    print "=============================================================\n"
+    print("\n=============================================================")
+    print("       Download GOES-16 Geostationary Lightning Mapper        ")
+    print("                         %s        " % DATE.strftime('%d %B %Y'))
+    print("=============================================================\n")
     
     product = 'GLM-L2-LCFA'
 
@@ -36,13 +41,13 @@ def download_goes16_GLM(DATE):
 
     # Sync AWS and horel-group7, retaining hour directories
     rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
-    print 'Syncing AWS --> horel-group7...'
+    print('Syncing AWS --> horel-group7...')
     os.system('%s sync %s %s' % (rclone, AWS, HG7))
-    print '        AWS --> horel-group7...DONE!'
+    print('        AWS --> horel-group7...DONE!')
 
-    print 'Syncing horel-group7 --> Pando...'
+    print('Syncing horel-group7 --> Pando...')
     os.system('%s sync %s %s' % (rclone, HG7, PANDO))
-    print '        horel-group7 --> Pando...DONE!'
+    print('        horel-group7 --> Pando...DONE!')
 
     # Change permissions of PANDO directory to public
     s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
@@ -58,14 +63,14 @@ if __name__ == '__main__':
     #    download_goes16_GLM(DATE)
 
     DATE = datetime.utcnow()
-    #DATE = datetime(2018, 9, 10)
+    #DATE = datetime(2018, 9, 10, 12)
     download_goes16_GLM(DATE)
 
     if DATE.hour == 0 and DATE.minute < 20:
         yesterday = DATE-timedelta(days=1)
         download_goes16_GLM(yesterday)
 
-    print "\nrun time: ", datetime.utcnow() - DATE
+    print("\nrun time: ", datetime.utcnow() - DATE)
 """
 # ----------------------------------
 # GOES16 rclone and s3cmd commands

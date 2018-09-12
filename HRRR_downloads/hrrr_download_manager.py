@@ -102,11 +102,11 @@ else:
 def oper_hrrr_multipro(args):
     DATE, model, field, fxx, source = args
     try:
-        download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, source=source)
+        download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=False, source=source)
     except:
        # Try again...
         try:
-            download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, source=source)
+            download_operational_hrrr.get_grib2(DATE, model, field, fxx, DIR, idx=True, png=False, source=source)
         except:
             print "THIS DID NOT WORK", args
 

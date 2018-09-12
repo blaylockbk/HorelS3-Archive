@@ -41,6 +41,6 @@ for D in DATES:
     DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrr/sfc/%s/' % D.strftime('%Y%m%d')
     print DIR
     for r in RISK: 
-        print "\n    !!! REMOVING these files..."
+        print "\n    !!! (Pando Risk) REMOVING these files from horel-group7..."
         print os.system('ls %s*%s.grib2*' % (DIR, r))
         os.system('rm %s*%s.grib2*' % (DIR, r))
