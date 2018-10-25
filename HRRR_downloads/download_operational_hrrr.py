@@ -138,9 +138,9 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
             urllib.urlretrieve(NOMADS+FILE+'.idx', DIR+PATH+NEWFILE+'.idx', reporthook)
 
         # If the file does not exists on horel-group7 or if our copy is smaller
-        # than 100 MB (maybe because the file is incomplete), then download it.
+        # than 90 MB (maybe because the file is incomplete), then download it.
         if model == 'hrrr':
-            min_file_size = 10e7
+            min_file_size = 9e7
         elif model == 'hrrrak':
             min_file_size = 10e6
         if not os.path.isfile(DIR+PATH+NEWFILE) or os.path.getsize(DIR+PATH+NEWFILE) < min_file_size:

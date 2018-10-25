@@ -59,7 +59,7 @@ models = {'hrrr':{'name':'Operational HRRR',
                   'hours':range(0,24),
                   'fxx':{'sfc':range(0,19),
                          'prs':range(0,1),
-                         'nat':[0],
+                         'nat':[],
                          'subh':[]}},
           'hrrrak':{'name':'Parallel HRRR Alaska',     # temporary download "operational" alaska from ESRL before it becomes operational
                     'source':'NOMADS',
@@ -89,7 +89,7 @@ if datetime.utcnow().hour < 5:
 else:
     DATE = datetime.utcnow()
 
-#DATE = datetime(2018, 8, 13)
+#DATE = datetime(2018, 10, 24)
 
 # -----------------------------------------------------------------------------
 #                   Download GRIB2 files from NOMADS or PARA

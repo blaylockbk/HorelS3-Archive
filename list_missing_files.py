@@ -22,7 +22,7 @@ DATES = [sDATE + timedelta(days=d) for d in range(days)]
 for D in DATES:
     for h in hours:
         DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/%s/%s/%s/' % (MODEL, field, D.strftime('%Y%m%d'))
-        FILE = '%s.t%02dz.wrf%sf%02d.grib2' % (MODEL, h, level, fxx)
+        FILE = '%s.t%02dz.wrf%sf%02d.grib2' % (MODEL, h, field, fxx)
 
         if not os.path.exists(DIR+FILE):
             print "FILE DOES NOT EXIST:", DIR+FILE

@@ -51,14 +51,14 @@ def download_goes16_GLM(DATE):
 
 if __name__ == '__main__':
     
-    #sDATE = datetime.now() - timedelta(days=1)
-    #eDATE = datetime.now() + timedelta(days=1)
+    #sDATE = datetime(2018, 5, 5)
+    #eDATE = datetime(2018, 5, 8)
     #DATES = [sDATE  + timedelta(days=i) for i in range((eDATE-sDATE).days)]
     #for DATE in DATES:     
     #    download_goes16_GLM(DATE)
 
     DATE = datetime.utcnow()
-    #DATE = datetime(2018, 9, 10)
+    #DATE = datetime(2018, 10, 22, 1)
     download_goes16_GLM(DATE)
 
     if DATE.hour == 0 and DATE.minute < 20:

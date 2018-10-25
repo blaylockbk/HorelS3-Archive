@@ -178,7 +178,7 @@ if __name__ == '__main__':
 
     
     DATE = datetime.utcnow()
-    #DATE = datetime(2018, 9, 10, 12)
+    #DATE = datetime(2018, 10, 22, 1)
     
     download_goes16(DATE)
 

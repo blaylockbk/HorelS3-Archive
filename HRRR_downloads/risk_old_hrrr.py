@@ -29,7 +29,7 @@ if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.
 
 # List of dates from archive begining to 25 months ago. These are the dates we
 # want to risk on the Pando archive and not backup on horel-group7.
-sDATE = datetime(2016, 7, 15)
+sDATE = datetime.now()-timedelta(days=602)
 eDATE = datetime.now()-timedelta(days=600)
 DATES = [sDATE + timedelta(days=d) for d in range((eDATE-sDATE).days)]
 
