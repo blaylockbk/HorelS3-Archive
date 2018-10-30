@@ -51,8 +51,8 @@ def download_goes16_GLM(DATE):
 
 if __name__ == '__main__':
     
-    #sDATE = datetime(2018, 5, 5)
-    #eDATE = datetime(2018, 5, 8)
+    #sDATE = datetime(2018, 10, 24)
+    #eDATE = datetime(2018, 10, 26)
     #DATES = [sDATE  + timedelta(days=i) for i in range((eDATE-sDATE).days)]
     #for DATE in DATES:     
     #    download_goes16_GLM(DATE)
