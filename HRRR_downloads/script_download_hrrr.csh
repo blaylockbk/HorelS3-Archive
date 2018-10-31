@@ -4,7 +4,7 @@
 # Brian Blaylock
 # February 6, 2018               SpaceX just launched and landed a Falcon Heavy
 #
-# CRON tab on meso1, mesohorse user. Runs 8 times a day
+# CRON tab on meso1, mesohorse user. Runs 8 times a day (every 3 hours)
 # Download the available HRRR files and move to Pando
 # ----------------------------------------------------------------------------
 
@@ -15,8 +15,8 @@ setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRR
 if (-e ${SCRIPTDIR}/hrrr.status) then
 	echo "$dateStart PREVIOUS HRRR PROCESS ON MESO1 STILL RUNNING" | mail -s "HRRR Pando Download ERROR: Attempt to restart" blaylockbk@gmail.com
 	echo "Attempt to kill old processes that fail"
-	pkill -f /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/hrrr_download_manager.py
-	pkill -f /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/script_download_hrrr.csh
+	pkill -f ${SCRIPTDIR}/hrrr_download_manager.py
+	pkill -f ${SCRIPTDIR}/script_download_hrrr.csh
 	rm -f ${SCRIPTDIR}/hrrr.status
 	echo "Restart downloads"
 endif
