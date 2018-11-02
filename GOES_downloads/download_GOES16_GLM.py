@@ -45,31 +45,35 @@ def download_goes16_GLM(DATE):
     print '        horel-group7 --> Pando...DONE!'
 
     # Change permissions of PANDO directory to public
+    print 'Set bucket contents to public...'
     s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
     os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PANDO.split(':')[1])
     
 
 if __name__ == '__main__':
-    
+    ## Loop many dates to backfill
     #sDATE = datetime(2018, 10, 24)
     #eDATE = datetime(2018, 10, 26)
     #DATES = [sDATE  + timedelta(days=i) for i in range((eDATE-sDATE).days)]
     #for DATE in DATES:     
     #    download_goes16_GLM(DATE)
 
+    timer1 = datetime.now()
+
     DATE = datetime.utcnow()
-    #DATE = datetime(2018, 10, 22, 1)
+    #DATE = datetime(2018, 10, 31, 1)
     download_goes16_GLM(DATE)
 
     if DATE.hour == 0 and DATE.minute < 20:
         yesterday = DATE-timedelta(days=1)
         download_goes16_GLM(yesterday)
 
-    print "\nrun time: ", datetime.utcnow() - DATE
+    print "\nDownload GLM run time: ", datetime.utcnow() - timer1
+
 """
-# ----------------------------------
-# GOES16 rclone and s3cmd commands
-#------------------------------------
+---------------------------------------------------------------
+    Manually do rclone and s3cmd commands for GOES16 bucket
+---------------------------------------------------------------
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/GLM-L2-LCFA/ horelS3:GOES16/GLM-L2-LCFA/
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://GOES16/GLM-L2-LCFA/ --acl-public --recursive
 """

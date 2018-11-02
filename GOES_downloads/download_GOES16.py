@@ -176,10 +176,10 @@ if __name__ == '__main__':
     print " Downloading GOES-16 ABI from NOAA AWS Archive and Copy to Pando  "
     print "=============================================================\n"
 
-    
+    timer = datetime.utcnow()
+
     DATE = datetime.utcnow()
-    #DATE = datetime(2018, 10, 25, 1)
-    
+    #DATE = datetime(2018, 10, 31, 1)
     download_goes16(DATE)
 
     # Extra attempt to download yesterday's last hour due to day change,
@@ -187,6 +187,7 @@ if __name__ == '__main__':
         yesterday = DATE-timedelta(days=1)
         download_goes16(yesterday)
 
+    print "\nDownload ABI run time: ", datetime.utcnow() - timer1
 
 """
 # GOES16
