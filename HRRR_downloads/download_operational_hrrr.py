@@ -35,11 +35,11 @@ def reporthook(a, b, c):
 
 def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', source='NOMADS'):
     """
-    Download OPERATIONAL HRRR from NOMADS via HTTP:
-    http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/
+    Download OPERATIONAL HRRR from NOMADS via HTTPS:
+    https://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/
 
-    Download EXPERIMENTAL HRRR from PARALLEL NOMADS via HTTP:
-    http://para.nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/para/
+    Download EXPERIMENTAL HRRR from PARALLEL NOMADS via HTTPS, if available:
+    https://para.nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/para/
 
     Input:
         DATE   - Python datetime object for the day and hour requested
@@ -60,7 +60,7 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
         # Download from operational products directory
         if datetime.utcnow() < datetime(2018, 7, 12, 14):
             # HRRR version 2
-            NOMADS = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/%s.%s/' \
+            NOMADS = 'https://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/%s.%s/' \
                     % (model, DATE.strftime('%Y%m%d'))
         else:
             # HRRR version 3
@@ -71,7 +71,7 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
             elif model == 'hrrr':
                 DOMAIN = 'conus'
                 SHORT = ''
-            NOMADS = 'http://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/hrrr.%s/%s/' \
+            NOMADS = 'https://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/hrrr.%s/%s/' \
                     % (DATE.strftime('%Y%m%d'), DOMAIN)
 
     elif source == 'PARA':
@@ -82,7 +82,7 @@ def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', 
         elif model == 'hrrr':
             DOMAIN = 'conus'
             SHORT = ''
-        NOMADS = 'http://para.nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/para/hrrr.%s/%s/' \
+        NOMADS = 'https://para.nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/para/hrrr.%s/%s/' \
                   % (DATE.strftime('%Y%m%d'), DOMAIN)
     
     # HRRR Destination Path (same for horel-group7 directory and s3 object)

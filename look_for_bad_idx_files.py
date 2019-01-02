@@ -22,7 +22,7 @@ for field in fields:
     else:
         fxx = [0]
 
-    sDATE = datetime.now()-timedelta(days=5)
+    sDATE = datetime(2018, 1, 1)
     eDATE = datetime.now()
 
     DATES = [sDATE+timedelta(days=d) for d in range((eDATE-sDATE).days)]

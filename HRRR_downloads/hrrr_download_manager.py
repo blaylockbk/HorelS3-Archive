@@ -130,7 +130,14 @@ p.join()
 #       dealing with FTP is cumbersome.
 exp_models = [m for m in models.keys() if models[m]['source']=='ESRL']
 for m in exp_models:
-    download_experimental_hrrr.get_grib2(m, models[m], DIR, idx=True)
+    try:
+        download_experimental_hrrr.get_grib2(m, models[m], DIR, idx=True)
+    except:
+        print "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+        print "         Could not reach FTP site."
+        print "           ftp://gsdftp.fsl.noaa.gov/"
+        print "         Is the government shutdown??"
+        print "++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
 
 
 print ""
