@@ -32,8 +32,8 @@ if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.
 # List of dates from archive begining to 16 months ago. These are the dates we
 # want to risk on the Pando archive and not backup on horel-group7.
 #sDATE = datetime(2016, 7, 15) # Begining of archive...
-sDATE = datetime.now()-timedelta(days=504)
-eDATE = datetime.now()-timedelta(days=500)
+sDATE = datetime.now()-timedelta(days=368)
+eDATE = datetime.now()-timedelta(days=365)
 DATES = [sDATE + timedelta(days=d) for d in range((eDATE-sDATE).days)]
 
 print sDATE
@@ -49,4 +49,5 @@ for D in DATES:
     for r in RISK: 
         print "\n    !!! (Pando Risk) REMOVING these files from horel-group7..."
         print os.system('ls %s*%s.grib2*' % (DIR, r))
+        print('rm %s*%s.grib2*' % (DIR, r))
         os.system('rm %s*%s.grib2*' % (DIR, r))
