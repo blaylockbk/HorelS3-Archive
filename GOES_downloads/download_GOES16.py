@@ -66,9 +66,7 @@ mU = draw_Utah_map()
 #latlon = np.load(GOES16_latlon).item()
 
 # ----------------------------------------------------------------------------
-def download_goes16(DATE,
-                    domain='C',
-                    product='ABI-L2-MCMIP'):
+def download_goes16(DATE, domain='C', product='ABI-L2-MCMIP'):
     """
     Downloads GOES-16 NetCDF files from the Amazon AWS
     https://noaa-goes16.s3.amazonaws.com

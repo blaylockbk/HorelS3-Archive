@@ -29,6 +29,7 @@ module load python/2.7.3          # until meso1 upgrades to centOS 7, then load 
 # Download GOES16 data and move to Pando
 python ${SCRIPTDIR}/download_GOES16_GLM.py
 python ${SCRIPTDIR}/download_GOES16.py
+python ${SCRIPTDIR}/download_GOES_16-17.py
 
 echo Begin: $dateStart
 echo End:   `date +%Y-%m-%d_%H:%M`
