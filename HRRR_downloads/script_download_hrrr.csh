@@ -16,7 +16,7 @@ if (-e ${SCRIPTDIR}/hrrr.status) then
 	echo "$dateStart PREVIOUS HRRR PROCESS ON MESO1 STILL RUNNING" | mail -s "HRRR Pando Download ERROR: Attempt to restart" blaylockbk@gmail.com
 	echo "Attempt to kill old processes that fail"
 	pkill -f ${SCRIPTDIR}/hrrr_download_manager.py
-	pkill -f ${SCRIPTDIR}/script_download_hrrr.csh
+	#####pkill -f ${SCRIPTDIR}/script_download_hrrr.csh # Whoops! Don't kill this process too!!!
 	rm -f ${SCRIPTDIR}/hrrr.status
 	echo "Restart downloads"
 endif

@@ -185,7 +185,7 @@ if __name__ == '__main__':
         yesterday = DATE-timedelta(days=1)
         download_goes16(yesterday)
 
-    print "\nDownload ABI run time: ", datetime.utcnow() - timer1
+    print "\nDownload ABI run time: ", datetime.utcnow() - timer
 
 """
 # GOES16

@@ -25,9 +25,10 @@ def download_goes(DATE, satellite, products=['ABI-L2-MCMIPC', 'GLM-L2-LCFA']):
                        ABI-L2-MCMIPC : ABI Multichannel Product for CONUS
                        GLM-L2-LCFA   : Geostarionary Lightning Mapper
     """
-    print "{:^80}".format("=====================================================================")
-    print "{:^20}{:^20}{:^40}".format('Download', satellite.upper(), products)
-    print "{:^80}".format("=====================================================================")
+    print "{:<80}".format("=====================================================================")
+    print "{:^10}{:^10}{:<60}".format('Download', satellite.upper(), products)
+    print "{:^80}".format(str(DATE))
+    print "{:<80}".format("=====================================================================")
 
 
     ## Check data inputs
@@ -70,8 +71,8 @@ def download_goes(DATE, satellite, products=['ABI-L2-MCMIPC', 'GLM-L2-LCFA']):
 
 if __name__ == '__main__':
     ## Loop many dates to backfill (going backwards)
-    #sDATE = datetime(2019, 3, 27)
-    #eDATE = datetime(2019, 2, 6)    # 7 Feb. 2019 is the first day GLM data was flowing from GOES-17.
+    #sDATE = datetime(2019, 2, 7)
+    #eDATE = datetime(2018, 12, 31)    # 7 Feb. 2019 is the first day GLM data was flowing from GOES-17.
     #DATES = [sDATE  - timedelta(days=i) for i in range((sDATE-eDATE).days)]
     #for DATE in DATES:     
     #    download_goes(DATE, 'goes17', products=['ABI-L2-MCMIPC', 'GLM-L2-LCFA'])
