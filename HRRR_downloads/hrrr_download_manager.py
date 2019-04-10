@@ -89,7 +89,7 @@ if datetime.utcnow().hour < 5:
 else:
     DATE = datetime.utcnow()
 
-#DATE = datetime(2019, 2, 21)
+#DATE = datetime(2019, 4, 9)
 
 # -----------------------------------------------------------------------------
 #                   Download GRIB2 files from NOMADS or PARA
@@ -167,7 +167,7 @@ for PATH in PATHS:
 
     print "DONE!"
 
-
+exit()
 
 """
 How to sync and set to public EVERYTHING in a bucket

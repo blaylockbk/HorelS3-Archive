@@ -79,8 +79,8 @@ for m in model:
 
                 checked += '\n'
 
-# Checke missing files based on correct .idx line number
-missing = subprocess.check_output('python /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/look_for_bad_idx_files.py', shell=True)
+# Check missing files based on correct .idx line number
+missing = subprocess.check_output('python /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/look_for_bad_idx_files.py', shell=True)
 
 # Send the Email
 sender = 'brian.blaylock@utah.edu'

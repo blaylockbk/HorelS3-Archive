@@ -22,8 +22,8 @@ for field in fields:
     else:
         fxx = [0]
 
-    # Check files for last 150 days.
-    sDATE = datetime.now()-timedelta(days=150)
+    # Check files for last 14 days (last two weeks).
+    sDATE = datetime.now()-timedelta(days=14)
     eDATE = datetime.now()
 
     DATES = [sDATE+timedelta(days=d) for d in range((eDATE-sDATE).days)]
