@@ -1,6 +1,8 @@
 [//]: # (If not on github, you can view this markdown file with the Chrome extension "Markdown Preview Plus")
 
-![MesoWest Logo, why doesn't this work??](MesoWest_20th_black.png "Powered by MesoWest")
+![Pando Logo](./images/PANDO_logo.png) 
+![MesoWest Logo, why doesn't this work??](MesoWest_20th_black.png "Powered by MesoWest") 
+
 
 # Using the Horel S3 Archive Buckets on Pando  
 **Author:** Brian Blaylock  
