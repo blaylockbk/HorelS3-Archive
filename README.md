@@ -186,7 +186,7 @@ Flashes
       * Analysis hour (f00) for all hours, if available.
       * File example: `hrrrX.t00.wrfsfcf00.grib2`
 
-### **`hrrrak/`** HRRR Alaska (Operational after May ??, 2018)
+### **`hrrrak/`** HRRR Alaska (Operational after 12 July 2018)
   * **`sfc/`** Surface fields
     * **_`YYYYMMDD/`_**
       * Analysis and 36 hour forecasts (f00-f36), if available. Runs initialize
