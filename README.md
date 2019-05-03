@@ -1,7 +1,7 @@
 [//]: # (If not on github, you can view this markdown file with the Chrome extension "Markdown Preview Plus")
 
 ![Pando Logo](./images/PANDO_logo.png) 
-![MesoWest Logo, why doesn't this work??](MesoWest_20th_black.png "Powered by MesoWest") 
+![MesoWest Logo, why doesn't this work??](./images/MesoWest_20th_black.png "Powered by MesoWest") 
 
 
 # Using the Horel S3 Archive Buckets on Pando  
@@ -329,7 +329,7 @@ For `rclone`, it is set up like this for the mesohorse user. The access keys are
 ## How much space is left and when will the S3 archive fill up?
 The [Pando Allocation Web Display (PAWD)](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/) shows the Pando allocation and usage for each bucket. The script that creates this display is run once a day by Brian on meso4 and is located on [GitHub](https://github.com/blaylockbk/Web-Homepage/blob/master/Pando_archive/daily_usage.py).
 
-![Pando Allocation](screenshot_allocation.png "Pando Allocation Web Display")
+![Pando Allocation](./images/screenshot_allocation.png "Pando Allocation Web Display")
 
 
 ## Where can I find examples on how to download HRRR data with a script?
@@ -365,5 +365,5 @@ You are now on your way to accessing the Amazon GOES16 archive. To list the buck
     rclone lsd AWS:noaa-goes17
 
 ___
-
-#### For questions, contact Brian Blaylock  (brian.blaylock@utah.edu)
+#### For questions, contact  Brian Blaylock  (brian.blaylock@utah.edu)
+![](./images/wxicon_medium.png)
