@@ -364,6 +364,54 @@ You are now on your way to accessing the Amazon GOES16 archive. To list the buck
 
     rclone lsd AWS:noaa-goes17
 
+---
+---
+
+# Pando Operational Download Tasks and Troubleshooting
+The script `script_download_hrrr.csh` runs the HRRR download manager script which is responsible for initiating downloads for HRRR, HRRR-AK, and HRRR-X. The script runs on the `meso1` crontab by the mesohorse user every three hours.
+
+To log onto `meso1.chpc.utah.edu` as the mesohorse user, you need permission. Ask John Horel about getting this permission and CHPC will grant it. To become the mesohorse user, you need to do the following:
+
+    sudo su - mesohorse
+
+In my `.aliases` file, this is set up as an alias, `alias horse 'sudo su - mesohorse'` so that when I type `horse`, it makes me the mesohorse user.
+
+
+The crontab for the download is as follows:
+
+    ## PANDO HRRR Download
+    29 0,3,6,9,12,15,18,21 * * * /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/script_download_hrrr.csh >& /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/testtest_123.txt
+
+    ## PANDO GOES16 Download
+    1,16,31,46 * * * * /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/GOES_downloads/script_download_GOES16.csh >& /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/GOES_downloads/crontab_goes16.txt
+
+## Troubleshooting
+
+There are a few defensive measures to help prevent script and download failures.
+
+1. **The Emailed Log**: If the downloads successfully finish, then an emailed receipt is sent to my email that show which files are on the Pando archive. This is the first line of defense. I mostly ignore the emails, but if that email doesn't come every three hours or if files are missing, then there may be a problem with Pando.
+2. **Restart Download**: The `script_download_hrrr.csh` script writes a temporary file before anything else called `hrrr.status`. If a previous download task is still running or got stuck, then the script will attempt to kill the old process and restart it again. An email notifies if this occurred. If the downloads finish successfully before the next scheduled task, then the `hrrr.status` file is deleted.
+3. **Run Script Manually**: If there has been trouble, try running the `script_download_hrrr.csh` script or `hrrr_download_manager.py` manually.
+
+If the download script is having trouble, there may be a few reasons for this:
+
+1. Is the `meso1` box available? Can you log onto it? Are there too many processes running that are bogging the machine down?    
+2. Is the HRRR data available? Is NOMADS having server issues? See if the website works and if it is running slow: https://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/
+3. Is the Pando allocation full? Can you move any files to Pando using the Horel-Group allocation? Are you getting an error that says **`QuotaExceeded`**? This means the Pando allocation is run up. Contact Sam Liston about this error if you believe the quota hasn't been reached. In the past, our allocation has appeared bloated because there are many small .idx files. It's weird.
+    - From an email on 8 March 2018: _Interesting issues with our data on Pando being bloated. Our objects are taking up 36 TB, but Pando thinks we are using 100+ TB. Sam removed our allocation for now and he will keep an eye on it and continue investigating the issue._
+4. Are the tasks scheduled in crontab? It might be possible that a machine reset messed up the crontab, so check that the tasks are running properly.
+
+Handy commands to check on things...
+
+    # Check the processes running a Pando related script
+    ps -ef | grep Pando
+
+    # Check the processes run by mesohorse user
+    ps -ef | grep 30067
+
+    # Kill a process (as the mesohorse user)
+    kill -9 [PID]
+
 ___
 #### For questions, contact  Brian Blaylock  (brian.blaylock@utah.edu)
 ![](./images/wxicon_medium.png)
