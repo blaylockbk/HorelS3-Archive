@@ -412,6 +412,20 @@ Handy commands to check on things...
     # Kill a process (as the mesohorse user)
     kill -9 [PID]
 
+# Archive Management
+## HRRR Registration
+The HRRR archive registration process is voluntary; users do not have to register to access data (it's just nice to know how many people are using the archive).
+
+The registration webpage, http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_download_register.html, is run by [Formspree](https://formspree.io/). When someone submits the registration form,the contents of the forum are emailed to me. I have an Excel sheet that I manually fill out to keep track of those registered (list and graph). 
+
+In the future, it would be nice to not rely on Formspree. I imagine I could easily have the form update a `.csv` file and auto generate a new graph, but it might not be worth the pain of writing a new python script to do that. Plus, I like seeing what the archive is used for.
+
+## Pando archive usage
+The usage of Pando storage space can be monitored on this website: home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/
+
+The script that generates this page runs every morning on `meso4`. 
+
+    .../u0553130/public_html/Brian_Blaylock/Pando_archive/
 ___
 #### For questions, contact  Brian Blaylock  (brian.blaylock@utah.edu)
 ![](./images/wxicon_medium.png)
