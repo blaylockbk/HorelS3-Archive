@@ -279,7 +279,7 @@ s3cmd is installed here: `/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scr
 
 > _NOTE: In order to set bucket names that are all lower case to public, I had to modify the configuration file.  In my `.s3cfg` file on the `host_bucket` line, remove the “s” after `$(bucket)`.  Once I did this I can could and make public whatever bucket name I want._
 
-First navigate to `/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1` directory.
+First navigate to the `/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/` directory.
 
 #### Make public
 Make a bucket public:
@@ -426,6 +426,20 @@ The usage of Pando storage space can be monitored on this website: home.chpc.uta
 The script that generates this page runs every morning on `meso4`. 
 
     .../u0553130/public_html/Brian_Blaylock/Pando_archive/
+
+
+# How can I (and others) access the bucket contents with Python?
+You can access bucket and files with the `s3fs` python package. 
+
+    import s3fs
+    # Access Pando
+    fs = s3fs.S3FileSystem(anon=True, client_kwargs={'endpoint_url':"https://pando-rgw01.chpc.utah.edu/"})
+    # List file objects in a path
+    fs.ls('hrrr/sfc/20190101/')
+
+Read the full documentation here: https://s3fs.readthedocs.io/en/latest/
+
 ___
+
 #### For questions, contact  Brian Blaylock  (brian.blaylock@utah.edu)
 ![](./images/wxicon_medium.png)
