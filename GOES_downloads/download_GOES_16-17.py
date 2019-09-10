@@ -9,6 +9,16 @@ Download GOES-16/17 from Amazon AWS to Horel-Group7 and copy to Pando archive.
 from datetime import datetime, timedelta
 import os
 
+###############################################################################
+# Rados Gateway
+# Set to 1 or 2. This is an option if the certificate for the gateway URL 
+# expires as it happened on September 8th, 2019.
+# Rados Gateway 1 is the default and downloads from https://pando-rgw01.chpc.utah.edu
+# Rados Gateway 2 is the alternative and downloads from https://pando-rgw02.chpc.utah.edu
+
+rados_gateway = 2
+
+###############################################################################
 
 def download_goes(DATE, satellite, products=['ABI-L2-MCMIPC', 'GLM-L2-LCFA']):
     """
@@ -51,7 +61,11 @@ def download_goes(DATE, satellite, products=['ABI-L2-MCMIPC', 'GLM-L2-LCFA']):
         AWS = 'AWS:noaa-%s/%s/%s/' % (satellite, p, DATE.strftime('%Y/%j'))
         HG7 = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/%s/%s/%s/' \
                 % (satellite.upper(), p, DATE.strftime('%Y%m%d'))
-        PANDO = 'horelS3:%s/%s/%s/' % (satellite.upper(), p, DATE.strftime('%Y%m%d'))
+        
+        if rados_gateway == 1:
+            PANDO = 'horelS3:%s/%s/%s/' % (satellite.upper(), p, DATE.strftime('%Y%m%d'))
+        elif rados_gateway == 2:
+            PANDO = 'horelS3_rgw02:%s/%s/%s/' % (satellite.upper(), p, DATE.strftime('%Y%m%d'))
 
         # Sync AWS and horel-group7. Retaining hour directories.
         rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
@@ -65,7 +79,12 @@ def download_goes(DATE, satellite, products=['ABI-L2-MCMIPC', 'GLM-L2-LCFA']):
 
         # Change permissions of PANDO directory to public
         print 'Set bucket contents to public...'
-        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
+        if rados_gateway == 1:
+            s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
+        elif rados_gateway == 2:
+            # Use config file in Brian's home directory
+            s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd -c /uufs/chpc.utah.edu/common/home/u0553130/.s3cfg_rgw02'
+
         os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PANDO.split(':')[1])
     
 

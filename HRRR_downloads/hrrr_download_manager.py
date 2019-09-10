@@ -78,9 +78,25 @@ models = {'hrrr':{'name':'Operational HRRR',
                           'prs':[]}}
          }
 
+
+###############################################################################
+# Rados Gateway
+# Set to 1 or 2. This is an option if the certificate for the gateway URL 
+# expires as it happened on September 8th, 2019.
+# Rados Gateway 1 is the default and downloads from https://pando-rgw01.chpc.utah.edu
+# Rados Gateway 2 is the alternative and downloads from https://pando-rgw02.chpc.utah.edu
+
+rados_gateway = 2
+
+###############################################################################
+
 # Define storage directories for horel-group7 and Pando S3
 DIR = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
-S3 = 'horelS3:'
+
+if rados_gateway == 1:
+    S3 = 'horelS3:'
+elif rados_gateway == 2:
+    S3 = 'horelS3_rgw02:'
 
 # If the current time is before 0300 UTC, finish downloading files from
 # yesterday. Else, download files from today.
@@ -162,7 +178,11 @@ for PATH in PATHS:
 
     # Set bucket permissions to public for URL access to each files
     print "- s3cmd -"
-    s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
+    if rados_gateway == 1:
+        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
+    elif rados_gateway == 2:
+        # Use config file in Brian's home directory
+        s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd -c /uufs/chpc.utah.edu/common/home/u0553130/.s3cfg_rgw02'
     os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH)
 
     print "DONE!"
@@ -173,18 +193,19 @@ exit()
 How to sync and set to public EVERYTHING in a bucket
 
 # hrrr
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrr/ horelS3:hrrr/
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd setacl s3://hrrr/ --acl-public --recursive
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrr/ horelS3:hrrr/
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://hrrr/ --acl-public --recursive
 
 # hrrrak
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrrak/ horelS3:hrrrak/
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrrak/ horelS3:hrrrak/
 /uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd setacl s3://hrrrak/ --acl-public --recursive
 
 # hrrrX
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrrX/ horelS3:hrrrX/
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd setacl s3://hrrrX/ --acl-public --recursive
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrrX/ horelS3:hrrrX/
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://hrrrX/ --acl-public --recursive
 
 # GOES16
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/ horelS3:GOES16/
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd setacl s3://GOES16/ --acl-public --recursive
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/ horelS3:GOES16/
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://GOES16/ --acl-public --recursive
+
 """
