@@ -2,6 +2,9 @@
 # February 22, 2018
 
 """
+Tool to sync HRRR directories to Pando, looping over a range of dates.
+This might be useful if Pando wasn't working for a few days.
+
 rclone : sync a directory on horel-group7 to Pando
 s3cmd  : set acl as public for bucket contents
 """

@@ -1,5 +1,5 @@
 # Brian Blaylock
-# March 13, 2017                        Had Sunday dinner at Rachel's yesterday
+# March 13, 2017
 
 """
 Check the HRRR files made it to the S3 archive and email a list to myself
@@ -9,9 +9,9 @@ import sys
 import smtplib
 import os
 from datetime import date, datetime, timedelta
-import download_operational_hrrr
 import subprocess
 
+print "Checking files were downloaded and composing email"
 
 # If the current time is before 0600 UTC, finish downloading files from
 # yesterday. Else, download files from today.
@@ -23,7 +23,7 @@ else:
 # DATE = datetime(2017, 1, 1)                                                  # Check a custom date
 
 model = ['hrrr', 'hrrrX', 'hrrrak']
-variable = ['sfc', 'prs', 'subh', 'buf']
+variable = ['sfc', 'prs']
 
 rclone = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone'
 
@@ -83,11 +83,11 @@ for m in model:
 missing = subprocess.check_output('python /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/look_for_bad_idx_files.py', shell=True)
 
 # Send the Email
-sender = 'brian.blaylock@utah.edu'
-receivers = ['blaylockbk@gmail.com','taylor.mccorkle@utah.edu']
+sender = 'atmos-mesowest@lists.utah.edu'
+receivers = ['blaylockbk@gmail.com', 'atmos-mesowest@lists.utah.edu']
 
-message = """From: Check HRRR moved to S3 <brian.blaylock@utah.edu>
-To: HRRR Check <brian.blaylock@utah.edu>
+message = """From: Check HRRR moved to S3 <atmos-mesowest@lists.utah.edu>
+To: HRRR Check <atmos-mesowest@lists.utah.edu>
 Subject: Check HRRR moved to Pando archvie %s
 
 """ % (DATE) +'\nMissing in HRRR:\n'+missing +'\n\nChecked'+ checked + '\n\nFinished:%s' % (datetime.now()) 

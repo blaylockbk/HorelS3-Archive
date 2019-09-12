@@ -54,6 +54,7 @@ def download_goes16_GLM(DATE):
     os.system('%s sync %s %s' % (rclone, AWS, HG7))
     print '        AWS --> horel-group7...DONE!'
 
+    # Sync horel-group7 to Pando
     print 'Syncing horel-group7 --> Pando...'
     os.system('%s sync %s %s' % (rclone, HG7, PANDO))
     print '        horel-group7 --> Pando...DONE!'

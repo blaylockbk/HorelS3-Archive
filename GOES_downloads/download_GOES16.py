@@ -72,7 +72,7 @@ mU = draw_Utah_map()
 # Rados Gateway 1 is the default and downloads from https://pando-rgw01.chpc.utah.edu
 # Rados Gateway 2 is the alternative and downloads from https://pando-rgw02.chpc.utah.edu
 
-rados_gateway = 2
+rados_gateway = 1
 
 ###############################################################################
 
@@ -136,16 +136,6 @@ def download_goes16(DATE, domain='C', product='ABI-L2-MCMIP'):
         print "Downloaded from AWS:", PATH_AWS+i, 'to:', OUTDIR
         print ""
 
-        # Copy the file to Pando (little different than the AWS path)
-        if rados_gateway == 1:
-            os.system(rclone + ' copy %s horelS3:%s' % (OUTDIR+i[3:], PATH_Pando))
-        elif rados_gateway == 2:
-            os.system(rclone + ' copy %s horelS3_rgw02:%s' % (OUTDIR+i[3:], PATH_Pando))
-
-        print ""
-        print "Moved to Pando:", PATH_Pando
-        print ""
-
         # Create true color image of the file
         G = get_GOES16_truecolor(OUTDIR+i[3:], only_RGB=False, night_IR=True)
         FT = get_GOES16_firetemperature(OUTDIR+i[3:], only_RGB=False)
@@ -163,12 +153,7 @@ def download_goes16(DATE, domain='C', product='ABI-L2-MCMIP'):
         plt.xlabel(i[3:])
         FIG = OUTDIR+i[3:-2]+'png'
         plt.savefig(FIG)
-        # Move Figure to Pando
-        if rados_gateway == 1:
-            os.system(rclone + ' copy %s horelS3:%s' % (FIG, PATH_Pando))
-        elif rados_gateway == 2:
-            os.system(rclone + ' copy %s horelS3_rgw02:%s' % (OUTDIR+i[3:], PATH_Pando))
-    
+
         # Draw Utah Map
         newmap = mU.pcolormesh(G['lon'], G['lat'], G['TrueColor'][:,:,1],
                                color=max_RGB,
@@ -179,24 +164,25 @@ def download_goes16(DATE, domain='C', product='ABI-L2-MCMIP'):
         mU.drawcounties()
         FIG = OUTDIR+i[3:-2]+'UTAH.png'
         plt.savefig(FIG)
-        # Move Figure to Pando
-        if rados_gateway == 1:
-            os.system(rclone + ' copy %s horelS3:%s' % (FIG, PATH_Pando))        
-        elif rados_gateway == 2:
-            os.system(rclone + ' copy %s horelS3_rgw02:%s' % (OUTDIR+i[3:], PATH_Pando))
-        
+
         print ""
         print 'FIGURE:', PATH_Pando, FIG
         print ""
 
-    # Change permissions of S3 directory to public
+
+    
+    # Sync everything to Pando (rclone) and change permissions of S3 directory to public (s3cmd)
+    # Need different options for s3cmd depending on rados gateway used
     if rados_gateway == 1:
         s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd'
     elif rados_gateway == 2:
         # Use config file in Brian's home directory
         s3cmd = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd -c /uufs/chpc.utah.edu/common/home/u0553130/.s3cfg_rgw02'
+    
+    HG7 = '/uufs/chpc.utah.edu/common/home/horel-group7/Pando/'
+    os.system(rclone + ' sync %s horelS3:%s' % (HG7+PATH_Pando, PATH_Pando))
     os.system(s3cmd + ' setacl s3://%s --acl-public --recursive' % PATH_Pando)
-    #
+
 
 if __name__ == '__main__':
 
@@ -219,6 +205,6 @@ if __name__ == '__main__':
 
 """
 # GOES16
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/ horelS3:GOES16/
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd setacl s3://GOES16/ --acl-public --recursive
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/ horelS3:GOES16/
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://GOES16/ --acl-public --recursive
 """

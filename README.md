@@ -1,26 +1,25 @@
 [//]: # (If not on github, you can view this markdown file with the Chrome extension "Markdown Preview Plus")
 
 ![Pando Logo](./images/PANDO_logo.png) 
-![MesoWest Logo, why doesn't this work??](./images/MesoWest_20th_black.png "Powered by MesoWest") 
+![MesoWest Logo](./images/MesoWest_20th_black.png "Powered by MesoWest") 
 
 
 # Using the Horel S3 Archive Buckets on Pando  
 **Author:** Brian Blaylock  
-**Date:** February 22, 2017  
-_updated September 22, 2017_  
-_updated February 6, 2018: New Pando rebuild_  
-_updated May 3, 2019: added GOES17 and GLM data_  
+**Updated:** September 12, 2019  
 
-## References
 
-> ### 📄 Cloud archiving and data mining of High-Resolution Rapid Refresh forecast model output.
->> Blaylock, B. K., J. D. Horel, S. T. Liston, 2017: Cloud archiving and data mining of High-Resolution Rapid Refresh forecast model output. _Computers and Geosciences_. **109**, 43-50. https://doi.org/10.1016/j.cageo.2017.08.005.   (PDF available in this repository.)
-
-> ### 📄 Archive Solutions at the Center for High Performance Computing 
->> Sam Liston: https://www.chpc.utah.edu/documentation/white_papers/ArchiveSolutionattheCenterforHighPerformanceComputing.pdf
-
-> ### 📄 Efficient Storage and Data Mining of Atmospheric Model Output Using the CHPC Pando Archive
->> Brian Blaylock and John Horel: https://www.chpc.utah.edu/news/newsletters/CHPC%20Newsletter%20-%20Spring%202017.pdf
+- [Guide to Potential Pando Issues](./docs/potential_Pando_issues.md)
+- [Accessing Data from Pando](./docs/accessing_data_from_pando.md)
+- [References](./docs/references.md)
+- Download Scripts Running
+    - [HRRR Downloads](./HRRR_downloads/README.md)
+    - [GOES Downloads](./GOES_downloads/README.md)
+- Software:
+    - [`rclone` Documentation](https://rclone.org/docs/)
+    - [`s3cmd` Documentation](https://s3tools.org/usage)
+- [Graph of Pando Allocation Usage](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/)
+---
 
 ## Introduction
 Pando is an object-storage system at the University of Utah, similar to Amazon Web Services S3. [Pando](https://en.wikipedia.org/wiki/Pando_%28tree%29), latin for _I spread_, is named after the vast network of aspen trees in Utah, thought to be the largest and oldest living organism on earth; a fitting name for an archive system.
@@ -441,5 +440,9 @@ Read the full documentation here: https://s3fs.readthedocs.io/en/latest/
 
 ___
 
-#### For questions, contact  Brian Blaylock  (brian.blaylock@utah.edu)
+# Contact:
+### **To contact the current archive managers, contact atmos-mesowest@lists.utah.edu**
+
+To contact the original archive creator, contact Brian Blaylock  blaylockbk@gmail.com
+
 ![](./images/wxicon_medium.png)
