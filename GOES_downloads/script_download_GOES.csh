@@ -11,7 +11,7 @@ set dateStart = `date +%Y-%m-%d_%H:%M`
 setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/GOES_downloads"
 
 if (-e ${SCRIPTDIR}/goes.status) then
-	echo "$dateStart PREVIOUS GOES PROCESS ON MESO1 STILL RUNNING" | mail -s "GOES Pando Download ERROR: Attempt to restart" blaylockbk@gmail.com
+	echo "$dateStart PREVIOUS GOES PROCESS ON MESO1 STILL RUNNING" | mail -s "GOES Pando Download ERROR: Attempt to restart" atmos-mesowest@lists.utah.edu 
 	echo "Attempt to kill old processes that fail"
 	pkill -f ${SCRIPTDIR}/download_GOES16.py
 	pkill -f ${SCRIPTDIR}/download_GOES16_GLM.py

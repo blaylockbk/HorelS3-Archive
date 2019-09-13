@@ -10,7 +10,7 @@ import urllib2
 
 def create_png():
     """
-    Create a sample image to store with the data
+    Create a sample image to store on Pando with the data
     """
     print "Make a sample image -- COMING SOON --"
 
@@ -33,7 +33,7 @@ def reporthook(a, b, c):
     print "% 3.1f%% of %.2f MB\r" % (min(100, float(a * b) / c * 100), c/1000000.),
 
 
-def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, PATH='default', source='NOMADS'):
+def get_grib2(DATE, model, field, fxx, DIR, idx=True, png=True, source='NOMADS'):
     """
     Download OPERATIONAL HRRR from NOMADS via HTTPS:
     https://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/

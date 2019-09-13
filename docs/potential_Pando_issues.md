@@ -1,11 +1,13 @@
 **Brian Blaylock**  
 **September 12, 2019**
 
+[**Back to Home**](../README.md)
+
 # ⚠ Potential Pando Issues
 
 The purpose of this document is to describe potential issues that might come up while using the Pando archive.
 
-<br><br>
+<br>
 
 ## ❌Allocation errors
 Our current allocation is 130 TB. For some unknown reason, the RADOS gateway and the `rclone size` command give different disk usage. Occasionally, this has caused our uploading to throw and error because the gateway thinks we have exceeded our allocation when we have not used it.
@@ -22,7 +24,7 @@ From Sam Liston
 From Sam
 > Brian, So as far as I can tell your usage is artificially inflated by around 41TB (raw).  I can’t find a way to have the rados layer re-inventory.  As an experiment, I have inflated your quota by 41TB raw (~25TB usable).  I am curious to see if as you put more data in, if you usage remains ~41TB inflated, or if it continues to over-inflate.  At any rate, please proceed and let’s see what happens.
 
-<br><br>
+<br>
 
 ## ❌RADOS Gateway certificate errors
 The RADOS Gateway is the door in and out of Pando. On September 7th, the certificate 
@@ -34,7 +36,7 @@ said that rgw02 was originally for the Globus transfers, but CHPC decided not
 to pay for that plug in since it isn't used. This means we are free to use
 `pando-rgw01` and `pando-rgw02` for uploading and downloading from Pando. If
 one or the other stops working (for certificate issues or any other reason), 
-there is a flag in the scripts to change the gateway. Look for the line that says:
+there is a flag in the download scripts to change the gateway. Look for the line that says:
 
     rados_gateway = 1
 
@@ -53,7 +55,7 @@ From Sam Liston on September 10, 2019
 
 > Brian, We have a new cert in place for pando-rgw01.chpc.utah.edu.  We were forced to go with a simpler cert with just the hostname, vs. with a wildcard (i.e *.pando-rgw01.chpc.utah.edu).  The result of this is references to `bucket-name.pando-rgw01.chpc.utah.edu` throw a cert warning.  References to `pando-rgw01.chpc.utah.edu/bucket-name` still work great.  I’m hoping you are using the bucket name as a suffix vs a prefix.  If you are not you may have to add some logic to handle the cert warning.
 
-<br><br>
+<br>
 
 ## ❌ "Access Denied" when trying to download from Pando
 This error is caused by not setting the bucket and the file to **public**. You can do this with the `s3cmd` command. 
@@ -75,10 +77,52 @@ To make the files in the bucket public...
 > To use that config file, use the `-c` option   
 > `./s3cmd -c PATH/.s3cfg_rgw02 setacl {etc.}`
 
-
-<br><br>
+<br>
 
 ## ❌ "`horel-group7` low on available disk space"
 `horel-group7` is the "Pando Backup." As part of the HRRR download process, files are downloaded from NOMADS to horel-group7 before the files are synced to Pando. The oldest files for the forecast hours removed from horel-group7, ricking them to be lost if the Pando archive ever fails. As the archive length increases, the amount of "non-risked" files increases and uses all the disk space. When horel-group7 becomes full, you will need to decide what you want to keep backed up and what you want to risk keeping on Pando.
 
+If horel-group7 is full, the download scripts will fail because HRRR data is first downloaded from NOMADS to horel-group7, then from horel-group7 to Pando.
+
 I would argue that the GOES data does not need to be backed up on horel-group7 (or Pando for that matter) at all because Amazon is doing a great job keeping that accessible. (Will that be true forever? I don't know.)
+
+
+<br>
+
+## ❌ Is the NOMADS server responding slow?
+Files not downloaded? Sometimes NOMADS goes down or is very slow to download from. 
+
+<br>
+
+## ❌ Are there any CHPC issues?
+Files not downloaded? Is CHPC having any issues? Is the python path broke?
+
+<br>
+
+# 🚧‍ Troubleshooting
+
+There are a few defensive measures to help prevent script and download failures.
+
+1. **The Emailed Log**: For the HRRR files, once a day the `email_log.py` script runs and emails a summary of data checks. This is the first line of defense. It lists bad or missing .idx files on horel-group7 and shows a table of files available on Pando for the previous day.
+    - If the table shows missing files on Pando, they might be on horel-group7 and just need to be re-synced. This error could occur because there is trouble getting access to Pando (allocation or certificate errors).
+    - If the .idx files on horel-group7 are bad or missing, this means the files have not been downloaded or have downloaded incomplete. This likely is caused by an issue with the NOMADS server being down or slow OR CHPC is having issues.
+2. **Restart Download**: The `script_download_hrrr.csh` script writes a temporary file before anything else called `hrrr.status`. If a previous download task is still running or got stuck, then the script will attempt to kill the old process and restart it again. An email notifies if this occurred. If the downloads finish successfully before the next scheduled task, then the `hrrr.status` file is deleted.
+3. **Run Script Manually**: If there has been trouble, the first thing to try is running the `script_download_hrrr.csh` script or `hrrr_download_manager.py` manually. Then you can look at the printed output and see where the issue might be.
+
+If the download script is having trouble, there may be a few reasons for this:
+
+1. Is the `meso1` box available? Can you log onto it? Are there too many processes running that are bogging the machine down?
+1. Is the HRRR data available? Is NOMADS having server issues? See if the website works and if it is running slow: https://nomads.ncep.noaa.gov/pub/data/nccf/com/hrrr/prod/
+1. Is the Pando allocation full? Can you move any files to Pando using the Horel-Group allocation? Are you getting an error that says **`QuotaExceeded`**? This means the Pando allocation is run up. Contact Sam Liston about this error if you believe the quota hasn't been reached. In the past, our allocation has appeared bloated because there are many small .idx files. It's weird.
+1. Are the tasks scheduled in crontab? It might be possible that a machine reset messed up the crontab, so check that the tasks are running properly.
+
+## Handy commands to check on things...
+
+    # Check the processes running a Pando related script
+    ps -ef | grep Pando
+
+    # Check the processes run by mesohorse user
+    ps -ef | grep 30067
+
+    # Kill a process (as the mesohorse user)
+    kill -9 [PID]

@@ -61,10 +61,10 @@ models = {'hrrr':{'name':'Operational HRRR',
                          'prs':range(0,1),
                          'nat':[],
                          'subh':[]}},
-          'hrrrak':{'name':'Parallel HRRR Alaska',     # temporary download "operational" alaska from ESRL before it becomes operational
+          'hrrrak':{'name':'HRRR Alaska',
                     'source':'NOMADS',
                     'hours':range(0,24,3),
-                    'fxx':{'sfc':range(0,37),          # 36 hour forecasts for 0, 6, 12, 18 UTC. 18 hour forecasts otherwise
+                    'fxx':{'sfc':range(0,37),  # 36 hour forecasts for 0, 6, 12, 18 UTC. 18 hour forecasts otherwise
                            'prs':[]}},
           'hrrrX':{'name':'Experimental HRRR',
                    'source':'ESRL',
@@ -85,6 +85,7 @@ models = {'hrrr':{'name':'Operational HRRR',
 # expires as it happened on September 8th, 2019.
 # Rados Gateway 1 is the default and downloads from https://pando-rgw01.chpc.utah.edu
 # Rados Gateway 2 is the alternative and downloads from https://pando-rgw02.chpc.utah.edu
+# Both work.
 
 rados_gateway = 2
 
@@ -98,8 +99,8 @@ if rados_gateway == 1:
 elif rados_gateway == 2:
     S3 = 'horelS3_rgw02:'
 
-# If the current time is before 0300 UTC, finish downloading files from
-# yesterday. Else, download files from today.
+# If the current time is before 0500 UTC, finish downloading files from yesterday.
+# Else, download files from today.
 if datetime.utcnow().hour < 5:
     DATE = datetime.utcnow()-timedelta(days=1)
 else:
@@ -150,9 +151,9 @@ for m in exp_models:
         download_experimental_hrrr.get_grib2(m, models[m], DIR, idx=True)
     except:
         print "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-        print "         Could not reach FTP site."
-        print "           ftp://gsdftp.fsl.noaa.gov/"
-        print "         Is the government shutdown??"
+        print "             Could not reach ESRL FTP site."
+        print "              ftp://gsdftp.fsl.noaa.gov/"
+        print "             Is the government shutdown??"
         print "++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
 
 
@@ -190,21 +191,22 @@ for PATH in PATHS:
 exit()
 
 """
-How to sync and set to public EVERYTHING in a bucket
+How to sync and set to public EVERYTHING in a bucket.
+NOTE: It will take a long time to do EVERYTHING so it is best to sync specific directories if you know what days Pando is missing.
 
-# hrrr
+## hrrr
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrr/ horelS3:hrrr/
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://hrrr/ --acl-public --recursive
 
-# hrrrak
+## hrrrak
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrrak/ horelS3:hrrrak/
-/uufs/chpc.utah.edu/common/home/horel-group/archive_s3/s3cmd-2.0.1/s3cmd setacl s3://hrrrak/ --acl-public --recursive
+/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://hrrrak/ --acl-public --recursive
 
-# hrrrX
+## hrrrX
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/hrrrX/ horelS3:hrrrX/
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://hrrrX/ --acl-public --recursive
 
-# GOES16
+## GOES16
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/rclone-v1.39-linux-386/rclone sync /uufs/chpc.utah.edu/common/home/horel-group7/Pando/GOES16/ horelS3:GOES16/
 /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/s3cmd-2.0.1/s3cmd setacl s3://GOES16/ --acl-public --recursive
 

@@ -13,7 +13,7 @@ set dateStart = `date +%Y-%m-%d_%H:%M`
 setenv SCRIPTDIR "/uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads"
 
 if (-e ${SCRIPTDIR}/hrrr.status) then
-	echo "$dateStart PREVIOUS HRRR PROCESS ON MESO1 STILL RUNNING" | mail -s "HRRR Pando Download ERROR: Attempt to restart" blaylockbk@gmail.com
+	echo "$dateStart PREVIOUS HRRR PROCESS ON MESO1 STILL RUNNING" | mail -s "HRRR Pando Download ERROR: Attempt to restart" atmos-mesowest@lists.utah.edu 
 	echo "Attempt to kill old processes that fail"
 	pkill -f ${SCRIPTDIR}/hrrr_download_manager.py
 	#####pkill -f ${SCRIPTDIR}/script_download_hrrr.csh # Whoops! Don't kill this process too!!!
