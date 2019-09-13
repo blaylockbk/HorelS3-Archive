@@ -44,7 +44,7 @@ import socket
 if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.edu':
     print "--> You are %s on %s" % (getpass.getuser(), socket.gethostname())
     print "--> Please run this operational download script with the mesohorse user on meso1."
-#    exit()
+    exit()
 
 # List of dates from archive begining to 6 months ago. These are the dates we
 # want to risk on the Pando archive and not backup on horel-group7.
