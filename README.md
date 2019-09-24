@@ -59,7 +59,19 @@ The contents of `horel-group7/Pando/` is the backup for what is on Pando. Note t
 
 The contents of `horel-group7/Pando_Scripts/` includes documents for how Pando works and download scripts. The scripts perform the downloading and syncing of HRRR and GOES files between HG7 and Pando. These documents are owned by **Brian Blaylock**, however, download tasks are performed by **mesohorse**.
 
-Downloads are set up as cron jobs on meso1 by mesohorse. If you believe you should have mesohorse access, talk to John Horel. To become the mesohorse user, you need to do the following:
+Downloads are set up as cron jobs on meso1 by mesohorse. 
+
+    ## PANDO HRRR Download
+    29 0,3,6,9,12,15,18,21 * * * /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/script_download_hrrr.csh > /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/HRRR_downloads/hrrr.cronout
+
+    ## PANDO GOES Download
+    1,16,31,46 * * * * /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/GOES_downloads/script_download_GOES.csh > /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/GOES_downloads/goes.cronout
+
+    ## PANDO Daily usage graphic and website
+    30 5 * * * csh /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/Daily_usage/Pando_daily_usage.csh > /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/Daily_usage/usage.cronout
+
+
+If you believe you should have mesohorse access, talk to John Horel. To become the mesohorse user, you need to do the following:
 
     sudo su - mesohorse
 
@@ -77,19 +89,26 @@ In my `.aliases` file, this is set up as an alias, `alias horse 'sudo su - mesoh
 # Contents of this repository
 
 ### **`docs/`**
-Additional documents of great worth and wisdom.
+Additional documents of great worth and contains much wisdom.
 
 ### **`GOES_downloads/`**
-Download scripts for the GOES-16 and GOES-17 data from the `noaa-goes16` and `noaa-goes17` bucket on Amazon S3. [**README**](./GOES_downloads/README.md).
+Download scripts for the GOES-16 and GOES-17 data from the `noaa-goes16` and `noaa-goes17` bucket on Amazon S3. <big>🌟[**README**](./GOES_downloads/README.md)</big>
 
 ### **`HRRR_downloads/`**
-Download scripts for the HRRR data. [**README**](./HRRR_downloads/README.md).
+Download scripts for the HRRR data. <big>🌟[**README**](./HRRR_downloads/README.md)</big>
+
+### **`Daily_usage/`**
+Keeps track of our Pando allocation. Contains a script to compute the daily disk usage on Pando and generates a graphical figure and a new html page with the data. The graphic and webpage is copied to Brian's *public_html* so it can be viewed on the web at http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/
+
+- `Pando_daily_usage.csh` is the script executed by cron once per day.
+- `daily_usage.py` is the python script. This requires python 3 and uses the intall in Brian's home directory.
+- `Pando_Space.csv` is a file that contains the Pando disk usage by category type. It is appended each time you run the script `daily_usage.py`. This information is used to make the graphical figure.
 
 ### **`rclone-v1.39-linux-386/`**
-Contains the version of rclone you should use so we don't get stuck when CHPC updates rclone versions. [**README**](./how_to_rclone.md).
+Contains the version of rclone you should use so we don't get stuck when CHPC updates rclone versions. <big>🌟[**README**](./how_to_rclone.md)</big>
 
 ### **`s3cmd-2.0.1/`** 
-Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. [**README**](./how_to_s3cmd.md).
+Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. <big>🌟[**README**](./how_to_s3cmd.md)</big>
 
 ### **`misc/`**
 Miscellaneous scripts that have been useful in the past.

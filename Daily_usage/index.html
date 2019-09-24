@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Pando Allocation</title>
+<link rel="stylesheet" href="../css/brian_style.css" />
+<script src="../js/site/siteopen.js"></script>
+</head>
+
+
+<body>
+
+<a name="TOP"></a>
+<script src="./js/site/sitemenu.js"></script>	
+
+<br>
+<div class="row" id="content">
+    <div class="col-md-offset-3 col-md-3">
+        <a href="http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hrrr_FAQ.html" class="btn btn-success btn-block">
+        <i class="fa fa-info-circle"></i> HRRR Archive FAQ</a>
+    </div>
+    <div class=" col-md-3">
+        <a href="http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/cgi-bin/generic_pando_download.cgi?BUCKET=GOES16" class="btn btn-primary btn-block">
+        <i class="fa fa-cloud-download-alt"></i> Pando Web Download</a>
+    </div>
+</div>
+
+<h1 align="center"><i class="fa fa-database"></i> Horel Group Pando Allocation</h1>
+
+<!--
+<div class='container'>
+<div class="row" id="content">
+    <div class=" col-md-3">
+    </div>
+    <div class="col-md-3">
+            
+    </div>
+    <div class="col-md-3">
+            
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+-->
+
+<br>
+  <script src='./js/pando_status.js'></script>
+    <center><font size=12> 104.9 TB out of 130 TB</font>
+    <div class="progress" style="max-width:700px;height:35px">
+            <div class="progress-bar progress-bar-danger" role="progressbar" style="width:14%">
+              <font size=4></font>
+            </div>
+            <div class="progress-bar progress-bar-primary" role="progressbar" style="width:59%">
+              <font size=4></font>
+            </div>
+            <div class="progress-bar progress-bar-success" role="progressbar" style="width:1%">
+              <font size=4></font>
+            </div>
+            <div class="progress-bar progress-bar-warning" role="progressbar" style="width:7%">
+              <font size=4></font>
+            </div>
+          </div>
+    
+    <img style='width:100%;max-width:750px'src="./Pando_archive/remaining_space_plot.png">
+    <br>
+    <hr>
+    <h4>Yesterday's Breakdown</h4>
+    <table class="table table-bordered" style='text-align:center;max-width:700px'>
+      <tr>
+        <th style='text-align:center'>Space Used Yesterday</th>
+        <th style='text-align:center'>Estimated Days Until Full</th>
+        <th style='text-align:center'>Estimated Full Date</th>
+      </tr>
+      <tr>
+        <td>121.47 GB</td>
+        <td>206</td>
+        <td>17 April 2020</td>
+      </tr>
+    </table>
+    <table class="table table-bordered" style='text-align:center;max-width:700px'>
+      <tr>
+        <th style='text-align:center'></th>
+        <th style='text-align:center' class="danger">GOES-16 (East)</th>
+        <th style='text-align:center' class="danger">GOES-17 (West)</th>
+      </tr>
+      <tr>
+        <th style='text-align:right'>ABI-L2-MCMIPC</th>
+        <td>16.19</td>
+        <td>15.57</td>
+      </tr>
+      <tr>
+        <th style='text-align:right'>GLM-L2-LCFA</th>
+        <td>1.91</td>
+        <td>0.83</td>
+      </tr>
+      <tr>
+        <th style='text-align:right'>Total</th>
+        <th style='text-align:center'>18.10 GB</th>
+        <th style='text-align:center'>16.40 GB</th>
+      </tr>
+    </table>
+
+
+    <table class="table table-bordered" style='text-align:center;max-width:700px'>
+      <tr>
+        <th style='text-align:center'></th>
+        <th style='text-align:center' class="info">HRRR</th>
+        <th style='text-align:center' class="success">HRRR-X</th>
+        <th style='text-align:center' class="warning">HRRR-Alaska</th>
+      </tr>
+      <tr>
+        <th style='text-align:right'>sfc</th>
+        <td>56.97</td>
+        <td>2.72</td>
+        <td>18.68</td>
+      </tr>
+      <tr>
+        <th style='text-align:right'>prs</th>
+        <td>8.60</td>
+        <td>0.00</td>
+        <td>0.00</td>
+      </tr>
+      <tr>
+        <th style='text-align:right'>nat</th>
+        <td>0.00</td>
+        <td>0.00</td>
+        <td>0.00</td>
+      </tr>
+      <tr>
+        <th style='text-align:right'>Total</th>
+        <th style='text-align:center'>65.57 GB</th>
+        <th style='text-align:center'>2.72 GB</th>
+        <th style='text-align:center'>18.68 GB</th>
+      </tr>
+    </table>
+
+  </center>
+  
+  <hr>
+  <div align=right class='container'>
+    <a href="https://github.com/blaylockbk/Web-Homepage/blob/master/Pando_archive/index.html"><i class="fab fa-github"></i> Page</a>
+    <a href="https://github.com/blaylockbk/Web-Homepage/blob/master/Pando_archive/daily_usage.py"><i class="fab fa-github"></i> Plot</a>
+    <br>
+    Last Updated: 24 Sep 2019 17:27 UTC
+  </div>
+
+</div>
+<script src="./js/site/siteclose.js"></script>
+</body>
+</html>
