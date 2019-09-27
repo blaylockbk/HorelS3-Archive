@@ -105,10 +105,10 @@ Keeps track of our Pando allocation. Contains a script to compute the daily disk
 - `Pando_Space.csv` is a file that contains the Pando disk usage by category type. It is appended each time you run the script `daily_usage.py`. This information is used to make the graphical figure.
 
 ### **`rclone-v1.39-linux-386/`**
-Contains the version of rclone you should use so we don't get stuck when CHPC updates rclone versions. <big>🌟[**README**](./how_to_rclone.md)</big>
+Contains the version of rclone you should use so we don't get stuck when CHPC updates rclone versions. <big>🌟[**README**](./docs/how_to_rclone.md)</big>
 
 ### **`s3cmd-2.0.1/`** 
-Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. <big>🌟[**README**](./how_to_s3cmd.md)</big>
+Contains `s3cmd` which is used to change permissions of files on S3 from private to public, and vice versa. <big>🌟[**README**](./docs/how_to_s3cmd.md)</big>
 
 ### **`misc/`**
 Miscellaneous scripts that have been useful in the past.
@@ -188,11 +188,7 @@ The [registration webpage](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/hr
 In the future, it would be nice to not rely on Formspree. I imagine the form would update a `.csv` file and auto generate a new graph to display on the webpage.
 
 ## Pando archive usage: How much space is left and when will the S3 archive fill up?
-The [Pando Allocation Web Display (PAWD)](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/) shows the Pando allocation and usage for each bucket. The script that creates this display is run once a day by Brian on meso4 and is located on [GitHub](https://github.com/blaylockbk/Web-Homepage/blob/master/Pando_archive/daily_usage.py).
-
-The script that generates this page runs every morning on `meso4`. 
-
-    .../u0553130/public_html/Brian_Blaylock/Pando_archive/
+The [Pando Allocation Web Display (PAWD)](http://home.chpc.utah.edu/~u0553130/Brian_Blaylock/Pando_archive/) shows the Pando allocation and usage for each bucket. The script that creates this display is run once a day by mesohorse on meso1 and is located in the `Daily_logs/` directory.
 
 ![Pando Allocation](./images/screenshot_allocation.png "Pando Allocation Web Display")
 
