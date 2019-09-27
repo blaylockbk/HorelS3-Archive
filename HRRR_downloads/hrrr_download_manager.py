@@ -57,7 +57,7 @@ if getpass.getuser() != 'mesohorse' or socket.gethostname() != 'meso1.chpc.utah.
 models = {'hrrr':{'name':'Operational HRRR',
                   'source':'NOMADS',
                   'hours':range(0,24),
-                  'fxx':{'sfc':range(0,19),
+                  'fxx':{'sfc':range(0,37),
                          'prs':range(0,1),
                          'nat':[],
                          'subh':[]}},

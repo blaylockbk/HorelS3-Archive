@@ -14,6 +14,7 @@
 
 limit coredumpsize 0
 
+cd /uufs/chpc.utah.edu/common/home/horel-group7/Pando_Scripts/Daily_usage/
 
 # Use Brian's python version 3 install of Python to run this script.
 # NOTE: This script takes a long time to sum the total disk usage.
