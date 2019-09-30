@@ -80,8 +80,11 @@ def check_and_email(DATE, models=['hrrr', 'hrrrak', 'hrrrX'], fields=['sfc', 'pr
     # sender = 'atmos-mesowest@lists.utah.edu'
     # receivers = ['blaylockbk@gmail.com', 'atmos-mesowest@lists.utah.edu']
 
-    sender = 'brian.blaylock@utah.edu'
-    receivers = ['blaylockbk@gmail.com']
+    #sender = 'brian.blaylock@utah.edu'
+    #receivers = ['blaylockbk@gmail.com']
+
+    sender = 'atmos-mesowest@lists.utah.edu'
+    receivers = ['atmos-mesowest@lists.utah.edu']
 
     message = 'Subject: Check HRRR Download to Pando -- {}\n\n'.format(DATE.strftime('%b %d %Y'))
     message += "{}\n{}\nFinished check: {} MT".format(idx_check, checked, datetime.now())
