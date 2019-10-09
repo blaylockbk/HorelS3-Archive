@@ -1,55 +1,55 @@
 -------
 GOES16
-Total objects: 2939072
-Total size: 12654.507 GBytes (13587673584918 Bytes)
+Total objects: 2985633
+Total size: 12810.016 GBytes (13754649649625 Bytes)
 
-GOES16: 13587.673584918 GB
+GOES16: 13754.649649625 GB
 -------
 -------
 GOES17
-Total objects: 1079987
-Total size: 4214.128 GBytes (4524885605359 Bytes)
+Total objects: 1121412
+Total size: 4351.522 GBytes (4672411433080 Bytes)
 
-GOES17: 4524.885605359001 GB
+GOES17: 4672.41143308 GB
 -------
 -------
 hrrr
-Total objects: 1129252
-Total size: 71405.013 GBytes (76670548542636 Bytes)
+Total objects: 1139188
+Total size: 72031.802 GBytes (77343558485871 Bytes)
 
-hrrr: 76670.54854263601 GB
+hrrr: 77343.558485871 GB
 -------
 -------
 hrrrX
-Total objects: 22434
-Total size: 1353.571 GBytes (1453386325596 Bytes)
+Total objects: 22780
+Total size: 1376.478 GBytes (1477982203107 Bytes)
 
-hrrrX: 1453.386325596 GB
+hrrrX: 1477.982203107 GB
 -------
 -------
 hrrrak
-Total objects: 231979
-Total size: 8773.944 GBytes (9420950244285 Bytes)
+Total objects: 236011
+Total size: 8927.089 GBytes (9585389278436 Bytes)
 
-hrrrak: 9420.950244285 GB
+hrrrak: 9585.389278436001 GB
 -------
 
 ------
 hrrr sfc
 Total objects: 1056
-Total size: 63.031 GBytes (67678961463 Bytes)
+Total size: 61.386 GBytes (65912982524 Bytes)
 
-Bytes 67678961463
-GB 67.67896146300001
+Bytes 65912982524
+GB 65.912982524
 ------
 
 ------
 hrrr prs
 Total objects: 48
-Total size: 8.151 GBytes (8751821634 Bytes)
+Total size: 8.094 GBytes (8691185847 Bytes)
 
-Bytes 8751821634
-GB 8.751821634
+Bytes 8691185847
+GB 8.691185847
 ------
 
 ------
@@ -64,10 +64,10 @@ GB 0.0
 ------
 hrrrak sfc
 Total objects: 448
-Total size: 17.134 GBytes (18396965221 Bytes)
+Total size: 17.180 GBytes (18447352574 Bytes)
 
-Bytes 18396965221
-GB 18.396965221000002
+Bytes 18447352574
+GB 18.447352574
 ------
 
 ------
@@ -90,11 +90,11 @@ GB 0.0
 
 ------
 hrrrX sfc
-Total objects: 48
-Total size: 3.275 GBytes (3516986386 Bytes)
+Total objects: 20
+Total size: 1.287 GBytes (1381672859 Bytes)
 
-Bytes 3516986386
-GB 3.516986386
+Bytes 1381672859
+GB 1.381672859
 ------
 
 ------
@@ -118,35 +118,35 @@ GB 0.0
 ------
 GOES16 ABI-L2-MCMIPC
 Total objects: 864
-Total size: 14.953 GBytes (16055740692 Bytes)
+Total size: 15.147 GBytes (16264043145 Bytes)
 
-Bytes 16055740692
-GB 16.055740692
+Bytes 16264043145
+GB 16.264043145000002
 ------
 
 ------
 GOES16 GLM-L2-LCFA
-Total objects: 4320
-Total size: 2.036 GBytes (2186299256 Bytes)
+Total objects: 4313
+Total size: 2.142 GBytes (2299492582 Bytes)
 
-Bytes 2186299256
-GB 2.1862992560000003
+Bytes 2299492582
+GB 2.299492582
 ------
 
 ------
 GOES17 ABI-L2-MCMIPC
 Total objects: 288
-Total size: 14.397 GBytes (15458525557 Bytes)
+Total size: 14.382 GBytes (15442272685 Bytes)
 
-Bytes 15458525557
-GB 15.458525557000002
+Bytes 15442272685
+GB 15.442272685
 ------
 
 ------
 GOES17 GLM-L2-LCFA
-Total objects: 4320
-Total size: 885.124 MBytes (928119895 Bytes)
+Total objects: 4311
+Total size: 752.274 MBytes (788816164 Bytes)
 
-Bytes 928119895
-GB 0.928119895
+Bytes 788816164
+GB 0.7888161640000001
 ------

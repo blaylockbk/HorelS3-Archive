@@ -14,11 +14,13 @@ temp/
 
 *.pyc
 
-*.log
-
-*.txt
-
 # Don't send potentially large files
 *.nc
 *.grib2
 *.h5
+
+# Don't send the log files
+hrrr.cronout
+hrrr.status
+goes.cronout
+goes.status
